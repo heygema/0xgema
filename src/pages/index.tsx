@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import {motion} from 'framer-motion';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -16,12 +17,12 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <p className={styles.description}>
+        <motion.p whileHover={{scale: 1.1}} className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
-        </p>
+        </motion.p>
 
-        <div className={styles.grid}>
+        <motion.div whileHover={{scale: 1.1}} className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
@@ -49,7 +50,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </motion.div>
       </main>
 
       <footer className={styles.footer}>
@@ -65,5 +66,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
