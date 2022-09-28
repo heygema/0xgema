@@ -1,5 +1,6 @@
 .container {
   padding: 0 2rem;
+  /* height: 5rem; */
 }
 
 .main {
@@ -121,9 +122,9 @@
     border-color: #222;
   }
   .code {
-    background: #111;
+    /* background: #111; */
   }
   .logo img {
-    filter: invert(1);
+    /* filter: invert(1); */
   }
 }

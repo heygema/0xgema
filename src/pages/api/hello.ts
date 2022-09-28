@@ -7,6 +7,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const files = await readdir('./src/data/_debug_posts');
 
   res.status(200).json({files});
 }
