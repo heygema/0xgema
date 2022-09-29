@@ -4,13 +4,28 @@ import {motion} from 'framer-motion';
 import styles from '../styles/Home.module.css';
 
 import {promises as fs} from 'fs';
-import {POST_PATH} from '../constant';
+import {POST_DIR} from '../constant';
 import Link from 'next/link';
+import matter from 'gray-matter';
+import path, {parse} from 'path';
 
-export default function Home({posts}: {posts: Array<string>}) {
+type Posts = Array<
+  matter.GrayMatterFile<string> & {
+    slug: string;
+  }
+>;
+
+type Props = {
+  posts: Posts;
+};
+
+export default function Home({posts}: Props) {
+  console.log({
+    posts,
+  });
   return (
     <div>
-      {posts.map((slug) => {
+      {posts.map(({slug}) => {
         return (
           <div key={slug}>
             <Link href={'/p/' + slug}>
@@ -24,11 +39,33 @@ export default function Home({posts}: {posts: Array<string>}) {
 }
 
 export async function getStaticProps() {
-  let postFiles = await fs.readdir(POST_PATH);
-
-  return {
+  let result = {
     props: {
-      posts: postFiles.map((file) => file.replace('.md', '')),
+      posts: {},
     },
   };
+  try {
+    let postDirs = await fs.readdir(POST_DIR);
+
+    let posts = [];
+
+    for (const slug of postDirs) {
+      let targetPath = path.join(POST_DIR, slug + '/index.mdx');
+      let post = await fs.readFile(targetPath, 'utf-8');
+      let parsedMatter = matter(post);
+      let parsedPost = JSON.parse(JSON.stringify(parsedMatter));
+      posts.push({
+        ...parsedPost,
+        slug,
+      });
+    }
+
+    return {
+      props: {
+        posts,
+      },
+    };
+  } catch {
+    return result;
+  }
 }
