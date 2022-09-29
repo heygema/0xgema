@@ -9,6 +9,7 @@ specifiers:
   '@types/react': 18.0.20
   '@vanilla-extract/css': ^1.9.1
   '@vanilla-extract/next-plugin': ^2.1.0
+  dompurify: ^2.4.0
   eslint: 8.23.1
   eslint-config-next: 12.3.1
   framer-motion: ^7.3.6
@@ -26,6 +27,7 @@ dependencies:
   '@types/marked': 4.0.7
   '@vanilla-extract/css': 1.9.1
   '@vanilla-extract/next-plugin': 2.1.0_next@12.3.1
+  dompurify: 2.4.0
   framer-motion: 7.3.6_biqbaboplfbrettd7655fr4n2y
   gray-matter: 4.0.3
   marked: 4.1.0
@@ -1195,6 +1197,10 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /dompurify/2.4.0:
+    resolution: {integrity: sha512-Be9tbQMZds4a3C6xTmz68NlMfeONA//4dOavl/1rNw50E+/QO0KVpbcU0PcaW0nsQxurXls9ZocqFxk8R2mWEA==}
+    dev: false
 
   /electron-to-chromium/1.4.257:
     resolution: {integrity: sha512-C65sIwHqNnPC2ADMfse/jWTtmhZMII+x6ADI9gENzrOiI7BpxmfKFE84WkIEl5wEg+7+SfIkwChDlsd1Erju2A==}

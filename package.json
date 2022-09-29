@@ -15,6 +15,7 @@
     "@types/marked": "^4.0.7",
     "@vanilla-extract/css": "^1.9.1",
     "@vanilla-extract/next-plugin": "^2.1.0",
+    "dompurify": "^2.4.0",
     "framer-motion": "^7.3.6",
     "gray-matter": "^4.0.3",
     "marked": "^4.1.0",
