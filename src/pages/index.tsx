@@ -1,17 +1,25 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import {motion} from 'framer-motion';
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import styles from "../styles/Home.module.css";
 
-import {promises as fs} from 'fs';
-import {POST_DIR} from '../constant';
-import Link from 'next/link';
-import matter from 'gray-matter';
-import path, {parse} from 'path';
+import { promises as fs } from "fs";
+import { POST_DIR } from "../constant";
+import Link from "next/link";
+import matter from "gray-matter";
+import path from "path";
+import { useRouter } from "next/router";
+
+type GrayMatterFile = matter.GrayMatterFile<string>;
 
 type Posts = Array<
-  matter.GrayMatterFile<string> & {
+  GrayMatterFile & {
     slug: string;
+    author: string;
+    canonical_url: string;
+    date: string;
+    hero: string;
+    title: string;
   }
 >;
 
@@ -19,18 +27,20 @@ type Props = {
   posts: Posts;
 };
 
-export default function Home({posts}: Props) {
-  console.log({
-    posts,
-  });
+export default function Home({ posts }: Props) {
+  const { query } = useRouter();
+
   return (
     <div>
-      {posts.map(({slug}) => {
+      {posts.map(({ slug, ...info }) => {
+        const imagePath = path.join(__dirname, `${slug}/${info.hero}`);
         return (
           <div key={slug}>
-            <Link href={'/p/' + slug}>
-              <a>{'/p/' + slug}</a>
+            <Link href={"/posts/" + slug}>
+              <a>{slug}</a>
             </Link>
+            <img src={imagePath} />
+            <p>{info.excerpt}</p>
           </div>
         );
       })}
@@ -46,16 +56,15 @@ export async function getStaticProps() {
   };
   try {
     let postDirs = await fs.readdir(POST_DIR);
-
     let posts = [];
 
     for (const slug of postDirs) {
-      let targetPath = path.join(POST_DIR, slug + '/index.mdx');
-      let post = await fs.readFile(targetPath, 'utf-8');
+      let targetPath = path.join(POST_DIR, slug + "/index.mdx");
+      let post = await fs.readFile(targetPath, "utf-8");
       let parsedMatter = matter(post);
-      let parsedPost = JSON.parse(JSON.stringify(parsedMatter));
       posts.push({
-        ...parsedPost,
+        ...parsedMatter.data,
+        date: new Date(parsedMatter.data?.date).toISOString(),
         slug,
       });
     }

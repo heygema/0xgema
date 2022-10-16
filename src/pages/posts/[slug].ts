@@ -29,11 +29,6 @@ export const getStaticProps = async ({params: {slug}}) => {
   const postLocation = path.join(POST_DIR, slug + `/index` + '.mdx');
   const markdownWithMetadata = await fs.readFile(postLocation, 'utf-8');
 
-  console.log({
-    postLocation,
-    markdownWithMetadata,
-  });
-
   //   const parsedMarkdown = matter(markdownWithMetadata);
 
   //   const htmlString = marked(parsedMarkdown.content);
