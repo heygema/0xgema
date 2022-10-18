@@ -9,6 +9,7 @@ export const navigation = style({
 const mainBase = style({
   margin: "0 auto",
   marginTop: "5rem",
+  marginBottom: "10rem",
 });
 
 const mainResponsive = sprinkles({

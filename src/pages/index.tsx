@@ -43,22 +43,24 @@ export default function Home({ posts }: Props) {
 
   //const renderedPosts = posts.slice(0)
 
-  return posts.map(({ slug, ...info }) => {
+  const renderedPosts = posts.map(({ slug, ...info }) => {
     const heroPath = path.join("/assets", info.hero);
 
     return (
-      <motion.div
-        className={styles.card}
-        whileHover={{ scale: 1.02 }}
-        key={slug}
-      >
-        <Link href={"/posts/" + slug}>
-          <a>{slug}</a>
-        </Link>
-        <p>{info.excerpt}</p>
-      </motion.div>
+      <Link href={"/posts/" + slug}>
+        <motion.div
+          className={styles.card}
+          whileHover={{ scale: 1.02 }}
+          key={slug}
+        >
+          <h3>{info.title}</h3>
+          <p>{info.excerpt}</p>
+        </motion.div>
+      </Link>
     );
   });
+
+  return <div className={styles.root}>{renderedPosts}</div>;
 }
 
 export async function getStaticProps() {
