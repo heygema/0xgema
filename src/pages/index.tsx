@@ -1,13 +1,13 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import {motion} from 'framer-motion';
+import Head from "next/head";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
-import {promises as fs} from 'fs';
-import {POST_DIR} from '../constant';
-import Link from 'next/link';
-import matter from 'gray-matter';
-import path from 'path';
-import {useRouter} from 'next/router';
+import { promises as fs } from "fs";
+import { POST_DIR } from "../constant";
+import Link from "next/link";
+import matter from "gray-matter";
+import path from "path";
+import { useRouter } from "next/router";
 
 type GrayMatterFile = matter.GrayMatterFile<string>;
 
@@ -26,8 +26,8 @@ type Props = {
   posts: Posts;
 };
 
-export default function Home({posts}: Props) {
-  const {query} = useRouter();
+export default function Home({ posts }: Props) {
+  const { query } = useRouter();
 
   const page = query?.page || 1;
 
@@ -46,19 +46,19 @@ export default function Home({posts}: Props) {
 
   return (
     <div>
-      {posts.map(({slug, ...info}) => {
-        const heroPath = path.join('/assets', info.hero);
+      {posts.map(({ slug, ...info }) => {
+        const heroPath = path.join("/assets", info.hero);
 
         return (
-          <motion.div whileHover={{scale: 1.02}} key={slug}>
-            <Link href={'/posts/' + slug}>
+          <motion.div whileHover={{ scale: 1.02 }} key={slug}>
+            <Link href={"/posts/" + slug}>
               <a>{slug}</a>
             </Link>
             <Image
               src={heroPath}
               alt={`hero-${slug}`}
               width="150px"
-              height={'100px'}
+              height={"100px"}
             />
             <p>{info.excerpt}</p>
           </motion.div>
@@ -81,8 +81,8 @@ export async function getStaticProps() {
     let posts = [];
 
     for (const slug of postDirs) {
-      let targetPath = path.join(POST_DIR, slug + '/index.mdx');
-      let post = await fs.readFile(targetPath, 'utf-8');
+      let targetPath = path.join(POST_DIR, slug + "/index.mdx");
+      let post = await fs.readFile(targetPath, "utf-8");
       let parsedMatter = matter(post);
       posts.push({
         ...parsedMatter.data,

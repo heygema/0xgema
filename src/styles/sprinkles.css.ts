@@ -1,12 +1,14 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 import { globalVars as vars } from "./theme.css";
 
+const BREAKPOINTS = {
+  mobile: { "@media": "screen and (max-width: 680px)" },
+  tablet: { "@media": "screen and (min-width: 768px)" },
+  desktop: { "@media": "screen and (min-width: 1024px)" },
+};
+
 const responsiveProperties = defineProperties({
-  conditions: {
-    mobile: {},
-    tablet: { "@media": "screen and (min-width: 768px)" },
-    desktop: { "@media": "screen and (min-width: 1024px)" },
-  },
+  conditions: BREAKPOINTS,
   defaultCondition: "mobile",
   properties: {
     display: ["none", "flex", "block", "inline"],
@@ -24,7 +26,7 @@ const responsiveProperties = defineProperties({
     paddingBottom: vars.space,
     paddingLeft: vars.space,
     paddingRight: vars.space,
-    // etc.
+    width: vars.width,
   },
   shorthands: {
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
