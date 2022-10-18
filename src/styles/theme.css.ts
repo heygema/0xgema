@@ -6,6 +6,7 @@ export const globalVars = createGlobalTheme(":root", {
     "bg-dark": "hsla(0, 0%, 7%, 100%)",
     "bg-dark-blue": "hsl(231, 91%, 9%)",
     "bg-light": "#ECEAE4",
+    grayish: "hsl(200, 6%, 10%)",
     black: "#111111",
     white: "#ECEAE4",
     light: "#ECEAE4",

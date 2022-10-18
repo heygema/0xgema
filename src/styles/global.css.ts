@@ -15,8 +15,8 @@ globalStyle("html, body", {
   padding: 0,
   "@media": {
     "(prefers-color-scheme: dark)": {
-      //background: globalVars.colors["bg-dark-blue"],
-      background: grainy + ` ${globalVars.colors["bg-dark"]}`,
+      background: globalVars.colors.grayish,
+      //background: grainy + ` ${globalVars.colors["bg-dark"]}`,
       color: globalVars.colors["bg-light"],
     },
   },
