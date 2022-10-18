@@ -1,13 +1,11 @@
-import Head from "next/head";
-import Image from "next/image";
-import { motion } from "framer-motion";
-
 import { promises as fs } from "fs";
-import { POST_DIR } from "../constant";
+import path from "path";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import matter from "gray-matter";
-import path from "path";
 import { useRouter } from "next/router";
+
+import { POST_DIR } from "../constant";
 
 type GrayMatterFile = matter.GrayMatterFile<string>;
 
@@ -54,12 +52,6 @@ export default function Home({ posts }: Props) {
             <Link href={"/posts/" + slug}>
               <a>{slug}</a>
             </Link>
-            <Image
-              src={heroPath}
-              alt={`hero-${slug}`}
-              width="150px"
-              height={"100px"}
-            />
             <p>{info.excerpt}</p>
           </motion.div>
         );
