@@ -1,12 +1,5 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
-
-const space = {
-  none: 0,
-  small: "4px",
-  medium: "8px",
-  large: "16px",
-  // etc.
-};
+import { vars } from "./theme.css";
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -27,10 +20,10 @@ const responsiveProperties = defineProperties({
       "space-between",
     ],
     alignItems: ["stretch", "flex-start", "center", "flex-end"],
-    paddingTop: space,
-    paddingBottom: space,
-    paddingLeft: space,
-    paddingRight: space,
+    paddingTop: vars.space,
+    paddingBottom: vars.space,
+    paddingLeft: vars.space,
+    paddingRight: vars.space,
     // etc.
   },
   shorthands: {
@@ -41,30 +34,26 @@ const responsiveProperties = defineProperties({
   },
 });
 
-const colors = {
-  "blue-50": "#eff6ff",
-  "blue-100": "#dbeafe",
-  "blue-200": "#bfdbfe",
-  "gray-700": "#374151",
-  "gray-800": "#1f2937",
-  "gray-900": "#111827",
-  // etc.
-};
-
 const colorProperties = defineProperties({
   conditions: {
     lightMode: {},
     darkMode: { "@media": "(prefers-color-scheme: dark)" },
   },
-  defaultCondition: "lightMode",
+  defaultCondition: "darkMode",
   properties: {
-    color: colors,
-    background: colors,
+    color: vars.colors,
+    background: vars.colors,
     // etc.
   },
 });
 
 export const sprinkles = createSprinkles(responsiveProperties, colorProperties);
+
+sprinkles({
+  background: {
+    darkMode: "dark",
+  },
+});
 
 // It's a good idea to export the Sprinkles type too
 export type Sprinkles = Parameters<typeof sprinkles>[0];
