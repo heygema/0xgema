@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import styles from "../styles/Home.module.css";
 
 import { promises as fs } from "fs";
 import { POST_DIR } from "../constant";
@@ -30,18 +29,33 @@ type Props = {
 export default function Home({ posts }: Props) {
   const { query } = useRouter();
 
+  const page = query?.page || 1;
+
+  const postPerPage = 4;
+
+  const totalPages = Math.ceil(posts.length / postPerPage);
+
+  //const offset =  ;
+
+  console.log({
+    page,
+    totalPages,
+  });
+
+  //const renderedPosts = posts.slice(0)
+
   return (
     <div>
       {posts.map(({ slug, ...info }) => {
         const imagePath = path.join(__dirname, `${slug}/${info.hero}`);
         return (
-          <div key={slug}>
+          <motion.div whileHover={{ scale: 1.02 }} key={slug}>
             <Link href={"/posts/" + slug}>
               <a>{slug}</a>
             </Link>
             <img src={imagePath} />
             <p>{info.excerpt}</p>
-          </div>
+          </motion.div>
         );
       })}
     </div>
@@ -54,8 +68,10 @@ export async function getStaticProps() {
       posts: {},
     },
   };
+
   try {
     let postDirs = await fs.readdir(POST_DIR);
+
     let posts = [];
 
     for (const slug of postDirs) {

@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import * as styles from "./layout.css";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -6,11 +7,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <div
         style={{ width: "100px", height: "200px", backgroundColor: "red" }}
       />
-      <main
-        style={{ backgroundColor: "green", margin: "0 auto", width: "720px" }}
-      >
-        {children}
-      </main>
+      <main className={[styles.main].join(" ")}>{children}</main>
     </>
   );
 }
