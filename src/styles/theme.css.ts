@@ -3,7 +3,11 @@ import { createTheme } from "@vanilla-extract/css";
 
 export const globalVars = createGlobalTheme(":root", {
   colors: {
-    dark: "#111111",
+    "bg-dark": "hsla(0, 0%, 7%, 100%)",
+    "bg-dark-blue": "hsl(231, 91%, 9%)",
+    "bg-light": "#ECEAE4",
+    black: "#111111",
+    white: "#ECEAE4",
     light: "#ECEAE4",
     blue: "#0423F7",
     gold: "#E8D9AC",

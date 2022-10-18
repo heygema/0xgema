@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import { useRouter } from "next/router";
 
 import { POST_DIR } from "../constant";
+import * as styles from "./index.css";
 
 type GrayMatterFile = matter.GrayMatterFile<string>;
 
@@ -42,22 +43,22 @@ export default function Home({ posts }: Props) {
 
   //const renderedPosts = posts.slice(0)
 
-  return (
-    <div>
-      {posts.map(({ slug, ...info }) => {
-        const heroPath = path.join("/assets", info.hero);
+  return posts.map(({ slug, ...info }) => {
+    const heroPath = path.join("/assets", info.hero);
 
-        return (
-          <motion.div whileHover={{ scale: 1.02 }} key={slug}>
-            <Link href={"/posts/" + slug}>
-              <a>{slug}</a>
-            </Link>
-            <p>{info.excerpt}</p>
-          </motion.div>
-        );
-      })}
-    </div>
-  );
+    return (
+      <motion.div
+        className={styles.card}
+        whileHover={{ scale: 1.02 }}
+        key={slug}
+      >
+        <Link href={"/posts/" + slug}>
+          <a>{slug}</a>
+        </Link>
+        <p>{info.excerpt}</p>
+      </motion.div>
+    );
+  });
 }
 
 export async function getStaticProps() {
