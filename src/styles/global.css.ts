@@ -22,11 +22,11 @@ globalStyle("html, body", {
 });
 
 globalStyle("body::-webkit-scrollbar", {
-  width: "0.5rem",
+  width: "0.75rem",
 });
 
 globalStyle("body::-webkit-scrollbar-track", {
-  backgroundColor: "#1e1e24",
+  backgroundColor: "transparent",
 });
 
 globalStyle("body::-webkit-scrollbar-thumb", {
