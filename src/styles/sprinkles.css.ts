@@ -1,5 +1,5 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
-import { vars } from "./theme.css";
+import { globalVars as vars } from "./theme.css";
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -48,12 +48,6 @@ const colorProperties = defineProperties({
 });
 
 export const sprinkles = createSprinkles(responsiveProperties, colorProperties);
-
-sprinkles({
-  background: {
-    darkMode: "dark",
-  },
-});
 
 // It's a good idea to export the Sprinkles type too
 export type Sprinkles = Parameters<typeof sprinkles>[0];
