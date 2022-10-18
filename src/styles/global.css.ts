@@ -19,6 +19,19 @@ globalStyle("html, body", {
   },
 });
 
+globalStyle("body::-webkit-scrollbar", {
+  width: "0.5rem",
+});
+
+globalStyle("body::-webkit-scrollbar-track", {
+  backgroundColor: "#1e1e24",
+});
+
+globalStyle("body::-webkit-scrollbar-thumb", {
+  background: "rgba(0,0,0,0.2)",
+  borderRadius: "50px",
+});
+
 globalStyle("*", {
   boxSizing: "border-box",
 });
