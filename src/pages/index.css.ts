@@ -3,7 +3,7 @@ import { globalVars } from "../styles/theme.css";
 
 export const root = style({
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fill, minmax(30%, 1fr))",
+  gridTemplateColumns: "repeat(auto-fill, minmax(3fr, 1fr))",
   gridTemplateRows: "minmax(100px, auto)",
   gridAutoFlow: "dense",
   gridGap: "0.5rem",

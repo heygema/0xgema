@@ -30,7 +30,7 @@ export default function Home({ posts }: Props) {
 
   const page = query?.page || 1;
 
-  const postPerPage = 4;
+  const postPerPage = 6;
 
   const totalPages = Math.ceil(posts.length / postPerPage);
 
@@ -43,7 +43,7 @@ export default function Home({ posts }: Props) {
 
   //const renderedPosts = posts.slice(0)
 
-  const renderedPosts = posts.map(({ slug, ...info }) => {
+  const renderedPosts = posts.slice(0, postPerPage).map(({ slug, ...info }) => {
     const heroPath = path.join("/assets", info.hero);
 
     return (
