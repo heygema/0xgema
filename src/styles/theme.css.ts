@@ -11,6 +11,7 @@ export const globalVars = createGlobalTheme(":root", {
     white: "#ECEAE4",
     light: "#ECEAE4",
     blue: "#0423F7",
+    green: "hsl(79, 100%, 58%)",
     gold: "#E8D9AC",
   },
   space: {

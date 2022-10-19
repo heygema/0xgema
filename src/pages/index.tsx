@@ -49,6 +49,14 @@ export default function Home({ posts }: Props) {
     return (
       <Link href={"/posts/" + slug}>
         <motion.div
+          variants={{
+            hidden: {
+              opacity: 0,
+            },
+            visible: { opacity: 1 },
+          }}
+          initial="hidden"
+          animate="visible"
           className={styles.card}
           whileHover={{ scale: 1.02 }}
           key={slug}
