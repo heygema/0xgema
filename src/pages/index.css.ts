@@ -92,3 +92,7 @@ export const easterEggContainer = style({
   height: "15rem",
   width: "15rem",
 });
+
+export const eggUnicorn = style({
+  fontSize: "2rem",
+});

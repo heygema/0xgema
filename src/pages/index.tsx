@@ -69,7 +69,9 @@ export default function Home({ posts }: Props) {
 
   return (
     <>
-      <div className={styles.easterEggContainer} />
+      <div className={styles.easterEggContainer}>
+        <span className={styles.eggUnicorn}>🥚🦄</span>
+      </div>
       <div className={styles.root}>{renderedPosts}</div>
     </>
   );
