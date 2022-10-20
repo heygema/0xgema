@@ -4,6 +4,7 @@ import * as styles from "./cirlceButton.css";
 export default function CircleButton() {
   return (
     <motion.div
+      aria-label="menu-button"
       whileHover={{
         scale: 1.1,
       }}

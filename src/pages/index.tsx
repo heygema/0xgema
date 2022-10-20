@@ -42,8 +42,9 @@ export default function Home({ posts }: Props) {
     .slice(offset, limit)
     .map(({ slug, ...info }, index) => {
       return (
-        <Link href={"/posts/" + slug}>
+        <Link aria-label={`article-card-link-${index}`} href={"/posts/" + slug}>
           <motion.div
+            aria-label="article-card"
             drag={index === 0}
             variants={{
               hidden: {
