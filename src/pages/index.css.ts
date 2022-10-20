@@ -78,16 +78,17 @@ export const cardAccent = styleVariants({
   },
 });
 
+export const draggableCard = style({
+  cursor: "grab",
+});
+
 export const card = style([cardBase, cardGridStyle]);
 
-export const cardDarkAccented = style([
-  cardBase,
-  cardGridStyle,
-  cardAccent.dark,
-]);
-
-export const cardLightAccented = style([
-  cardBase,
-  cardGridStyle,
-  cardAccent.light,
-]);
+export const easterEggContainer = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  position: "absolute",
+  height: "15rem",
+  width: "15rem",
+});

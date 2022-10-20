@@ -4,11 +4,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import matter from "gray-matter";
 import { useRouter } from "next/router";
-import { useTheme } from "next-themes";
 
 import { POST_DIR } from "../constant";
 import * as styles from "./index.css";
-import { useEffect, useMemo, useState } from "react";
 
 type GrayMatterFile = matter.GrayMatterFile<string>;
 
@@ -30,14 +28,18 @@ type Props = {
 export default function Home({ posts }: Props) {
   const { query } = useRouter();
 
-  const page = query?.page || 1;
+  const page = Number(String(query?.page)) || 1;
 
   const postPerPage = 6;
+
+  const offset = postPerPage * (page - 1);
+
+  const limit = offset + postPerPage;
 
   const totalPages = Math.ceil(posts.length / postPerPage);
 
   const renderedPosts = posts
-    .slice(0, postPerPage)
+    .slice(offset, limit)
     .map(({ slug, ...info }, index) => {
       return (
         <Link href={"/posts/" + slug}>
@@ -51,7 +53,9 @@ export default function Home({ posts }: Props) {
             }}
             initial="hidden"
             animate="visible"
-            className={styles.card}
+            className={[styles.card, index === 0 && styles.draggableCard].join(
+              " "
+            )}
             whileHover={{ scale: 1.02 }}
             key={slug}
           >
@@ -62,7 +66,12 @@ export default function Home({ posts }: Props) {
       );
     });
 
-  return <div className={styles.root}>{renderedPosts}</div>;
+  return (
+    <>
+      <div className={styles.easterEggContainer} />
+      <div className={styles.root}>{renderedPosts}</div>
+    </>
+  );
 }
 
 export async function getStaticProps() {
