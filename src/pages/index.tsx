@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import matter from "gray-matter";
 import { useRouter } from "next/router";
+import { useTheme } from "next-themes";
 
 import { POST_DIR } from "../constant";
 import * as styles from "./index.css";
@@ -27,6 +28,11 @@ type Props = {
 
 export default function Home({ posts }: Props) {
   const { query } = useRouter();
+  const { theme } = useTheme();
+
+  console.log({
+    theme,
+  });
 
   const page = query?.page || 1;
 
@@ -39,34 +45,47 @@ export default function Home({ posts }: Props) {
   console.log({
     page,
     totalPages,
+    theme,
   });
 
-  //const renderedPosts = posts.slice(0)
+  const renderedPosts = posts
+    .slice(0, postPerPage)
+    .map(({ slug, ...info }, index) => {
+      const heroPath = path.join("/assets", info.hero);
 
-  const renderedPosts = posts.slice(0, postPerPage).map(({ slug, ...info }) => {
-    const heroPath = path.join("/assets", info.hero);
+      const cardStyle =
+        index === 0 ? styles.accentedCardStyle[theme] : styles.card;
 
-    return (
-      <Link href={"/posts/" + slug}>
-        <motion.div
-          variants={{
-            hidden: {
-              opacity: 0,
-            },
-            visible: { opacity: 1 },
-          }}
-          initial="hidden"
-          animate="visible"
-          className={styles.card}
-          whileHover={{ scale: 1.02 }}
-          key={slug}
-        >
-          <h3>{info.title}</h3>
-          <p>{info.excerpt}</p>
-        </motion.div>
-      </Link>
-    );
-  });
+      const draggableProps =
+        index === 0
+          ? {
+              dragElastic: 0.2,
+              drag: true,
+            }
+          : {};
+
+      return (
+        <Link href={"/posts/" + slug}>
+          <motion.div
+            {...draggableProps}
+            variants={{
+              hidden: {
+                opacity: 0,
+              },
+              visible: { opacity: 1 },
+            }}
+            initial="hidden"
+            animate="visible"
+            className={cardStyle}
+            whileHover={{ scale: 1.02 }}
+            key={slug}
+          >
+            <h3>{info.title}</h3>
+            <p>{info.excerpt}</p>
+          </motion.div>
+        </Link>
+      );
+    });
 
   return <div className={styles.root}>{renderedPosts}</div>;
 }

@@ -1,4 +1,5 @@
-import { style } from "@vanilla-extract/css";
+import { style, styleVariants } from "@vanilla-extract/css";
+import { BREAKPOINTS } from "../constant";
 import { globalVars } from "../styles/theme.css";
 
 export const root = style({
@@ -8,7 +9,7 @@ export const root = style({
   gridAutoFlow: "dense",
   gridGap: "0.5rem",
   "@media": {
-    "(max-width: 680px)": {
+    [`(max-width: ${BREAKPOINTS.mobile})`]: {
       gridTemplateColumns: "100px",
       gridTemplateRows: "minmax(auto, auto)",
     },
@@ -25,29 +26,28 @@ const cardBase = style({
   ":active": {
     opacity: 0.85,
   },
-  ":first-child": {
-    backgroundColor: globalVars.colors.green,
-    color: globalVars.colors.black,
-  },
+  placeItems: "center",
+  textAlign: "left",
+});
+
+const cardSystemColorStyle = style({
   "@media": {
     "(prefers-color-scheme: dark)": {
       ":first-child": {
-        backgroundColor: globalVars.colors.green,
+        backgroundColor: globalVars.colors.darkThemeAccent,
         color: globalVars.colors.black,
       },
     },
     "(prefers-color-scheme: light)": {
       ":first-child": {
-        backgroundColor: globalVars.colors.blue,
+        backgroundColor: globalVars.colors.lightThemeAccent,
         color: globalVars.colors.white,
       },
     },
   },
-  placeItems: "center",
-  textAlign: "left",
 });
 
-const cardGrid = style({
+const cardGridStyle = style({
   selectors: {
     "&:nth-child(4n-2)": {
       gridColumn: "span 2",
@@ -57,10 +57,39 @@ const cardGrid = style({
     },
   },
   "@media": {
-    "(max-width: 680px)": {
+    [`(max-width: ${BREAKPOINTS.mobile})`]: {
       gridColumn: "span 3",
     },
   },
 });
 
-export const card = style([cardBase, cardGrid]);
+const cardAccent = styleVariants({
+  dark: {
+    backgroundColor: globalVars.colors.darkThemeAccent,
+    color: globalVars.colors.black,
+  },
+  light: {
+    backgroundColor: globalVars.colors.lightThemeAccent,
+    color: globalVars.colors.white,
+  },
+});
+
+export const card = style([cardBase, cardSystemColorStyle, cardGridStyle]);
+
+export const cardDarkAccented = style([
+  cardBase,
+  cardGridStyle,
+  cardAccent.dark,
+]);
+
+export const cardLightAccented = style([
+  cardBase,
+  cardGridStyle,
+  cardAccent.light,
+]);
+
+export const accentedCardStyle = {
+  system: card,
+  dark: cardDarkAccented,
+  light: cardLightAccented,
+};

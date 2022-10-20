@@ -1,14 +1,13 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
+import { BREAKPOINTS } from "../constant";
 import { globalVars as vars } from "./theme.css";
 
-const BREAKPOINTS = {
-  mobile: { "@media": "screen and (max-width: 680px)" },
-  tablet: { "@media": "screen and (min-width: 768px)" },
-  desktop: { "@media": "screen and (min-width: 1024px)" },
-};
-
 const responsiveProperties = defineProperties({
-  conditions: BREAKPOINTS,
+  conditions: {
+    mobile: { "@media": `screen and (max-width: ${BREAKPOINTS.mobile})` },
+    tablet: { "@media": `screen and (min-width: ${BREAKPOINTS.tablet})` },
+    desktop: { "@media": `screen and (min-width: ${BREAKPOINTS.desktop})` },
+  },
   defaultCondition: "mobile",
   properties: {
     display: ["none", "flex", "block", "inline"],
@@ -41,7 +40,7 @@ const colorProperties = defineProperties({
     lightMode: {},
     darkMode: { "@media": "(prefers-color-scheme: dark)" },
   },
-  defaultCondition: "darkMode",
+  defaultCondition: "lightMode",
   properties: {
     color: vars.colors,
     background: vars.colors,

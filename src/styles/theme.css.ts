@@ -1,18 +1,21 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
 import { createTheme } from "@vanilla-extract/css";
 
+const BASE_COLORS = {
+  grayish: "hsl(200, 6%, 10%)",
+  black: "#111111",
+  white: "#ECEAE4",
+  light: "#ECEAE4",
+  blue: "#0423F7",
+  green: "hsl(79, 100%, 58%)",
+  gold: "#E8D9AC",
+};
+
 export const globalVars = createGlobalTheme(":root", {
   colors: {
-    "bg-dark": "hsla(0, 0%, 7%, 100%)",
-    "bg-dark-blue": "hsl(231, 91%, 9%)",
-    "bg-light": "#ECEAE4",
-    grayish: "hsl(200, 6%, 10%)",
-    black: "#111111",
-    white: "#ECEAE4",
-    light: "#ECEAE4",
-    blue: "#0423F7",
-    green: "hsl(79, 100%, 58%)",
-    gold: "#E8D9AC",
+    ...BASE_COLORS,
+    lightThemeAccent: BASE_COLORS.grayish,
+    darkThemeAccent: BASE_COLORS.green,
   },
   space: {
     none: "0",

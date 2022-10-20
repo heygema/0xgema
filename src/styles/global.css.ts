@@ -10,25 +10,39 @@ globalStyle("html, body", {
     "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
   margin: 0,
   padding: 0,
-  background: globalVars.colors.grayish,
-  color: globalVars.colors.white,
-  "@media": {
-    "(prefers-color-scheme: light)": {
-      background: globalVars.colors.white,
-      color: globalVars.colors.black,
-    },
-    "(prefers-color-scheme: dark)": {
-      background: globalVars.colors.grayish,
-      color: globalVars.colors.white,
-    },
+  // NOTE: I like this media style, but..
+  //"@media": {
+  //"(prefers-color-scheme: light)": {
+  //background: globalVars.colors.white,
+  //color: globalVars.colors.black,
+  //},
+  //"(prefers-color-scheme: dark)": {
+  //background: globalVars.colors.grayish,
+  //color: globalVars.colors.white,
+  //},
+  //},
+});
+
+// following https://github.com/pacocoursey/next-themes pattern
+globalStyle(":root", {
+  vars: {
+    "--background": globalVars.colors.white,
+    "--foreground": globalVars.colors.black,
   },
 });
 
-// just in case
-globalStyle("body.dark", {
-  background: globalVars.colors.grayish,
-  color: globalVars.colors["bg-light"],
+globalStyle("[data-theme='dark']", {
+  vars: {
+    "--background": globalVars.colors.grayish,
+    "--foreground": globalVars.colors.white,
+  },
 });
+
+// just in case, leave it here
+//globalStyle("body.dark", {
+//background: globalVars.colors.grayish,
+//color: globalVars.colors["bg-light"],
+//});
 
 globalStyle("body::-webkit-scrollbar", {
   width: "0.75rem",
