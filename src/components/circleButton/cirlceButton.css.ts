@@ -16,5 +16,7 @@ export const circleFallback = style({
   display: "flex",
   flex: 1,
   borderRadius: "50%",
-  background: "var(--accentBackground)",
+  borderWidth: "3px",
+  borderStyle: "solid",
+  borderColor: "var(--foreground)",
 });
