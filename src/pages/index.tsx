@@ -41,6 +41,15 @@ export default function Home({ posts }: Props) {
   const renderedPosts = posts
     .slice(offset, limit)
     .map(({ slug, ...info }, index) => {
+      const year = new Date(info.date).toLocaleString("en-US", {
+        year: "numeric",
+      });
+      const month = new Date(info.date).toLocaleString("en-US", {
+        month: "long",
+      });
+      const day = new Date(info.date).toLocaleString("en-US", {
+        day: "2-digit",
+      });
       return (
         <Link aria-label={`article-card-link-${index}`} href={"/posts/" + slug}>
           <motion.div
@@ -62,6 +71,10 @@ export default function Home({ posts }: Props) {
           >
             <h3>{info.title}</h3>
             <p>{info.excerpt}</p>
+            <p>•••</p>
+            <p>
+              {month} {day}, {year}
+            </p>
           </motion.div>
         </Link>
       );
