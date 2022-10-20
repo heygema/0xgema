@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 
 import { POST_DIR } from "../constant";
 import * as styles from "./index.css";
+import { useEffect, useMemo, useState } from "react";
 
 type GrayMatterFile = matter.GrayMatterFile<string>;
 
@@ -28,11 +29,6 @@ type Props = {
 
 export default function Home({ posts }: Props) {
   const { query } = useRouter();
-  const { theme } = useTheme();
-
-  console.log({
-    theme,
-  });
 
   const page = query?.page || 1;
 
@@ -40,34 +36,13 @@ export default function Home({ posts }: Props) {
 
   const totalPages = Math.ceil(posts.length / postPerPage);
 
-  //const offset =  ;
-
-  console.log({
-    page,
-    totalPages,
-    theme,
-  });
-
   const renderedPosts = posts
     .slice(0, postPerPage)
     .map(({ slug, ...info }, index) => {
-      const heroPath = path.join("/assets", info.hero);
-
-      const cardStyle =
-        index === 0 ? styles.accentedCardStyle[theme] : styles.card;
-
-      const draggableProps =
-        index === 0
-          ? {
-              dragElastic: 0.2,
-              drag: true,
-            }
-          : {};
-
       return (
         <Link href={"/posts/" + slug}>
           <motion.div
-            {...draggableProps}
+            drag={index === 0}
             variants={{
               hidden: {
                 opacity: 0,
@@ -76,7 +51,7 @@ export default function Home({ posts }: Props) {
             }}
             initial="hidden"
             animate="visible"
-            className={cardStyle}
+            className={styles.card}
             whileHover={{ scale: 1.02 }}
             key={slug}
           >

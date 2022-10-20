@@ -28,9 +28,13 @@ const cardBase = style({
   },
   placeItems: "center",
   textAlign: "left",
+  ":first-child": {
+    backgroundColor: "var(--accentBackground)",
+    color: "var(--accentForeground)",
+  },
 });
 
-const cardSystemColorStyle = style({
+export const cardSystemColorStyle = style({
   "@media": {
     "(prefers-color-scheme: dark)": {
       ":first-child": {
@@ -63,7 +67,7 @@ const cardGridStyle = style({
   },
 });
 
-const cardAccent = styleVariants({
+export const cardAccent = styleVariants({
   dark: {
     backgroundColor: globalVars.colors.darkThemeAccent,
     color: globalVars.colors.black,
@@ -74,7 +78,7 @@ const cardAccent = styleVariants({
   },
 });
 
-export const card = style([cardBase, cardSystemColorStyle, cardGridStyle]);
+export const card = style([cardBase, cardGridStyle]);
 
 export const cardDarkAccented = style([
   cardBase,
@@ -87,9 +91,3 @@ export const cardLightAccented = style([
   cardGridStyle,
   cardAccent.light,
 ]);
-
-export const accentedCardStyle = {
-  system: card,
-  dark: cardDarkAccented,
-  light: cardLightAccented,
-};

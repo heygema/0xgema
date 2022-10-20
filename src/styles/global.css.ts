@@ -28,6 +28,9 @@ globalStyle(":root", {
   vars: {
     "--background": globalVars.colors.white,
     "--foreground": globalVars.colors.black,
+
+    "--accentBackground": globalVars.colors.lightThemeAccent,
+    "--accentForeground": globalVars.colors.white,
   },
 });
 
@@ -35,14 +38,11 @@ globalStyle("[data-theme='dark']", {
   vars: {
     "--background": globalVars.colors.grayish,
     "--foreground": globalVars.colors.white,
+
+    "--accentBackground": globalVars.colors.darkThemeAccent,
+    "--accentForeground": globalVars.colors.black,
   },
 });
-
-// just in case, leave it here
-//globalStyle("body.dark", {
-//background: globalVars.colors.grayish,
-//color: globalVars.colors["bg-light"],
-//});
 
 globalStyle("body::-webkit-scrollbar", {
   width: "0.75rem",
