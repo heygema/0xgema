@@ -11,10 +11,9 @@ export const container = style({
 });
 
 export const circleFallback = style({
-  height: "100%",
-  width: "100%",
+  height: "40px",
+  width: "40px",
   display: "flex",
-  flex: 1,
   borderRadius: "50%",
   borderWidth: "3px",
   borderStyle: "solid",

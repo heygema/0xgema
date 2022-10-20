@@ -13,17 +13,7 @@ export default function CircleButton() {
       }}
       className={styles.container}
     >
-      <svg height="100" width="100">
-        <circle
-          cx="25"
-          cy="50"
-          r="18"
-          stroke="var(--foreground)"
-          stroke-width="3"
-          fill="transparent"
-        />
-        <div className={styles.circleFallback} />
-      </svg>
+      <div className={styles.circleFallback} />
     </motion.div>
   );
 }
