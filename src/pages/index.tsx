@@ -53,6 +53,7 @@ export default function Home({ posts }: Props) {
       return (
         <Link aria-label={`article-card-link-${index}`} href={"/posts/" + slug}>
           <motion.div
+            key={`${slug}_${index}`}
             aria-label="article-card"
             drag={index === 0}
             variants={{
