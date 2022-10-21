@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 import { POST_DIR } from "../constant";
 import * as styles from "./index.css";
+import ArticleCard from "../components/ArticleCard";
 
 type GrayMatterFile = matter.GrayMatterFile<string>;
 
@@ -53,7 +54,6 @@ export default function Home({ posts }: Props) {
       return (
         <Link aria-label={`article-card-link-${index}`} href={"/posts/" + slug}>
           <motion.div
-            key={`${slug}_${index}`}
             aria-label="article-card"
             drag={index === 0}
             variants={{

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import * as styles from "./cirlceButton.css";
+import * as styles from "./style.css";
 import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
 import { useEffect, useState } from "react";
@@ -8,7 +8,7 @@ interface Props {
   onClick?: () => void;
 }
 
-export default function CircleButton({ onClick }: Props) {
+export default function CircleMenu({ onClick }: Props) {
   const [open, setOpen] = useState(false);
 
   const closeModal = () => setOpen(false);

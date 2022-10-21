@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import CircleButton from "../circleButton";
+import CircleMenu from "../CircleMenu";
 import * as styles from "./layout.css";
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <>
       <nav className={styles.navigation}>
         <div className={styles.menuContainer}>
-          <CircleButton />
+          <CircleMenu />
         </div>
       </nav>
       <main className={styles.main}>{children}</main>
