@@ -68,7 +68,6 @@ export default function Home({ posts }: Props) {
               " "
             )}
             whileHover={{ scale: 1.02 }}
-            key={slug}
           >
             <h3>{info.title}</h3>
             <p>{info.excerpt}</p>
