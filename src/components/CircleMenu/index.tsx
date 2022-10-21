@@ -3,6 +3,7 @@ import * as styles from "./style.css";
 import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
 import { useEffect, useState } from "react";
+import { globalVars } from "../../styles/theme.css";
 
 interface Props {
   onClick?: () => void;
@@ -56,7 +57,14 @@ export default function CircleMenu({ onClick }: Props) {
       modal
       position="right center"
     >
-      <div>Popup content here !!</div>
+      <div
+        style={{
+          background: globalVars.colors["grayish-02"],
+          display: "flex",
+        }}
+      >
+        Popup content here !!
+      </div>
     </Popup>
   );
 }

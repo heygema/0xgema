@@ -66,3 +66,8 @@ globalStyle("a", {
   textDecoration: "none",
   fontWeight: "500",
 });
+
+globalStyle(".popup-content", {
+  background: "transparent",
+  padding: 0,
+});

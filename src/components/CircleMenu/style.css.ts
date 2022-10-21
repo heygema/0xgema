@@ -14,8 +14,10 @@ export const circleFallback = style({
   height: "40px",
   width: "40px",
   display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   borderRadius: "50%",
-  borderWidth: "3px",
+  borderWidth: "3.7px",
   borderStyle: "solid",
   borderColor: "var(--foreground)",
 });
