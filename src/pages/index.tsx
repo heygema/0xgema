@@ -1,7 +1,5 @@
 import { promises as fs } from "fs";
 import path from "path";
-import { motion } from "framer-motion";
-import Link from "next/link";
 import matter from "gray-matter";
 import { useRouter } from "next/router";
 
@@ -41,7 +39,7 @@ export default function Home({ posts }: Props) {
 
   const renderedPosts = posts
     .slice(offset, limit)
-    .map(({ slug, ...info }, index) => {
+    .map(({ slug, title, excerpt, ...info }, index) => {
       const year = new Date(info.date).toLocaleString("en-US", {
         year: "numeric",
       });
@@ -51,32 +49,17 @@ export default function Home({ posts }: Props) {
       const day = new Date(info.date).toLocaleString("en-US", {
         day: "2-digit",
       });
+
       return (
-        <Link aria-label={`article-card-link-${index}`} href={"/posts/" + slug}>
-          <motion.div
-            aria-label="article-card"
-            drag={index === 0}
-            variants={{
-              hidden: {
-                opacity: 0,
-              },
-              visible: { opacity: 1 },
-            }}
-            initial="hidden"
-            animate="visible"
-            className={[styles.card, index === 0 && styles.draggableCard].join(
-              " "
-            )}
-            whileHover={{ scale: 1.02 }}
-          >
-            <h3>{info.title}</h3>
-            <p>{info.excerpt}</p>
-            <p>•••</p>
-            <p>
-              {month} {day}, {year}
-            </p>
-          </motion.div>
-        </Link>
+        <ArticleCard
+          slug={slug}
+          isDraggable={index === 0}
+          title={title}
+          excerpt={excerpt}
+          month={month}
+          day={day}
+          year={year}
+        />
       );
     });
 
