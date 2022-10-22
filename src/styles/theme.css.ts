@@ -19,6 +19,9 @@ export const globalVars = createGlobalTheme(":root", {
     lightThemeAccent: BASE_COLORS.grayish,
     darkThemeAccent: BASE_COLORS.green,
   },
+  shadow: {
+    mild: "0px 2px 5px rgba(0,0,0,0.25)",
+  },
   space: {
     none: "0",
     small: "4px",

@@ -1,13 +1,20 @@
-import React, { ReactNode } from "react";
-import CircleMenu from "../CircleMenu";
+import dynamic from "next/dynamic";
+import React, { ReactNode, Suspense } from "react";
+//import CircleMenu from "../CircleMenu";
 import * as styles from "./layout.css";
+
+const CircleMenu = dynamic(() => import("../CircleMenu/"), {
+  suspense: true,
+});
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <nav className={styles.navigation}>
         <div className={styles.menuContainer}>
-          <CircleMenu />
+          <Suspense fallback={"..."}>
+            <CircleMenu />
+          </Suspense>
         </div>
       </nav>
       <main className={styles.main}>{children}</main>

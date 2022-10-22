@@ -5,7 +5,13 @@ import { useRouter } from "next/router";
 
 import { POST_DIR } from "../constant";
 import * as styles from "./index.css";
-import ArticleCard from "../components/ArticleCard";
+//import ArticleCard from "../components/ArticleCard";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+
+const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
+  suspense: true,
+});
 
 type GrayMatterFile = matter.GrayMatterFile<string>;
 
@@ -64,12 +70,12 @@ export default function Home({ posts }: Props) {
     });
 
   return (
-    <>
+    <Suspense fallback={"..."}>
       <div className={styles.easterEggContainer}>
         <span className={styles.eggUnicorn}>🥚🦄</span>
       </div>
       <div className={styles.root}>{renderedPosts}</div>
-    </>
+    </Suspense>
   );
 }
 

@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { globalVars } from "../../styles/theme.css";
 
 export const container = style({
   cursor: "pointer",
@@ -11,6 +12,7 @@ export const container = style({
 });
 
 export const circleFallback = style({
+  boxShadow: globalVars.shadow.mild,
   height: "40px",
   width: "40px",
   display: "flex",

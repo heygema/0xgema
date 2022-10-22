@@ -68,9 +68,9 @@ globalStyle("a", {
 });
 
 globalStyle(".popup-content", {
-  background: "transparent",
+  background: "transparent !important",
   padding: 0,
-  border: 0,
+  border: "none !important",
   width: "600px",
   display: "flex",
   justifyContent: "center",
