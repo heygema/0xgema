@@ -8,6 +8,7 @@ import * as styles from "./index.css";
 //import ArticleCard from "../components/ArticleCard";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import ThemeSwitch from "../components/ThemeChanger";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
   suspense: true,
@@ -71,6 +72,7 @@ export default function Home({ posts }: Props) {
 
   return (
     <Suspense fallback={"..."}>
+      <ThemeSwitch />
       <div className={styles.easterEggContainer}>
         <span className={styles.eggUnicorn}>🥚🦄</span>
       </div>

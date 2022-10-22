@@ -2,11 +2,16 @@ import { motion } from "framer-motion";
 import * as styles from "./style.css";
 import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
 interface Props {
   onClick?: () => void;
 }
+
+const ModalMenu = dynamic(() => import("../ModalMenu/"), {
+  suspense: true,
+});
 
 export default function CircleMenu({ onClick }: Props) {
   const [open, setOpen] = useState(false);
@@ -39,8 +44,6 @@ export default function CircleMenu({ onClick }: Props) {
       closeOnDocumentClick
       trigger={
         <motion.div
-          onClick={onClick}
-          aria-label="menu-button"
           whileHover={{
             scale: 1.2,
           }}
@@ -48,7 +51,11 @@ export default function CircleMenu({ onClick }: Props) {
             scale: 0.9,
           }}
           className={styles.container}
+          onClick={onClick}
+          aria-label="menu-button"
         >
+          <div className={styles.CircleStackGlow} />
+          <div className={styles.CircleStackGlow} />
           <div className={styles.circleFallback} />
         </motion.div>
       }
@@ -56,29 +63,9 @@ export default function CircleMenu({ onClick }: Props) {
       modal
       position="right center"
     >
-      <motion.div
-        variants={{
-          hidden: {
-            opacity: 0,
-            scale: 0.9,
-          },
-          visible: { opacity: 1, scale: 1 },
-        }}
-        transition={{
-          duration: 0.1,
-        }}
-        initial="hidden"
-        animate="visible"
-        style={{
-          borderRadius: "18px",
-          padding: "5px",
-          background: "var(--cmdKBackground)",
-          backdropFilter: "blur(4px)",
-          minHeight: "10rem",
-          maxHeight: "33rem",
-          width: "100%",
-        }}
-      />
+      <Suspense fallback="...">
+        <ModalMenu />
+      </Suspense>
     </Popup>
   );
 }

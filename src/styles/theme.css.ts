@@ -7,6 +7,7 @@ const BASE_COLORS = {
   "grayish-02-transluscent": "hsla(200, 6%, 10%, 97%)",
   black: "#111111",
   white: "#ECEAE4",
+  "white-2": "hsl(0, 0%, 93.0%)",
   "whiteish-transluscent": "hsla(200, 100%, 100%, 95%)",
   light: "#ECEAE4",
   blue: "#0423F7",
