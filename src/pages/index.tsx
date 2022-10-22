@@ -4,7 +4,6 @@ import * as styles from "../styles/index.css";
 //import ArticleCard from "../components/ArticleCard";
 import dynamic from "next/dynamic";
 import { Suspense, useEffect } from "react";
-import ThemeSwitch from "../components/ThemeChanger";
 import getPosts from "../helpers/getPosts";
 import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";
@@ -65,7 +64,6 @@ export default function Home({ posts }: Props) {
 
   return (
     <Suspense fallback={"..."}>
-      <ThemeSwitch />
       <div className={styles.easterEggContainer}>
         <span className={styles.eggUnicorn}>🥚🦄</span>
       </div>
