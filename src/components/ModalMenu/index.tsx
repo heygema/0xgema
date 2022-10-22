@@ -33,7 +33,6 @@ export default function ModalMenu() {
         id="combobox-input"
         data-command-input=""
         autoComplete="off"
-        role="combobox"
         value={search}
         onChange={(e) => {
           e.preventDefault();
