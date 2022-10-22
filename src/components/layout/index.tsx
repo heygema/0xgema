@@ -1,11 +1,6 @@
-import dynamic from "next/dynamic";
 import React, { ReactNode, Suspense } from "react";
-//import CircleMenu from "../CircleMenu";
+import CircleMenu from "../CircleMenu";
 import * as styles from "./layout.css";
-
-const CircleMenu = dynamic(() => import("../CircleMenu/"), {
-  suspense: true,
-});
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
