@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { useRouter } from "next/router";
 
 import { POST_DIR } from "../constant";
-import * as styles from "./index.css";
+import * as styles from "../styles/index.css";
 //import ArticleCard from "../components/ArticleCard";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
