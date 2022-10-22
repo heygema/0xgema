@@ -1,4 +1,4 @@
-import React, { ReactNode, Suspense } from "react";
+import React, { ReactNode } from "react";
 import CircleMenu from "../CircleMenu";
 import * as styles from "./layout.css";
 
@@ -7,9 +7,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <>
       <nav className={styles.navigation}>
         <div className={styles.menuContainer}>
-          <Suspense fallback={"..."}>
-            <CircleMenu />
-          </Suspense>
+          <CircleMenu />
         </div>
       </nav>
       <main className={styles.main}>{children}</main>
