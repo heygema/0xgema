@@ -22,7 +22,7 @@ export default function CircleMenu({ onClick }: Props) {
         switch (event.key) {
           case "k": {
             if (event.metaKey) {
-              setOpen(() => true);
+              setOpen((open) => !open);
             }
           }
         }
@@ -57,7 +57,19 @@ export default function CircleMenu({ onClick }: Props) {
       modal
       position="right center"
     >
-      <div
+      <motion.div
+        variants={{
+          hidden: {
+            opacity: 0,
+            scale: 0.9,
+          },
+          visible: { opacity: 1, scale: 1 },
+        }}
+        transition={{
+          duration: 0.1,
+        }}
+        initial="hidden"
+        animate="visible"
         style={{
           borderRadius: "18px",
           padding: "5px",
