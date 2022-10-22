@@ -1,7 +1,7 @@
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 
-import Layout from "../components/Layout";
+import Layout from "../components/CoolLayout";
 
 import "../styles/global.css";
 
