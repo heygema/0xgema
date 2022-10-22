@@ -3,7 +3,6 @@ import * as styles from "./style.css";
 import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
 import { useEffect, useState } from "react";
-import { globalVars } from "../../styles/theme.css";
 
 interface Props {
   onClick?: () => void;
@@ -73,9 +72,10 @@ export default function CircleMenu({ onClick }: Props) {
         style={{
           borderRadius: "18px",
           padding: "5px",
-          background: globalVars.colors["grayish-02-hollow"],
+          background: "var(--cmdKBackground)",
           backdropFilter: "blur(4px)",
-          height: "33rem",
+          minHeight: "10rem",
+          maxHeight: "33rem",
           width: "100%",
         }}
       />

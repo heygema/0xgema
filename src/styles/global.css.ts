@@ -31,6 +31,9 @@ globalStyle(":root", {
 
     "--accentBackground": globalVars.colors.lightThemeAccent,
     "--accentForeground": globalVars.colors.white,
+
+    // it's the modal dialog menu
+    "--cmdKBackground": globalVars.colors["whiteish-transluscent"],
   },
 });
 
@@ -41,6 +44,8 @@ globalStyle("[data-theme='dark']", {
 
     "--accentBackground": globalVars.colors.darkThemeAccent,
     "--accentForeground": globalVars.colors.black,
+
+    "--cmdKBackground": globalVars.colors["grayish-02-transluscent"],
   },
 });
 

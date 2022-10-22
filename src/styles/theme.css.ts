@@ -4,9 +4,10 @@ import { createTheme } from "@vanilla-extract/css";
 const BASE_COLORS = {
   grayish: "hsl(200, 6%, 10%)",
   "grayish-02": "hsl(200, 6%, 15%)",
-  "grayish-02-hollow": "hsla(200, 6%, 10%, 97%)",
+  "grayish-02-transluscent": "hsla(200, 6%, 10%, 97%)",
   black: "#111111",
   white: "#ECEAE4",
+  "whiteish-transluscent": "hsla(200, 100%, 100%, 95%)",
   light: "#ECEAE4",
   blue: "#0423F7",
   green: "hsl(79, 100%, 58%)",
