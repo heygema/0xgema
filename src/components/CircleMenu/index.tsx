@@ -59,12 +59,13 @@ export default function CircleMenu({ onClick }: Props) {
     >
       <div
         style={{
+          borderRadius: "18px",
+          padding: "5px",
           background: globalVars.colors["grayish-02"],
-          display: "flex",
+          height: "33rem",
+          width: "100%",
         }}
-      >
-        Popup content here !!
-      </div>
+      />
     </Popup>
   );
 }

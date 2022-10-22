@@ -70,4 +70,10 @@ globalStyle("a", {
 globalStyle(".popup-content", {
   background: "transparent",
   padding: 0,
+  border: 0,
+  width: "600px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  top: "-3%",
 });
