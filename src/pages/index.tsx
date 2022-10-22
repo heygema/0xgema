@@ -59,6 +59,7 @@ export default function Home({ posts }: Props) {
 
       return (
         <ArticleCard
+          key={`slug_${index}`}
           slug={slug}
           isDraggable={index === 0}
           title={title}

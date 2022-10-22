@@ -1,12 +1,9 @@
-import React from 'react';
-import {promises as fs} from 'fs';
-import {POST_DIR} from '../../constant';
-import path from 'path';
+import React from "react";
+import { promises as fs } from "fs";
+import { POST_DIR } from "../../constant";
+import path from "path";
 
-export default function Post({htmlString}) {
-  console.log({
-    htmlString,
-  });
+export default function Post({ htmlString }) {
   return htmlString;
 }
 
@@ -15,7 +12,7 @@ export const getStaticPaths = async () => {
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace('.md', ''),
+      slug: filename.replace(".md", ""),
     },
   }));
 
@@ -25,9 +22,9 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({params: {slug}}) => {
-  const postLocation = path.join(POST_DIR, slug + `/index` + '.mdx');
-  const markdownWithMetadata = await fs.readFile(postLocation, 'utf-8');
+export const getStaticProps = async ({ params: { slug } }) => {
+  const postLocation = path.join(POST_DIR, slug + `/index` + ".mdx");
+  const markdownWithMetadata = await fs.readFile(postLocation, "utf-8");
 
   //   const parsedMarkdown = matter(markdownWithMetadata);
 

@@ -22,7 +22,6 @@ export default function CircleMenu({ onClick }: Props) {
     let keyHandler: ReturnType<typeof document.addEventListener> | undefined;
     if (document !== undefined) {
       keyHandler = document.addEventListener("keydown", (event) => {
-        console.log(event.key);
         switch (event.key) {
           case "k": {
             if (event.metaKey) {

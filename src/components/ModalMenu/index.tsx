@@ -32,10 +32,6 @@ export default function ModalMenu() {
         type="text"
         id="combobox-input"
         data-command-input=""
-        aria-expanded="true"
-        aria-autocomplete="list"
-        aria-owns="command-list"
-        aria-haspopup="listbox"
         autoComplete="off"
         role="combobox"
         value={search}
