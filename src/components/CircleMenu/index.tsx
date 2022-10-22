@@ -73,7 +73,8 @@ export default function CircleMenu({ onClick }: Props) {
         style={{
           borderRadius: "18px",
           padding: "5px",
-          background: globalVars.colors["grayish-02"],
+          background: globalVars.colors["grayish-02-hollow"],
+          backdropFilter: "blur(4px)",
           height: "33rem",
           width: "100%",
         }}
