@@ -1,31 +1,17 @@
-import { promises as fs } from "fs";
-import path from "path";
-import matter from "gray-matter";
 import { useRouter } from "next/router";
 
-import { POST_DIR } from "../constant";
 import * as styles from "../styles/index.css";
 //import ArticleCard from "../components/ArticleCard";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import ThemeSwitch from "../components/ThemeChanger";
+import getPosts from "../helpers/getPosts";
+import { Posts } from "../data/types";
+import { usePostsStore } from "../data/store";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
   suspense: true,
 });
-
-type GrayMatterFile = matter.GrayMatterFile<string>;
-
-type Posts = Array<
-  GrayMatterFile & {
-    slug: string;
-    author: string;
-    canonical_url: string;
-    date: string;
-    hero: string;
-    title: string;
-  }
->;
 
 type Props = {
   posts: Posts;
@@ -43,6 +29,12 @@ export default function Home({ posts }: Props) {
   const limit = offset + postPerPage;
 
   const totalPages = Math.ceil(posts.length / postPerPage);
+
+  const setPosts = usePostsStore((state) => state.addPosts);
+
+  useEffect(() => {
+    setPosts(posts);
+  }, []);
 
   const renderedPosts = posts
     .slice(offset, limit)
@@ -83,34 +75,18 @@ export default function Home({ posts }: Props) {
 }
 
 export async function getStaticProps() {
-  let result = {
-    props: {
-      posts: {},
-    },
-  };
-
   try {
-    let postDirs = await fs.readdir(POST_DIR);
-
-    let posts = [];
-
-    for (const slug of postDirs) {
-      let targetPath = path.join(POST_DIR, slug + "/index.mdx");
-      let post = await fs.readFile(targetPath, "utf-8");
-      let parsedMatter = matter(post);
-      posts.push({
-        ...parsedMatter.data,
-        date: new Date(parsedMatter.data?.date).toISOString(),
-        slug,
-      });
-    }
-
+    let posts = await getPosts();
     return {
       props: {
         posts,
       },
     };
   } catch {
-    return result;
+    return {
+      props: {
+        posts: [],
+      },
+    };
   }
 }

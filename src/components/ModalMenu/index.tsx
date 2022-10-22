@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { usePostsStore } from "../../data/store";
 import * as styles from "./style.css";
 
 export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState<string>();
+
+  const posts = usePostsStore((state) => state.posts);
 
   useEffect(() => {
     inputRef?.current?.focus();
