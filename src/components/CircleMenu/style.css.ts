@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 export const container = style({
   cursor: "pointer",
@@ -41,7 +41,8 @@ export const CircleStackGlow = style([
   },
 ]);
 
-export const smiley = style({
-  fill: "rgb(255,255,255)",
-  color: "white !important",
+export const smiley = style({});
+
+globalStyle(`${smiley} > path`, {
+  stroke: "var(--accentForeground)",
 });
