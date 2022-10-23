@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { promises as fs } from "fs";
 import { POST_DIR } from "../../constant";
 import path from "path";
+import getPosts from "../../helpers/getPosts";
+import { Posts } from "../../data/types";
+import { useSetPosts } from "../../hooks/useSetPosts";
 
-export default function Post({ htmlString }) {
-  return htmlString;
+interface Props {
+  htmlString: string;
+  posts: Posts;
+}
+
+export default function Post({ posts, htmlString }: Props) {
+  // hacky way to make sure posts always available on search
+  useSetPosts(posts);
+
+  return <h1>Post</h1>;
 }
 
 export const getStaticPaths = async () => {
@@ -23,6 +34,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
+  let posts = await getPosts();
+
   const postLocation = path.join(POST_DIR, slug + `/index` + ".mdx");
   const markdownWithMetadata = await fs.readFile(postLocation, "utf-8");
 
@@ -33,6 +46,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   return {
     props: {
       htmlString: markdownWithMetadata,
+      posts,
     },
   };
 };

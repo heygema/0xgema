@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Fuse from "fuse.js";
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePostsStore } from "../../data/store";
 import { Post } from "../../data/types";
@@ -61,8 +62,15 @@ export default function ModalMenu() {
       />
       <div className={styles.menuContainer}>
         {searchedPosts.map(({ item }) => {
-          return <div className={styles.menuItem}>{item.title}</div>;
+          return (
+            <Link href={`/posts/${item.slug}`}>
+              <div className={styles.menuItem}>{item.title}</div>
+            </Link>
+          );
         })}
+        <Link href={"/"}>
+          <div className={styles.menuItem}>Home</div>
+        </Link>
       </div>
     </motion.div>
   );
