@@ -1,4 +1,5 @@
 import { globalFontFace, globalStyle } from "@vanilla-extract/css";
+import { BREAKPOINTS } from "../constant";
 import { globalVars } from "./theme.css";
 
 globalFontFace("Open Sans", {
@@ -106,4 +107,9 @@ globalStyle(".popup-content", {
   justifyContent: "center",
   alignItems: "flex-start",
   height: "600px",
+  "@media": {
+    [`screen and (max-width: ${BREAKPOINTS.mobile})`]: {
+      width: "320px",
+    },
+  },
 });

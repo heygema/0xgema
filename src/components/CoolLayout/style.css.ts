@@ -19,6 +19,7 @@ const mainResponsive = sprinkles({
     desktop: "breakpoint-medium",
     tablet: "breakpoint-medium",
     mobile: "breakpoint-small",
+    ["mobile-s"]: "breakpoint-x-small",
   },
 });
 

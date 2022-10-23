@@ -35,6 +35,7 @@ export const globalVars = createGlobalTheme(":root", {
   width: {
     "breakpoint-medium": "720px",
     "breakpoint-small": "420px",
+    "breakpoint-x-small": "290px",
   },
 });
 
