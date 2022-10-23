@@ -8,14 +8,18 @@ import { Post } from "../../data/types";
 import Button from "../Button";
 import * as styles from "./style.css";
 
-export type MenuType = "POST" | "LINK" | "ACTION";
+export enum MenuType {
+  "POST",
+  "ACTION",
+}
 
 export type MenuItem = {
-  type: MenuType;
-  post?: Post;
-  menu?: {
+  type: MenuType.ACTION;
+  menu: {
     title: string;
   };
+  // TODO: FUCK any
+  icon: any;
   action: () => void;
 };
 
@@ -37,6 +41,11 @@ export default function ModalMenu() {
     setOpen(false);
   };
 
+  const navigate = (href: string) => {
+    closeModal();
+    router.push(href);
+  };
+
   useEffect(() => {
     if (previousRoute !== currentRoute) {
       closeModal();
@@ -44,6 +53,16 @@ export default function ModalMenu() {
   }, [currentRoute]);
 
   const posts = usePostsStore((state) => state.posts);
+
+  const menuItems: Array<MenuItem> = [
+    {
+      type: MenuType.ACTION,
+      menu: {
+        title: "Home",
+      },
+      action: () => navigate("/"),
+    },
+  ];
 
   useEffect(() => {
     inputRef?.current?.focus();
@@ -57,15 +76,25 @@ export default function ModalMenu() {
     []
   );
 
+  const fuseMenuItems = useMemo(
+    () =>
+      new Fuse(menuItems, {
+        keys: ["menu.title"],
+      }),
+    []
+  );
+
   const searchedPosts = useMemo(
     () => fuse.search<Post>(search),
     [search, fuse]
   );
 
-  const navigate = (href: string) => {
-    closeModal();
-    router.push(href);
-  };
+  const searchedMenuItems = useMemo(
+    () => fuseMenuItems.search<MenuItem>(search),
+    [search, fuseMenuItems]
+  );
+
+  //const renderedMenuItems = search ? searchedMenuItems : menuItems;
 
   return (
     <motion.div
@@ -126,9 +155,21 @@ export default function ModalMenu() {
             </div>
           );
         })}
-        <div onClick={() => navigate("/")} className={styles.menuItem}>
-          Home
-        </div>
+        {search
+          ? searchedMenuItems.map(({ item }) => {
+              return (
+                <div onClick={item?.action} className={styles.menuItem}>
+                  {item.menu.title}
+                </div>
+              );
+            })
+          : menuItems.map(({ menu, action }) => {
+              return (
+                <div onClick={action} className={styles.menuItem}>
+                  {menu.title}
+                </div>
+              );
+            })}
       </div>
     </motion.div>
   );
