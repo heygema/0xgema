@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Fuse from "fuse.js";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePostsStore } from "../../data/store";
 import { Post } from "../../data/types";
@@ -9,9 +10,11 @@ import * as styles from "./style.css";
 
 type MenuType = "POST" | "LINK" | "ACTION";
 
-export default function ModalMenu() {
+export default function ModalMenu({ closeModal }: { closeModal: () => void }) {
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState<string>("");
+
+  const router = useRouter();
 
   const posts = usePostsStore((state) => state.posts);
 
@@ -31,6 +34,11 @@ export default function ModalMenu() {
     () => fuse.search<Post>(search),
     [search, fuse]
   );
+
+  const navigate = (href: string) => {
+    closeModal();
+    router.push(href);
+  };
 
   return (
     <motion.div
@@ -63,15 +71,20 @@ export default function ModalMenu() {
       />
       <div className={styles.menuContainer}>
         {searchedPosts.map(({ item }, index) => {
+          const href = `/posts/${item.slug}`;
           return (
-            <Link key={index} href={`/posts/${item.slug}`}>
-              <div className={styles.menuItem}>{item.title}</div>
-            </Link>
+            <div
+              key={index}
+              onClick={() => navigate(href)}
+              className={styles.menuItem}
+            >
+              {item.title}
+            </div>
           );
         })}
-        <Link href={"/"}>
-          <div className={styles.menuItem}>Home</div>
-        </Link>
+        <div onClick={() => navigate("/")} className={styles.menuItem}>
+          Home
+        </div>
       </div>
     </motion.div>
   );

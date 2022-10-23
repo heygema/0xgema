@@ -66,7 +66,7 @@ export default function CircleMenu({ onClick }: Props) {
       position="right center"
     >
       <Suspense fallback="...">
-        <ModalMenu />
+        <ModalMenu closeModal={closeModal} />
       </Suspense>
     </Popup>
   );
