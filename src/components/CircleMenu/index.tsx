@@ -7,14 +7,12 @@ import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
 import { useModalStore } from "../../data/store";
 import ModalMenu from "../ModalMenu";
 
-interface Props {
-  onClick?: () => void;
-}
-
-export default function CircleMenu({ onClick }: Props) {
+export default function CircleMenu() {
   const { isOpen, setOpen } = useModalStore((state) => state);
 
   const closeModal = () => setOpen(false);
+
+  const onClick = () => setOpen(true);
 
   useEffect(() => {
     let keyHandler: ReturnType<typeof document.addEventListener> | undefined;
@@ -39,6 +37,7 @@ export default function CircleMenu({ onClick }: Props) {
       onClose={closeModal}
       closeOnEscape
       closeOnDocumentClick
+      onOpen={onClick}
       trigger={
         <motion.div
           whileHover={{
@@ -48,7 +47,6 @@ export default function CircleMenu({ onClick }: Props) {
             scale: 0.9,
           }}
           className={styles.container}
-          onClick={onClick}
           aria-label="menu-button"
         >
           <div className={styles.CircleStackGlow} />
