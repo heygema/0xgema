@@ -18,8 +18,7 @@ export type MenuItem = {
   menu: {
     title: string;
   };
-  // TODO: FUCK any
-  icon: any;
+  icon?: React.ReactNode;
   action: () => void;
 };
 
