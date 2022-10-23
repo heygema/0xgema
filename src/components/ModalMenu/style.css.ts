@@ -30,6 +30,7 @@ export const menuContainer = style({
   borderTop: `1px solid ${globalVars.colors.thinBorder}`,
   maxHeight: "400px",
   overflow: "scroll",
+  padding: "0 10px 0 10px",
 });
 
 //globalStyle(`${menuContainer}::-webkit-scrollbar`, {
@@ -56,5 +57,6 @@ export const menuItem = style({
   cursor: "pointer",
   ":hover": {
     filter: "brightness(100%)",
+    background: globalVars.colors.genericTransparent,
   },
 });

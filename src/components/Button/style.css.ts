@@ -1,8 +1,9 @@
 import { style } from "@vanilla-extract/css";
+import { globalVars } from "../../styles/theme.css";
 
 export const button = style({
   cursor: "pointer",
-  background: "hsla(0, 0%, 30%, 10%)",
+  background: globalVars.colors.genericTransparent,
   boxShadow: "0px 1px 1px rgba(0,0,0,0.25)",
   borderWidth: 0,
   padding: 10,

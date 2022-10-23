@@ -18,6 +18,7 @@ const BASE_COLORS = {
 export const globalVars = createGlobalTheme(":root", {
   colors: {
     ...BASE_COLORS,
+    genericTransparent: "hsla(0, 0%, 30%, 10%)",
     thinBorder: "hsla(200, 6%, 10%, 8%)",
     lightThemeAccent: BASE_COLORS.blue,
     darkThemeAccent: BASE_COLORS.green,
