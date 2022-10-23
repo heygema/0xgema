@@ -63,6 +63,7 @@ export default function ModalMenu() {
   );
 
   const navigate = (href: string) => {
+    closeModal();
     router.push(href);
   };
 
