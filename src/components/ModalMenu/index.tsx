@@ -1,3 +1,4 @@
+// eslint-disable react-hooks/exhaustive-deps
 import { motion } from "framer-motion";
 import Fuse from "fuse.js";
 import Link from "next/link";
