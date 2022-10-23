@@ -155,16 +155,24 @@ export default function ModalMenu() {
           );
         })}
         {search
-          ? searchedMenuItems.map(({ item }) => {
+          ? searchedMenuItems.map(({ item }, index) => {
               return (
-                <div onClick={item?.action} className={styles.menuItem}>
+                <div
+                  key={`${item.menu.title}-${index}`}
+                  onClick={item?.action}
+                  className={styles.menuItem}
+                >
                   {item.menu.title}
                 </div>
               );
             })
-          : menuItems.map(({ menu, action }) => {
+          : menuItems.map(({ menu, action }, index) => {
               return (
-                <div onClick={action} className={styles.menuItem}>
+                <div
+                  key={`${menu.title}-${index}`}
+                  onClick={action}
+                  className={styles.menuItem}
+                >
                   {menu.title}
                 </div>
               );
