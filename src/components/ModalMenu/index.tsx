@@ -5,6 +5,8 @@ import { usePostsStore } from "../../data/store";
 import { Post } from "../../data/types";
 import * as styles from "./style.css";
 
+type MenuType = "POST" | "LINK" | "ACTION";
+
 export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState<string>("");
