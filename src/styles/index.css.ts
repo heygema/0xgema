@@ -91,6 +91,7 @@ export const easterEggContainer = style({
   position: "absolute",
   height: "15rem",
   width: "15rem",
+  cursor: "pointer",
 });
 
 export const eggUnicorn = style({

@@ -61,9 +61,9 @@ export default function ModalMenu() {
         }}
       />
       <div className={styles.menuContainer}>
-        {searchedPosts.map(({ item }) => {
+        {searchedPosts.map(({ item }, index) => {
           return (
-            <Link href={`/posts/${item.slug}`}>
+            <Link key={index} href={`/posts/${item.slug}`}>
               <div className={styles.menuItem}>{item.title}</div>
             </Link>
           );
