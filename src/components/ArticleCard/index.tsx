@@ -44,7 +44,7 @@ export default function ArticleCard({
         className={[styles.card, isDraggable && styles.draggableCard].join(" ")}
         whileHover={{ scale: 1.02 }}
       >
-        <h3>{title}</h3>
+        <h3 className={styles.title}>{title}</h3>
         <p>{excerpt}</p>
         <p>•••</p>
         <p>

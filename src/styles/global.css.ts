@@ -5,9 +5,22 @@ globalFontFace("Open Sans", {
   src: 'local("Open Sans")',
 });
 
+const ptSerif = "PT Serif Caption";
+const jost = "Jost";
+
+globalFontFace(ptSerif, {
+  src: "../.././public/assets/fonts/PT_Serif_Caption/PTSerifCaption-Regular.ttf",
+  fontWeight: 500,
+});
+
+globalFontFace(jost, {
+  src: "../.././public/assets/fonts/Jost/static/Jost-Regular.ttf",
+  fontWeight: 500,
+});
+
 globalStyle("html, body", {
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+  fontFamily: `${jost}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
+  fontWeight: 250,
   margin: 0,
   padding: 0,
   // NOTE: I like this media style, but..
@@ -21,6 +34,11 @@ globalStyle("html, body", {
   //color: globalVars.colors.white,
   //},
   //},
+});
+
+globalStyle("h1, h2, h3", {
+  fontFamily: `${ptSerif}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
+  fontWeight: 800,
 });
 
 // following https://github.com/pacocoursey/next-themes pattern

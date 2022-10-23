@@ -69,3 +69,8 @@ export const draggableCard = style({
 });
 
 export const card = style([cardBase, cardGridStyle]);
+
+export const title = style({
+  fontSize: "1.3rem",
+  fontWeight: 700,
+});
