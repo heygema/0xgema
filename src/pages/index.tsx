@@ -7,6 +7,7 @@ import { Suspense, useEffect } from "react";
 import getPosts from "../helpers/getPosts";
 import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";
+import path from "path";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
   suspense: true,
@@ -47,6 +48,7 @@ export default function Home({ posts }: Props) {
       const day = new Date(info.date).toLocaleString("en-US", {
         day: "2-digit",
       });
+      const heroPath = path.join("/assets", info.hero);
 
       return (
         <ArticleCard

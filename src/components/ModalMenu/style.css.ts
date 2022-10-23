@@ -28,7 +28,7 @@ export const inputStyle = style({
 
 export const menuContainer = style({
   borderTop: `1px solid ${globalVars.colors["grayish-02-transluscent"]}`,
-  height: "400px",
+  maxHeight: "400px",
   overflow: "scroll",
 });
 

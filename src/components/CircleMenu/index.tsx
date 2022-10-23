@@ -4,6 +4,7 @@ import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
 import { Suspense, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 interface Props {
   onClick?: () => void;
@@ -55,7 +56,14 @@ export default function CircleMenu({ onClick }: Props) {
         >
           <div className={styles.CircleStackGlow} />
           <div className={styles.CircleStackGlow} />
-          <div className={styles.circleFallback} />
+          <div className={styles.circleFallback}>
+            <Image
+              className={styles.smiley}
+              src="/assets/images/Smiley.svg"
+              height="100%"
+              width="100%"
+            />
+          </div>
         </motion.div>
       }
       open={open}

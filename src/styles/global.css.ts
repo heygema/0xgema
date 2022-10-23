@@ -32,8 +32,12 @@ globalStyle(":root", {
     "--accentBackground": globalVars.colors.lightThemeAccent,
     "--accentForeground": globalVars.colors.white,
 
+    // it's the glowing effect for cmd k button
+    "--glowFilter": "none",
+
     // it's the modal dialog menu
     "--cmdKBackground": globalVars.colors["whiteish-transluscent"],
+    "--cmdKShadow": globalVars.shadow.mild,
   },
 });
 
@@ -45,7 +49,10 @@ globalStyle("[data-theme='dark']", {
     "--accentBackground": globalVars.colors.darkThemeAccent,
     "--accentForeground": globalVars.colors.black,
 
+    "--glowFilter": "blur(3.5px)",
+
     "--cmdKBackground": globalVars.colors["grayish-02-transluscent"],
+    "--cmdKShadow": "none",
   },
 });
 
@@ -79,6 +86,6 @@ globalStyle(".popup-content", {
   width: "600px",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center",
-  top: "-3%",
+  alignItems: "flex-start",
+  height: "600px",
 });

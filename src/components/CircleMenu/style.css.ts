@@ -34,9 +34,14 @@ export const CircleStackGlow = style([
     position: "absolute",
     zIndex: -1,
     pointerEvents: "none",
-    boxShadow: "none",
-    filter: "blur(3.5px)",
+    boxShadow: "var(--cmdKShadow)",
+    filter: "var(--glowFilter)",
     //transform: "scale(1.01)",
     //borderColor: globalVars.colors["whiteish-transluscent"],
   },
 ]);
+
+export const smiley = style({
+  fill: "rgb(255,255,255)",
+  color: "white !important",
+});
