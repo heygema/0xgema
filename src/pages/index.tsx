@@ -7,8 +7,8 @@ import { Suspense, useEffect } from "react";
 import getPosts from "../helpers/getPosts";
 import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";
-import path from "path";
 import Link from "next/link";
+import Button from "../components/Button";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
   suspense: true,
@@ -33,6 +33,8 @@ export default function Home({ posts }: Props) {
 
   const setPosts = usePostsStore((state) => state.setPosts);
 
+  const availablePaginations = [...Array(totalPages)].slice(offset - 2, limit);
+
   useEffect(() => {
     setPosts(posts);
   }, []);
@@ -49,7 +51,6 @@ export default function Home({ posts }: Props) {
       const day = new Date(info.date).toLocaleString("en-US", {
         day: "2-digit",
       });
-      const heroPath = path.join("/assets", info.hero);
 
       return (
         <ArticleCard
@@ -73,18 +74,18 @@ export default function Home({ posts }: Props) {
         </div>
       </Link>
       <div className={styles.root}>{renderedPosts}</div>
-      <div>
-        1 ... {totalPages}{" "}
-        <Link
-          href={{
-            pathname: "/",
-            query: {
-              page: page + 1,
-            },
-          }}
-        >
-          Next
-        </Link>
+      <div
+        style={{
+          paddingTop: "40px",
+          gap: 2,
+        }}
+      >
+        <Button>First</Button>
+        {availablePaginations.map((_, index) => (
+          <Button>{String(index + 1)}</Button>
+        ))}
+
+        <Button>Last</Button>
       </div>
     </Suspense>
   );
