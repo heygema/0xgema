@@ -109,13 +109,20 @@ export default function ModalMenu() {
       <div className={styles.menuContainer}>
         {searchedPosts.map(({ item }, index) => {
           const href = `/posts/${item.slug}`;
+
+          let title = item.title;
+
+          if (title.length >= 65) {
+            title = title.slice(0, 65) + "...";
+          }
+
           return (
             <div
               key={index}
               onClick={() => navigate(href)}
               className={styles.menuItem}
             >
-              {item.title}
+              {title}
             </div>
           );
         })}
