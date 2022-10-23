@@ -53,7 +53,7 @@ export const menuItem = style({
   borderRadius: 8,
   borderWidth: 1,
   filter: "brightness(65%)",
-  transition: "filter 0.1s ease-in",
+  transition: "filter 0.1s ease-in, background 0.05s ease-in",
   cursor: "pointer",
   ":hover": {
     filter: "brightness(100%)",
