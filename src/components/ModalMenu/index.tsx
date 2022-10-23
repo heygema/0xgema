@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useModalStore, usePostsStore } from "../../data/store";
 import { Post } from "../../data/types";
+import Button from "../Button";
 import * as styles from "./style.css";
 
 export type MenuType = "POST" | "LINK" | "ACTION";
@@ -20,25 +21,24 @@ export type MenuItem = {
 
 export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
-  const [rendered, setRendered] = useState(false);
   const [search, setSearch] = useState<string>("");
   const setOpen = useModalStore((state) => state.setOpen);
   const router = useRouter();
 
-  useEffect(() => {
-    setRendered(true);
-  }, []);
-
   const currentRoute = useMemo(() => {
     return router.query.slug;
   }, [router]);
+
+  const previousRoute = useMemo(() => {
+    return currentRoute?.toString();
+  }, []);
 
   const closeModal = () => {
     setOpen(false);
   };
 
   useEffect(() => {
-    if (rendered) {
+    if (previousRoute !== currentRoute) {
       closeModal();
     }
   }, [currentRoute]);
@@ -83,19 +83,29 @@ export default function ModalMenu() {
       animate="visible"
       className={styles.modal}
     >
-      <input
-        className={styles.inputStyle}
-        placeholder="Search"
-        type="text"
-        id="combobox-input"
-        data-command-input=""
-        autoComplete="off"
-        value={search}
-        onChange={(e) => {
-          e.preventDefault();
-          setSearch(e?.target?.value || "");
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "row",
+          padding: 18,
         }}
-      />
+      >
+        <input
+          className={styles.inputStyle}
+          placeholder="Search"
+          type="text"
+          id="combobox-input"
+          data-command-input=""
+          autoComplete="off"
+          value={search}
+          onChange={(e) => {
+            e.preventDefault();
+            setSearch(e?.target?.value || "");
+          }}
+        />
+        <Button onClick={closeModal}>ESC</Button>
+      </div>
       <div className={styles.menuContainer}>
         {searchedPosts.map(({ item }, index) => {
           const href = `/posts/${item.slug}`;

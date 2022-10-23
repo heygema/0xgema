@@ -3,17 +3,13 @@ import * as styles from "./style.css";
 import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
 import { Suspense, useEffect } from "react";
-import dynamic from "next/dynamic";
 import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
 import { useModalStore } from "../../data/store";
+import ModalMenu from "../ModalMenu";
 
 interface Props {
   onClick?: () => void;
 }
-
-const ModalMenu = dynamic(() => import("../ModalMenu/"), {
-  suspense: true,
-});
 
 export default function CircleMenu({ onClick }: Props) {
   const { isOpen, setOpen } = useModalStore((state) => state);
