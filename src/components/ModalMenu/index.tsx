@@ -20,15 +20,28 @@ export type MenuItem = {
 
 export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
+  const [rendered, setRendered] = useState(false);
   const [search, setSearch] = useState<string>("");
-
   const setOpen = useModalStore((state) => state.setOpen);
+  const router = useRouter();
+
+  useEffect(() => {
+    setRendered(true);
+  }, []);
+
+  const currentRoute = useMemo(() => {
+    return router.query.slug;
+  }, [router]);
 
   const closeModal = () => {
     setOpen(false);
   };
 
-  const router = useRouter();
+  useEffect(() => {
+    if (rendered) {
+      closeModal();
+    }
+  }, [currentRoute]);
 
   const posts = usePostsStore((state) => state.posts);
 
@@ -50,7 +63,6 @@ export default function ModalMenu() {
   );
 
   const navigate = (href: string) => {
-    closeModal();
     router.push(href);
   };
 
