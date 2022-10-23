@@ -18,9 +18,7 @@ const BASE_COLORS = {
 export const globalVars = createGlobalTheme(":root", {
   colors: {
     ...BASE_COLORS,
-    modal: {
-      menuContainer: "hsla(200, 6%, 10%, 8%)",
-    },
+    thinBorder: "hsla(200, 6%, 10%, 8%)",
     lightThemeAccent: BASE_COLORS.grayish,
     darkThemeAccent: BASE_COLORS.green,
   },

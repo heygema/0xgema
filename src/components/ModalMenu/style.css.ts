@@ -27,7 +27,7 @@ export const inputStyle = style({
 });
 
 export const menuContainer = style({
-  borderTop: `1px solid ${globalVars.colors.modal.menuContainer}`,
+  borderTop: `1px solid ${globalVars.colors.thinBorder}`,
   maxHeight: "400px",
   overflow: "scroll",
 });
