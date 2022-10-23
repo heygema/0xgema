@@ -1,17 +1,32 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import Fuse from "fuse.js";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { usePostsStore } from "../../data/store";
+import { Post } from "../../data/types";
 import * as styles from "./style.css";
 
 export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
-  const [search, setSearch] = useState<string>();
+  const [search, setSearch] = useState<string>("");
 
   const posts = usePostsStore((state) => state.posts);
 
   useEffect(() => {
     inputRef?.current?.focus();
   }, []);
+
+  const fuse = useMemo(
+    () =>
+      new Fuse(posts, {
+        keys: ["title"],
+      }),
+    []
+  );
+
+  const searchedPosts = useMemo(
+    () => fuse.search<Post>(search),
+    [search, fuse]
+  );
 
   return (
     <motion.div
@@ -42,6 +57,11 @@ export default function ModalMenu() {
           setSearch(e?.target?.value || "");
         }}
       />
+      <div className={styles.menuContainer}>
+        {searchedPosts.map(({ item }) => {
+          return <div className={styles.menuItem}>{item.title}</div>;
+        })}
+      </div>
     </motion.div>
   );
 }

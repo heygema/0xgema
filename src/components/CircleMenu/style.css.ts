@@ -1,5 +1,4 @@
 import { style } from "@vanilla-extract/css";
-import { globalVars } from "../../styles/theme.css";
 
 export const container = style({
   cursor: "pointer",
@@ -18,10 +17,13 @@ export const circleFallback = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  borderRadius: "50%",
+  borderRadius: "10px",
   borderWidth: "3.7px",
   borderStyle: "solid",
-  borderColor: "var(--foreground)",
+  borderColor: "var(--accentBackground)",
+  backgroundColor: "var(--accentBackground)",
+  filter: "brightness(120%)",
+  //transform: "rotate(45deg)",
   // hmm
   //backgroundColor: "var(--foreground)",
 });
@@ -33,8 +35,8 @@ export const CircleStackGlow = style([
     zIndex: -1,
     pointerEvents: "none",
     boxShadow: "none",
-    filter: "blur(4.5px)",
-    transform: "scale(1.01)",
-    borderColor: globalVars.colors["whiteish-transluscent"],
+    filter: "blur(3.5px)",
+    //transform: "scale(1.01)",
+    //borderColor: globalVars.colors["whiteish-transluscent"],
   },
 ]);

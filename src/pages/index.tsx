@@ -29,7 +29,7 @@ export default function Home({ posts }: Props) {
 
   const totalPages = Math.ceil(posts.length / postPerPage);
 
-  const setPosts = usePostsStore((state) => state.addPosts);
+  const setPosts = usePostsStore((state) => state.setPosts);
 
   useEffect(() => {
     setPosts(posts);
