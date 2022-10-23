@@ -82,7 +82,7 @@ export default function Home({ posts }: Props) {
       >
         <Button>First</Button>
         {availablePaginations.map((_, index) => (
-          <Button>{String(index + 1)}</Button>
+          <Button key={index}>{String(index + 1)}</Button>
         ))}
 
         <Button>Last</Button>
