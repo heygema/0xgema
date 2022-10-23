@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import * as styles from "./style.css";
 import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
+import { useModalStore } from "../../data/store";
 
 interface Props {
   onClick?: () => void;
@@ -15,7 +16,7 @@ const ModalMenu = dynamic(() => import("../ModalMenu/"), {
 });
 
 export default function CircleMenu({ onClick }: Props) {
-  const [open, setOpen] = useState(false);
+  const { isOpen, setOpen } = useModalStore((state) => state);
 
   const closeModal = () => setOpen(false);
 
@@ -26,7 +27,7 @@ export default function CircleMenu({ onClick }: Props) {
         switch (event.key) {
           case "k": {
             if (event.metaKey) {
-              setOpen((open) => !open);
+              setOpen(!isOpen);
             }
           }
         }
@@ -61,12 +62,12 @@ export default function CircleMenu({ onClick }: Props) {
           </div>
         </motion.div>
       }
-      open={open}
+      open={isOpen}
       modal
       position="right center"
     >
       <Suspense fallback="...">
-        <ModalMenu closeModal={closeModal} />
+        <ModalMenu />
       </Suspense>
     </Popup>
   );

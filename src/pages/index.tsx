@@ -73,6 +73,19 @@ export default function Home({ posts }: Props) {
         </div>
       </Link>
       <div className={styles.root}>{renderedPosts}</div>
+      <div>
+        1 ... {totalPages}{" "}
+        <Link
+          href={{
+            pathname: "/",
+            query: {
+              page: page + 1,
+            },
+          }}
+        >
+          Next
+        </Link>
+      </div>
     </Suspense>
   );
 }

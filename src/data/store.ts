@@ -12,3 +12,11 @@ export const usePostsStore = create<State>((set) => ({
   setPosts: (posts: Posts) => set(() => ({ posts: [...posts] })),
   remove: () => set({ posts: [] }),
 }));
+
+export const useModalStore = create<{
+  isOpen: boolean;
+  setOpen: (input: boolean) => void;
+}>((set) => ({
+  isOpen: false,
+  setOpen: (isOpen) => set(() => ({ isOpen })),
+}));

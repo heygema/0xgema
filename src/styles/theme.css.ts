@@ -19,7 +19,7 @@ export const globalVars = createGlobalTheme(":root", {
   colors: {
     ...BASE_COLORS,
     thinBorder: "hsla(200, 6%, 10%, 8%)",
-    lightThemeAccent: BASE_COLORS.grayish,
+    lightThemeAccent: BASE_COLORS.blue,
     darkThemeAccent: BASE_COLORS.green,
   },
   shadow: {

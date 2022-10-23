@@ -1,18 +1,32 @@
 // eslint-disable react-hooks/exhaustive-deps
 import { motion } from "framer-motion";
 import Fuse from "fuse.js";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { usePostsStore } from "../../data/store";
+import { useModalStore, usePostsStore } from "../../data/store";
 import { Post } from "../../data/types";
 import * as styles from "./style.css";
 
-type MenuType = "POST" | "LINK" | "ACTION";
+export type MenuType = "POST" | "LINK" | "ACTION";
 
-export default function ModalMenu({ closeModal }: { closeModal: () => void }) {
+export type MenuItem = {
+  type: MenuType;
+  post?: Post;
+  menu?: {
+    title: string;
+  };
+  action: () => void;
+};
+
+export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState<string>("");
+
+  const setOpen = useModalStore((state) => state.setOpen);
+
+  const closeModal = () => {
+    setOpen(false);
+  };
 
   const router = useRouter();
 
