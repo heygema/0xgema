@@ -2,6 +2,7 @@ import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
 import { globalVars } from "../../styles/theme.css";
 
 export const modal = style({
+  cursor: "pointer",
   display: "block",
   flexDirection: "column",
   borderRadius: "18px",
@@ -63,7 +64,6 @@ export const menuItem = style({
   alignItems: "center",
   filter: "brightness(65%)",
   transition: "filter 0.1s ease-in, background 0.05s ease-in",
-  cursor: "pointer",
   ":hover": {
     filter: "brightness(100%)",
     background: globalVars.colors.genericTransparent,

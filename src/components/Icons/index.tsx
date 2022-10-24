@@ -7,7 +7,7 @@ import {
 import { VscGithubAlt as Github } from "react-icons/vsc";
 import { RiSkullLine as About } from "react-icons/ri";
 import { BiMoon as Night } from "react-icons/bi";
-import { BsSun as Sun } from "react-icons/bs";
+import { BsSun as Day } from "react-icons/bs";
 
 export const Icons = {
   Home,
@@ -16,5 +16,5 @@ export const Icons = {
   Github,
   System,
   Night,
-  Sun,
+  Day,
 };

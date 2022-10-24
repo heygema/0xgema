@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useModalStore, usePostsStore } from "../../data/store";
 import { Post } from "../../data/types";
+import { useThemeSwitch } from "../../hooks/useThemeSwitch";
 import Button from "../Button";
 import { Icons } from "../Icons";
 import * as styles from "./style.css";
@@ -28,6 +29,8 @@ export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState<string>("");
   const [selectedMenuIndex, selectMenuIndex] = useState<number>(0);
+  const { setTheme } = useThemeSwitch();
+
   const setOpen = useModalStore((state) => state.setOpen);
   const router = useRouter();
 
@@ -90,6 +93,30 @@ export default function ModalMenu() {
       },
       icon: <Icons.Github className={styles.menuIcon} />,
       action: () => navigate("https://github.com/heygema"),
+    },
+    {
+      type: MenuType.ACTION,
+      menu: {
+        title: "Switch to Light Theme",
+      },
+      icon: <Icons.Day className={styles.menuIcon} />,
+      action: () => setTheme?.("light"),
+    },
+    {
+      type: MenuType.ACTION,
+      menu: {
+        title: "Switch to Dark Theme",
+      },
+      icon: <Icons.Night className={styles.menuIcon} />,
+      action: () => setTheme?.("dark"),
+    },
+    {
+      type: MenuType.ACTION,
+      menu: {
+        title: "Switch to System Theme",
+      },
+      icon: <Icons.System className={styles.menuIcon} />,
+      action: () => setTheme?.("system"),
     },
   ];
 
