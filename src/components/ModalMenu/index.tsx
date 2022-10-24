@@ -165,36 +165,64 @@ export default function ModalMenu() {
   const enterAction = useCallback(() => {
     if (!search) {
       menuItems[selectedMenuIndex]?.action();
+    } else {
+      combinedSearchItems[selectedMenuIndex]?.item?.action();
     }
-    combinedSearchItems[selectedMenuIndex]?.item?.action();
   }, [combinedSearchItems, selectedMenuIndex]);
 
-  useEffect(() => {
-    let keyHandler: ReturnType<typeof document.addEventListener> | undefined;
-    if (document !== undefined) {
-      keyHandler = document.addEventListener("keydown", (event) => {
-        switch (event.key.toLowerCase()) {
-          case "enter": {
-            enterAction();
-          }
-          case "arrowup": {
-            if (selectedMenuIndex) {
-              selectMenuIndex(selectedMenuIndex - 1);
-            }
-          }
-
-          case "down": {
-            if (selectedMenuIndex < combinedSearchItems.length - 1) {
-              selectMenuIndex(selectedMenuIndex + 1);
-            }
-          }
+  const enterAction2 = useCallback(() => {
+    selectMenuIndex((currentIndex) => {
+      setSearch((search) => {
+        if (search) {
+          combinedSearchItems[currentIndex]?.item?.action();
+        } else {
+          menuItems[currentIndex]?.action();
         }
+        return search;
       });
-    }
-
-    // fuck
-    return () => removeEventListener("keydown", keyHandler as any);
+      return currentIndex;
+    });
   }, [combinedSearchItems]);
+
+  const downHandler = () => {
+    const menuLength = search ? combinedMenuItems.length : menuItems.length;
+
+    selectMenuIndex((current) => {
+      return current < menuLength - 1 ? current + 1 : current;
+    });
+  };
+
+  const upHandler = () => {
+    selectMenuIndex((current) => (current ? current - 1 : current));
+  };
+
+  const keydownListener = (e: KeyboardEvent) => {
+    switch (e.key) {
+      case "Enter": {
+        enterAction();
+        break;
+      }
+      case "ArrowUp": {
+        upHandler();
+        break;
+      }
+      case "ArrowDown": {
+        downHandler();
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (!document || !window) return;
+    window.addEventListener("keydown", keydownListener);
+    return () => {
+      window.removeEventListener("keydown", keydownListener);
+    };
+  }, []);
 
   return (
     <motion.div

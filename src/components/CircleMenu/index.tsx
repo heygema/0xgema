@@ -15,21 +15,23 @@ export default function CircleMenu() {
   const onClick = () => setOpen(true);
 
   useEffect(() => {
-    let keyHandler: ReturnType<typeof document.addEventListener> | undefined;
-    if (document !== undefined) {
-      keyHandler = document.addEventListener("keydown", (event) => {
-        switch (event.key) {
-          case "k": {
-            if (event.metaKey) {
-              setOpen(!isOpen);
-            }
+    if (!document) return;
+    const keyDown = (event: KeyboardEvent) => {
+      switch (event.key) {
+        case "k": {
+          if (event.metaKey) {
+            setOpen(!isOpen);
           }
+          break;
         }
-      });
-    }
+        default: {
+          return;
+        }
+      }
+    };
+    document.addEventListener("keydown", keyDown);
 
-    // fuck
-    return () => removeEventListener("keydown", keyHandler as any);
+    return () => removeEventListener("keydown", keyDown);
   }, []);
 
   return (
