@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useModalStore, usePostsStore } from "../../data/store";
 import { Post } from "../../data/types";
-import { useThemeSwitch } from "../../hooks/useThemeSwitch";
 import Button from "../Button";
 import { Icons } from "../Icons";
 import * as styles from "./style.css";
