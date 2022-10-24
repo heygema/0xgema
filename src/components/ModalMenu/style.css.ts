@@ -54,7 +54,7 @@ globalStyle(`${menuContainer}::-webkit-scrollbar-thumb`, {
   borderRadius: "50px",
 });
 
-export const menuItem = style({
+const menuItemBase = style({
   padding: 15,
   marginTop: 5,
   marginBottom: 5,
@@ -64,10 +64,18 @@ export const menuItem = style({
   alignItems: "center",
   filter: "brightness(65%)",
   transition: "filter 0.1s ease-in, background 0.05s ease-in",
-  ":hover": {
-    filter: "brightness(100%)",
-    background: globalVars.colors.genericTransparent,
-  },
+  ":hover": {},
+});
+
+export const menuItem = styleVariants({
+  default: [menuItemBase],
+  highlighted: [
+    menuItemBase,
+    {
+      filter: "brightness(100%)",
+      background: globalVars.colors.genericTransparent,
+    },
+  ],
 });
 
 export const menuIcon = style({});

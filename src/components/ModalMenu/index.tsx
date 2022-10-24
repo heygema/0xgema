@@ -177,7 +177,7 @@ export default function ModalMenu() {
 
     // fuck
     return () => removeEventListener("keydown", keyHandler as any);
-  }, [combinedSearchItems]);
+  }, [combinedSearchItems, selectedMenuIndex]);
 
   return (
     <motion.div
@@ -212,6 +212,11 @@ export default function ModalMenu() {
       </div>
       <div className={styles.menuContainer}>
         {combinedSearchItems.map(({ item }, index) => {
+          const onMouseOver = () => selectMenuIndex(index);
+          const isSelected = selectedMenuIndex === index;
+
+          const selectedStyle = isSelected ? "highlighted" : "default";
+
           if (item.type === MenuType.POST) {
             let title = item.post.title;
 
@@ -223,7 +228,8 @@ export default function ModalMenu() {
               <div
                 key={`${item.post.slug}-${index}`}
                 onClick={item.action}
-                className={styles.menuItem}
+                className={styles.menuItem[selectedStyle]}
+                onMouseOver={onMouseOver}
               >
                 <span className={styles.menuTitle.noIcon}>{title}</span>
               </div>
@@ -233,7 +239,8 @@ export default function ModalMenu() {
               <div
                 key={`${item.menu.title}-${index}`}
                 onClick={item.action}
-                className={styles.menuItem}
+                className={styles.menuItem[selectedStyle]}
+                onMouseOver={onMouseOver}
               >
                 {item.icon}
                 <span className={styles.menuTitle.withIcon}>
@@ -245,11 +252,16 @@ export default function ModalMenu() {
         })}
         {!search &&
           menuItems.map(({ menu, icon, action }, index) => {
+            const onMouseOver = () => selectMenuIndex(index);
+            const isSelected = selectedMenuIndex === index;
+            const selectedStyle = isSelected ? "highlighted" : "default";
+
             return (
               <div
                 key={`${menu.title}-${index}`}
                 onClick={action}
-                className={styles.menuItem}
+                className={styles.menuItem[selectedStyle]}
+                onMouseOver={onMouseOver}
               >
                 {icon}
                 <span className={styles.menuTitle.withIcon}>{menu.title}</span>
