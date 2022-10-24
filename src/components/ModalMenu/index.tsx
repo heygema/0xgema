@@ -142,7 +142,7 @@ export default function ModalMenu() {
       >
         <input
           className={styles.inputStyle}
-          placeholder="Search"
+          placeholder="Search for posts and menus..."
           type="text"
           id="combobox-input"
           data-command-input=""
