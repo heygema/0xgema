@@ -52,6 +52,8 @@ export const menuItem = style({
   marginBottom: 5,
   borderRadius: 8,
   borderWidth: 1,
+  display: "flex",
+  alignItems: "center",
   filter: "brightness(65%)",
   transition: "filter 0.1s ease-in, background 0.05s ease-in",
   cursor: "pointer",
@@ -59,4 +61,22 @@ export const menuItem = style({
     filter: "brightness(100%)",
     background: globalVars.colors.genericTransparent,
   },
+});
+
+export const menuIcon = style({});
+
+export const homeIcon = style({});
+
+globalStyle(`${menuIcon} > path`, {
+  stroke: "var(--foreground)",
+});
+
+globalStyle(`${homeIcon} > path`, {
+  stroke: "var(--foreground)",
+  strokeWidth: 1,
+});
+
+export const menuTitle = style({
+  marginLeft: "0.5rem",
+  fontSize: "0.9rem",
 });

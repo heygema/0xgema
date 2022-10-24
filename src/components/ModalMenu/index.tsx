@@ -6,11 +6,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useModalStore, usePostsStore } from "../../data/store";
 import { Post } from "../../data/types";
 import Button from "../Button";
+import { Icons } from "../Icons";
 import * as styles from "./style.css";
 
 export enum MenuType {
   "POST",
   "ACTION",
+  "DESCRIPTION",
 }
 
 export type MenuItem = {
@@ -56,10 +58,29 @@ export default function ModalMenu() {
   const menuItems: Array<MenuItem> = [
     {
       type: MenuType.ACTION,
+      icon: <Icons.Home className={styles.homeIcon} />,
       menu: {
         title: "Home",
       },
       action: () => navigate("/"),
+    },
+
+    {
+      type: MenuType.ACTION,
+      menu: {
+        title: "Twitter",
+      },
+      icon: <Icons.Twitter className={styles.menuIcon} />,
+      action: () => navigate("https://twitter.com/heygema"),
+    },
+
+    {
+      type: MenuType.ACTION,
+      menu: {
+        title: "Github",
+      },
+      icon: <Icons.Github className={styles.menuIcon} />,
+      action: () => navigate("https://github.com/heygema"),
     },
   ];
 
@@ -166,14 +187,15 @@ export default function ModalMenu() {
                 </div>
               );
             })
-          : menuItems.map(({ menu, action }, index) => {
+          : menuItems.map(({ menu, icon, action }, index) => {
               return (
                 <div
                   key={`${menu.title}-${index}`}
                   onClick={action}
                   className={styles.menuItem}
                 >
-                  {menu.title}
+                  {icon}
+                  <span className={styles.menuTitle}>{menu.title}</span>
                 </div>
               );
             })}
