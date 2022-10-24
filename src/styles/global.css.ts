@@ -103,7 +103,7 @@ globalStyle("a", {
 globalStyle(".popup-content", {
   background: "transparent !important",
   padding: 0,
-  translate: "0px -270px",
+  translate: "0px -220px",
   border: "none !important",
   width: "600px",
   display: "flex",
@@ -113,7 +113,8 @@ globalStyle(".popup-content", {
   pointerEvents: "none",
   "@media": {
     [`screen and (max-width: ${BREAKPOINTS.mobile})`]: {
-      width: "320px",
+      width: "98%",
+      translate: "0px -200px",
     },
   },
 });
