@@ -103,12 +103,14 @@ globalStyle("a", {
 globalStyle(".popup-content", {
   background: "transparent !important",
   padding: 0,
+  translate: "0px -270px",
   border: "none !important",
   width: "600px",
   display: "flex",
   justifyContent: "center",
   alignItems: "flex-start",
-  height: "600px",
+  height: "10px",
+  pointerEvents: "none",
   "@media": {
     [`screen and (max-width: ${BREAKPOINTS.mobile})`]: {
       width: "320px",
