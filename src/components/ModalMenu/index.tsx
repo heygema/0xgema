@@ -36,7 +36,7 @@ export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState<string>("");
   const [selectedMenuIndex, selectMenuIndex] = useState<number>(0);
-  // figure out
+  // TODO: figure out
   //const { setTheme } = useThemeSwitch();
   const { setTheme } = useTheme();
 
