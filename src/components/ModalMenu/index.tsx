@@ -27,6 +27,7 @@ export type MenuItem = {
 export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState<string>("");
+  const [selectedMenuIndex, selectMenuIndex] = useState<number>(0);
   const setOpen = useModalStore((state) => state.setOpen);
   const router = useRouter();
 

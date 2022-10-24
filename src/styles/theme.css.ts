@@ -22,6 +22,8 @@ export const globalVars = createGlobalTheme(":root", {
     thinBorder: "hsla(200, 6%, 10%, 8%)",
     lightThemeAccent: BASE_COLORS.blue,
     darkThemeAccent: BASE_COLORS.green,
+    // softer on the night
+    alternateDarkThemeAccent: "hsl(239, 86%, 55%)",
   },
   shadow: {
     mild: "0px 2px 5px rgba(0,0,0,0.25)",
