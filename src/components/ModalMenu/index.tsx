@@ -132,9 +132,11 @@ export default function ModalMenu() {
     action: () => navigate(`/posts/${post.slug}`),
   }));
 
-  const combinedMenuItems: Array<MenuItem | PostSearchItem> = [
-    ...menuItems,
-    ...postSearchItems,
+  type CombinedItem = MenuItem | PostSearchItem;
+
+  const combinedMenuItems: Array<CombinedItem> = [
+    ...(menuItems as Array<MenuItem>),
+    ...(postSearchItems as Array<PostSearchItem>),
   ];
 
   useEffect(() => {
