@@ -10,6 +10,7 @@ export const root = style({
   gridGap: "0.5rem",
   "@media": {
     [`(max-width: ${BREAKPOINTS.mobile})`]: {
+      gridGap: "1rem",
       gridTemplateColumns: "100px",
       gridTemplateRows: "minmax(auto, auto)",
     },
