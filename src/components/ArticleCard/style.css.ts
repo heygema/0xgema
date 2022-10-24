@@ -74,3 +74,9 @@ export const title = style({
   fontSize: "1.3rem",
   fontWeight: 700,
 });
+
+export const postDate = style({
+  fontSize: "0.8rem",
+  opacity: 0.8,
+  fontWeight: 500,
+});
