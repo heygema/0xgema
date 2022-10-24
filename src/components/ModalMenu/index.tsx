@@ -64,6 +64,14 @@ export default function ModalMenu() {
       },
       action: () => navigate("/"),
     },
+    {
+      type: MenuType.ACTION,
+      icon: <Icons.About className={styles.menuIcon} />,
+      menu: {
+        title: "About",
+      },
+      action: () => navigate("/about"),
+    },
 
     {
       type: MenuType.ACTION,
