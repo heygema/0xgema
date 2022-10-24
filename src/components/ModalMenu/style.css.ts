@@ -1,4 +1,4 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
 import { globalVars } from "../../styles/theme.css";
 
 export const modal = style({
@@ -76,7 +76,12 @@ globalStyle(`${homeIcon} > path`, {
   strokeWidth: 1,
 });
 
-export const menuTitle = style({
+const baseMenu = style({
   marginLeft: "0.5rem",
   fontSize: "0.9rem",
+});
+
+export const menuTitle = styleVariants({
+  withIcon: [baseMenu],
+  noIcon: [baseMenu, { marginLeft: 0 }],
 });

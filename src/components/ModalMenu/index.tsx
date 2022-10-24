@@ -171,7 +171,7 @@ export default function ModalMenu() {
               onClick={() => navigate(href)}
               className={styles.menuItem}
             >
-              {title}
+              <span className={styles.menuTitle.noIcon}>{title}</span>
             </div>
           );
         })}
@@ -183,7 +183,10 @@ export default function ModalMenu() {
                   onClick={item?.action}
                   className={styles.menuItem}
                 >
-                  {item.menu.title}
+                  {item.icon}
+                  <span className={styles.menuTitle.withIcon}>
+                    {item.menu.title}
+                  </span>
                 </div>
               );
             })
@@ -195,7 +198,9 @@ export default function ModalMenu() {
                   className={styles.menuItem}
                 >
                   {icon}
-                  <span className={styles.menuTitle}>{menu.title}</span>
+                  <span className={styles.menuTitle.withIcon}>
+                    {menu.title}
+                  </span>
                 </div>
               );
             })}
