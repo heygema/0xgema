@@ -25,6 +25,12 @@ export type MenuItem = {
   action: () => void;
 };
 
+export type PostSearchItem = {
+  type: MenuType.POST;
+  post?: Post;
+  action: () => void;
+};
+
 export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState<string>("");
@@ -120,9 +126,28 @@ export default function ModalMenu() {
     },
   ];
 
+  const postSearchItems = posts.map((post) => ({
+    type: MenuType.POST,
+    post,
+    action: () => navigate(`/posts/${post.slug}`),
+  }));
+
+  const combinedMenuItems: Array<MenuItem | PostSearchItem> = [
+    ...menuItems,
+    ...postSearchItems,
+  ];
+
   useEffect(() => {
     inputRef?.current?.focus();
   }, []);
+
+  const combinedFuse = useMemo(
+    () =>
+      new Fuse(combinedMenuItems, {
+        keys: ["post.title", "menu.title"],
+      }),
+    []
+  );
 
   const fuse = useMemo(
     () =>
@@ -140,17 +165,10 @@ export default function ModalMenu() {
     []
   );
 
-  const searchedPosts = useMemo(
-    () => fuse.search<Post>(search),
-    [search, fuse]
+  const combinedSearchItems = useMemo(
+    () => combinedFuse.search<PostSearchItem | MenuItem>(search),
+    [search, combinedFuse]
   );
-
-  const searchedMenuItems = useMemo(
-    () => fuseMenuItems.search<MenuItem>(search),
-    [search, fuseMenuItems]
-  );
-
-  //const renderedMenuItems = search ? searchedMenuItems : menuItems;
 
   return (
     <motion.div
@@ -184,54 +202,51 @@ export default function ModalMenu() {
         <Button onClick={closeModal}>ESC</Button>
       </div>
       <div className={styles.menuContainer}>
-        {searchedPosts.map(({ item }, index) => {
-          const href = `/posts/${item.slug}`;
+        {combinedSearchItems.map(({ item }, index) => {
+          if (item.type === MenuType.POST) {
+            let title = item.post.title;
 
-          let title = item.title;
+            if (title.length >= 65) {
+              title = title.slice(0, 65) + "...";
+            }
 
-          if (title.length >= 65) {
-            title = title.slice(0, 65) + "...";
+            return (
+              <div
+                key={`${item.post.slug}-${index}`}
+                onClick={item.action}
+                className={styles.menuItem}
+              >
+                <span className={styles.menuTitle.noIcon}>{title}</span>
+              </div>
+            );
+          } else {
+            return (
+              <div
+                key={`${item.menu.title}-${index}`}
+                onClick={item.action}
+                className={styles.menuItem}
+              >
+                {item.icon}
+                <span className={styles.menuTitle.withIcon}>
+                  {item.menu.title}
+                </span>
+              </div>
+            );
           }
-
-          return (
-            <div
-              key={index}
-              onClick={() => navigate(href)}
-              className={styles.menuItem}
-            >
-              <span className={styles.menuTitle.noIcon}>{title}</span>
-            </div>
-          );
         })}
-        {search
-          ? searchedMenuItems.map(({ item }, index) => {
-              return (
-                <div
-                  key={`${item.menu.title}-${index}`}
-                  onClick={item?.action}
-                  className={styles.menuItem}
-                >
-                  {item.icon}
-                  <span className={styles.menuTitle.withIcon}>
-                    {item.menu.title}
-                  </span>
-                </div>
-              );
-            })
-          : menuItems.map(({ menu, icon, action }, index) => {
-              return (
-                <div
-                  key={`${menu.title}-${index}`}
-                  onClick={action}
-                  className={styles.menuItem}
-                >
-                  {icon}
-                  <span className={styles.menuTitle.withIcon}>
-                    {menu.title}
-                  </span>
-                </div>
-              );
-            })}
+        {!search &&
+          menuItems.map(({ menu, icon, action }, index) => {
+            return (
+              <div
+                key={`${menu.title}-${index}`}
+                onClick={action}
+                className={styles.menuItem}
+              >
+                {icon}
+                <span className={styles.menuTitle.withIcon}>{menu.title}</span>
+              </div>
+            );
+          })}
       </div>
     </motion.div>
   );
