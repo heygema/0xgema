@@ -162,6 +162,23 @@ export default function ModalMenu() {
     [search, combinedFuse, setTheme]
   );
 
+  useEffect(() => {
+    let keyHandler: ReturnType<typeof document.addEventListener> | undefined;
+    if (document !== undefined) {
+      keyHandler = document.addEventListener("keydown", (event) => {
+        switch (event.key.toLowerCase()) {
+          case "enter": {
+            const selected = combinedSearchItems[selectedMenuIndex]?.item;
+            selected?.action();
+          }
+        }
+      });
+    }
+
+    // fuck
+    return () => removeEventListener("keydown", keyHandler as any);
+  }, [combinedSearchItems]);
+
   return (
     <motion.div
       variants={{
@@ -212,10 +229,6 @@ export default function ModalMenu() {
               </div>
             );
           } else {
-            if (item.menu.title.startsWith("Switch")) {
-              console.log("action >>", item.action);
-            }
-
             return (
               <div
                 key={`${item.menu.title}-${index}`}
