@@ -26,7 +26,7 @@ const mainResponsive = sprinkles({
 export const menuContainer = style([
   style({
     margin: "0 auto",
-    paddingTop: 10,
+    paddingTop: 40,
     height: "5rem",
     display: "flex",
     justifyContent: "flex-end",
