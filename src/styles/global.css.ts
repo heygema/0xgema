@@ -19,8 +19,10 @@ globalFontFace(jost, {
   fontWeight: 500,
 });
 
+const baseFontFamily = `${jost}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
+
 globalStyle("html, body", {
-  fontFamily: `${jost}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
+  fontFamily: baseFontFamily,
   fontWeight: 250,
   margin: 0,
   padding: 0,
@@ -38,8 +40,8 @@ globalStyle("html, body", {
 });
 
 globalStyle("h1, h2, h3", {
-  fontFamily: `${ptSerif}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
-  fontWeight: 800,
+  fontWeight: 600,
+  fontSize: "3rem",
 });
 
 // following https://github.com/pacocoursey/next-themes pattern
