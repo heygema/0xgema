@@ -1,6 +1,7 @@
 // eslint-disable react-hooks/exhaustive-deps
 import { motion } from "framer-motion";
 import Fuse from "fuse.js";
+import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useModalStore, usePostsStore } from "../../data/store";
@@ -35,7 +36,9 @@ export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState<string>("");
   const [selectedMenuIndex, selectMenuIndex] = useState<number>(0);
-  const { setTheme } = useThemeSwitch();
+  // figure out
+  //const { setTheme } = useThemeSwitch();
+  const { setTheme } = useTheme();
 
   const setOpen = useModalStore((state) => state.setOpen);
   const router = useRouter();
@@ -134,10 +137,13 @@ export default function ModalMenu() {
 
   type CombinedItem = MenuItem | PostSearchItem;
 
-  const combinedMenuItems: Array<CombinedItem> = [
-    ...(menuItems as Array<MenuItem>),
-    ...(postSearchItems as Array<PostSearchItem>),
-  ];
+  const combinedMenuItems: Array<CombinedItem> = useMemo(
+    () => [
+      ...(menuItems as Array<MenuItem>),
+      ...(postSearchItems as Array<PostSearchItem>),
+    ],
+    [setTheme, menuItems, postSearchItems]
+  );
 
   useEffect(() => {
     inputRef?.current?.focus();
@@ -151,25 +157,9 @@ export default function ModalMenu() {
     []
   );
 
-  const fuse = useMemo(
-    () =>
-      new Fuse(posts, {
-        keys: ["title"],
-      }),
-    []
-  );
-
-  const fuseMenuItems = useMemo(
-    () =>
-      new Fuse(menuItems, {
-        keys: ["menu.title"],
-      }),
-    []
-  );
-
   const combinedSearchItems = useMemo(
     () => combinedFuse.search<PostSearchItem | MenuItem>(search),
-    [search, combinedFuse]
+    [search, combinedFuse, setTheme]
   );
 
   return (
@@ -222,6 +212,10 @@ export default function ModalMenu() {
               </div>
             );
           } else {
+            if (item.menu.title.startsWith("Switch")) {
+              console.log("action >>", item.action);
+            }
+
             return (
               <div
                 key={`${item.menu.title}-${index}`}
