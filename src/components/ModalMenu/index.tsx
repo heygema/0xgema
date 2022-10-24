@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Fuse from "fuse.js";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useModalStore, usePostsStore } from "../../data/store";
 import { Post } from "../../data/types";
 import { useThemeSwitch } from "../../hooks/useThemeSwitch";
@@ -162,14 +162,31 @@ export default function ModalMenu() {
     [search, combinedFuse, setTheme]
   );
 
+  const enterAction = useCallback(() => {
+    if (!search) {
+      menuItems[selectedMenuIndex]?.action();
+    }
+    combinedSearchItems[selectedMenuIndex]?.item?.action();
+  }, [combinedSearchItems, selectedMenuIndex]);
+
   useEffect(() => {
     let keyHandler: ReturnType<typeof document.addEventListener> | undefined;
     if (document !== undefined) {
       keyHandler = document.addEventListener("keydown", (event) => {
         switch (event.key.toLowerCase()) {
           case "enter": {
-            const selected = combinedSearchItems[selectedMenuIndex]?.item;
-            selected?.action();
+            enterAction();
+          }
+          case "arrowup": {
+            if (selectedMenuIndex) {
+              selectMenuIndex(selectedMenuIndex - 1);
+            }
+          }
+
+          case "down": {
+            if (selectedMenuIndex < combinedSearchItems.length - 1) {
+              selectMenuIndex(selectedMenuIndex + 1);
+            }
           }
         }
       });
@@ -177,7 +194,7 @@ export default function ModalMenu() {
 
     // fuck
     return () => removeEventListener("keydown", keyHandler as any);
-  }, [combinedSearchItems, selectedMenuIndex]);
+  }, [combinedSearchItems]);
 
   return (
     <motion.div
