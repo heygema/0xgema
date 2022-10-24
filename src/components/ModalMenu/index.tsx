@@ -71,7 +71,7 @@ export default function ModalMenu() {
         title: "Twitter",
       },
       icon: <Icons.Twitter className={styles.menuIcon} />,
-      action: () => navigate("https://twitter.com/heygema"),
+      action: () => navigate("https://twitter.com/0xgema"),
     },
 
     {
