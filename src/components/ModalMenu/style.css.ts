@@ -26,6 +26,13 @@ export const inputStyle = style({
   borderTopLeftRadius: "10px",
 });
 
+export const searchContainer = style({
+  display: "flex",
+  alignItems: "center",
+  flexDirection: "row",
+  padding: 18,
+});
+
 export const menuContainer = style({
   borderTop: `1px solid ${globalVars.colors.thinBorder}`,
   maxHeight: "400px",

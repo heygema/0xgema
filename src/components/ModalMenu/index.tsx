@@ -132,20 +132,12 @@ export default function ModalMenu() {
       animate="visible"
       className={styles.modal}
     >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "row",
-          padding: 18,
-        }}
-      >
+      <div className={styles.searchContainer}>
         <input
+          aria-label="global-search-box"
           className={styles.inputStyle}
           placeholder="Search for posts and menus..."
           type="text"
-          id="combobox-input"
-          data-command-input=""
           autoComplete="off"
           value={search}
           onChange={(e) => {
