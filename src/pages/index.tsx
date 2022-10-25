@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import { Suspense, useEffect } from "react";
 
 import * as styles from "../styles/index.css";
-//import ArticleCard from "../components/ArticleCard";
 import getPosts from "../helpers/getPosts";
 import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";

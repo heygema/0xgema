@@ -41,7 +41,15 @@ globalStyle("html, body", {
 
 globalStyle("h1, h2, h3", {
   fontWeight: 600,
+});
+globalStyle("h1", {
   fontSize: "3rem",
+});
+globalStyle("h2", {
+  fontSize: "2.5rem",
+});
+globalStyle("h1", {
+  fontSize: "2rem",
 });
 
 // following https://github.com/pacocoursey/next-themes pattern

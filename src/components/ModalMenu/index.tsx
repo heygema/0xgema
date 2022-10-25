@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Fuse from "fuse.js";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useModalStore, usePostsStore } from "../../data/store";
 import { Post } from "../../data/types";
 import Button from "../Button";
@@ -35,8 +35,6 @@ export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState<string>("");
   const [selectedMenuIndex, selectMenuIndex] = useState<number>(0);
-  // TODO: figure out
-  //const { setTheme } = useThemeSwitch();
   const { setTheme } = useTheme();
 
   const setOpen = useModalStore((state) => state.setOpen);
