@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import * as styles from "./style.css";
 import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
 import { useModalStore } from "../../data/store";
 import ModalMenu from "../ModalMenu";
@@ -10,25 +10,34 @@ import ModalMenu from "../ModalMenu";
 export default function CircleMenu() {
   const { isOpen, setOpen } = useModalStore((state) => state);
 
+  const openRef = useRef(isOpen);
+
+  useEffect(() => {
+    setOpen(isOpen);
+  }, [isOpen, openRef]);
+
   const closeModal = () => setOpen(false);
 
   const onClick = () => setOpen(true);
 
+  const keyDown = (event: KeyboardEvent) => {
+    event.preventDefault();
+    switch (event.key) {
+      case "k": {
+        if (event.metaKey) {
+          console.log("What >", openRef.current);
+          setOpen(!openRef.current);
+        }
+        break;
+      }
+      default: {
+        return;
+      }
+    }
+  };
+
   useEffect(() => {
     if (!document) return;
-    const keyDown = (event: KeyboardEvent) => {
-      switch (event.key) {
-        case "k": {
-          if (event.metaKey) {
-            setOpen(!isOpen);
-          }
-          break;
-        }
-        default: {
-          return;
-        }
-      }
-    };
     document.addEventListener("keydown", keyDown);
 
     return () => removeEventListener("keydown", keyDown);

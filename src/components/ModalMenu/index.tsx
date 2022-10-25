@@ -156,9 +156,8 @@ export default function ModalMenu() {
     []
   );
 
-  const combinedSearchItems = useMemo(
-    () => combinedFuse.search<PostSearchItem | MenuItem>(search),
-    [search, combinedFuse, setTheme]
+  const combinedSearchItems = combinedFuse.search<PostSearchItem | MenuItem>(
+    search
   );
 
   const enterAction = useCallback(() => {
@@ -167,7 +166,7 @@ export default function ModalMenu() {
     } else {
       combinedSearchItems[selectedMenuIndex]?.item?.action();
     }
-  }, [combinedSearchItems, selectedMenuIndex]);
+  }, [search, combinedSearchItems, selectedMenuIndex]);
 
   const enterAction2 = useCallback(() => {
     selectMenuIndex((currentIndex) => {
@@ -196,6 +195,7 @@ export default function ModalMenu() {
   };
 
   const keydownListener = (e: KeyboardEvent) => {
+    e.preventDefault();
     switch (e.key) {
       case "Enter": {
         enterAction();
