@@ -1,4 +1,18 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { globalStyle, keyframes, style } from "@vanilla-extract/css";
+
+const shaky = keyframes({
+  "0%": { transform: "rotate(0deg)" },
+
+  "20%": { transform: "rotate(-15deg)" },
+  "30%": { transform: "rotate(-5deg)" },
+  "40%": { transform: "rotate(-10deg)" },
+
+  "70%": { transform: "rotate(15deg)" },
+  "80%": { transform: "rotate(5deg)" },
+  "90%": { transform: "rotate(10deg)" },
+
+  "100%": { transform: "rotate(0deg)" },
+});
 
 export const container = style({
   cursor: "pointer",
@@ -23,6 +37,7 @@ export const circleFallback = style({
   borderColor: "var(--accentBackground)",
   backgroundColor: "var(--accentBackground)",
   filter: "brightness(120%)",
+  animation: `${shaky} 0.8s infinite ease`,
   //transform: "rotate(45deg)",
   // hmm
   //backgroundColor: "var(--foreground)",
