@@ -90,6 +90,31 @@ export default function Home({ posts }: Props) {
       );
     });
 
+  const renderedPaginations = (
+    <div className={styles.pagination}>
+      {paginations.map((item, index) => {
+        const isCurrentPage = String(page) === item;
+        const onClick = () => {
+          if (isCurrentPage) {
+            return;
+          }
+          pressPagination(item);
+        };
+        return (
+          <Button
+            className={
+              styles.paginationButton[isCurrentPage ? "currentPage" : "base"]
+            }
+            onClick={onClick}
+            key={index}
+          >
+            {String(item)}
+          </Button>
+        );
+      })}
+    </div>
+  );
+
   return (
     <Suspense fallback={"..."}>
       <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
@@ -98,28 +123,7 @@ export default function Home({ posts }: Props) {
         </div>
       </Link>
       <div className={styles.root}>{renderedPosts}</div>
-      <div className={styles.pagination}>
-        {paginations.map((item, index) => {
-          const isCurrentPage = String(page) === item;
-          const onClick = () => {
-            if (isCurrentPage) {
-              return;
-            }
-            pressPagination(item);
-          };
-          return (
-            <Button
-              className={
-                styles.paginationButton[isCurrentPage ? "currentPage" : "base"]
-              }
-              onClick={onClick}
-              key={index}
-            >
-              {String(item)}
-            </Button>
-          );
-        })}
-      </div>
+      {renderedPaginations}
     </Suspense>
   );
 }
