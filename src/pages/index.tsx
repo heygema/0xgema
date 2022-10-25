@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import * as styles from "../styles/index.css";
 //import ArticleCard from "../components/ArticleCard";
 import dynamic from "next/dynamic";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useMemo } from "react";
 import getPosts from "../helpers/getPosts";
 import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";
@@ -19,7 +19,7 @@ type Props = {
 };
 
 export default function Home({ posts }: Props) {
-  const { query } = useRouter();
+  const { query, push } = useRouter();
 
   const page = Number(String(query?.page)) || 1;
 
@@ -33,7 +33,57 @@ export default function Home({ posts }: Props) {
 
   const setPosts = usePostsStore((state) => state.setPosts);
 
-  const availablePaginations = [...Array(totalPages)].slice(offset - 2, limit);
+  // TODO
+  const getAvailablePagination = () => {
+    let availablePaginations: Array<string> = [...Array(totalPages)].map(
+      (_, index) => (index + 1).toString()
+    );
+
+    let currentPageIndex = availablePaginations.indexOf(page.toString());
+
+    availablePaginations = availablePaginations.slice(
+      currentPageIndex - 3,
+      currentPageIndex + 3
+    );
+
+    const showNext = page !== totalPages;
+
+    const showFirst = page !== 1;
+
+    const showPrev = page !== 1;
+
+    availablePaginations = [...availablePaginations, String(totalPages)];
+
+    if (showPrev) {
+      //availablePaginations = ["Previous", ...availablePaginations];
+    }
+
+    if (showNext) {
+      //availablePaginations = [
+      //...availablePaginations,
+      //String(totalPages),
+      //"Next",
+      //];
+    }
+
+    if (showFirst) {
+      //availablePaginations = ["First", ...availablePaginations];
+    }
+
+    availablePaginations = Array.from(new Set(availablePaginations));
+  };
+
+  const paginations = [...Array(totalPages)].map((_, index) =>
+    String(index + 1)
+  );
+
+  const pressPagination = (page: string) => {
+    push("/", {
+      query: {
+        page,
+      },
+    });
+  };
 
   useEffect(() => {
     setPosts(posts);
@@ -75,12 +125,13 @@ export default function Home({ posts }: Props) {
       </Link>
       <div className={styles.root}>{renderedPosts}</div>
       <div className={styles.pagination}>
-        <Button>First</Button>
-        {availablePaginations.map((_, index) => (
-          <Button key={index}>{String(index + 1)}</Button>
-        ))}
-
-        <Button>Last</Button>
+        {paginations.map((item, index) => {
+          return (
+            <Button onClick={() => pressPagination(item)} key={index}>
+              {String(item)}
+            </Button>
+          );
+        })}
       </div>
     </Suspense>
   );

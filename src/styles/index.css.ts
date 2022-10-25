@@ -53,16 +53,16 @@ export const cardSystemColorStyle = style({
 });
 
 const cardGridStyle = style({
+  "@media": {
+    [`(max-width: ${BREAKPOINTS.mobile})`]: {
+      gridColumn: "span 3",
+    },
+  },
   selectors: {
     "&:nth-child(4n-2)": {
       gridColumn: "span 2",
     },
     "&:nth-child(6n)": {
-      gridColumn: "span 3",
-    },
-  },
-  "@media": {
-    [`(max-width: ${BREAKPOINTS.mobile})`]: {
       gridColumn: "span 3",
     },
   },
