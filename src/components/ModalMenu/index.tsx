@@ -187,6 +187,22 @@ export default function ModalMenu() {
         enterAction();
         break;
       }
+      case "n": {
+        e.stopPropagation();
+        e.preventDefault();
+        if (e.ctrlKey) {
+          downHandler();
+          break;
+        }
+      }
+      case "p": {
+        e.stopPropagation();
+        e.preventDefault();
+        if (e.ctrlKey) {
+          upHandler();
+          break;
+        }
+      }
       case "ArrowUp": {
         e.preventDefault();
         upHandler();
