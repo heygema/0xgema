@@ -15,10 +15,10 @@ export default function CircleMenu() {
   const onClick = () => setOpen(true);
 
   const keyDown = (event: KeyboardEvent) => {
-    event.preventDefault();
     switch (event.key) {
       case "k": {
         if (event.metaKey) {
+          event.preventDefault();
           toggleOpen();
         }
         break;

@@ -195,17 +195,19 @@ export default function ModalMenu() {
   };
 
   const keydownListener = (e: KeyboardEvent) => {
-    e.preventDefault();
     switch (e.key) {
       case "Enter": {
+        e.preventDefault();
         enterAction();
         break;
       }
       case "ArrowUp": {
+        e.preventDefault();
         upHandler();
         break;
       }
       case "ArrowDown": {
+        e.preventDefault();
         downHandler();
         break;
       }

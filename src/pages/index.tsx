@@ -74,12 +74,7 @@ export default function Home({ posts }: Props) {
         </div>
       </Link>
       <div className={styles.root}>{renderedPosts}</div>
-      <div
-        style={{
-          paddingTop: "40px",
-          gap: 2,
-        }}
-      >
+      <div className={styles.pagination}>
         <Button>First</Button>
         {availablePaginations.map((_, index) => (
           <Button key={index}>{String(index + 1)}</Button>

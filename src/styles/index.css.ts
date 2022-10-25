@@ -1,4 +1,4 @@
-import { style, styleVariants } from "@vanilla-extract/css";
+import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
 import { BREAKPOINTS } from "../constant";
 import { globalVars } from "../styles/theme.css";
 
@@ -97,4 +97,18 @@ export const easterEggContainer = style({
 
 export const eggUnicorn = style({
   fontSize: "2rem",
+});
+
+export const pagination = style({
+  paddingTop: "40px",
+  gap: 2,
+});
+
+export const paginationButton = style({
+  paddingTop: "40px",
+  gap: 2,
+});
+
+globalStyle(`${pagination} > *`, {
+  marginRight: 10,
 });
