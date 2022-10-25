@@ -1,13 +1,13 @@
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import { Suspense, useEffect } from "react";
 
 import * as styles from "../styles/index.css";
 //import ArticleCard from "../components/ArticleCard";
-import dynamic from "next/dynamic";
-import { Suspense, useEffect } from "react";
 import getPosts from "../helpers/getPosts";
 import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";
-import Link from "next/link";
 import Button from "../components/Button";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
