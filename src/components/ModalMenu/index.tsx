@@ -160,27 +160,13 @@ export default function ModalMenu() {
     search
   );
 
-  const enterAction = useCallback(() => {
+  const enterAction = () => {
     if (!search) {
       menuItems[selectedMenuIndex]?.action();
     } else {
       combinedSearchItems[selectedMenuIndex]?.item?.action();
     }
-  }, [search, combinedSearchItems, selectedMenuIndex]);
-
-  const enterAction2 = useCallback(() => {
-    selectMenuIndex((currentIndex) => {
-      setSearch((search) => {
-        if (search) {
-          combinedSearchItems[currentIndex]?.item?.action();
-        } else {
-          menuItems[currentIndex]?.action();
-        }
-        return search;
-      });
-      return currentIndex;
-    });
-  }, [combinedSearchItems]);
+  };
 
   const downHandler = () => {
     const menuLength = search ? combinedMenuItems.length : menuItems.length;
@@ -223,7 +209,7 @@ export default function ModalMenu() {
     return () => {
       window.removeEventListener("keydown", keydownListener);
     };
-  }, []);
+  }, [selectedMenuIndex, search]);
 
   return (
     <motion.div
