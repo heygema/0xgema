@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import * as styles from "../styles/index.css";
 //import ArticleCard from "../components/ArticleCard";
 import dynamic from "next/dynamic";
-import { Suspense, useEffect, useMemo } from "react";
+import { Suspense, useEffect } from "react";
 import getPosts from "../helpers/getPosts";
 import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";

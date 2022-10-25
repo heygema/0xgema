@@ -48,7 +48,7 @@ const cardGridStyle = style({
   },
   "@media": {
     [`(max-width: ${BREAKPOINTS.mobile})`]: {
-      gridColumn: "span 3",
+      gridColumn: "span 3 !important",
     },
   },
 });
