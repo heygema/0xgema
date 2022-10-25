@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 
 import * as styles from "../styles/index.css";
 //import ArticleCard from "../components/ArticleCard";
@@ -19,9 +19,21 @@ type Props = {
 };
 
 export default function Home({ posts }: Props) {
-  const { query, push } = useRouter();
+  const { asPath, query, push } = useRouter();
 
-  const page = Number(String(query?.page)) || 1;
+  // tedious
+  let pageTarget: string;
+  const q = String(asPath.split("?").pop()).split("&");
+  const pageParamIndex = q.findIndex((value) => value.startsWith("page"));
+
+  if (q[pageParamIndex]) {
+    const [, target] = q[pageParamIndex]?.split("=");
+    pageTarget = target;
+  }
+
+  const page = !isNaN(Number(pageTarget))
+    ? Number(pageTarget)
+    : Number(String(query?.page)) || 1;
 
   const postPerPage = 6;
 
@@ -33,45 +45,7 @@ export default function Home({ posts }: Props) {
 
   const setPosts = usePostsStore((state) => state.setPosts);
 
-  // TODO
-  const getAvailablePagination = () => {
-    let availablePaginations: Array<string> = [...Array(totalPages)].map(
-      (_, index) => (index + 1).toString()
-    );
-
-    let currentPageIndex = availablePaginations.indexOf(page.toString());
-
-    availablePaginations = availablePaginations.slice(
-      currentPageIndex - 3,
-      currentPageIndex + 3
-    );
-
-    const showNext = page !== totalPages;
-
-    const showFirst = page !== 1;
-
-    const showPrev = page !== 1;
-
-    availablePaginations = [...availablePaginations, String(totalPages)];
-
-    if (showPrev) {
-      //availablePaginations = ["Previous", ...availablePaginations];
-    }
-
-    if (showNext) {
-      //availablePaginations = [
-      //...availablePaginations,
-      //String(totalPages),
-      //"Next",
-      //];
-    }
-
-    if (showFirst) {
-      //availablePaginations = ["First", ...availablePaginations];
-    }
-
-    availablePaginations = Array.from(new Set(availablePaginations));
-  };
+  // TODO: getAvailablePaginations()
 
   const paginations = [...Array(totalPages)].map((_, index) =>
     String(index + 1)
@@ -126,8 +100,14 @@ export default function Home({ posts }: Props) {
       <div className={styles.root}>{renderedPosts}</div>
       <div className={styles.pagination}>
         {paginations.map((item, index) => {
+          const onClick = () => {
+            if (pageTarget === item) {
+              return;
+            }
+            pressPagination(item);
+          };
           return (
-            <Button onClick={() => pressPagination(item)} key={index}>
+            <Button onClick={onClick} key={index}>
               {String(item)}
             </Button>
           );
