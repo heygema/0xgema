@@ -57,3 +57,7 @@ export const CircleStackGlow = style([
 ]);
 
 export const smiley = style({});
+
+globalStyle(`${smiley} > path`, {
+  stroke: "var(--accentForeground)",
+});
