@@ -100,7 +100,7 @@ export default function Home({ posts }: Props) {
       <div className={styles.root}>{renderedPosts}</div>
       <div className={styles.pagination}>
         {paginations.map((item, index) => {
-          const isCurrentPage = currentActualPage === item;
+          const isCurrentPage = String(page) === item;
           const onClick = () => {
             if (isCurrentPage) {
               return;
