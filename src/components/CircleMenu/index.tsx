@@ -2,19 +2,13 @@ import { motion } from "framer-motion";
 import * as styles from "./style.css";
 import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect } from "react";
 import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
 import { useModalStore } from "../../data/store";
 import ModalMenu from "../ModalMenu";
 
 export default function CircleMenu() {
-  const { isOpen, setOpen } = useModalStore((state) => state);
-
-  const openRef = useRef(isOpen);
-
-  useEffect(() => {
-    setOpen(isOpen);
-  }, [isOpen, openRef]);
+  const { isOpen, setOpen, toggleOpen } = useModalStore((state) => state);
 
   const closeModal = () => setOpen(false);
 
@@ -25,8 +19,7 @@ export default function CircleMenu() {
     switch (event.key) {
       case "k": {
         if (event.metaKey) {
-          console.log("What >", openRef.current);
-          setOpen(!openRef.current);
+          toggleOpen();
         }
         break;
       }

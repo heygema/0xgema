@@ -16,7 +16,9 @@ export const usePostsStore = create<State>((set) => ({
 export const useModalStore = create<{
   isOpen: boolean;
   setOpen: (input: boolean) => void;
+  toggleOpen: () => void;
 }>((set) => ({
   isOpen: false,
   setOpen: (isOpen) => set(() => ({ isOpen })),
+  toggleOpen: () => set((state) => ({ isOpen: !state.isOpen })),
 }));
