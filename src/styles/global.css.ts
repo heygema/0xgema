@@ -23,7 +23,7 @@ const baseFontFamily = `${jost}, -apple-system, BlinkMacSystemFont, Segoe UI, Ro
 
 globalStyle("html, body", {
   fontFamily: baseFontFamily,
-  fontWeight: 250,
+  fontWeight: 300,
   margin: 0,
   padding: 0,
   // NOTE: I like this media style, but..

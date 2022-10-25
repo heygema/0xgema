@@ -13,6 +13,7 @@ const BASE_COLORS = {
   blue: "#0423F7",
   green: "hsl(79, 100%, 58%)",
   gold: "#E8D9AC",
+  purplish: "hsl(239, 86%, 55%)",
 };
 
 export const globalVars = createGlobalTheme(":root", {
@@ -20,10 +21,9 @@ export const globalVars = createGlobalTheme(":root", {
     ...BASE_COLORS,
     genericTransparent: "hsla(0, 0%, 30%, 10%)",
     thinBorder: "hsla(200, 6%, 10%, 8%)",
-    lightThemeAccent: BASE_COLORS.blue,
+    lightThemeAccent: BASE_COLORS.purplish,
     darkThemeAccent: BASE_COLORS.green,
     // softer on the night
-    alternateDarkThemeAccent: "hsl(239, 86%, 55%)",
   },
   shadow: {
     mild: "0px 2px 5px rgba(0,0,0,0.25)",

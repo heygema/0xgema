@@ -1,6 +1,7 @@
 import { globalStyle, keyframes, style } from "@vanilla-extract/css";
 
-const shaky = keyframes({
+// NOTE: funny
+export const shaky = keyframes({
   "0%": { transform: "rotate(0deg)" },
 
   "20%": { transform: "rotate(-15deg)" },
@@ -37,7 +38,6 @@ export const circleFallback = style({
   borderColor: "var(--accentBackground)",
   backgroundColor: "var(--accentBackground)",
   filter: "brightness(120%)",
-  animation: `${shaky} 0.8s infinite ease`,
   //transform: "rotate(45deg)",
   // hmm
   //backgroundColor: "var(--foreground)",
@@ -57,7 +57,3 @@ export const CircleStackGlow = style([
 ]);
 
 export const smiley = style({});
-
-globalStyle(`${smiley} > path`, {
-  stroke: "var(--accentForeground)",
-});
