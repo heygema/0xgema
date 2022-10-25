@@ -22,17 +22,17 @@ export default function Home({ posts }: Props) {
   const { asPath, query, push } = useRouter();
 
   // tedious
-  let pageTarget: string;
+  let currentActualPage: string;
   const q = String(asPath.split("?").pop()).split("&");
   const pageParamIndex = q.findIndex((value) => value.startsWith("page"));
 
   if (q[pageParamIndex]) {
     const [, target] = q[pageParamIndex]?.split("=");
-    pageTarget = target;
+    currentActualPage = target;
   }
 
-  const page = !isNaN(Number(pageTarget))
-    ? Number(pageTarget)
+  const page = !isNaN(Number(currentActualPage))
+    ? Number(currentActualPage)
     : Number(String(query?.page)) || 1;
 
   const postPerPage = 6;
@@ -101,7 +101,7 @@ export default function Home({ posts }: Props) {
       <div className={styles.pagination}>
         {paginations.map((item, index) => {
           const onClick = () => {
-            if (pageTarget === item) {
+            if (currentActualPage === item) {
               return;
             }
             pressPagination(item);
