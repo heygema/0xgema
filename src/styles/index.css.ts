@@ -1,4 +1,5 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
+import { button } from "../components/Button/style.css";
 import { BREAKPOINTS } from "../constant";
 
 export const root = style({
@@ -35,9 +36,16 @@ export const pagination = style({
   gap: 2,
 });
 
-export const paginationButton = style({
-  paddingTop: "40px",
-  gap: 2,
+export const paginationButton = styleVariants({
+  base: [button],
+  currentPage: [
+    button,
+    {
+      backgroundColor: "var(--accentBackground)",
+      color: "var(--accentForeground)",
+      fontWeight: 800,
+    },
+  ],
 });
 
 globalStyle(`${pagination} > *`, {

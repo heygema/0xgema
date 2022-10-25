@@ -100,14 +100,21 @@ export default function Home({ posts }: Props) {
       <div className={styles.root}>{renderedPosts}</div>
       <div className={styles.pagination}>
         {paginations.map((item, index) => {
+          const isCurrentPage = currentActualPage === item;
           const onClick = () => {
-            if (currentActualPage === item) {
+            if (isCurrentPage) {
               return;
             }
             pressPagination(item);
           };
           return (
-            <Button onClick={onClick} key={index}>
+            <Button
+              className={
+                styles.paginationButton[isCurrentPage ? "currentPage" : "base"]
+              }
+              onClick={onClick}
+              key={index}
+            >
               {String(item)}
             </Button>
           );
