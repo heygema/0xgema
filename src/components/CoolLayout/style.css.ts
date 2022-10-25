@@ -2,7 +2,6 @@ import { style } from "@vanilla-extract/css";
 import { sprinkles } from "../../styles/sprinkles.css";
 
 export const navigation = style({
-  position: "fixed",
   width: "100%",
   top: 0,
   height: "4rem",
