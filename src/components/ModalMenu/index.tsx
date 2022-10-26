@@ -89,7 +89,7 @@ export default function ModalMenu() {
         title: "Twitter",
       },
       icon: <Icons.Twitter className={styles.homeIcon} />,
-      action: () => navigate("https://twitter.com/0xgema"),
+      action: () => window?.open("https://twitter.com/0xgema", "_blank"),
     },
 
     {
@@ -98,7 +98,7 @@ export default function ModalMenu() {
         title: "Github",
       },
       icon: <Icons.Github className={styles.menuIcon} />,
-      action: () => navigate("https://github.com/heygema"),
+      action: () => window?.open("https://github.com/heygema", "_blank"),
     },
     {
       type: MenuType.ACTION,
