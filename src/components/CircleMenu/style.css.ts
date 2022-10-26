@@ -20,15 +20,15 @@ export const container = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  height: "50px",
-  width: "50px",
+  height: "max-content",
+  width: "max-content",
   borderRadius: " 8px",
 });
 
 export const circleFallback = style({
   background: "transparent",
-  height: "40px",
-  width: "40px",
+  height: "45px",
+  width: "45px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
