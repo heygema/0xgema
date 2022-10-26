@@ -17,6 +17,7 @@ const cardBase = style({
   ":first-child": {
     backgroundColor: "var(--accentBackground)",
     color: "var(--accentForeground)",
+    fontWeight: 420,
   },
 });
 

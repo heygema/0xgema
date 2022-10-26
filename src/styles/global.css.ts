@@ -4,11 +4,17 @@ import { globalVars } from "./theme.css";
 
 const frauncesSB = "Fraunces Semi Bold";
 const oxygen = "Oxygen";
+const inter = "Inter";
 const nanumPen = "Nanum Pen";
 
 globalFontFace(frauncesSB, {
   src: "url(/assets/fonts/Fraunces/static/Fraunces_9pt_Soft/Fraunces_9pt_Soft-SemiBold.ttf)",
   fontStyle: "bold",
+});
+
+globalFontFace(inter, {
+  src: "url(/assets/fonts/Inter/static/Inter-Regular.ttf)",
+  fontStyle: "normal",
 });
 
 globalFontFace(oxygen, {
@@ -22,13 +28,13 @@ globalFontFace(nanumPen, {
 
 const baseSerifFamily = `${frauncesSB}, Georgia, serif`;
 
-const baseFontFamily = `${oxygen}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
+const baseFontFamily = `${inter}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
 
 globalStyle("html, body", {
   background: "var(--background)",
   color: "var(--foreground)",
   fontFamily: baseFontFamily,
-  fontWeight: 100,
+  fontWeight: 300,
   margin: 0,
   padding: 0,
   // NOTE: I like this media style, but..
