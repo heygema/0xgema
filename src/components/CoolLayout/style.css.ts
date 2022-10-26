@@ -28,7 +28,9 @@ export const menuContainer = style([
     paddingTop: 63,
     height: "5rem",
     display: "flex",
-    justifyContent: "flex-end",
+    //justifyContent: "flex-end",
+    // experiment on the center
+    justifyContent: "center",
     flexDirection: "row",
   }),
   mainResponsive,
