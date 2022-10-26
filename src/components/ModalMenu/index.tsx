@@ -134,6 +134,7 @@ export default function ModalMenu() {
 
   type CombinedItem = MenuItem | PostSearchItem;
 
+  // this is the complete ALL RAW not the searched value
   const combinedMenuItems: Array<CombinedItem> = useMemo(
     () => [
       ...(menuItems as Array<MenuItem>),
@@ -167,15 +168,27 @@ export default function ModalMenu() {
   };
 
   const downHandler = () => {
-    const menuLength = search ? combinedMenuItems.length : menuItems.length;
+    const menuLength = search ? combinedSearchItems.length : menuItems.length;
 
     selectMenuIndex((current) => {
+      if (current > menuLength - 1) {
+        return 0;
+      }
+
       return current < menuLength - 1 ? current + 1 : current;
     });
   };
 
   const upHandler = () => {
-    selectMenuIndex((current) => (current ? current - 1 : current));
+    const menuLength = search ? combinedSearchItems.length : menuItems.length;
+
+    selectMenuIndex((current) => {
+      if (current > menuLength - 1) {
+        return 0;
+      }
+
+      return current ? current - 1 : current;
+    });
   };
 
   const keydownListener = (e: KeyboardEvent) => {
@@ -185,6 +198,7 @@ export default function ModalMenu() {
         enterAction();
         break;
       }
+      case "j":
       case "n": {
         e.stopPropagation();
         e.preventDefault();
@@ -193,6 +207,7 @@ export default function ModalMenu() {
           break;
         }
       }
+      case "k":
       case "p": {
         e.stopPropagation();
         e.preventDefault();
@@ -223,7 +238,7 @@ export default function ModalMenu() {
     return () => {
       window.removeEventListener("keydown", keydownListener);
     };
-  }, [selectedMenuIndex, search]);
+  }, [combinedSearchItems, selectedMenuIndex, search]);
 
   return (
     <motion.div
