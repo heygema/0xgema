@@ -23,6 +23,11 @@ export default function CircleMenu() {
         }
         break;
       }
+      case "Escape": {
+        event.preventDefault();
+        closeModal();
+        break;
+      }
       default: {
         return;
       }

@@ -1,21 +1,33 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { promises as fs } from "fs";
 import { POST_DIR } from "../../constant";
 import path from "path";
 import getPosts from "../../helpers/getPosts";
 import { Posts } from "../../data/types";
 import { useSetPosts } from "../../hooks/useSetPosts";
+import Head from "next/head";
+import { marked } from "marked";
+import matter from "gray-matter";
 
 interface Props {
-  htmlString: string;
+  parsedMarkdown: matter.GrayMatterFile<string>;
   posts: Posts;
 }
 
-export default function Post({ posts, htmlString }: Props) {
+export default function Post({ posts }: Props) {
   // hacky way to make sure posts always available on search
   useSetPosts(posts);
 
-  return <h1>Post</h1>;
+  //const htmlString = marked(parsedMarkdown.content);
+
+
+  return (
+    <>
+      <Head>
+        <title>Post title</title>
+      </Head>
+    </>
+  );
 }
 
 export const getStaticPaths = async () => {
@@ -39,13 +51,13 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const postLocation = path.join(POST_DIR, slug + `/index` + ".mdx");
   const markdownWithMetadata = await fs.readFile(postLocation, "utf-8");
 
-  //   const parsedMarkdown = matter(markdownWithMetadata);
+  const parsedMarkdown = matter(markdownWithMetadata);
 
-  //   const htmlString = marked(parsedMarkdown.content);
+  console.log(">>>>", parsedMarkdown);
 
   return {
     props: {
-      htmlString: markdownWithMetadata,
+      //parsedMarkdown: JSON.stringify(parsedMarkdown),
       posts,
     },
   };
