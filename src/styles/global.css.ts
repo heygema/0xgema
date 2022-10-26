@@ -20,6 +20,8 @@ globalFontFace(nanumPen, {
   src: "url(/assets/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf)",
 });
 
+const baseSerifFamily = `${frauncesSB}, Georgia, serif`;
+
 const baseFontFamily = `${oxygen}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
 
 globalStyle("html, body", {
@@ -43,7 +45,7 @@ globalStyle("html, body", {
 });
 
 globalStyle("h1, h2, h3", {
-  fontFamily: frauncesSB + "," + baseFontFamily,
+  fontFamily: baseSerifFamily,
   fontWeight: 600,
 });
 globalStyle("h1", {
