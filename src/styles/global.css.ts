@@ -6,13 +6,7 @@ globalFontFace("Open Sans", {
   src: 'local("Open Sans")',
 });
 
-const ptSerif = "PT Serif Caption";
 const jost = "Jost";
-
-globalFontFace(ptSerif, {
-  src: "../.././public/assets/fonts/PT_Serif_Caption/PTSerifCaption-Regular.ttf",
-  fontWeight: 500,
-});
 
 globalFontFace(jost, {
   src: "../.././public/assets/fonts/Jost/static/Jost-Regular.ttf",
@@ -43,12 +37,12 @@ globalStyle("h1, h2, h3", {
   fontWeight: 600,
 });
 globalStyle("h1", {
-  fontSize: "3rem",
+  fontSize: "4rem",
 });
 globalStyle("h2", {
-  fontSize: "2.5rem",
+  fontSize: "3rem",
 });
-globalStyle("h1", {
+globalStyle("h3", {
   fontSize: "2rem",
 });
 
