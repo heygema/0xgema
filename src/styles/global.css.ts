@@ -2,9 +2,14 @@ import { globalFontFace, globalStyle } from "@vanilla-extract/css";
 import { BREAKPOINTS } from "../constant";
 import { globalVars } from "./theme.css";
 
+const frauncesSB = "Fraunces Semi Bold";
 const oxygen = "Oxygen";
 const nanumPen = "Nanum Pen";
-const ptSerif = "PT Serif";
+
+globalFontFace(frauncesSB, {
+  src: "url(/assets/fonts/Fraunces/static/Fraunces_9pt_Soft/Fraunces_9pt_Soft-SemiBold.ttf)",
+  fontStyle: "bold",
+});
 
 globalFontFace(oxygen, {
   src: "url(/assets/fonts/Oxygen/Oxygen-Regular.ttf)",
@@ -13,10 +18,6 @@ globalFontFace(oxygen, {
 
 globalFontFace(nanumPen, {
   src: "url(/assets/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf)",
-});
-
-globalFontFace(ptSerif, {
-  src: "url(/assets/fonts/PT_Serif_Caption/PTSerifCaption-Regular.ttf)",
 });
 
 const baseFontFamily = `${oxygen}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
@@ -42,11 +43,11 @@ globalStyle("html, body", {
 });
 
 globalStyle("h1, h2, h3", {
-  fontFamily: ptSerif + "," + baseFontFamily,
+  fontFamily: frauncesSB + "," + baseFontFamily,
   fontWeight: 600,
 });
 globalStyle("h1", {
-  fontFamily: nanumPen + "," + baseFontFamily,
+  //fontFamily: nanumPen + "," + baseFontFamily,
   fontSize: "4rem",
 });
 globalStyle("h2", {
