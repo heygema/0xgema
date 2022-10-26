@@ -88,7 +88,7 @@ globalStyle(`${menuIcon} > path`, {
 
 globalStyle(`${homeIcon} > path`, {
   stroke: "var(--foreground)",
-  strokeWidth: 1,
+  strokeWidth: 1.8,
 });
 
 const baseMenu = style({
