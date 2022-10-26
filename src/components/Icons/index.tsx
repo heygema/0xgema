@@ -1,4 +1,4 @@
-import { CiTwitter as Twitter } from "react-icons/ci";
+import { FiTwitter as Twitter } from "react-icons/fi";
 import {
   GrPersonalComputer as System,
   GrHomeRounded as Home,
