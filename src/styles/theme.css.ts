@@ -5,13 +5,13 @@ const BASE_COLORS = {
   grayish: "hsl(200, 6%, 10%)",
   "grayish-02": "hsl(200, 6%, 15%)",
   "grayish-02-transluscent": "hsla(200, 6%, 10%, 97%)",
-  black: "#111111",
-  white: "#ECEAE4",
+  black: "hsla(0, 0%, 7%, 87%)",
+  white: "hsla(45, 17%, 91%, 87%)",
   "white-2": "hsl(0, 0%, 93.0%)",
   "whiteish-transluscent": "hsla(200, 100%, 100%, 95%)",
   light: "#ECEAE4",
   blue: "#0423F7",
-  green: "hsl(79, 100%, 58%)",
+  lime: "hsl(79, 100%, 58%)",
   gold: "#E8D9AC",
   purplish: "hsl(239, 86%, 55%)",
 };
@@ -22,7 +22,7 @@ export const globalVars = createGlobalTheme(":root", {
     genericTransparent: "hsla(0, 0%, 30%, 10%)",
     thinBorder: "hsla(200, 6%, 10%, 8%)",
     lightThemeAccent: BASE_COLORS.purplish,
-    darkThemeAccent: BASE_COLORS.green,
+    darkThemeAccent: BASE_COLORS.lime,
     // softer on the night
   },
   shadow: {

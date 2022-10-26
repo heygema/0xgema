@@ -47,11 +47,10 @@ export const CircleStackGlow = style([
   circleFallback,
   {
     position: "absolute",
-    zIndex: -1,
     pointerEvents: "none",
     boxShadow: "var(--cmdKShadow)",
     filter: "var(--glowFilter)",
-    //transform: "scale(1.01)",
+    transform: "scale(1.01)",
     //borderColor: globalVars.colors["whiteish-transluscent"],
   },
 ]);

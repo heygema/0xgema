@@ -2,22 +2,30 @@ import { globalFontFace, globalStyle } from "@vanilla-extract/css";
 import { BREAKPOINTS } from "../constant";
 import { globalVars } from "./theme.css";
 
-globalFontFace("Open Sans", {
-  src: 'local("Open Sans")',
+const oxygen = "Oxygen";
+const nanumPen = "Nanum Pen";
+const ptSerif = "PT Serif";
+
+globalFontFace(oxygen, {
+  src: "url(/assets/fonts/Oxygen/Oxygen-Regular.ttf)",
+  fontStyle: "normal",
 });
 
-const jost = "Jost";
-
-globalFontFace(jost, {
-  src: "../.././public/assets/fonts/Jost/static/Jost-Regular.ttf",
-  fontWeight: 500,
+globalFontFace(nanumPen, {
+  src: "url(/assets/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf)",
 });
 
-const baseFontFamily = `${jost}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
+globalFontFace(ptSerif, {
+  src: "url(/assets/fonts/PT_Serif_Caption/PTSerifCaption-Regular.ttf)",
+});
+
+const baseFontFamily = `${oxygen}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
 
 globalStyle("html, body", {
+  background: "var(--background)",
+  color: "var(--foreground)",
   fontFamily: baseFontFamily,
-  fontWeight: 300,
+  fontWeight: 100,
   margin: 0,
   padding: 0,
   // NOTE: I like this media style, but..
@@ -34,9 +42,11 @@ globalStyle("html, body", {
 });
 
 globalStyle("h1, h2, h3", {
+  fontFamily: ptSerif + "," + baseFontFamily,
   fontWeight: 600,
 });
 globalStyle("h1", {
+  fontFamily: nanumPen + "," + baseFontFamily,
   fontSize: "4rem",
 });
 globalStyle("h2", {
