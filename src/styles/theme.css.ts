@@ -25,6 +25,8 @@ export const globalVars = createGlobalTheme(":root", {
     darkThemeAccent: BASE_COLORS.lime,
     gradientTheme1:
       "linear-gradient(90deg, rgba(0,255,12,1) 9%, rgba(98,255,7,1) 39%, rgba(162,108,205,0.9304315476190477) 69%, rgba(255,39,236,1) 100%)",
+    gradentPastelRainbow:
+      "linear-gradient(to right, rgba(0,0,0,0), teal), linear-gradient(to right, rgba(255,0,100,.3), rgba(255,100,127,.2)), linear-gradient(to top right, yellow, rgba(0,0,0,0)), radial-gradient(closest-corner at 20% 80%, yellow, red)",
     // softer on the night
   },
   shadow: {

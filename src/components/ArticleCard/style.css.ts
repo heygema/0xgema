@@ -15,7 +15,7 @@ const cardBase = style({
   placeItems: "center",
   textAlign: "left",
   ":first-child": {
-    backgroundColor: "var(--accentBackground)",
+    background: "var(--accentBackground)",
     color: "var(--accentForeground)",
     fontWeight: 420,
   },

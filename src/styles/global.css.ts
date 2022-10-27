@@ -55,7 +55,9 @@ globalStyle("h1, h2, h3", {
   fontWeight: 600,
 });
 globalStyle("h1", {
-  //fontFamily: nanumPen + "," + baseFontFamily,
+  //background: globalVars.colors.gradentPastelRainbow,
+  //WebkitBackgroundClip: "text",
+  //WebkitTextFillColor: "transparent",
   fontSize: "4rem",
 });
 globalStyle("h2", {
@@ -88,7 +90,7 @@ globalStyle("[data-theme='dark']", {
     "--background": globalVars.colors.grayish,
     "--foreground": globalVars.colors.white,
 
-    "--accentBackground": globalVars.colors.darkThemeAccent,
+    "--accentBackground": globalVars.colors.gradentPastelRainbow,
     "--accentForeground": globalVars.colors.black,
 
     "--glowFilter": "blur(3.5px)",

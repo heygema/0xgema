@@ -26,17 +26,13 @@ export const container = style({
 });
 
 export const circleFallback = style({
-  background: "transparent",
   height: "45px",
   width: "45px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   borderRadius: "10px",
-  borderWidth: "3.7px",
-  borderStyle: "solid",
-  borderColor: "var(--accentBackground)",
-  backgroundColor: "var(--accentBackground)",
+  background: "var(--accentBackground)",
   filter: "brightness(120%)",
   //transform: "rotate(45deg)",
   // hmm

@@ -41,7 +41,7 @@ export const paginationButton = styleVariants({
   currentPage: [
     button,
     {
-      backgroundColor: "var(--accentBackground)",
+      background: "var(--accentBackground)",
       color: "var(--accentForeground)",
       fontWeight: 800,
     },
