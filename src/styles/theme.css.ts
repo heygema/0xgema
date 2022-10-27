@@ -23,6 +23,8 @@ export const globalVars = createGlobalTheme(":root", {
     thinBorder: "hsla(200, 6%, 10%, 8%)",
     lightThemeAccent: BASE_COLORS.purplish,
     darkThemeAccent: BASE_COLORS.lime,
+    gradientTheme1:
+      "linear-gradient(90deg, rgba(0,255,12,1) 9%, rgba(98,255,7,1) 39%, rgba(162,108,205,0.9304315476190477) 69%, rgba(255,39,236,1) 100%)",
     // softer on the night
   },
   shadow: {
