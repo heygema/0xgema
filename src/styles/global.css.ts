@@ -73,7 +73,7 @@ globalStyle(":root", {
     "--background": globalVars.colors.white,
     "--foreground": globalVars.colors.black,
 
-    "--accentBackground": globalVars.colors.lightThemeAccent,
+    "--accentBackground": globalVars.colors.blue,
     "--accentForeground": globalVars.colors.white,
 
     // it's the glowing effect for cmd k button
