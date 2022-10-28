@@ -200,18 +200,18 @@ export default function ModalMenu() {
       }
       case "j":
       case "n": {
-        e.stopPropagation();
-        e.preventDefault();
         if (e.ctrlKey) {
+          e.stopPropagation();
+          e.preventDefault();
           downHandler();
           break;
         }
       }
       case "k":
       case "p": {
-        e.stopPropagation();
-        e.preventDefault();
         if (e.ctrlKey) {
+          e.stopPropagation();
+          e.preventDefault();
           upHandler();
           break;
         }
