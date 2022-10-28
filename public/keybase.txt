@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/gemx
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://gema.monster
+  * I am gemx (https://keybase.io/gemx) on keybase.
+  * I have a public key with fingerprint D744 BA16 5466 78F3 C0FC  A549 6639 42C9 5F35 3332
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120730084d3df8f3d15fca6a87be2112355f25a9e63b7503f32a6a1f9c4d51c21560a",
+      "fingerprint": "d744ba16546678f3c0fca549663942c95f353332",
+      "host": "keybase.io",
+      "key_id": "663942c95f353332",
+      "kid": "01012504662b8aa6743cd843e3000ec3cd77933c182571dd21770636c865630100d40a",
+      "uid": "ea3f87225d6b8a4e2ba490136fa0d319",
+      "username": "gemx"
+    },
+    "service": {
+      "hostname": "gema.monster",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1666956074,
+  "expire_in": 157680000,
+  "prev": "7596c09b26f39d282a949f459e4ac7f05fce5ccc915a783830e0a72a50e9394a",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNwAnicbZJ/UBRlGMcPFEMGFaVS5AJndQiQcHfffffHTSCDJZ2MEymQ8cNzb/dd
+2FH2jr3jRC7QKDV1aqbG0MauxihIw2CQsnAqyasQrUGQCkpvgCPHkgl/EAgCvcfk
+9E9/vfO+z/f7eb/P877eBXMMYUGKkH7BAgEddLHtcJlByj+b6CasNnkXYXIT29Hs
+gnbIyOG0bFdlwkSQFE1ygCR5RgaywitApqAiiazIc1ZEUxQNIFRoKAqIBVYOkkAB
+NK5SiiAxMqQkmoIsKRJJhKJqRUi366rmxFiZYxirSLGQYVkOUyUSQyEjsCwQGFoS
+oAIgAIDGxmKbI+DA4ayiAyWrNnyGN5bZeP+jf5AbJ4ckxtNWXhRZjgGSzDMA4V5I
+JOENxwkASBRPQ46SZZriOJIFrMSzkAXYTcrMbO6yWRwSgcJzNA1lFuMYRFtFRiAp
+wCoiKQNKCAgdSNfEEoTVRaiknKhMIvCJS5VQYKiBLv6risklNs3hRDr22XWb0ybZ
+duBKsdNpd5gCTucue0C6E1kt/0IsVlWT8Qyxw4V0h2rTCBOFlZJTDVAplmUFPGqO
+SSJQuV3VkUUNKCDH8rhjMnAPcmEkBwVWIgUrzSpAkGmeFgVGUBgoIEaUOIXEr4ug
+JEkCBUWOBzwgESlytAhJJOBZB0biQKWaDbPxVU6xCDMdapEmOst0RFR+01Yw1xAU
+ZpgXEhz4XIaw+REPvty3UYtm0j35HekLIwYjqozP5CVmmz+zrzi5Kbh7ssK8dPRL
+8zJxZG/atZXLnux2re/pH2vMjj00dl931NR8mB+x3/VczGXjUF9Ohv3QTtfeoZ7F
+NVmrp909N4nMg+8fHz8+s2RVwoov/p4wf9J3rmHT7oO15+LbqlytgxVzw8m8795u
+rEq8daB5YcoNd8UZ1+DDAzFHoy4ODzTdrX2s8vSn/qLUU3bvquVZi+tfPPJzh+vY
+/ncaXqcy5sT+kDCee+W1akLKgNeDX/ltTcGJ0tDetaXx06ETprzqO/5OH1rTurTe
+6zP2d3MbjJfHPJr20kdSeubUdM6C2mHNpKtX280922qjQ/1XTNTtJo8v+uiZyKTf
+D//qH97zwl8xjZPeZzevNmz5+pLvau6tkMK4JXeqIhO2RRc0hI2M3L9W8OP51PD4
+0+3eRaXPz7zVatx4qnjdEXi2a3Srd6OQ+IZ5bKImdN/awdaPt6aED5Znujc3jYeW
+1d3sfbevko7d3eVI6713/g9fzAfv1f+5vuFVX9pXfEXcys51dQPH2k8un/dmMVWd
+f/uhwnWPgIGZ7MjYn/rgSN9ETsvnJ+omKpq/7+oJ6fA8YYq7kZHeqUdG+XMak/dk
+z/eYQOoWU7OrJdtz7+Xrk1ORElnd4v/FlubcEPL4FHVAv5t7wQhKH43fl9rvlkIE
+LWs0LuWpwiGbm8t5+tI/1Ou9LA==
+=ZeK4
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gemx
+
+========================================
