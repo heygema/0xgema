@@ -61,10 +61,10 @@ globalStyle("h1", {
   fontSize: "4rem",
 });
 globalStyle("h2", {
-  fontSize: "3rem",
+  fontSize: "2.5rem",
 });
 globalStyle("h3", {
-  fontSize: "2rem",
+  fontSize: "1.8rem",
 });
 globalStyle("a", {
   background: "var(--accentBackground)",
