@@ -8,7 +8,7 @@ import getPosts from "../helpers/getPosts";
 import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";
 import Button from "../components/Button";
-import { Card } from "../core-ui";
+import { Card, Loading } from "../core-ui";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
   suspense: true,
@@ -129,7 +129,7 @@ export default function Home({ posts }: Props) {
   );
 
   return (
-    <Suspense fallback={"..."}>
+    <Suspense fallback={<Loading />}>
       <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
         <div className={styles.easterEggContainer}>
           <span className={styles.eggUnicorn}>🥚🦄</span>

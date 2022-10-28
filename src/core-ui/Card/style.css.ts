@@ -23,6 +23,14 @@ const center = style({
 export const cardVariant = styleVariants({
   normal: [center, card],
   empty: [center],
+  emptyPadded: [
+    center,
+    {
+      padding: "40px",
+      boxShadow: "none",
+      background: "none",
+    },
+  ],
   bio: [
     card,
     {

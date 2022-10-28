@@ -6,6 +6,7 @@ import { Suspense, useEffect } from "react";
 import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
 import { useModalStore } from "../../data/store";
 import ModalMenu from "../ModalMenu";
+import { Loading } from "../../core-ui/Loading";
 
 export default function CircleMenu() {
   const { isOpen, setOpen, toggleOpen } = useModalStore((state) => state);
@@ -69,7 +70,7 @@ export default function CircleMenu() {
       modal
       position="right center"
     >
-      <Suspense fallback="...">
+      <Suspense fallback={<Loading />}>
         <ModalMenu />
       </Suspense>
     </Popup>
