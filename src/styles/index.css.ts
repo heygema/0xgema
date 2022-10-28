@@ -37,6 +37,7 @@ export const pagination = style({
 });
 
 const onHover = style({
+  transition: "opacity 0.1s ease-in",
   ":hover": {
     opacity: "0.8",
   },
@@ -48,13 +49,11 @@ export const paginationButton = styleVariants({
     button,
     onHover,
     {
-      //background: "var(--accentBackground)",
-      //color: "var(--accentForeground)",
-      fontWeight: 800,
       background: "var(--accentBackground)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      transition: "opacity 0.1s ease-in",
+      color: "var(--accentForeground)",
+      fontWeight: 800,
+      //WebkitBackgroundClip: "text",
+      //WebkitTextFillColor: "transparent",
     },
   ],
 });
