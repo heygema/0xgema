@@ -8,6 +8,7 @@ import { VscGithubAlt as Github } from "react-icons/vsc";
 import { RiSkullLine as About } from "react-icons/ri";
 import { BiMoon as Night } from "react-icons/bi";
 import { BsSun as Day } from "react-icons/bs";
+import { AiOutlineLinkedin } from "react-icons/ai";
 
 import * as styles from "./style.css";
 import { IconBaseProps } from "react-icons";
@@ -32,4 +33,5 @@ export const Icons = {
     <Night {...props} className={styles.menuIcon} />
   ),
   Day: (props: IconBaseProps) => <Day {...props} className={styles.menuIcon} />,
+  Linkedin: (props: IconBaseProps) => <AiOutlineLinkedin {...props} />,
 };
