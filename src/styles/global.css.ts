@@ -124,6 +124,7 @@ globalStyle("body::-webkit-scrollbar-thumb", {
 
 globalStyle("*", {
   boxSizing: "border-box",
+  WebkitTapHighlightColor: "transparent",
 });
 
 globalStyle("a", {
