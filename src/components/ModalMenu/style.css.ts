@@ -78,19 +78,6 @@ export const menuItem = styleVariants({
   ],
 });
 
-export const menuIcon = style({});
-
-export const homeIcon = style({});
-
-globalStyle(`${menuIcon} > path`, {
-  stroke: "var(--foreground)",
-});
-
-globalStyle(`${homeIcon} > path`, {
-  stroke: "var(--foreground)",
-  strokeWidth: 1.8,
-});
-
 const baseMenu = style({
   marginLeft: "0.5rem",
   fontSize: "0.9rem",

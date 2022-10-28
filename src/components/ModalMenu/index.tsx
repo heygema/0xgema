@@ -68,7 +68,7 @@ export default function ModalMenu() {
   const menuItems: Array<MenuItem> = [
     {
       type: MenuType.ACTION,
-      icon: <Icons.Home className={styles.homeIcon} />,
+      icon: <Icons.Home />,
       menu: {
         title: "Home",
       },
@@ -76,7 +76,7 @@ export default function ModalMenu() {
     },
     {
       type: MenuType.ACTION,
-      icon: <Icons.About className={styles.menuIcon} />,
+      icon: <Icons.About />,
       menu: {
         title: "About",
       },
@@ -88,7 +88,7 @@ export default function ModalMenu() {
       menu: {
         title: "Twitter",
       },
-      icon: <Icons.Twitter className={styles.homeIcon} />,
+      icon: <Icons.Twitter />,
       action: () => window?.open("https://twitter.com/0xgema", "_blank"),
     },
 
@@ -97,7 +97,7 @@ export default function ModalMenu() {
       menu: {
         title: "Github",
       },
-      icon: <Icons.Github className={styles.menuIcon} />,
+      icon: <Icons.Github />,
       action: () => window?.open("https://github.com/heygema", "_blank"),
     },
     {
@@ -105,7 +105,7 @@ export default function ModalMenu() {
       menu: {
         title: "Switch to Light Theme",
       },
-      icon: <Icons.Day className={styles.menuIcon} />,
+      icon: <Icons.Day />,
       action: () => setTheme?.("light"),
     },
     {
@@ -113,7 +113,7 @@ export default function ModalMenu() {
       menu: {
         title: "Switch to Dark Theme",
       },
-      icon: <Icons.Night className={styles.menuIcon} />,
+      icon: <Icons.Night />,
       action: () => setTheme?.("dark"),
     },
     {
@@ -121,7 +121,7 @@ export default function ModalMenu() {
       menu: {
         title: "Switch to System Theme",
       },
-      icon: <Icons.System className={styles.menuIcon} />,
+      icon: <Icons.System />,
       action: () => setTheme?.("system"),
     },
   ];
