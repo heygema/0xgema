@@ -50,21 +50,37 @@ globalStyle("html, body", {
   //},
 });
 
+const getMobileFontSize = (baseNumber = 0) => ({
+  "@media": {
+    [`(max-width: ${BREAKPOINTS.mobile})`]: {
+      fontSize: `${baseNumber - 1}rem`,
+    },
+  },
+});
+
 globalStyle("h1, h2, h3", {
   fontFamily: baseSerifFamily,
   fontWeight: 600,
 });
+
 globalStyle("h1", {
   //background: globalVars.colors.gradentPastelRainbow,
   //WebkitBackgroundClip: "text",
   //WebkitTextFillColor: "transparent",
   fontSize: "4rem",
+  ...getMobileFontSize(4),
 });
 globalStyle("h2", {
   fontSize: "2.5rem",
+  ...getMobileFontSize(2.5),
 });
 globalStyle("h3", {
   fontSize: "1.8rem",
+  ...getMobileFontSize(1.8),
+});
+globalStyle("p", {
+  // 1.9 -> results in 0.9
+  ...getMobileFontSize(1.9),
 });
 globalStyle("a", {
   background: "var(--accentBackground)",
