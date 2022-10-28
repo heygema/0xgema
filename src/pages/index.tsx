@@ -8,6 +8,7 @@ import getPosts from "../helpers/getPosts";
 import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";
 import Button from "../components/Button";
+import { Card } from "../core-ui";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
   suspense: true,
@@ -30,9 +31,12 @@ export default function Home({ posts }: Props) {
     currentActualPage = target;
   }
 
-  const page = !isNaN(Number(currentActualPage))
-    ? Number(currentActualPage)
-    : Number(String(query?.page)) || 1;
+  const currentPageNumber = Number(currentActualPage);
+
+  const page =
+    !isNaN(currentPageNumber) && currentPageNumber > 0
+      ? Number(currentActualPage)
+      : Number(String(query?.page)) || 1;
 
   const postPerPage = 6;
 
@@ -62,9 +66,18 @@ export default function Home({ posts }: Props) {
     setPosts(posts);
   }, []);
 
-  const renderedPosts = posts
-    .slice(offset, limit)
-    .map(({ slug, title, excerpt, ...info }, index) => {
+  const availablePost = posts.slice(offset, limit);
+
+  if (!availablePost.length) {
+    return (
+      <Card variant="empty">
+        <h2>No Post</h2>
+      </Card>
+    );
+  }
+
+  const renderedPosts = availablePost.map(
+    ({ slug, title, excerpt, ...info }, index) => {
       const year = new Date(info.date).toLocaleString("en-US", {
         year: "numeric",
       });
@@ -87,7 +100,8 @@ export default function Home({ posts }: Props) {
           year={year}
         />
       );
-    });
+    }
+  );
 
   const renderedPaginations = (
     <div className={styles.pagination}>
