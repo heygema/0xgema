@@ -206,6 +206,7 @@ export default function ModalMenu() {
           downHandler();
           break;
         }
+        break;
       }
       case "k":
       case "p": {
@@ -215,6 +216,7 @@ export default function ModalMenu() {
           upHandler();
           break;
         }
+        break;
       }
       case "ArrowUp": {
         e.preventDefault();
