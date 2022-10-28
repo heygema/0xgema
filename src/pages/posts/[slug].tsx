@@ -20,7 +20,6 @@ export default function Post({ posts }: Props) {
 
   //const htmlString = marked(parsedMarkdown.content);
 
-
   return (
     <>
       <Head>
@@ -52,8 +51,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMetadata = await fs.readFile(postLocation, "utf-8");
 
   const parsedMarkdown = matter(markdownWithMetadata);
-
-  console.log(">>>>", parsedMarkdown);
 
   return {
     props: {
