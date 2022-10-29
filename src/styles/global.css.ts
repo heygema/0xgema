@@ -3,23 +3,19 @@ import { BREAKPOINTS } from "../constant";
 import { globalVars } from "./theme.css";
 
 const frauncesSB = "Fraunces Semi Bold";
-const oxygen = "Oxygen";
 const inter = "Inter";
 const nanumPen = "Nanum Pen";
 
 globalFontFace(frauncesSB, {
   src: "url(/assets/fonts/Fraunces/static/Fraunces_9pt_Soft/Fraunces_9pt_Soft-SemiBold.ttf)",
   fontStyle: "bold",
+  fontDisplay: "swap",
 });
 
 globalFontFace(inter, {
   src: "url(/assets/fonts/Inter/static/Inter-Regular.ttf)",
   fontStyle: "normal",
-});
-
-globalFontFace(oxygen, {
-  src: "url(/assets/fonts/Oxygen/Oxygen-Regular.ttf)",
-  fontStyle: "normal",
+  fontDisplay: "swap",
 });
 
 globalFontFace(nanumPen, {
