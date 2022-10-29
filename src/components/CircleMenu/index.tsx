@@ -57,7 +57,7 @@ export default function CircleMenu() {
             scale: 0.9,
           }}
           className={styles.container}
-          aria-label="menu-button"
+          role="button"
         >
           <div className={styles.CircleStackGlow} />
           <div className={styles.CircleStackGlow} />
