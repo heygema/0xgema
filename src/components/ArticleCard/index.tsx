@@ -30,6 +30,8 @@ export default function ArticleCard({
       <motion.div
         aria-label="article-card"
         drag={isDraggable}
+        dragElastic={0.1}
+        dragMomentum={false}
         variants={{
           hidden: {
             opacity: 0,
