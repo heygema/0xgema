@@ -1,0 +1,49 @@
+---
+title: Rando Docker stuff 
+tags: #programming 
+topics: [[Javascript MOC]]
+date: 2022-10-30
+excerpt: Docker Cheat sheet
+
+---
+
+here lies some cheat sheet
+
+```bash
+docker run --name xmachina -d -p 80:8080 ubuntu /bin/sh -c "while true; do ping 8.8.8.8; done"
+
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
+docker exec -it xmachina /bin/bash
+```
+
+left side is host's port, right side is docker's port
+[Reference SQL](https://bytearcher.com/articles/create-new-postgresql-database-instance-using-docker/)
+Quick PostgreSQL [[202102101304-SQL Cheat sheet]]
+```bash
+ docker run --name app-postgres \
+             --env POSTGRES_USER=app_dev \
+             --env POSTGRES_PASSWORD=e1bc9e7f864d \
+             --publish 127.0.0.1:5432:5432 \
+             --detach \
+             --restart unless-stopped \
+             postgres:13
+
+```
+
+mount to outside volume
+```bash
+docker run --name pg-node-orms -p 5432:5432 -e POSTGRES\_PASSWORD=hunter12 -e POSTGRES\_USER=orm-user -e POSTGRES\_DB=orm-db -v ~/data/pg-node-orms:/var/lib/postgresql/data -d
+
+```
+
+any update
+```bash
+docker update --restart=unless-stopped $(docker ps -a -q)
+```
+
+elastic
+```bash
+docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.15.1
+```

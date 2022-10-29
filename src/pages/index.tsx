@@ -144,6 +144,7 @@ export default function Home({ posts }: Props) {
 export async function getStaticProps() {
   try {
     let posts = await getPosts();
+
     return {
       props: {
         posts,
