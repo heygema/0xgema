@@ -23,8 +23,13 @@ export function Social() {
 
   return (
     <div className={styles.root}>
-      {links.map(({ href, label, icon }) => (
-        <Link aria-label={label} href={href} target="_blank">
+      {links.map(({ href, label, icon }, index) => (
+        <Link
+          key={`${label}-${index}`}
+          aria-label={label}
+          href={href}
+          target="_blank"
+        >
           {icon}
         </Link>
       ))}
