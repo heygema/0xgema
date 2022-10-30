@@ -17,7 +17,7 @@ export const blockquote = style({
   fontStyle: "italic",
   borderLeft: `10px solid ${globalVars.colors["grayish-02-transluscent-02"]}`,
   opacity: 0.6,
-  margin: "1.5em 2px",
+  margin: "2rem 2px 2rem 2.5rem",
   padding: "1.5rem 2rem",
   quotes: `red`,
 });
