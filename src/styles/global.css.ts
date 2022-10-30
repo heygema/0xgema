@@ -77,12 +77,6 @@ globalStyle("h3", {
 globalStyle("p", {
   ...getMobileFontSize(1),
 });
-globalStyle("a", {
-  background: "var(--accentBackground)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  transition: "opacity 0.1s ease-in",
-});
 globalStyle(".no-highlight", {
   color: "black !imporant",
 });
