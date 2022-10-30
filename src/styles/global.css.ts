@@ -49,7 +49,7 @@ globalStyle("html, body", {
 const getMobileFontSize = (baseNumber = 0) => ({
   "@media": {
     [`(max-width: ${BREAKPOINTS.mobile})`]: {
-      fontSize: `${baseNumber - 1}rem`,
+      fontSize: `${baseNumber - 0.2}rem`,
     },
   },
 });
@@ -75,8 +75,7 @@ globalStyle("h3", {
   ...getMobileFontSize(1.8),
 });
 globalStyle("p", {
-  // 1.9 -> results in 0.9
-  ...getMobileFontSize(1.9),
+  ...getMobileFontSize(1),
 });
 globalStyle("a", {
   background: "var(--accentBackground)",
