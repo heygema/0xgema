@@ -21,6 +21,7 @@ export const project = style([
     flexDirection: "column",
     transition: "transform 0.2s ease",
     textAlign: "left",
+    cursor: "pointer",
     ":hover": {
       transform: "scale(1.03)",
     },
