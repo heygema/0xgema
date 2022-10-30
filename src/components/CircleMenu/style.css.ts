@@ -33,10 +33,7 @@ export const circleFallback = style({
   alignItems: "center",
   borderRadius: "10px",
   background: "var(--accentBackground)",
-  filter: "brightness(120%)",
-  //transform: "rotate(45deg)",
-  // hmm
-  //backgroundColor: "var(--foreground)",
+  zIndex: "1",
 });
 
 export const CircleStackGlow = style([
@@ -47,7 +44,6 @@ export const CircleStackGlow = style([
     boxShadow: "var(--cmdKShadow)",
     filter: "var(--glowFilter)",
     transform: "scale(1.01)",
-    //borderColor: globalVars.colors["whiteish-transluscent"],
   },
 ]);
 
