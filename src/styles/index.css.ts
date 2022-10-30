@@ -43,9 +43,15 @@ const onHover = style({
   },
 });
 
+const circle = style({
+  borderRadius: "3px",
+  textAlign: "center",
+});
+
 export const paginationButton = styleVariants({
-  base: [button, onHover],
+  base: [circle, button, onHover],
   currentPage: [
+    circle,
     button,
     onHover,
     {
