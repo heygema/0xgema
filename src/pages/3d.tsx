@@ -24,6 +24,9 @@ export default function D() {
           borderRadius: "100%",
         }}
         className=""
+        camera={{
+          position: [0, 0, 0],
+        }}
       >
         <Suspense fallback={"Loading..."}>
           <ambientLight />
