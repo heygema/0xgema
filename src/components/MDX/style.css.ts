@@ -10,6 +10,7 @@ export const link = style({
 
 export const blockquote = style({
   borderRadius: "8px",
+  maxWidth: "450px",
   background: globalVars.colors.blockquote,
   fontWeight: 400,
   fontSize: "0.9rem",

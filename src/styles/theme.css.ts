@@ -25,7 +25,7 @@ export const globalVars = createGlobalTheme(":root", {
     transluscent: "hsla(0, 0%, 30%, 10%)",
     genericTransparent: "hsla(0, 0%, 30%, 10%)",
     thinBorder: "hsla(200, 6%, 10%, 8%)",
-    blockquote: "hsla(0, 0%, 74%, 50%)",
+    blockquote: "hsla(0, 0%, 74%, 20%)",
     lightThemeAccent: BASE_COLORS.purplish,
     darkThemeAccent: BASE_COLORS.lime,
     orange: "#F78D42",
