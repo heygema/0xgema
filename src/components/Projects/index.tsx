@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import * as styles from "../Social/style.css";
+import * as styles from "./style.css";
 
 export function Projects() {
   const projects = [
