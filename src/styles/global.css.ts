@@ -84,6 +84,9 @@ globalStyle("a", {
   WebkitTextFillColor: "transparent",
   transition: "opacity 0.1s ease-in",
 });
+globalStyle(".no-highlight", {
+  color: "black !imporant",
+});
 globalStyle("a:hover", {
   opacity: 0.8,
 });
@@ -112,7 +115,6 @@ globalStyle("[data-theme='dark']", {
     "--foreground": globalVars.colors.white,
 
     "--accentBackground": globalVars.colors.gradentPastelRainbow,
-    "--accentBorder": `3px solid ${globalVars.colors.orange}`,
     "--accentForeground": globalVars.colors.black,
 
     "--glowFilter": "blur(3.5px)",
