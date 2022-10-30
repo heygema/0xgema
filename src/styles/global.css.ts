@@ -91,7 +91,7 @@ globalStyle("a:hover", {
 // following https://github.com/pacocoursey/next-themes pattern
 globalStyle(":root", {
   vars: {
-    "--background": globalVars.colors.white,
+    "--background": globalVars.colors.cream,
     "--foreground": globalVars.colors.black,
 
     "--accentBackground": globalVars.colors.blue,
@@ -112,6 +112,7 @@ globalStyle("[data-theme='dark']", {
     "--foreground": globalVars.colors.white,
 
     "--accentBackground": globalVars.colors.gradentPastelRainbow,
+    "--accentBorder": `3px solid ${globalVars.colors.orange}`,
     "--accentForeground": globalVars.colors.black,
 
     "--glowFilter": "blur(3.5px)",

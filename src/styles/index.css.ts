@@ -50,6 +50,7 @@ export const paginationButton = styleVariants({
     onHover,
     {
       background: "var(--accentBackground)",
+      border: "var(--accentBorder)",
       color: "var(--accentForeground)",
       fontWeight: 800,
       //WebkitBackgroundClip: "text",
