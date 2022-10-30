@@ -1,18 +1,10 @@
 import { style } from "@vanilla-extract/css";
-import * as stylesSocial from "../Social/style.css";
-import * as stylesCard from "../../.././src/core-ui/Card/style.css";
+import * as styles from "../../.././src/core-ui/Card/style.css";
 
-const styles = {
-  ...stylesSocial,
-  ...stylesCard,
-};
-
-export const root = style([
-  styles.root,
-  {
-    justifyContent: "normal",
-  },
-]);
+export const root = style({
+  display: "flex",
+  alignItems: "center",
+});
 
 export const display = style({
   borderTopLeftRadius: "12px",
@@ -29,6 +21,7 @@ export const project = style([
     flexDirection: "column",
     transition: "transform 0.2s ease",
     textAlign: "left",
+    cursor: "pointer",
     ":hover": {
       transform: "scale(1.03)",
     },

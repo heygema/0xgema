@@ -1,7 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 
-import * as styles from "../../core-ui/Card/style.css";
-
 export const root = style({
   display: "flex",
   justifyContent: "center",
@@ -10,4 +8,6 @@ export const root = style({
 
 globalStyle(`${root} > *`, {
   cursor: "pointer",
+  marginLeft: "0.3rem",
+  marginRight: "0.3rem",
 });
