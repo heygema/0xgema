@@ -10,21 +10,23 @@ import { marked } from "marked";
 import matter from "gray-matter";
 
 interface Props {
-  parsedMarkdown: matter.GrayMatterFile<string>;
+  data: matter.GrayMatterFile<string>["data"];
+  slug: string;
+  content: string;
   posts: Posts;
 }
 
-export default function Post({ posts }: Props) {
+export default function Post({ posts, content, data }: Props) {
   // hacky way to make sure posts always available on search
   useSetPosts(posts);
-
-  //const htmlString = marked(parsedMarkdown.content);
 
   return (
     <>
       <Head>
-        <title>Post title</title>
+        <title>{data?.title}</title>
       </Head>
+      <h1>{data?.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: marked(content) }} />
     </>
   );
 }
@@ -48,14 +50,22 @@ export const getStaticProps = async ({ params: { slug } }) => {
   let posts = await getPosts();
 
   const postLocation = path.join(POST_DIR, slug + `/index` + ".mdx");
+
   const markdownWithMetadata = await fs.readFile(postLocation, "utf-8");
 
   const parsedMarkdown = matter(markdownWithMetadata);
 
+  const data = {
+    ...parsedMarkdown.data,
+    date: new Date(parsedMarkdown.data.date).toISOString(),
+  };
+
   return {
     props: {
-      //parsedMarkdown: JSON.stringify(parsedMarkdown),
+      slug,
+      content: parsedMarkdown.content,
       posts,
+      data,
     },
   };
 };
