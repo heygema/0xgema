@@ -6,6 +6,11 @@ export const link = style({
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   transition: "opacity 0.1s ease-in",
+  ":hover": {
+    textDecoration: "underline",
+    textDecorationStyle: "wavy",
+    textDecorationColor: "var(--accentBackground)",
+  },
 });
 
 export const blockquote = style({
