@@ -7,12 +7,19 @@ import "../styles/global.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider enableSystem>
-      <Layout>
-        <MDXProvider components={MDXComponents}>
-          <Component {...pageProps} />
-        </MDXProvider>
-      </Layout>
-    </ThemeProvider>
+    <>
+      <ThemeProvider enableSystem>
+        <Layout>
+          <MDXProvider components={MDXComponents}>
+            <Component {...pageProps} />
+          </MDXProvider>
+        </Layout>
+      </ThemeProvider>
+      <script
+        data-goatcounter="https://gema.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js"
+      ></script>
+    </>
   );
 }
