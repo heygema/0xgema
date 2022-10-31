@@ -119,6 +119,7 @@ globalStyle("[data-theme='dark']", {
   },
 });
 
+/**
 globalStyle("body::-webkit-scrollbar", {
   width: "0.75rem",
 });
@@ -131,6 +132,7 @@ globalStyle("body::-webkit-scrollbar-thumb", {
   background: "rgba(0,0,0,0.2)",
   borderRadius: "50px",
 });
+**/
 
 globalStyle("*", {
   boxSizing: "border-box",

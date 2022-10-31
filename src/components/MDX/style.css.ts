@@ -18,14 +18,19 @@ export const blockquote = style({
   maxWidth: "450px",
   background: globalVars.colors.blockquote,
   fontWeight: 400,
-  fontSize: "0.9rem",
+  fontSize: "0.8rem",
   fontStyle: "italic",
   borderLeft: `10px solid ${globalVars.colors["grayish-02-transluscent-02"]}`,
   opacity: 0.6,
-  margin: "2rem 2px 2rem 2.5rem",
-  padding: "1.5rem 2rem",
+  margin: "2rem 2px 2rem 1.7vmin",
+  padding: "1rem 1rem",
   quotes: `red`,
 });
+
+globalStyle(`${blockquote} > p`, {
+    fontSize: "0.8rem"
+
+})
 
 globalStyle(`${blockquote}:before`, {
   color: `${globalVars.colors["grayish-02-transluscent-02"]}`,
@@ -34,6 +39,10 @@ globalStyle(`${blockquote}:before`, {
   lineHeight: "0.1em",
   marginRight: "0.25em",
   verticalAlign: "-0.4em",
+});
+
+export const paragraph = style({
+  lineHeight: "2rem",
 });
 
 globalStyle(`${blockquote} p`, {

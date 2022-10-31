@@ -3,7 +3,7 @@ import * as styles from "./style.css";
 
 export type Props = {
   children: ReactNode;
-  variant?: "normal" | "bio" | "empty" | "emptyPadded";
+  variant?: "normal" | "bio" | "empty" | "empty-left-aligned" | "emptyPadded";
 };
 
 export function Card({ children, variant = "normal" }: Props) {
