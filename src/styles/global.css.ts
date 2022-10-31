@@ -54,32 +54,34 @@ const getMobileFontSize = (baseNumber = 0) => ({
   },
 });
 
-globalStyle("h1, h2, h3", {
+globalStyle("h1, h2, h3, h4, h5, h6, h7", {
   fontFamily: baseSerifFamily,
   fontWeight: 600,
 });
 
-globalStyle("h1", {
-  //background: globalVars.colors.gradentPastelRainbow,
-  //WebkitBackgroundClip: "text",
-  //WebkitTextFillColor: "transparent",
-  fontSize: "4rem",
-  ...getMobileFontSize(4),
-});
-globalStyle("h2", {
-  fontSize: "2.5rem",
-  ...getMobileFontSize(2.5),
-});
-globalStyle("h3", {
-  fontSize: "1.8rem",
-  ...getMobileFontSize(1.8),
-});
-globalStyle("p", {
-  ...getMobileFontSize(1),
-});
-globalStyle(".no-highlight", {
-  color: "black !imporant",
-});
+// if you want gradient stuff
+//background: globalVars.colors.gradientPastelRainbow,
+//WebkitBackgroundClip: "text",
+//WebkitTextFillColor: "transparent",
+
+const typography: Array<[string, number]> = [
+  ["h1", 4],
+  ["h2", 2.5],
+  ["h3", 1.8],
+  ["h4", 1.5],
+  ["h5", 1.3],
+  ["h6", 1.2],
+  ["h7", 1.1],
+  ["p", 1],
+];
+
+for (let [element, size] of typography) {
+  globalStyle(element, {
+    fontSize: `${size}rem`,
+    ...getMobileFontSize(size),
+  });
+}
+
 globalStyle("a:hover", {
   opacity: 0.8,
 });

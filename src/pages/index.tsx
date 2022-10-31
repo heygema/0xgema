@@ -92,7 +92,7 @@ export default function Home({ posts }: Props) {
         <ArticleCard
           key={`slug_${index}`}
           slug={slug}
-          isDraggable={index === 0}
+          //isDraggable={index === 0}
           title={title}
           excerpt={excerpt}
           month={month}
@@ -103,7 +103,7 @@ export default function Home({ posts }: Props) {
     }
   );
 
-  const renderedPaginations = (
+  const renderedPaginations = totalPages > 1 && (
     <div className={styles.pagination}>
       {paginations.map((item, index) => {
         const isCurrentPage = String(page) === item;

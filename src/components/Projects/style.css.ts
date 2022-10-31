@@ -3,6 +3,9 @@ import * as styles from "../../.././src/core-ui/Card/style.css";
 
 export const root = style({
   display: "flex",
+  gridGap: "2rem",
+  flexWrap: "wrap",
+  justifyContent: "center",
   alignItems: "center",
 });
 
