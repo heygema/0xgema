@@ -31,7 +31,7 @@ export function Social() {
           target="_blank"
           passHref
         >
-          <a target="_blank" rel="noopener noreferrer">
+          <a aria-label={label} target="_blank" rel="noopener noreferrer">
             {icon}
           </a>
         </Link>
