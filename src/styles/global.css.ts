@@ -65,7 +65,7 @@ globalStyle("h1, h2, h3, h4, h5, h6, h7", {
 //WebkitTextFillColor: "transparent",
 
 const typography: Array<[string, number]> = [
-  ["h1", 4],
+  ["h1", 3],
   ["h2", 2.5],
   ["h3", 1.8],
   ["h4", 1.5],
