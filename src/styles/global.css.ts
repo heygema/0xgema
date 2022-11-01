@@ -101,6 +101,8 @@ globalStyle(":root", {
     // it's the modal dialog menu
     "--cmdKBackground": globalVars.colors["white3-transluscent"],
     "--cmdKShadow": globalVars.shadow.mild,
+
+    "--hoverGradient": globalVars.colors.hoverGradientLightTheme,
   },
 });
 
@@ -116,6 +118,8 @@ globalStyle("[data-theme='dark']", {
 
     "--cmdKBackground": globalVars.colors["grayish2-transluscent"],
     "--cmdKShadow": "none",
+
+    "--hoverGradient": globalVars.colors.hoverGradientDarkTheme,
   },
 });
 

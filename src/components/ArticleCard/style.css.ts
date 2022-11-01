@@ -74,7 +74,7 @@ export const card = style([
 ]);
 
 globalStyle(`${card}:hover`, {
-  color: globalVars.colors.black,
+  color: "var(--accentForeground)"
 });
 
 globalStyle(`${card}:before`, {
@@ -84,7 +84,7 @@ globalStyle(`${card}:before`, {
   left: "0px",
   top: "0px",
   position: "absolute",
-  background: globalVars.colors.likeGradient,
+  background: "var(--hoverGradient)",
   backgroundSize: "300% 300%",
   backgroundPosition: "0% 0%",
   transition: "background-position 350ms ease",

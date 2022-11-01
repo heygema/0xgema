@@ -28,8 +28,11 @@ const BASE_COLORS = {
     linear-gradient(130deg, rgba(0,0,0,0) 33%, yellow 83.5%, teal 100%),
     radial-gradient(closest-corner at 75%, red, transparent)
     `,
-  likeGradient: `
+  hoverGradientDarkTheme: `
     linear-gradient(130deg, rgba(0,0,0,0) 0% 33%, #DF7B48 66%, #978560 83.5%, #24807C 100%)
+    `,
+  hoverGradientLightTheme: `
+    linear-gradient(130deg, rgba(0,0,0,0) 0% 33%, #0423F7 66%, #3d56f7 83.5%, #1ad9e0 100%)
     `,
 };
 
