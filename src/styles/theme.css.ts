@@ -34,6 +34,9 @@ const BASE_COLORS = {
   hoverGradientLightTheme: `
     linear-gradient(130deg, rgba(0,0,0,0) 0% 33%, #0423F7 66%, #3d56f7 83.5%, #1ad9e0 100%)
     `,
+  hoverGradientLightThemeAllBlue: `
+    linear-gradient(130deg, rgba(0,0,0,0) 0% 33%, #0423F7 66% 100%)
+    `,
 };
 
 export const globalVars = createGlobalTheme(":root", {

@@ -74,7 +74,7 @@ export const card = style([
 ]);
 
 globalStyle(`${card}:hover`, {
-  color: "var(--accentForeground)"
+  color: "var(--accentForeground)",
 });
 
 globalStyle(`${card}:before`, {
