@@ -130,6 +130,7 @@ export default function Home({ posts }: Props) {
 
   return (
     <Suspense fallback={<Loading />}>
+      <h2> Like this site is bad, it's under construction 😂</h2>
       <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
         <div className={styles.easterEggContainer}>
           <span className={styles.eggUnicorn}>🥚🦄</span>
