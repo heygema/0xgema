@@ -1,4 +1,4 @@
-import { style, styleVariants } from "@vanilla-extract/css";
+import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
 import { BREAKPOINTS } from "../../constant";
 import { globalVars } from "../../styles/theme.css";
 
@@ -7,7 +7,7 @@ const cardBase = style({
   aspectRatio: "1 / 1",
   boxShadow: "0px 2px 5px rgba(0,0,0,0.25)",
   backdropFilter: "blur(1.1px)",
-  border: "3px solid " + globalVars.colors.blue,
+  //border: "3px solid " + globalVars.colors.blue,
   borderRadius: "16px",
   padding: "20px",
   cursor: "pointer",
@@ -17,6 +17,8 @@ const cardBase = style({
   placeItems: "center",
   textAlign: "left",
   ":first-child": {},
+  overflow: "hidden",
+  transition: "color 350ms ease",
 });
 
 export const cardSystemColorStyle = style({
@@ -40,6 +42,7 @@ const cardGridStyle = style({
   "@media": {
     [`(max-width: ${BREAKPOINTS.mobile})`]: {
       gridColumn: "span 3 !important",
+      aspectRatio: "1.6 / 1",
     },
   },
 });
@@ -59,15 +62,52 @@ export const draggableCard = style({
   cursor: "grab",
 });
 
-export const card = style([cardBase, cardGridStyle]);
+export const card = style([
+  cardBase,
+  {
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    flexDirection: "column",
+  },
+  cardGridStyle,
+]);
+
+globalStyle(`${card}:hover`, {
+  color: globalVars.colors.black,
+});
+
+globalStyle(`${card}:before`, {
+  content: "",
+  height: "100%",
+  width: "100%",
+  left: "0px",
+  top: "0px",
+  position: "absolute",
+  background: globalVars.colors.likeGradient,
+  backgroundSize: "300% 300%",
+  backgroundPosition: "0% 0%",
+  transition: "background-position 350ms ease",
+});
+
+globalStyle(`${card}:hover:before`, {
+  backgroundPosition: "100% 100%",
+  transform: "scale(1.08, 1.03)",
+});
 
 export const title = style({
+  opacity: 0.9,
   fontSize: "1.5rem",
   fontWeight: 800,
 });
 
 export const postDate = style({
   fontSize: "0.8rem",
-  opacity: 0.8,
+  opacity: 0.9,
   fontWeight: 500,
+});
+
+export const excerpt = style({
+  opacity: 0.9,
+  fontWeight: 400,
 });

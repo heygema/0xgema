@@ -92,14 +92,14 @@ globalStyle(":root", {
     "--background": globalVars.colors.cream,
     "--foreground": globalVars.colors.black,
 
-    "--accentBackground": globalVars.colors.blue,
+    "--accentBackground": globalVars.colors.lightThemeAccent,
     "--accentForeground": globalVars.colors.white,
 
     // it's the glowing effect for cmd k button
     "--glowFilter": "none",
 
     // it's the modal dialog menu
-    "--cmdKBackground": globalVars.colors["whiteish-transluscent"],
+    "--cmdKBackground": globalVars.colors["white3-transluscent"],
     "--cmdKShadow": globalVars.shadow.mild,
   },
 });
@@ -109,12 +109,12 @@ globalStyle("[data-theme='dark']", {
     "--background": globalVars.colors.grayish,
     "--foreground": globalVars.colors.white,
 
-    "--accentBackground": globalVars.colors.gradentPastelRainbow,
+    "--accentBackground": globalVars.colors.darkThemeAccent,
     "--accentForeground": globalVars.colors.black,
 
     "--glowFilter": "blur(3.5px)",
 
-    "--cmdKBackground": globalVars.colors["grayish-02-transluscent"],
+    "--cmdKBackground": globalVars.colors["grayish2-transluscent"],
     "--cmdKShadow": "none",
   },
 });

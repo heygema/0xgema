@@ -52,7 +52,7 @@ export default function ArticleCard({
             {month} {day}, {year}
           </span>
         </div>
-        <p>{excerpt}</p>
+        <p className={styles.excerpt}>{excerpt}</p>
       </motion.div>
     </Link>
   );
