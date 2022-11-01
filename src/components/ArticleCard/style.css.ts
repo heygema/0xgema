@@ -4,12 +4,12 @@ import { globalVars } from "../../styles/theme.css";
 
 const cardBase = style({
   background: globalVars.colors.transluscent,
-  aspectRatio: "1 / 1",
+  aspectRatio: "1.2 / 1",
   boxShadow: "0px 2px 5px rgba(0,0,0,0.25)",
   backdropFilter: "blur(1.1px)",
   //border: "3px solid " + globalVars.colors.blue,
   borderRadius: "16px",
-  padding: "20px",
+  padding: "25px",
   cursor: "pointer",
   ":active": {
     opacity: 0.85,

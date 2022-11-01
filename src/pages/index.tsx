@@ -9,6 +9,8 @@ import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";
 import Button from "../components/Button";
 import { Card, Loading } from "../core-ui";
+import { globalVars } from "../styles/theme.css";
+import { motion } from "framer-motion";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
   suspense: true,
@@ -114,15 +116,34 @@ export default function Home({ posts }: Props) {
           pressPagination(item);
         };
         return (
-          <Button
-            className={
-              styles.paginationButton[isCurrentPage ? "currentPage" : "base"]
-            }
-            onClick={onClick}
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
             key={index}
+            className={styles.paginationButtonContainer}
           >
-            {String(item)}
-          </Button>
+            <div
+              className={styles.buttonGlow[isCurrentPage ? "selected" : "base"]}
+            />
+            <div
+              className={
+                styles.buttonWrapper[isCurrentPage ? "selected" : "base"]
+              }
+            >
+              <Button
+                onClick={onClick}
+                className={
+                  styles.paginationButton[isCurrentPage ? "selected" : "base"]
+                }
+              >
+                {String(index + 1)}
+              </Button>
+            </div>
+          </motion.div>
         );
       })}
     </div>

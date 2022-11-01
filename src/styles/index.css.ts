@@ -35,6 +35,8 @@ export const eggUnicorn = style({
 export const pagination = style({
   paddingTop: "40px",
   gap: 2,
+  display: "flex",
+  flexDirection: "row",
 });
 
 const onHover = style({
@@ -49,14 +51,66 @@ const circle = style({
   textAlign: "center",
 });
 
+export const paginationButtonContainer = style({
+  cursor: "pointer",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "max-content",
+  width: "max-content",
+});
+
+const buttonWrapperBase = style({
+  height: "max-content",
+  width: "max-content",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  borderRadius: "6px",
+  zIndex: 1,
+});
+
+export const buttonWrapper = styleVariants({
+  base: [buttonWrapperBase],
+  selected: [buttonWrapperBase, { background: "var(--accentBackground)" }],
+});
+
+const buttonGlowBase = style({
+  background: "var(--accentBackground)",
+  position: "absolute",
+  pointerEvents: "none",
+  boxShadow: "var(--cmdKShadow)",
+  filter: "var(--glowFilter)",
+});
+
+export const buttonGlow = styleVariants({
+  base: [
+    buttonGlowBase,
+    {
+      transform: "scale(1.1)",
+      background: "none",
+    },
+  ],
+  selected: [
+    buttonWrapperBase,
+    buttonGlowBase,
+    {
+      transform: "scale(1.1)",
+    },
+  ],
+});
+
 export const paginationButton = styleVariants({
-  base: [circle, button, onHover],
-  currentPage: [
+  base: [button, onHover],
+  selected: [
     circle,
     button,
+    {
+      background: "none",
+      boxShadow: "none",
+    },
     onHover,
     {
-      background: "var(--accentBackground)",
       border: "var(--accentBorder)",
       color: "var(--accentForeground)",
       fontWeight: 800,
