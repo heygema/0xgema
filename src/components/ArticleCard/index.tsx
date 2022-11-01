@@ -47,7 +47,7 @@ export default function ArticleCard({
         whileHover={{ scale: 1.02 }}
       >
         <div>
-          <h3 className={styles.title}>{title}</h3>
+          <h4 className={styles.title}>{title}</h4>
           <span className={styles.postDate}>
             {month} {day}, {year}
           </span>

@@ -4,8 +4,9 @@ import { BREAKPOINTS } from "../constant";
 
 export const root = style({
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fill, minmax(3fr, 1fr))",
-  gridTemplateRows: "minmax(100px, auto)",
+  //gridTemplateColumns: "repeat(auto-fill, minmax(3fr, 3fr))",
+  gridTemplateColumns: "1fr 1fr",
+  //gridTemplateRows: "minmax(100px, auto)",
   gridAutoFlow: "dense",
   gridGap: "0.5rem",
   "@media": {

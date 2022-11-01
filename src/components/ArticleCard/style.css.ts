@@ -4,8 +4,10 @@ import { globalVars } from "../../styles/theme.css";
 
 const cardBase = style({
   background: globalVars.colors.transluscent,
+  aspectRatio: "1 / 1",
   boxShadow: "0px 2px 5px rgba(0,0,0,0.25)",
   backdropFilter: "blur(1.1px)",
+  border: "3px solid " + globalVars.colors.blue,
   borderRadius: "16px",
   padding: "20px",
   cursor: "pointer",
@@ -14,12 +16,7 @@ const cardBase = style({
   },
   placeItems: "center",
   textAlign: "left",
-  ":first-child": {
-    background: "var(--accentBackground)",
-    border: "var(--accentBorder)",
-    color: "var(--accentForeground)",
-    fontWeight: 420,
-  },
+  ":first-child": {},
 });
 
 export const cardSystemColorStyle = style({
@@ -40,14 +37,6 @@ export const cardSystemColorStyle = style({
 });
 
 const cardGridStyle = style({
-  selectors: {
-    "&:nth-child(4n-2)": {
-      gridColumn: "span 2",
-    },
-    "&:nth-child(6n)": {
-      gridColumn: "span 3",
-    },
-  },
   "@media": {
     [`(max-width: ${BREAKPOINTS.mobile})`]: {
       gridColumn: "span 3 !important",
