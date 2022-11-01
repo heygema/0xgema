@@ -10,4 +10,5 @@ globalStyle(`${root} > *`, {
   cursor: "pointer",
   marginLeft: "0.3rem",
   marginRight: "0.3rem",
+  fontSize: "1.25rem",
 });
