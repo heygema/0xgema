@@ -9,7 +9,6 @@ import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";
 import Button from "../components/Button";
 import { Card, Loading } from "../core-ui";
-import { globalVars } from "../styles/theme.css";
 import { motion } from "framer-motion";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
