@@ -10,7 +10,7 @@ export const navigation = style({
 const mainBase = style({
   margin: "0 auto",
   marginTop: "20vmin",
-  marginBottom: "10rem",
+  marginBottom: "5rem",
 });
 
 const mainResponsive = sprinkles({
