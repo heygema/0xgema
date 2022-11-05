@@ -46,7 +46,7 @@ export default function ArticleCard({
         className={[styles.card, isDraggable && styles.draggableCard].join(" ")}
         whileHover={{ scale: 1.02 }}
       >
-        <h4 className={styles.title}>{title}</h4>
+        <h5 className={styles.title}>{title}</h5>
         <span className={styles.postDate}>
           {month} {day}, {year}
         </span>

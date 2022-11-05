@@ -5,12 +5,12 @@ import { globalVars } from "../../styles/theme.css";
 const cardBase = style({
   background: globalVars.colors.transluscent,
   //aspectRatio: "1.2 / 1",
-  aspectRatio: "1.3 / 1",
+  //aspectRatio: "1.3 / 1",
   boxShadow: "0px 2px 5px rgba(0,0,0,0.25)",
   backdropFilter: "blur(1.1px)",
-  //border: "3px solid " + globalVars.colors.blue,
+  border: "3px solid " + "var(--accentForeground)",
+  padding: "15px 15px",
   borderRadius: "16px",
-  padding: "25px",
   cursor: "pointer",
   ":active": {
     opacity: 0.85,
@@ -67,10 +67,10 @@ export const draggableCard = style({
 export const card = style([
   cardBase,
   {
-    display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    flexDirection: "column",
+    //display: "flex",
+    //justifyContent: "flex-start",
+    //alignItems: "flex-start",
+    //flexDirection: "column",
   },
   cardGridStyle,
 ]);
@@ -98,8 +98,9 @@ globalStyle(`${card}:hover:before`, {
 });
 
 export const title = style({
+  marginTop: "1rem",
+  marginBottom: "1rem",
   opacity: 0.9,
-  fontSize: "1.5rem",
   fontWeight: 800,
 });
 
@@ -111,5 +112,6 @@ export const postDate = style({
 
 export const excerpt = style({
   opacity: 0.9,
+  fontSize: "0.9rem",
   fontWeight: 400,
 });
