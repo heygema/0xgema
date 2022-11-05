@@ -1,7 +1,9 @@
 import Head from "next/head";
+import Link from "next/link";
 import React, { ReactNode } from "react";
 import CircleMenu from "../CircleMenu";
 import * as styles from "./style.css";
+import { link as linkStyle } from "../../.././src/components/MDX/style.css";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -39,6 +41,26 @@ export default function Layout({ children }: { children: ReactNode }) {
         </div>
       </nav>
       <main className={styles.main}>{children}</main>
+      <footer className={styles.footer}>
+        <span>
+          {`© ${new Date().getFullYear()} Gema Anggada • `}
+          <Link
+            aria-label={"license"}
+            href={"https://creativecommons.org/licenses/by-sa/4.0/"}
+            target="_blank"
+            passHref
+          >
+            <a
+              className={linkStyle}
+              aria-label={"license"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              cc-by-sa
+            </a>
+          </Link>
+        </span>
+      </footer>
     </>
   );
 }

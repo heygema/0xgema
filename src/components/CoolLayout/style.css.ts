@@ -36,4 +36,15 @@ export const menuContainer = style([
   mainResponsive,
 ]);
 
+export const footer = style([
+  style({
+    margin: "0 auto",
+    height: "3rem",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "row",
+  }),
+  mainResponsive,
+]);
+
 export const main = style([mainBase, mainResponsive]);
