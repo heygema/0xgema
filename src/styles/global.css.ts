@@ -55,7 +55,7 @@ const getMobileFontSize = (baseNumber = 0) => ({
 });
 
 globalStyle("h1, h2, h3, h4, h5, h6, h7", {
-  fontFamily: baseSerifFamily,
+  fontFamily: baseFontFamily,
   fontWeight: 600,
 });
 

@@ -93,7 +93,7 @@ globalStyle(`${card}:before`, {
 });
 
 globalStyle(`${card}:hover:before`, {
-  backgroundPosition: "100% 100%",
+  backgroundPosition: "90% 90%",
   transform: "scale(1.08, 1.03)",
 });
 
