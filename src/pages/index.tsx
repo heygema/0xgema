@@ -9,7 +9,6 @@ import { Posts } from "../data/types";
 import { usePostsStore } from "../data/store";
 import Button from "../components/Button";
 import { Card, Loading } from "../core-ui";
-import { motion } from "framer-motion";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
   suspense: true,
@@ -115,16 +114,7 @@ export default function Home({ posts }: Props) {
           pressPagination(item);
         };
         return (
-          <motion.div
-            whileHover={{
-              scale: 1.1,
-            }}
-            whileTap={{
-              scale: 0.9,
-            }}
-            key={index}
-            className={styles.paginationButtonContainer}
-          >
+          <div key={index} className={styles.paginationButtonContainer}>
             <div
               className={styles.buttonGlow[isCurrentPage ? "selected" : "base"]}
             />
@@ -142,7 +132,7 @@ export default function Home({ posts }: Props) {
                 {String(index + 1)}
               </Button>
             </div>
-          </motion.div>
+          </div>
         );
       })}
     </div>
