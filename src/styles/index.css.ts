@@ -72,7 +72,7 @@ const buttonWrapperBase = style({
 
 export const buttonWrapper = styleVariants({
   base: [buttonWrapperBase],
-  selected: [buttonWrapperBase, { background: "var(--accentBackground)" }],
+  selected: [buttonWrapperBase, { background: "var(--accentBackground)", border: `1px solid var(--accentForeground)` }],
 });
 
 const buttonGlowBase = style({
