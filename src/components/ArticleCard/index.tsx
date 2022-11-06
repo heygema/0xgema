@@ -29,9 +29,6 @@ export default function ArticleCard({
     <Link {...otherProps} href={"/posts/" + slug}>
       <motion.div
         aria-label="article-card"
-        drag={isDraggable}
-        dragElastic={0.1}
-        dragMomentum={false}
         variants={{
           hidden: {
             opacity: 0,
@@ -44,7 +41,7 @@ export default function ArticleCard({
         initial="hidden"
         animate="visible"
         className={[styles.card, isDraggable && styles.draggableCard].join(" ")}
-        whileHover={{ scale: 1.02 }}
+        whileHover={{ scale: 1.06 }}
       >
         <h5 className={styles.title}>{title}</h5>
         <span className={styles.postDate}>
