@@ -26,11 +26,12 @@ export const menuContainer = style([
   style({
     margin: "0 auto",
     paddingTop: 63,
+    paddingRight: "5vmin",
     height: "5rem",
     display: "flex",
     //justifyContent: "flex-end",
     // experiment on the center
-    justifyContent: "center",
+    justifyContent: "flex-end",
     flexDirection: "row",
   }),
   mainResponsive,
