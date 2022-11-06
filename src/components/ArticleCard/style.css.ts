@@ -113,5 +113,4 @@ export const postDate = style({
 export const excerpt = style({
   opacity: 0.99,
   fontSize: "0.9rem",
-  fontWeight: 400,
 });
