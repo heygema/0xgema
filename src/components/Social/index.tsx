@@ -7,12 +7,12 @@ export function Social() {
     {
       label: "social-link-twitter",
       href: "https://twitter.com/0xgema",
-      icon: <Icons.Twitter />,
+      icon: <Icons.BsTwitter />,
     },
     {
       label: "social-link-github",
       href: "https://github.com/heygema",
-      icon: <Icons.Github />,
+      icon: <Icons.BsGithub />,
     },
     {
       label: "social-link-linkedin",

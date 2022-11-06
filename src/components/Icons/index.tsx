@@ -8,6 +8,8 @@ import { VscGithubAlt as Github } from "react-icons/vsc";
 import { RiSkullLine as About } from "react-icons/ri";
 import { BiMoon as Night } from "react-icons/bi";
 import {
+  BsTwitter,
+  BsGithub,
   BsSun as Day,
   BsLinkedin as LinkedIn,
   BsMastodon as Mastodon,
@@ -26,8 +28,14 @@ export const Icons = {
   Twitter: (props: IconBaseProps) => (
     <Twitter {...props} className={styles.boldIcon} />
   ),
+  BsTwitter: (props: IconBaseProps) => (
+    <BsTwitter {...props} className={styles.menuIcon} />
+  ),
   Github: (props: IconBaseProps) => (
     <Github {...props} className={styles.menuIcon} />
+  ),
+  BsGithub: (props: IconBaseProps) => (
+    <BsGithub {...props} className={styles.menuIcon} />
   ),
   Mastodon: (props: IconBaseProps) => (
     <Mastodon {...props} className={styles.menuIcon} />
