@@ -4,7 +4,6 @@ import { globalVars } from "./theme.css";
 
 const frauncesSB = "Fraunces Semi Bold";
 const inter = "Inter";
-const exo2 = "Exo2";
 const nanumPen = "Nanum Pen";
 
 globalFontFace(frauncesSB, {
@@ -23,16 +22,10 @@ globalFontFace(nanumPen, {
   src: "url(/assets/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf)",
 });
 
-globalFontFace(exo2, {
-  src: "url(/assets/fonts/Exo2/Exo2-VariableFont_wght.ttf)",
-  fontDisplay: "swap",
-});
 
 //const baseSerifFamily = `${frauncesSB}, Georgia, serif`;
 
 const baseFontFamily = `${inter}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
-
-const headingFontFamily = `${exo2}, ${baseFontFamily}`;
 
 globalStyle("html, body", {
   background: "var(--background)",
@@ -64,7 +57,7 @@ const getMobileFontSize = (baseNumber = 0) => ({
 });
 
 globalStyle("h1, h2, h3, h4, h5, h6, h7", {
-  fontFamily: headingFontFamily,
+  fontFamily: baseFontFamily,
   letterSpacing: "0.1rem",
   fontWeight: 600,
 });

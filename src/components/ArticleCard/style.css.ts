@@ -101,7 +101,6 @@ export const title = style({
   marginTop: "1rem",
   marginBottom: "1rem",
   opacity: 0.99,
-  fontWeight: 800,
 });
 
 export const postDate = style({
