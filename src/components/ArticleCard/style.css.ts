@@ -8,7 +8,7 @@ const cardBase = style({
   //aspectRatio: "1.3 / 1",
   boxShadow: "0px 2px 5px rgba(0,0,0,0.25)",
   backdropFilter: "blur(1.1px)",
-  border: "3px solid " + "var(--accentForeground)",
+  //border: "3px solid " + "var(--accentForeground)",
   padding: "15px 15px",
   borderRadius: "16px",
   cursor: "pointer",
