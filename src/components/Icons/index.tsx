@@ -32,7 +32,7 @@ export const Icons = {
     <BsTwitter {...props} className={styles.menuIcon} />
   ),
   Github: (props: IconBaseProps) => (
-    <Github {...props} className={styles.menuIcon} />
+    <Github {...props} className={styles.semiBoldIcon} />
   ),
   BsGithub: (props: IconBaseProps) => (
     <BsGithub {...props} className={styles.menuIcon} />

@@ -4,8 +4,15 @@ export const menuIcon = style({});
 
 export const boldIcon = style({});
 
+export const semiBoldIcon = style({});
+
 globalStyle(`${menuIcon} > path`, {
   stroke: "var(--foreground)",
+});
+
+globalStyle(`${semiBoldIcon} > path`, {
+  stroke: "var(--foreground)",
+  strokeWidth: 0.3,
 });
 
 globalStyle(`${boldIcon} > path`, {
