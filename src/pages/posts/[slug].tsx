@@ -8,6 +8,7 @@ import { useSetPosts } from "../../hooks/useSetPosts";
 import Head from "next/head";
 import { marked } from "marked";
 import matter from "gray-matter";
+import { serialize } from "v8";
 
 interface Props {
   data: matter.GrayMatterFile<string>["data"];
@@ -51,9 +52,11 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const postLocation = path.join(POST_DIR, slug + `/index` + ".mdx");
 
-  const markdownWithMetadata = await fs.readFile(postLocation, "utf-8");
+  const rawFile = await fs.readFile(postLocation, "utf-8");
 
-  const parsedMarkdown = matter(markdownWithMetadata);
+  const parsedMarkdown = matter(rawFile);
+
+  const mdxSource = await serialize(rawFile);
 
   const data = {
     ...parsedMarkdown.data,
