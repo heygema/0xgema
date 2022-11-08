@@ -50,7 +50,7 @@ globalStyle("html, body", {
 const getMobileFontSize = (baseNumber = 0) => ({
   "@media": {
     [`(max-width: ${BREAKPOINTS.mobile})`]: {
-      fontSize: `${baseNumber - 0.2}rem`,
+      fontSize: `${baseNumber - 0.1}rem`,
     },
   },
 });
