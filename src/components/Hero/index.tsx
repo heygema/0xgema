@@ -6,7 +6,7 @@ export function Hero() {
 
   return (
     <div className={styles.root}>
-      <h4>Gema Anggada</h4>
+      <h4 className={styles.title}>Gema Anggada</h4>
       <p>
         Software Engineer,{" "}
         <span>
