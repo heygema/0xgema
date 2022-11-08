@@ -1,5 +1,6 @@
 export * from "./ArticleCard";
 export * from "./CircleMenu";
+export * from "./Hero";
 export * from "./CoolLayout";
 export * from "./ThemeChanger";
 export * from "./Icons";

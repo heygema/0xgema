@@ -10,6 +10,7 @@ import { usePostsStore } from "../data/store";
 import Button from "../components/Button";
 import { Card, Loading } from "../core-ui";
 import { motion } from "framer-motion";
+import { Hero } from "../components";
 
 const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
   suspense: true,
@@ -150,6 +151,7 @@ export default function Home({ posts }: Props) {
 
   return (
     <Suspense fallback={<Loading />}>
+      <Hero />
       <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
         <div className={styles.easterEggContainer}>
           <span className={styles.eggUnicorn}></span>
