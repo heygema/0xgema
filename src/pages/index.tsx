@@ -150,16 +150,18 @@ export default function Home({ posts }: Props) {
   );
 
   return (
-    <Suspense fallback={<Loading />}>
+    <>
       <Hero />
-      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        <div className={styles.easterEggContainer}>
-          <span className={styles.eggUnicorn}></span>
-        </div>
-      </Link>
-      <div className={styles.root}>{renderedPosts}</div>
-      {renderedPaginations}
-    </Suspense>
+      <Suspense fallback={<Loading />}>
+        <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <div className={styles.easterEggContainer}>
+            <span className={styles.eggUnicorn}></span>
+          </div>
+        </Link>
+        <div className={styles.root}>{renderedPosts}</div>
+        {renderedPaginations}
+      </Suspense>
+    </>
   );
 }
 
