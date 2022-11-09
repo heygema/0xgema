@@ -29,7 +29,6 @@ const baseFontFamily = `${inter}, -apple-system, BlinkMacSystemFont, Segoe UI, R
 globalStyle("html, body", {
   background: "var(--background)",
   color: "var(--foreground)",
-  letterSpacing: "0.025rem",
   fontFamily: baseFontFamily,
   margin: 0,
   padding: 0,
