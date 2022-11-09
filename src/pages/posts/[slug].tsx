@@ -10,6 +10,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { DateTime } from "luxon";
 import { MDXComponents } from "../../components";
+import Link from "next/link";
 
 interface Props {
   slug: string;
@@ -32,6 +33,7 @@ export default function Post({ posts, source }: Props) {
       <Head>
         <title>{title}</title>
       </Head>
+      <Link href="/">↩ Home</Link>
       <h1>{title}</h1>
       <span>
         {date.day} {date.monthLong}, {date.year}
