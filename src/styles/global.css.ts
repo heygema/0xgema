@@ -34,7 +34,7 @@ globalStyle("html, body", {
   fontWeight: 300,
   margin: 0,
   padding: 0,
-  fontSize: "17px",
+  fontSize: "15px",
   // NOTE: I like this media style, but..
   //"@media": {
   //"(prefers-color-scheme: light)": {
@@ -51,7 +51,7 @@ globalStyle("html, body", {
 const getMobileFontSize = (baseNumber = 0) => ({
   "@media": {
     [`(max-width: ${BREAKPOINTS.mobile})`]: {
-      fontSize: `${baseNumber - 0.1}rem`,
+      fontSize: `${baseNumber + 0.1}rem`,
     },
   },
 });
