@@ -29,6 +29,7 @@ export const MDXComponents = {
         padding: "2px",
         lineHeight: "1.2rem",
         borderRadius: "2px",
+        color: globalVars.colors.lime
       }}
     />
   ),

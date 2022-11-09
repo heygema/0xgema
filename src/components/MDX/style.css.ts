@@ -42,7 +42,7 @@ globalStyle(`${blockquote}:before`, {
 });
 
 export const paragraph = style({
-  lineHeight: "2rem",
+  lineHeight: "1.5rem",
 });
 
 globalStyle(`${blockquote} p`, {

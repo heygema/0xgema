@@ -34,6 +34,7 @@ globalStyle("html, body", {
   fontWeight: 300,
   margin: 0,
   padding: 0,
+  fontSize: "17px",
   // NOTE: I like this media style, but..
   //"@media": {
   //"(prefers-color-scheme: light)": {
