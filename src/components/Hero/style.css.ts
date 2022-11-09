@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 export const root = style({
   width: "100%",
@@ -8,4 +8,10 @@ export const root = style({
 
 export const title = style({
   marginBottom: "1rem",
+});
+
+export const smiley = style({});
+
+globalStyle(`${smiley} > path`, {
+  stroke: "var(--foreground)",
 });

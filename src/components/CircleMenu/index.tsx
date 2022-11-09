@@ -3,7 +3,7 @@ import * as styles from "./style.css";
 import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
 import { Suspense, useEffect } from "react";
-import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
+//import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
 import { useModalStore } from "../../data/store";
 import ModalMenu from "../ModalMenu";
 import { Loading } from "../../core-ui/Loading";
