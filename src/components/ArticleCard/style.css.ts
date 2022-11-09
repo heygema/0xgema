@@ -98,8 +98,8 @@ globalStyle(`${card}:hover:before`, {
 });
 
 export const title = style({
-  marginTop: "1rem",
-  marginBottom: "1rem",
+  marginTop: "0.5rem",
+  marginBottom: "0.5rem",
   opacity: 0.99,
 });
 
@@ -110,5 +110,7 @@ export const postDate = style({
 });
 
 export const excerpt = style({
+  marginTop: "0.5rem",
+  marginBottom: "0.5rem",
   opacity: 0.99,
 });
