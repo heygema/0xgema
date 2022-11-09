@@ -51,7 +51,7 @@ export default function CircleMenu() {
       onOpen={onClick}
       trigger={
         <motion.div
-          title="(cmd+ctrl)+k"
+          title="(cmd/ctrl)+k"
           whileHover={{
             scale: 1.2,
           }}
