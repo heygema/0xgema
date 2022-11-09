@@ -11,12 +11,13 @@ export const MDXComponents = {
     <pre
       {...props}
       style={{
-        border: "1px solid red",
         width: "100%",
         padding: "20px",
         overflow: "scroll",
         wordWrap: "normal",
         wordBreak: "break-word",
+        background: globalVars.colors.transluscent,
+        borderRadius: "10px",
       }}
     />
   ),
@@ -25,8 +26,8 @@ export const MDXComponents = {
     <code
       {...props}
       style={{
-        background: globalVars.colors.transluscent,
         padding: "2px",
+        lineHeight: "1.2rem",
         borderRadius: "2px",
       }}
     />
