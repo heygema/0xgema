@@ -1,5 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { sprinkles } from "../../styles/sprinkles.css";
+import { globalVars } from "../../styles/theme.css";
 
 export const navigation = style({
   width: "100%",
@@ -47,5 +48,16 @@ export const footer = style([
   }),
   mainResponsive,
 ]);
+
+export const backGlow = style({
+  position: "absolute",
+  background: globalVars.colors.gradientPastelRainbow,
+  aspectRatio: "1 / 1",
+  borderRadius: "100%",
+  height: "300px",
+  //left: -100,
+  filter: "blur(90px)",
+  opacity: 0.2,
+});
 
 export const main = style([mainBase, mainResponsive]);

@@ -7,8 +7,8 @@ const BASE_COLORS = {
   grayish2: "hsl(200, 6%, 15%)",
   "grayish2-transluscent": "hsla(200, 6%, 10%, 97%)",
   "grayish2-transluscent2": "hsla(200, 6%, 10%, 37%)",
-
-  cream: "hsl(51, 31%, 95%)",
+  cream: "hsla(51, 31%, 95%, 87%)",
+  //cream: "hsla(51, 31%, 90%, 17%)",
   white: "hsla(45, 17%, 91%, 87%)",
   white2: "hsl(0, 0%, 93.0%)",
   "white3-transluscent": "hsla(200, 100%, 100%, 95%)",

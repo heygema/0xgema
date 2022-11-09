@@ -40,6 +40,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <CircleMenu />
         </div>
       </nav>
+      <aside className={styles.backGlow} />
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
         <span>

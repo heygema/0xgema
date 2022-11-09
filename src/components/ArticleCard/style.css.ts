@@ -90,6 +90,7 @@ globalStyle(`${card}:before`, {
   backgroundSize: "300% 300%",
   backgroundPosition: "0% 0%",
   transition: "background-position 350ms ease",
+  WebkitTransition: "background-position 350ms ease",
 });
 
 globalStyle(`${card}:hover:before`, {
