@@ -6,28 +6,37 @@ import getPosts from "../../helpers/getPosts";
 import { Posts } from "../../data/types";
 import { useSetPosts } from "../../hooks/useSetPosts";
 import Head from "next/head";
-import { marked } from "marked";
-import matter from "gray-matter";
-import { serialize } from "v8";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { DateTime } from "luxon";
+import { MDXComponents } from "../../components";
 
 interface Props {
-  data: matter.GrayMatterFile<string>["data"];
   slug: string;
-  content: string;
   posts: Posts;
+  source: MDXRemoteSerializeResult<
+    Record<string, unknown>,
+    Record<string, string>
+  >;
 }
 
-export default function Post({ posts, content, data }: Props) {
+export default function Post({ posts, source }: Props) {
   // hacky way to make sure posts always available on search
   useSetPosts(posts);
+
+  const title = source?.frontmatter?.title;
+  const date = DateTime.fromISO(source?.frontmatter?.date);
 
   return (
     <>
       <Head>
-        <title>{data?.title}</title>
+        <title>{title}</title>
       </Head>
-      <h1>{data?.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: marked(content) }} />
+      <h1>{title}</h1>
+      <span>
+        {date.day} {date.monthLong}, {date.year}
+      </span>
+      <MDXRemote {...source} components={MDXComponents} />
     </>
   );
 }
@@ -54,21 +63,19 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const rawFile = await fs.readFile(postLocation, "utf-8");
 
-  const parsedMarkdown = matter(rawFile);
-
-  const mdxSource = await serialize(rawFile);
-
-  const data = {
-    ...parsedMarkdown.data,
-    date: new Date(parsedMarkdown.data.date).toISOString(),
-  };
+  const mdxSource = await serialize(rawFile, { parseFrontmatter: true });
 
   return {
     props: {
       slug,
-      content: parsedMarkdown.content,
       posts,
-      data,
+      source: {
+        ...mdxSource,
+        frontmatter: {
+          ...mdxSource.frontmatter,
+          date: new Date(mdxSource.frontmatter?.date).toISOString(),
+        },
+      },
     },
   };
 };

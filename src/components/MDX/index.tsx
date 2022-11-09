@@ -6,4 +6,27 @@ export const MDXComponents = {
   blockquote: (props: any) => (
     <blockquote className={styles.blockquote} {...props} />
   ),
+  pre: (props: any) => (
+    <pre
+      {...props}
+      style={{
+        border: "1px solid yellow",
+        width: "400px",
+        overflow: "scroll",
+        wordWrap: "normal",
+        wordBreak: "break-word",
+      }}
+    />
+  ),
+  code: (props: any) => (
+    <code
+      {...props}
+      style={{
+        wordWrap: "normal",
+        wordBreak: "break-word",
+        background: "red",
+        width: "100px",
+      }}
+    />
+  ),
 };
