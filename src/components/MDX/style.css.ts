@@ -19,7 +19,7 @@ export const blockquote = style({
   background: globalVars.colors.blockquote,
   fontWeight: 400,
   fontSize: "0.8rem",
-  fontStyle: "italic",
+  //fontStyle: "italic",
   borderLeft: `10px solid ${globalVars.colors["grayish-02-transluscent-02"]}`,
   opacity: 0.6,
   margin: "2rem 2px 2rem 1.7vmin",
@@ -28,13 +28,13 @@ export const blockquote = style({
 });
 
 globalStyle(`${blockquote} > p`, {
-    fontSize: "0.8rem"
-
-})
+  fontSize: "0.8rem",
+});
 
 globalStyle(`${blockquote}:before`, {
   color: `${globalVars.colors["grayish-02-transluscent-02"]}`,
   content: "open-quote",
+  fontWeight: "100",
   fontSize: "4em",
   lineHeight: "0.1em",
   marginRight: "0.25em",
