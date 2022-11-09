@@ -10,22 +10,12 @@ export const MDXComponents = {
     <pre
       {...props}
       style={{
-        border: "1px solid yellow",
-        width: "400px",
+        border: "1px solid red",
+        width: "100%",
+        padding: "20px",
         overflow: "scroll",
         wordWrap: "normal",
         wordBreak: "break-word",
-      }}
-    />
-  ),
-  code: (props: any) => (
-    <code
-      {...props}
-      style={{
-        wordWrap: "normal",
-        wordBreak: "break-word",
-        background: "red",
-        width: "100px",
       }}
     />
   ),
