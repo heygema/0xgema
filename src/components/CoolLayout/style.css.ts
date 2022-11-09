@@ -64,6 +64,7 @@ export const backGlowVariant = styleVariants({
   bottom: [
     backGlow,
     {
+      height: "100px",
       bottom: 1,
       right: 1,
     },
