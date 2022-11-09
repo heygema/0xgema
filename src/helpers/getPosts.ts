@@ -7,7 +7,7 @@ export default async function getPosts() {
   try {
     let postDirs = await fs.readdir(POST_DIR);
 
-    let posts = [];
+    let posts: Array<{ date: string; slug: string }> = [];
 
     for (const slug of postDirs) {
       let targetPath = path.join(POST_DIR, slug + "/index.mdx");
@@ -20,7 +20,9 @@ export default async function getPosts() {
       });
     }
 
-    const sorted = posts.sort(() => -1);
+    const sorted = posts.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
 
     return sorted;
   } catch (error) {
