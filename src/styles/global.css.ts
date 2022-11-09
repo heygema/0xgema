@@ -31,7 +31,6 @@ globalStyle("html, body", {
   color: "var(--foreground)",
   letterSpacing: "0.025rem",
   fontFamily: baseFontFamily,
-  fontWeight: 300,
   margin: 0,
   padding: 0,
   fontSize: "15px",
