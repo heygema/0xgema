@@ -26,6 +26,7 @@ export default async function getPosts() {
 
     return sorted;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
     return [];
   }
