@@ -16,7 +16,7 @@ export function Hero() {
         </span>
         Gema Anggada
       </h4>
-      <p>
+      <p className={styles.detail}>
         Software Engineer, <span>(UTC+7) {clock}</span>
       </p>
     </div>

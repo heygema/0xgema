@@ -10,6 +10,10 @@ export const title = style({
   marginBottom: "1rem",
 });
 
+export const detail = style({
+  opacity: 0.6,
+});
+
 export const smiley = style({});
 
 globalStyle(`${smiley} > path`, {
