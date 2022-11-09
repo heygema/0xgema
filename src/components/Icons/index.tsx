@@ -46,6 +46,6 @@ export const Icons = {
   Night: (props: IconBaseProps) => (
     <Night {...props} className={styles.menuIcon} />
   ),
-  Day: (props: IconBaseProps) => <Day {...props} className={styles.menuIcon} />,
+  Day: (props: IconBaseProps) => <Day {...props} className={styles.semiBoldIcon} />,
   Linkedin: (props: IconBaseProps) => <LinkedIn {...props} />,
 };
