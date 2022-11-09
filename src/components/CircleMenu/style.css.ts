@@ -33,6 +33,8 @@ export const circleFallback = style({
   alignItems: "center",
   borderRadius: "10px",
   background: "var(--accentBackground)",
+  color: "var(--accentForeground)",
+  fontSize: "1.3rem",
   zIndex: "1",
 });
 

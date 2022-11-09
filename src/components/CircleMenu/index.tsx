@@ -42,6 +42,7 @@ export default function CircleMenu() {
     return () => removeEventListener("keydown", keyDown);
   }, []);
 
+  // <Smiley className={styles.smiley} />
   return (
     <Popup
       onClose={closeModal}
@@ -62,9 +63,7 @@ export default function CircleMenu() {
         >
           <div className={styles.CircleStackGlow} />
           <div className={styles.CircleStackGlow} />
-          <div className={styles.circleFallback}>
-            <Smiley className={styles.smiley} />
-          </div>
+          <div className={styles.circleFallback}>⌘</div>
         </motion.div>
       }
       open={isOpen}
