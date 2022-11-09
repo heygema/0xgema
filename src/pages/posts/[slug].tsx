@@ -36,7 +36,9 @@ export default function Post({ posts, source }: Props) {
       <Head>
         <title>{title}</title>
       </Head>
-      <Link href="/">↩ Home</Link>
+      <Link aria-label="back-button" href="/">
+        ↩ Home
+      </Link>
       <h1>{title}</h1>
       <span className={styles.date}>
         {date.day} {date.monthLong}, {date.year}
