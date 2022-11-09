@@ -23,7 +23,7 @@ const BASE_COLORS = {
   redToPurpleGradient:
     "linear-gradient(130deg, rgba(255,0,0,0) 33%, rgba(227,88,31,1) 66%, rgba(161,44,128,1) 81%, rgba(125,22,198,1) 100%)",
   redToPurpleGradientFull:
-    "linear-gradient(130deg, rgba(227,88,31,1) 0% 66%, rgba(161,44,128,1) 81%, rgba(125,22,198,1) 100%)",
+    "linear-gradient(130deg, rgb(255, 0, 0) 33%, rgba(227,88,31,1) 66%, rgba(161,44,128,1) 81%, rgba(125,22,198,1) 100%)",
   gradientTheme1:
     "linear-gradient(90deg, rgba(0,255,12,1) 9%, rgba(98,255,7,1) 39%, rgba(162,108,205,0.9304315476190477) 69%, rgba(255,39,236,1) 100%)",
   gradientPastelRainbow:
