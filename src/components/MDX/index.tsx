@@ -1,3 +1,4 @@
+import { globalVars } from "../../styles/theme.css";
 import * as styles from "./style.css";
 
 export const MDXComponents = {
@@ -16,6 +17,17 @@ export const MDXComponents = {
         overflow: "scroll",
         wordWrap: "normal",
         wordBreak: "break-word",
+      }}
+    />
+  ),
+
+  code: (props: any) => (
+    <code
+      {...props}
+      style={{
+        background: globalVars.colors.transluscent,
+        padding: "2px",
+        borderRadius: "2px",
       }}
     />
   ),
