@@ -105,7 +105,7 @@ export const title = style({
 
 export const postDate = style({
   fontSize: "0.7rem",
-  opacity: 0.99,
+  opacity: 0.8,
   fontWeight: 500,
 });
 
