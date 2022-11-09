@@ -13,7 +13,7 @@ import { Posts } from "../../data/types";
 import { useSetPosts } from "../../hooks/useSetPosts";
 import { MDXComponents } from "../../components";
 
-import * as styles from "./style.css";
+import * as styles from "../../styles/slug.css";
 
 interface Props {
   slug: string;
