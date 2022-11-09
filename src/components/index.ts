@@ -1,4 +1,5 @@
 export * from "./ArticleCard";
+export * from "./Avatar";
 export * from "./CircleMenu";
 export * from "./Hero";
 export * from "./CoolLayout";
