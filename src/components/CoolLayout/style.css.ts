@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { style, styleVariants } from "@vanilla-extract/css";
 import { sprinkles } from "../../styles/sprinkles.css";
 import { globalVars } from "../../styles/theme.css";
 
@@ -55,9 +55,19 @@ export const backGlow = style({
   aspectRatio: "1 / 1",
   borderRadius: "100%",
   height: "300px",
-  //left: -100,
   filter: "blur(90px)",
   opacity: 0.2,
+});
+
+export const backGlowVariant = styleVariants({
+  top: [backGlow, { top: 1 }],
+  bottom: [
+    backGlow,
+    {
+      bottom: 1,
+      right: 1,
+    },
+  ],
 });
 
 export const main = style([mainBase, mainResponsive]);
