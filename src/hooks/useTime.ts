@@ -21,7 +21,8 @@ export function useTime() {
   });
 
   useEffect(() => {
-    setHydrated(true);
+    setHydrated(() => true);
+    setTime(() => getTime(true));
   }, []);
 
   useEffect(() => {
