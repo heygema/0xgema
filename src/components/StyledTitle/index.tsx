@@ -12,7 +12,7 @@ export function StyledTitle({
     children: (
       <>
         <span className={styles.xSymbol}>×</span> {text}{" "}
-        <span className={styles.xSymbol}>×</span>
+        <span className={styles.xSymbolVariant.faster}>×</span>
       </>
     ),
   });

@@ -1,4 +1,4 @@
-import { keyframes, style } from "@vanilla-extract/css";
+import { keyframes, style, styleVariants } from "@vanilla-extract/css";
 
 export const shaky = keyframes({
   "0%": { transform: "rotate(0deg)" },
@@ -17,4 +17,13 @@ export const shaky = keyframes({
 export const xSymbol = style({
   animation: `${shaky} 1.2s infinite ease`,
   display: "inline-block",
+});
+
+export const xSymbolVariant = styleVariants({
+  faster: [
+    xSymbol,
+    {
+      animation: `${shaky} 1.1s infinite ease`,
+    },
+  ],
 });
