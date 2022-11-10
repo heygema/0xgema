@@ -57,6 +57,7 @@ export const backGlow = style({
   height: "300px",
   filter: "blur(90px)",
   opacity: 0.2,
+  pointerEvents: "none",
 });
 
 export const backGlowVariant = styleVariants({
