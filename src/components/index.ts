@@ -7,4 +7,5 @@ export * from "./ThemeChanger";
 export * from "./Icons";
 export * from "./MDX";
 export * from "./Projects";
+export * from "./StyledTitle";
 export * from "./Social";

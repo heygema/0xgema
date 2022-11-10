@@ -11,78 +11,78 @@ import { POST_DIR } from "../../constant";
 import getPosts from "../../helpers/getPosts";
 import { Posts } from "../../data/types";
 import { useSetPosts } from "../../hooks/useSetPosts";
-import { MDXComponents } from "../../components";
+import { MDXComponents, StyledTitle } from "../../components";
 
 import * as styles from "../../styles/slug.css";
 
 interface Props {
-    slug: string;
-    posts: Posts;
-    source: MDXRemoteSerializeResult<
-        Record<string, unknown>,
-        Record<string, string>
-    >;
+  slug: string;
+  posts: Posts;
+  source: MDXRemoteSerializeResult<
+    Record<string, unknown>,
+    Record<string, string>
+  >;
 }
 
 export default function Post({ posts, source }: Props) {
-    // hacky way to make sure posts always available on search
-    useSetPosts(posts);
+  // hacky way to make sure posts always available on search
+  useSetPosts(posts);
 
-    const title = source?.frontmatter?.title;
-    const date = DateTime.fromISO(source?.frontmatter?.date);
+  const title = source?.frontmatter?.title;
+  const date = DateTime.fromISO(source?.frontmatter?.date);
 
-    return (
-        <>
-            <Head>
-                <title>{title}</title>
-            </Head>
-            <Link aria-label="back-button" href="/" passHref>
-                <a className={styles.backButton}>↩ Home</a>
-            </Link>
-            <h1>× {title} ×</h1>
-            <span className={styles.date}>
-                {date.day} {date.monthLong}, {date.year}
-            </span>
-            <MDXRemote {...source} components={MDXComponents} />
-        </>
-    );
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <Link aria-label="back-button" href="/" passHref>
+        <a className={styles.backButton}>↩ Home</a>
+      </Link>
+      <StyledTitle type="h1" text={title} />
+      <span className={styles.date}>
+        {date.day} {date.monthLong}, {date.year}
+      </span>
+      <MDXRemote {...source} components={MDXComponents} />
+    </>
+  );
 }
 
 export const getStaticPaths = async () => {
-    const files = await fs.readdir(POST_DIR);
+  const files = await fs.readdir(POST_DIR);
 
-    const paths = files.map((filename) => ({
-        params: {
-            slug: filename.replace(".md", ""),
-        },
-    }));
+  const paths = files.map((filename) => ({
+    params: {
+      slug: filename.replace(".md", ""),
+    },
+  }));
 
-    return {
-        paths,
-        fallback: false,
-    };
+  return {
+    paths,
+    fallback: false,
+  };
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-    let posts = await getPosts();
+  let posts = await getPosts();
 
-    const postLocation = path.join(POST_DIR, slug + `/index` + ".mdx");
+  const postLocation = path.join(POST_DIR, slug + `/index` + ".mdx");
 
-    const rawFile = await fs.readFile(postLocation, "utf-8");
+  const rawFile = await fs.readFile(postLocation, "utf-8");
 
-    const mdxSource = await serialize(rawFile, { parseFrontmatter: true });
+  const mdxSource = await serialize(rawFile, { parseFrontmatter: true });
 
-    return {
-        props: {
-            slug,
-            posts,
-            source: {
-                ...mdxSource,
-                frontmatter: {
-                    ...mdxSource.frontmatter,
-                    date: new Date(mdxSource.frontmatter?.date).toISOString(),
-                },
-            },
+  return {
+    props: {
+      slug,
+      posts,
+      source: {
+        ...mdxSource,
+        frontmatter: {
+          ...mdxSource.frontmatter,
+          date: new Date(mdxSource.frontmatter?.date).toISOString(),
         },
-    };
+      },
+    },
+  };
 };
