@@ -2,6 +2,7 @@ import { useTime } from "../../hooks/useTime";
 import * as styles from "./style.css";
 
 import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
+import { TIME_ZONE } from "../../constant";
 
 export function Hero() {
   const time = useTime();
@@ -17,7 +18,10 @@ export function Hero() {
         Gema Anggada
       </h4>
       <p className={styles.detail}>
-        Software Engineer, <span>(UTC+7) {clock}</span>
+        Software Engineer,{" "}
+        <span>
+          ({TIME_ZONE}) {clock}
+        </span>
       </p>
     </div>
   );

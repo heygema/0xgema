@@ -1,5 +1,6 @@
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
+import { TIME_ZONE } from "../constant";
 
 // f means just format
 const f = (n: number) => {
@@ -8,7 +9,7 @@ const f = (n: number) => {
 
 const getTime = (hydrated?: boolean) => {
   if (hydrated) {
-    let { hour, minute, second } = DateTime.now().setZone("UTC+7");
+    let { hour, minute, second } = DateTime.now().setZone(TIME_ZONE);
     return { hour: f(hour), minute: f(minute), second: f(second) };
   }
   return;
