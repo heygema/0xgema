@@ -33,6 +33,7 @@ globalStyle("html, body", {
   margin: 0,
   padding: 0,
   fontSize: "15px",
+  minHeight: "100vh",
   // NOTE: I like this media style, but..
   //"@media": {
   //"(prefers-color-scheme: light)": {
@@ -87,11 +88,14 @@ for (let [element, size] of typography) {
 // following https://github.com/pacocoursey/next-themes pattern
 globalStyle(":root", {
   vars: {
-    "--background": globalVars.colors.cream,
+    //"--background": "hsla(217, 8%, 80%, 30%)",
+    "--background": globalVars.colors.gray,
     "--foreground": globalVars.colors.black,
 
     "--accentBackground": globalVars.colors.lightThemeAccent,
     "--accentForeground": globalVars.colors.white,
+
+    "--cardBackground": globalVars.colors["white-transluscent50"],
 
     // it's the glowing effect for cmd k button
     "--glowFilter": "none",
@@ -111,6 +115,8 @@ globalStyle("[data-theme='dark']", {
 
     "--accentBackground": globalVars.colors.darkThemeAccent,
     "--accentForeground": globalVars.colors.black,
+
+    "--cardBackground": globalVars.colors.transluscent,
 
     "--glowFilter": "blur(3.5px)",
 

@@ -3,13 +3,14 @@ import { BREAKPOINTS } from "../../constant";
 import { globalVars } from "../../styles/theme.css";
 
 const cardBase = style({
-  background: globalVars.colors.transluscent,
+  //background: globalVars.colors.transluscent,
+  background: "var(--cardBackground)",
   //aspectRatio: "1.2 / 1",
   //aspectRatio: "1.3 / 1",
-  boxShadow: "0px 2px 5px rgba(0,0,0,0.25)",
+  boxShadow: globalVars.shadow.macShadow,
   backdropFilter: "blur(1.1px)",
   //border: "3px solid " + "var(--accentForeground)",
-  padding: "15px 15px",
+  padding: "15px 15px 15px 30px",
   borderRadius: "16px",
   cursor: "pointer",
   ":active": {

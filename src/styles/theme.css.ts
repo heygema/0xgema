@@ -3,6 +3,7 @@ import { createTheme } from "@vanilla-extract/css";
 
 const BASE_COLORS = {
   black: "hsla(0, 0%, 7%, 87%)",
+  gray: "hsla(217, 8%, 80%, 30%)",
   grayish: "hsl(200, 6%, 10%)",
   grayish2: "hsl(200, 6%, 15%)",
   "grayish2-transluscent": "hsla(200, 6%, 10%, 97%)",
@@ -10,6 +11,7 @@ const BASE_COLORS = {
   cream: "hsla(51, 31%, 95%, 87%)",
   //cream: "hsla(51, 31%, 90%, 17%)",
   white: "hsla(45, 17%, 91%, 87%)",
+  "white-transluscent50": "hsla(0, 0%, 98%, 50%)",
   white2: "hsl(0, 0%, 93.0%)",
   "white3-transluscent": "hsla(200, 100%, 100%, 95%)",
   transluscent: "hsla(0, 0%, 30%, 10%)",
@@ -56,6 +58,7 @@ export const globalVars = createGlobalTheme(":root", {
   },
   shadow: {
     mild: "0px 2px 5px rgba(0,0,0,0.25)",
+    macShadow: "0 22px 70px 4px rgba(0, 0, 0, 0.1)",
   },
   space: {
     none: "0",
