@@ -1,4 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
+import { jetbrains } from "../../styles/global.css";
 import { globalVars } from "../../styles/theme.css";
 
 export const link = style({
@@ -52,4 +53,8 @@ export const paragraph = style({
 
 globalStyle(`${blockquote} p`, {
   display: "inline",
+});
+
+export const code = style({
+  fontFamily: jetbrains,
 });

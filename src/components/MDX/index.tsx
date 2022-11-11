@@ -22,14 +22,20 @@ export const MDXComponents = {
     />
   ),
 
-  code: (props: any) => (
-    <code
-      {...props}
-      style={{
-        padding: "2px",
-        lineHeight: "1.2rem",
-        borderRadius: "2px",
-      }}
-    />
-  ),
+  code: (props: any) => {
+    //console.log("props >>", props);
+    //console.log("child >>", props.children);
+
+    return (
+      <code
+        {...props}
+        className={styles.code}
+        style={{
+          padding: "2px",
+          lineHeight: "1.2rem",
+          borderRadius: "2px",
+        }}
+      />
+    );
+  },
 };

@@ -2,8 +2,9 @@ import { globalFontFace, globalStyle } from "@vanilla-extract/css";
 import { BREAKPOINTS } from "../constant";
 import { globalVars } from "./theme.css";
 
-const inter = "Inter";
-const outfit = "Outfit";
+export const inter = "Inter";
+export const outfit = "Outfit";
+export const jetbrains = "JetBrains Mono";
 
 globalFontFace(outfit, {
   src: "url(/assets/fonts/Outfit/Outfit-VariableFont_wght.ttf)",
@@ -13,6 +14,12 @@ globalFontFace(outfit, {
 
 globalFontFace(inter, {
   src: "url(/assets/fonts/Inter/static/Inter-Regular.ttf)",
+  fontStyle: "normal",
+  fontDisplay: "swap",
+});
+
+globalFontFace(jetbrains, {
+  src: "url(/assets/fonts/JetBrainsMono/JetBrainsMono-Regular.woff2)",
   fontStyle: "normal",
   fontDisplay: "swap",
 });
