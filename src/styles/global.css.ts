@@ -4,11 +4,17 @@ import { globalVars } from "./theme.css";
 
 const frauncesSB = "Fraunces Semi Bold";
 const inter = "Inter";
-const nanumPen = "Nanum Pen";
+const outfit = "Outfit";
 
 globalFontFace(frauncesSB, {
   src: "url(/assets/fonts/Fraunces/static/Fraunces_9pt_Soft/Fraunces_9pt_Soft-SemiBold.ttf)",
   fontStyle: "bold",
+  fontDisplay: "swap",
+});
+
+globalFontFace(outfit, {
+  src: "url(/assets/fonts/Outfit/Outfit-VariableFont_wght.ttf)",
+  fontStyle: "normal",
   fontDisplay: "swap",
 });
 
@@ -18,13 +24,11 @@ globalFontFace(inter, {
   fontDisplay: "swap",
 });
 
-globalFontFace(nanumPen, {
-  src: "url(/assets/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf)",
-});
-
 //const baseSerifFamily = `${frauncesSB}, Georgia, serif`;
 
 const baseFontFamily = `${inter}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
+
+const headingFontFamily = `${outfit}, ${baseFontFamily}`;
 
 globalStyle("html, body", {
   background: "var(--background)",
@@ -57,7 +61,7 @@ const getMobileFontSize = (baseNumber = 0) => ({
 });
 
 globalStyle("h1, h2, h3, h4, h5, h6, h7", {
-  fontFamily: baseFontFamily,
+  fontFamily: headingFontFamily,
   letterSpacing: "0.025rem",
   fontWeight: 600,
 });

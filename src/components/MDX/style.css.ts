@@ -43,7 +43,10 @@ globalStyle(`${blockquote}:before`, {
 });
 
 export const paragraph = style({
+  // for inter
   letterSpacing: "0.015rem",
+  // for outfit
+  //letterSpacing: "0.025rem",
   lineHeight: "1.5rem",
 });
 
