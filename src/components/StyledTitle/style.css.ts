@@ -17,6 +17,10 @@ export const shaky = keyframes({
 export const xSymbol = style({
   animation: `${shaky} 1.2s infinite ease`,
   display: "inline-block",
+  cursor: "help",
+  ":hover": {
+    animation: "none",
+  },
 });
 
 export const xSymbolVariant = styleVariants({
