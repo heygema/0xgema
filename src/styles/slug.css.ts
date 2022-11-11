@@ -7,9 +7,13 @@ export const date = style({
 
 export const backButton = style({
   padding: "8px",
-  WebkitTransition: "background 0.2s ease",
+  WebkitTransition: "background 0.2s ease, border 0.3s ease;",
+  border: "2px solid transparent",
   borderRadius: "5px",
   ":hover": {
     background: globalVars.colors.transluscent,
+  },
+  ":active": {
+    border: `2px solid ${globalVars.colors["grayish2-transluscent2"]}`,
   },
 });
