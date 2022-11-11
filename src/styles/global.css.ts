@@ -2,15 +2,8 @@ import { globalFontFace, globalStyle } from "@vanilla-extract/css";
 import { BREAKPOINTS } from "../constant";
 import { globalVars } from "./theme.css";
 
-const frauncesSB = "Fraunces Semi Bold";
 const inter = "Inter";
 const outfit = "Outfit";
-
-globalFontFace(frauncesSB, {
-  src: "url(/assets/fonts/Fraunces/static/Fraunces_9pt_Soft/Fraunces_9pt_Soft-SemiBold.ttf)",
-  fontStyle: "bold",
-  fontDisplay: "swap",
-});
 
 globalFontFace(outfit, {
   src: "url(/assets/fonts/Outfit/Outfit-VariableFont_wght.ttf)",
@@ -23,8 +16,6 @@ globalFontFace(inter, {
   fontStyle: "normal",
   fontDisplay: "swap",
 });
-
-//const baseSerifFamily = `${frauncesSB}, Georgia, serif`;
 
 const baseFontFamily = `${inter}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
 
@@ -54,8 +45,7 @@ globalStyle("html, body", {
 const getMobileFontSize = (baseNumber = 0) => ({
   "@media": {
     [`(max-width: ${BREAKPOINTS.mobile})`]: {
-      // TODO: test 0 scale for now
-      fontSize: `${baseNumber + 0}rem`,
+      fontSize: `${baseNumber - 0.3}rem`,
     },
   },
 });
@@ -70,7 +60,6 @@ globalStyle("h1, h2, h3, h4, h5, h6, h7", {
 //background: globalVars.colors.gradientPastelRainbow,
 //WebkitBackgroundClip: "text",
 //WebkitTextFillColor: "transparent",
-
 const typography: Array<[string, number]> = [
   ["h1", 3],
   ["h2", 2.5],
@@ -83,6 +72,9 @@ const typography: Array<[string, number]> = [
 ];
 
 for (let [element, size] of typography) {
+  if (element === "p") {
+    continue;
+  }
   globalStyle(element, {
     fontSize: `${size}rem`,
     ...getMobileFontSize(size),
@@ -132,6 +124,7 @@ globalStyle("[data-theme='dark']", {
 });
 
 /**
+ * NOTE: to modify scrollbar
 globalStyle("body::-webkit-scrollbar", {
   width: "0.75rem",
 });
