@@ -42,7 +42,7 @@ export const cardSystemColorStyle = style({
 
 const cardGridStyle = style({
   "@media": {
-    [`(max-width: ${BREAKPOINTS.mobile})`]: {
+    [`(max-width: ${BREAKPOINTS.tablet})`]: {
       gridColumn: "span 3 !important",
       //aspectRatio: "1.6 / 1",
       //aspectRatio: "1 / 1",

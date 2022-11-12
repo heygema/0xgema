@@ -7,7 +7,9 @@ const responsiveProperties = defineProperties({
     mobile: {
       "@media": `screen and (min-width: ${BREAKPOINTS["mobile-s"]}) and (max-width: ${BREAKPOINTS.mobile})`,
     },
-    tablet: { "@media": `screen and (min-width: ${BREAKPOINTS.tablet})` },
+    tablet: {
+      "@media": `screen and (min-width: ${BREAKPOINTS.mobile}) and (max-width: ${BREAKPOINTS.desktop})`,
+    },
     desktop: { "@media": `screen and (min-width: ${BREAKPOINTS.desktop})` },
     ["mobile-s"]: {
       "@media": `screen and (max-width: ${BREAKPOINTS["mobile-s"]})`,

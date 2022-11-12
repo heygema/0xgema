@@ -67,8 +67,9 @@ export const globalVars = createGlobalTheme(":root", {
     large: "16px",
   },
   width: {
-    "breakpoint-medium": "750px",
-    "breakpoint-small": "460px",
+    "breakpoint-desktop": "750px",
+    "breakpoint-tablet": "600px",
+    "breakpoint-mobile": "460px",
     "breakpoint-x-small": "320px",
   },
 });
