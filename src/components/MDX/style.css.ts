@@ -56,7 +56,7 @@ globalStyle(`${blockquote} p`, {
 });
 
 export const code = style({
-  fontFamily: jetbrains,
+  fontFamily: `${jetbrains}, monospace`,
   padding: "5px",
   borderRadius: "8px",
   background: globalVars.colors.transluscent,
