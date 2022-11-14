@@ -16,7 +16,7 @@ Let me share what I have on `this`.
 
 Implicit Binding occurs upon the creation of the object. When a function is invoked from an object after a . (dot), the `this` inside the scope of the function will refers to the object that calls it.
 
-```js
+```javascript
 const me = {
   name: 'X',
   sayName: function() {
@@ -30,14 +30,14 @@ me.sayName()
 
 but in case of arrow function
 
-```js
+```javascript
 () => {}
 let you = {name: 'you', sayName: () => {console.log(this.name)}} // undefined
 ```
 
-this is because arrow function by default binds `this`, to the scope where it was created, in this case if it's in the browser, the window object. if it was this case:
+this is because arrow function by default binds `this` to the scope where it was created, in this case if it's in the browser then it's the window object. if it was this case however
 
-```js
+```javascript
 function createYou(name) {this.name=name, this.sayName = () => {console.log(this.name)}}
 
 let you = new createYou("a person");
@@ -50,7 +50,7 @@ but you cannot rebind it anywhere after it was defined
 
 ##  Explicit Binding
 
-We can explicitly tells javascript to bind to an object (everything in JS is an Object anyway) available using three types of methods _call_,  _apply_, and  _bind_
+We can explicitly tell javascript to bind to an object (everything in JS is an Object anyway) available using three types of methods _call_,  _apply_, and  _bind_
 
 **call**
 ```javascript
