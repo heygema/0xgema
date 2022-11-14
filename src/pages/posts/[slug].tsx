@@ -14,6 +14,7 @@ import { useSetPosts } from "../../hooks/useSetPosts";
 import { MDXComponents, StyledTitle } from "../../components";
 
 import * as styles from "../../styles/slug.css";
+import rehypeHighlight from "rehype-highlight";
 
 interface Props {
   slug: string;
@@ -35,6 +36,10 @@ export default function Post({ posts, source }: Props) {
     <>
       <Head>
         <title>{title}</title>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css"
+        />
       </Head>
       <Link aria-label="back-button" href="/" passHref>
         <a className={styles.backButton}>↩ Home</a>
@@ -70,7 +75,12 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const rawFile = await fs.readFile(postLocation, "utf-8");
 
-  const mdxSource = await serialize(rawFile, { parseFrontmatter: true });
+  const mdxSource = await serialize(rawFile, {
+    parseFrontmatter: true,
+    mdxOptions: {
+      rehypePlugins: [rehypeHighlight],
+    },
+  });
 
   return {
     props: {

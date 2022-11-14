@@ -7,35 +7,21 @@ export const MDXComponents = {
   blockquote: (props: any) => (
     <blockquote className={styles.blockquote} {...props} />
   ),
-  pre: (props: any) => (
-    <pre
-      {...props}
-      style={{
-        width: "100%",
-        padding: "20px",
-        overflow: "scroll",
-        wordWrap: "normal",
-        wordBreak: "break-word",
-        background: globalVars.colors.transluscent,
-        borderRadius: "10px",
-      }}
-    />
-  ),
-
+  //pre: (props: any) => (
+  //<pre
+  //{...props}
+  //style={{
+  //width: "100%",
+  //padding: "20px",
+  //overflow: "scroll",
+  //wordWrap: "normal",
+  //wordBreak: "break-word",
+  //background: globalVars.colors.black,
+  //borderRadius: "10px",
+  //}}
+  ///>
+  //),
   code: (props: any) => {
-    //console.log("props >>", props);
-    //console.log("child >>", props.children);
-
-    return (
-      <code
-        {...props}
-        className={styles.code}
-        style={{
-          padding: "2px",
-          lineHeight: "1.2rem",
-          borderRadius: "2px",
-        }}
-      />
-    );
+    return <code {...props} className={styles.code} />;
   },
 };

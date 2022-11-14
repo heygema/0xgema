@@ -57,4 +57,15 @@ globalStyle(`${blockquote} p`, {
 
 export const code = style({
   fontFamily: jetbrains,
+  padding: "5px",
+  borderRadius: "8px",
+  background: globalVars.colors.transluscent,
+});
+
+globalStyle(`pre code.${code}`, {
+  display: "block",
+  overflowX: "auto",
+  padding: "1rem",
+  background: globalVars.colors.transluscent,
+  borderRadius: "16px",
 });
