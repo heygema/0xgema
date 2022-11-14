@@ -66,6 +66,7 @@ globalStyle(`pre code.${code}`, {
   display: "block",
   overflowX: "auto",
   padding: "1rem",
-  background: globalVars.colors.transluscent,
+  background: globalVars.colors.black,
+  color: globalVars.colors.white,
   borderRadius: "16px",
 });
