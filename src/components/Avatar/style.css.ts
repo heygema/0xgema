@@ -6,6 +6,7 @@ export const root = style({
   backgroundPosition: "center",
   backgroundSize: "cover",
   width: "200px",
-  borderRadius: "100%",
   margin: "0 auto",
+  borderRadius: "16px",
+  //borderRadius: "100%",
 });
