@@ -1,5 +1,4 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
-import { createTheme } from "@vanilla-extract/css";
 
 const BASE_COLORS = {
   black: "hsla(0, 0%, 7%, 87%)",
@@ -71,17 +70,5 @@ export const globalVars = createGlobalTheme(":root", {
     "breakpoint-tablet": "600px",
     "breakpoint-mobile": "460px",
     "breakpoint-x-small": "320px",
-  },
-});
-
-export const [themeClass, themeVars] = createTheme({
-  background: {},
-  color: {
-    brand: "blue",
-    white: "#fff",
-  },
-  space: {
-    small: "4px",
-    medium: "8px",
   },
 });

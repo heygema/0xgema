@@ -2,7 +2,7 @@ import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 import { BREAKPOINTS } from "../constant";
 import { globalVars as vars } from "./theme.css";
 
-const responsiveProperties = defineProperties({
+export const responsiveProperties = defineProperties({
   conditions: {
     mobile: {
       "@media": `screen and (min-width: ${BREAKPOINTS["mobile-s"]}) and (max-width: ${BREAKPOINTS.mobile})`,

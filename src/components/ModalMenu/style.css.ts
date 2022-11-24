@@ -1,4 +1,5 @@
 import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
+import { BREAKPOINTS } from "../../constant";
 import { globalVars } from "../../styles/theme.css";
 
 export const modal = style({
@@ -9,9 +10,14 @@ export const modal = style({
   padding: "5px",
   background: "var(--cmdKBackground)",
   backdropFilter: "blur(4px)",
+  width: "100%",
   minHeight: "10rem",
   maxHeight: "33rem",
-  width: "100%",
+  "@media": {
+    [`screen and (max-width: ${BREAKPOINTS.mobile})`]: {
+      height: "100vmin",
+    },
+  },
 });
 
 export const inputStyle = style({
