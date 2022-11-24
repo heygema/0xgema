@@ -170,10 +170,12 @@ globalStyle(".popup-content", {
   pointerEvents: "none",
   "@media": {
     [`screen and (max-width: ${BREAKPOINTS.mobile})`]: {
+      height: "100%",
+      translate: 0,
       width: "100%",
       bottom: "0",
-      translate: "0px -27vmin",
-      justifyContent: "flex-end",
+      alignItems: "center",
+      background: "var(--cmdKBackground) !important",
     },
   },
 });
