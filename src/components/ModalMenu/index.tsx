@@ -145,6 +145,7 @@ export default function ModalMenu() {
 
   useEffect(() => {
     inputRef?.current?.focus();
+    inputRef?.current?.blur();
   }, []);
 
   const combinedFuse = useMemo(
