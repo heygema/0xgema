@@ -6,6 +6,13 @@ import * as styles from "./style.css";
 import { link as linkStyle } from "../../.././src/components/MDX/style.css";
 
 export default function Layout({ children }: { children: ReactNode }) {
+  //const backGlow = (
+  //<>
+  //<aside className={styles.backGlowVariant.top} />
+  //<aside className={styles.backGlowVariant.bottom} />
+  //</>
+  //);
+
   return (
     <>
       <Head>
@@ -40,8 +47,6 @@ export default function Layout({ children }: { children: ReactNode }) {
           <CircleMenu />
         </div>
       </nav>
-      <aside className={styles.backGlowVariant.top} />
-      <aside className={styles.backGlowVariant.bottom} />
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
         <span>

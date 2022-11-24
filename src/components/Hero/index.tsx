@@ -9,14 +9,16 @@ export function Hero() {
 
   const clock = time && `${time.hour}:${time.minute}:${time.second}`;
 
+  // TODO: decide
+  const _smiley = (
+    <span>
+      <Smiley className={styles.smiley} />
+    </span>
+  );
+
   return (
     <div className={styles.root}>
-      <h4 className={styles.title}>
-        <span>
-          <Smiley className={styles.smiley} />
-        </span>
-        Gema Anggada
-      </h4>
+      <h4 className={styles.title}>Gema Anggada</h4>
       <p className={styles.detail}>
         Software Engineer,{" "}
         <span>
