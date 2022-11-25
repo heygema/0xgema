@@ -58,9 +58,9 @@ const getMobileFontSize = (baseNumber = 0) => ({
 });
 
 globalStyle("h1, h2, h3, h4, h5, h6, h7", {
-  fontFamily: headingFontFamily,
+  fontFamily: baseFontFamily,
   letterSpacing: "0.025rem",
-  fontWeight: 600,
+  fontWeight: 500,
 });
 
 // if you want gradient stuff
