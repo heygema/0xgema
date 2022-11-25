@@ -35,13 +35,13 @@ export default function ArticleCard({
           },
           visible: { opacity: 1 },
         }}
-        whileTap={{
-          scale: 0.975,
-        }}
+        //whileTap={{
+        //scale: 0.975,
+        //}}
         initial="hidden"
         animate="visible"
         className={[styles.card, isDraggable && styles.draggableCard].join(" ")}
-        whileHover={{ scale: 1.01 }}
+        //whileHover={{ scale: 1.01 }}
       >
         <h5 className={styles.title}>{title}</h5>
         <span className={styles.postDate}>
