@@ -9,3 +9,4 @@ export * from "./MDX";
 export * from "./Projects";
 export * from "./StyledTitle";
 export * from "./Social";
+export * from "./WorkingSince";
