@@ -1,5 +1,4 @@
 import React from "react";
-import * as styles from "./style.css";
 
 export function StyledTitle({
   text,
@@ -8,12 +7,9 @@ export function StyledTitle({
   text: string;
   type: "h1" | "h2" | "h3" | "h4" | "h5";
 }) {
-  return React.createElement(
-    type,
-    {},
-    <>
-      <span className={styles.xSymbol}>×</span> {text}{" "}
-      <span className={styles.xSymbolVariant.faster}>×</span>
-    </>
-  );
+  //<>
+  //<span className={styles.xSymbol}>×</span> {text}{" "}
+  //<span className={styles.xSymbolVariant.faster}>×</span>
+  //</>
+  return React.createElement(type, {}, text);
 }
