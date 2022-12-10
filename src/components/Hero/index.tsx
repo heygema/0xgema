@@ -16,15 +16,16 @@ export function Hero() {
     </span>
   );
 
+  const timer = (
+    <span>
+      ({TIME_ZONE}) {clock}
+    </span>
+  );
+
   return (
     <div className={styles.root}>
       <h4 className={styles.title}>Gema Anggada</h4>
-      <p className={styles.detail}>
-        Software Engineer,{" "}
-        <span>
-          ({TIME_ZONE}) {clock}
-        </span>
-      </p>
+      <p className={styles.detail}>Software Engineer, </p>
     </div>
   );
 }
