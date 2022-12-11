@@ -25,7 +25,7 @@ export function Hero() {
   return (
     <div className={styles.root}>
       <h4 className={styles.title}>Gema Anggada</h4>
-      <p className={styles.detail}>Software Engineer, </p>
+      <p className={styles.detail}>Software Engineer</p>
     </div>
   );
 }
