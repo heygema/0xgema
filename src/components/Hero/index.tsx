@@ -1,26 +1,30 @@
 import { useTime } from "../../hooks/useTime";
 import * as styles from "./style.css";
 
-import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
+//import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
 import { TIME_ZONE } from "../../constant";
 
-export function Hero() {
+export function TimezoneClock() {
   const time = useTime();
 
   const clock = time && `${time.hour}:${time.minute}:${time.second}`;
 
-  // TODO: decide
-  const _smiley = (
-    <span>
-      <Smiley className={styles.smiley} />
-    </span>
-  );
-
-  const timer = (
+  const timezoneClock = (
     <span>
       ({TIME_ZONE}) {clock}
     </span>
   );
+
+  return timezoneClock;
+}
+
+export function Hero() {
+  // TODO: decide
+  //const _smiley = (
+  //<span>
+  //<Smiley className={styles.smiley} />
+  //</span>
+  //);
 
   return (
     <div className={styles.root}>
