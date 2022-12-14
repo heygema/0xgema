@@ -79,27 +79,14 @@ export default function Home({ posts }: Props) {
   }
 
   const renderedPosts = availablePost.map(
-    ({ slug, title, excerpt, ...info }, index) => {
-      const year = new Date(info.date).toLocaleString("en-US", {
-        year: "numeric",
-      });
-      const month = new Date(info.date).toLocaleString("en-US", {
-        month: "long",
-      });
-      const day = new Date(info.date).toLocaleString("en-US", {
-        day: "2-digit",
-      });
-
+    ({ slug, date, title, excerpt }, index) => {
       return (
         <ArticleCard
           key={`slug_${index}`}
           slug={slug}
-          //isDraggable={index === 0}
+          date={date}
           title={title}
           excerpt={excerpt}
-          month={month}
-          day={day}
-          year={year}
         />
       );
     }

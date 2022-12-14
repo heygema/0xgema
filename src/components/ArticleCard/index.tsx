@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { getArticleDate } from "../../helpers/getArticleDate";
 import * as styles from "./style.css";
 
 interface Props {
@@ -8,9 +9,7 @@ interface Props {
   slug?: string;
   title: string;
   excerpt: string;
-  month: string;
-  day: string;
-  year: string;
+  date: string;
   ["aria-label"]?: string;
 }
 
@@ -20,11 +19,11 @@ export default function ArticleCard({
   slug,
   title,
   excerpt,
-  month,
-  day,
-  year,
+  date,
   ...otherProps
 }: Props) {
+  const { year, month, day } = getArticleDate(date);
+
   return (
     <Link {...otherProps} href={"/posts/" + slug}>
       <motion.div
