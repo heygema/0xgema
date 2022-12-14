@@ -19,17 +19,13 @@ export function TimezoneClock() {
 }
 
 export function Hero() {
-  // TODO: decide
-  //const _smiley = (
-  //<span>
-  //<Smiley className={styles.smiley} />
-  //</span>
-  //);
-
   return (
     <div className={styles.root}>
       <h4 className={styles.title}>Gema Anggada</h4>
-      <p className={styles.detail}>Software Engineer</p>
+      <p className={styles.detail}>
+        Software Engineer -
+        <TimezoneClock />
+      </p>
     </div>
   );
 }
