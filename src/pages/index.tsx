@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { Suspense, useEffect } from "react";
 
 import * as styles from "../styles/index.css";
@@ -11,10 +10,7 @@ import Button from "../components/Button";
 import { Card, Loading } from "../core-ui";
 import { motion } from "framer-motion";
 import { Hero } from "../components";
-
-const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
-  suspense: true,
-});
+import ArticleCard from "../components/ArticleCard";
 
 type Props = {
   posts: Posts;
