@@ -5,5 +5,5 @@ export function WorkingSince() {
     const currentYear = DateTime.now().year;
     const yearElapsed = currentYear - since;
 
-    return <span>{yearElapsed}+ years</span>;
+    return <span>{yearElapsed}</span>;
 }
