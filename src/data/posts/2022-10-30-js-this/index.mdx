@@ -1,5 +1,5 @@
 ---
-title: Js `this` explainer
+title: Understanding `this` in JavaScript
 tags: #programming 
 link: 
 topics: [[Javascript MOC]]
@@ -10,11 +10,11 @@ excerpt: Javascript this binding quick explainer
 
 ---
 
-Let me share what I have on `this`.
+`this` is a reference to the object that invokes the current function. In JavaScript, `this` can have different values depending on the context in which the function is invoked.
 
-##  Implicit Binding
+## Implicit Binding
 
-Implicit Binding occurs upon the creation of the object. When a function is invoked from an object after a . (dot), the `this` inside the scope of the function will refers to the object that called it.
+In implicit binding, the value of this is set based on the object that invokes the function. For example:
 
 ```javascript
 const me = {
@@ -23,89 +23,66 @@ const me = {
     console.log(this.name);
   }
 };
-
-// this is the `me`
-me.sayName()
+me.sayName(); // Output: X
 ```
 
-but in case of arrow function
+However, the value of this in arrow functions is not determined by the object that invokes it. Instead, the value of this is set to the context in which the arrow function was created.
 
 ```javascript
-() => {}
-let you = {name: 'you', sayName: () => {console.log(this.name)}} // undefined
+const you = {name: 'you', sayName: () => console.log(this.name)};
+you.sayName(); // Output: undefined
+The value of this in an arrow function cannot be rebound after it is defined.
 ```
 
-this is because arrow function by default binds `this` to the scope where it was created, in this case if it's in the browser then it's the window object. if it was this case however
+## Explicit Binding
+
+In explicit binding, you can set the value of this explicitly using methods like call, apply, and bind.
+
+`call` allows you to pass arguments to the function and bind this to a specific object:
 
 ```javascript
-function createYou(name) {this.name=name, this.sayName = () => {console.log(this.name)}}
-
-let you = new createYou("a person");
-you.sayName(); // "a person"
-```
-
-but you cannot rebind it anywhere after it was defined
-
-> You cannot rebind `this` in an arrow function. It will always be defined as the context in which it was defined. If you require this to be meaningful you should use a normal function. [source](https://stackoverflow.com/questions/33308121/can-you-bind-this-in-an-arrow-function)
-
-##  Explicit Binding
-
-We can explicitly tell javascript to bind to an object (everything in JS is an Object anyway) available using three types of methods _call_,  _apply_, and  _bind_
-
-**call**
-```javascript
-const me = {
-  name: 'Stacey'
-}
-
+const me = { name: 'Stacey' };
 function hello(address, address2, address3) {
-  console.log("hello ", this.name, ", ", address, ", " , address2, ", ", address3);
+  console.log("Hello ", this.name, ", ", address, ", " , address2, ", ", address3);
 }
-
-hello.call(me, "Hollywood", address2)
+hello.call(me, "Hollywood", "California", "New York");
 ```
 
-**apply**
-same as .call, but we can apply array of args
+`apply` is similar to call, but you pass the arguments as an array:
+
 ```javascript
-
-let addresses = ["Malibu", "California", "New York"]
-
+const me = { name: 'Stacey' };
+function hello(address, address2, address3) {
+  console.log("Hello ", this.name, ", ", address, ", " , address2, ", ", address3);
+}
+const addresses = ["Malibu", "California", "New York"];
 hello.apply(me, addresses);
 ```
 
-**bind**
+`bind` allows you to bind this to a specific object and create a new function with a pre-bound this value:
+
 ```javascript
-const me = {
-  name: 'Stacey'
-}
-
+const me = { name: 'Stacey' };
 function hello(address) {
-  console.log("hello ", this.name, ", ", address);
+  console.log("Hello ", this.name, ", ", address);
 }
-
-let newHello = hello.bind(me, 'Hollywood')
-neHello();
-
+const newHello = hello.bind(me, 'Hollywood');
+newHello();
+new Operator
+In JavaScript, the new operator creates a new instance of an object and binds this to the new object. For example:
 ```
 
-Others: 
-
-##  using `new` 
-
 ```javascript
-
 const Animal = function(name, type) {
   this.name = name;
   this.type = type;
-}
-
-let omnivore = new Animal("Jane", "Omnivore")
-
+};
+const omnivore = new Animal("Jane", "Omnivore");
 ```
 
+##Default Window Binding
 
-##  Default Window Binding
+By default, this is bound to the window object (or global in a non-browser environment). To avoid this behavior, you can add 'use strict'; at the beginning of your code.
 
 ```javascript
 /*
@@ -121,3 +98,4 @@ const sayName = function() {
 }
 sayName();
 ```
+
