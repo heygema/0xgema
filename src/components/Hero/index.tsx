@@ -4,13 +4,14 @@ import * as styles from "./style.css";
 //import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
 import { TIME_ZONE } from "../../constant";
 
+// this component is something alright
 export function TimezoneClock() {
   const time = useTime();
 
   const clock = time && `${time.hour}:${time.minute}:${time.second}`;
 
   const timezoneClock = (
-    <span>
+    <span className={styles.timezone}>
       ({TIME_ZONE}) {clock}
     </span>
   );
