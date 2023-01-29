@@ -10,7 +10,8 @@ const cardBase = style({
   boxShadow: globalVars.shadow.macShadow,
   backdropFilter: "blur(1.1px)",
   //border: "3px solid " + "var(--accentForeground)",
-  padding: "15px 15px 15px 30px",
+  //padding: "15px 15px 15px 30px",
+  padding: "1.1rem",
   borderRadius: "16px",
   cursor: "pointer",
   ":active": {

@@ -2,7 +2,7 @@ import { globalStyle, style } from "@vanilla-extract/css";
 
 export const root = style({
     width: "100%",
-    padding: "20px",
+    padding: "1rem",
     paddingTop: "0px",
 });
 
