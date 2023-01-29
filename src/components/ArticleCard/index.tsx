@@ -25,7 +25,7 @@ export default function ArticleCard({
   const { year, month, day } = getArticleDate(date);
 
   return (
-    <a {...otherProps} href={"/posts/" + slug}>
+    <Link {...otherProps} href={"/posts/" + slug}>
       <motion.div
         aria-label="article-card"
         variants={{
@@ -48,6 +48,6 @@ export default function ArticleCard({
         </span>
         <p className={styles.excerpt}>{excerpt}</p>
       </motion.div>
-    </a>
+    </Link>
   );
 }
