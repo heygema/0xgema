@@ -3,17 +3,17 @@ import { BREAKPOINTS } from "../constant";
 import { globalVars } from "./theme.css";
 
 export const inter = "Inter";
-export const outfit = "Outfit";
+export const readex = "ReadexPro";
 export const jetbrains = "JetBrains Mono";
 
-globalFontFace(outfit, {
-  src: "url(/assets/fonts/Outfit/Outfit-VariableFont_wght.ttf)",
+globalFontFace(inter, {
+  src: "url(/assets/fonts/Inter/static/Inter-Regular.ttf)",
   fontStyle: "normal",
   fontDisplay: "swap",
 });
 
-globalFontFace(inter, {
-  src: "url(/assets/fonts/Inter/static/Inter-Regular.ttf)",
+globalFontFace(readex, {
+  src: "url(/assets/fonts/ReadexPro/ReadexPro-Regular.ttf)",
   fontStyle: "normal",
   fontDisplay: "swap",
 });
@@ -24,9 +24,7 @@ globalFontFace(jetbrains, {
   fontDisplay: "swap",
 });
 
-const baseFontFamily = `${inter}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
-
-const headingFontFamily = `${outfit}, ${baseFontFamily}`;
+const baseFontFamily = `${readex}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
 
 globalStyle("html, body", {
   background: "var(--background)",
@@ -59,7 +57,7 @@ const getMobileFontSize = (baseNumber = 0) => ({
 
 globalStyle("h1, h2, h3, h4, h5, h6, h7", {
   fontFamily: baseFontFamily,
-  letterSpacing: "0.025rem",
+  //letterSpacing: "0.025rem",
   fontWeight: 500,
 });
 
