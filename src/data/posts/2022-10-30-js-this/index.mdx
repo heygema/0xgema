@@ -23,6 +23,7 @@ const me = {
     console.log(this.name);
   }
 };
+
 me.sayName(); // Output: X
 ```
 
@@ -30,7 +31,9 @@ However, the value of this in arrow functions is not determined by the object th
 
 ```javascript
 const you = {name: 'you', sayName: () => console.log(this.name)};
+
 you.sayName(); // Output: undefined
+
 The value of this in an arrow function cannot be rebound after it is defined.
 ```
 
@@ -42,9 +45,11 @@ In explicit binding, you can set the value of this explicitly using methods like
 
 ```javascript
 const me = { name: 'Stacey' };
+
 function hello(address, address2, address3) {
   console.log("Hello ", this.name, ", ", address, ", " , address2, ", ", address3);
 }
+
 hello.call(me, "Hollywood", "California", "New York");
 ```
 
@@ -52,10 +57,13 @@ hello.call(me, "Hollywood", "California", "New York");
 
 ```javascript
 const me = { name: 'Stacey' };
+
 function hello(address, address2, address3) {
   console.log("Hello ", this.name, ", ", address, ", " , address2, ", ", address3);
 }
+
 const addresses = ["Malibu", "California", "New York"];
+
 hello.apply(me, addresses);
 ```
 
@@ -63,10 +71,13 @@ hello.apply(me, addresses);
 
 ```javascript
 const me = { name: 'Stacey' };
+
 function hello(address) {
   console.log("Hello ", this.name, ", ", address);
 }
+
 const newHello = hello.bind(me, 'Hollywood');
+
 newHello();
 ```
 
@@ -78,6 +89,7 @@ const Animal = function(name, type) {
   this.name = name;
   this.type = type;
 };
+
 const omnivore = new Animal("Jane", "Omnivore");
 ```
 
@@ -94,9 +106,11 @@ const sayName = function() {
  'use strict';
  console.log(this.name);
 }
+
 const sayName = function() {
  console.log(this.name);
 }
+
 sayName();
 ```
 
