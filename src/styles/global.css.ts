@@ -2,19 +2,19 @@ import { globalFontFace, globalStyle } from "@vanilla-extract/css";
 import { BREAKPOINTS } from "../constant";
 import { globalVars } from "./theme.css";
 
-export const inter = "Inter";
 export const readex = "ReadexPro";
+export const readexBold = "ReadexPro-Bold";
 export const jetbrains = "JetBrains Mono";
 
-globalFontFace(inter, {
-  src: "url(/assets/fonts/Inter/static/Inter-Regular.ttf)",
+globalFontFace(readex, {
+  src: "url(/assets/fonts/ReadexPro/ReadexPro-Light.ttf)",
   fontStyle: "normal",
   fontDisplay: "swap",
 });
 
-globalFontFace(readex, {
+globalFontFace(readexBold, {
   src: "url(/assets/fonts/ReadexPro/ReadexPro-Regular.ttf)",
-  fontStyle: "normal",
+  fontStyle: "bold",
   fontDisplay: "swap",
 });
 
@@ -56,7 +56,7 @@ const getMobileFontSize = (baseNumber = 0) => ({
 });
 
 globalStyle("h1, h2, h3, h4, h5, h6, h7", {
-  fontFamily: baseFontFamily,
+  fontFamily: `${readexBold}, ${baseFontFamily}`,
   //letterSpacing: "0.025rem",
   fontWeight: 500,
 });
