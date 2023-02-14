@@ -47,7 +47,7 @@ export const paragraph = style({
   // for inter
   // for outfit
   //letterSpacing: "0.025rem",
-  lineHeight: "1.5rem",
+  lineHeight: "1.6",
 });
 
 globalStyle(`${blockquote} p`, {
