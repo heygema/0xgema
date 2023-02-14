@@ -26,7 +26,7 @@ export const inputStyle = style({
   height: "64px",
   padding: "0px 50px 0px 10px",
   fontSize: "18px",
-  letterSpacing: "-0.013em",
+  //letterSpacing: "-0.013em",
   outline: "none",
   backgroundColor: "transparent",
   borderTopRightRadius: "10px",
