@@ -32,7 +32,7 @@ globalStyle("html, body", {
   fontFamily: baseFontFamily,
   margin: 0,
   padding: 0,
-  fontSize: "15px",
+  //fontSize: "15px",
   minHeight: "100vh",
   // NOTE: I like this media style, but..
   //"@media": {
