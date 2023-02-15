@@ -34,6 +34,7 @@ globalStyle("html, body", {
   padding: 0,
   //fontSize: "15px",
   minHeight: "100vh",
+  letterSpacing: "0.03rem",
   // NOTE: I like this media style, but..
   //"@media": {
   //"(prefers-color-scheme: light)": {
