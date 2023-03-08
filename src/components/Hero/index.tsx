@@ -3,6 +3,7 @@ import * as styles from "./style.css";
 
 //import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
 import { TIME_ZONE } from "../../constant";
+import { Social } from "../Social";
 
 // this component is something alright
 export function TimezoneClock() {
@@ -27,6 +28,7 @@ export function Hero() {
         Software Engineer
         <TimezoneClock />
       </p>
+      <Social />
     </div>
   );
 }
