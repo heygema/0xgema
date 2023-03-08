@@ -10,7 +10,7 @@ export const navigation = style({
 
 const mainBase = style({
   margin: "0 auto",
-  marginTop: "20vmin",
+  marginTop: "15vmin",
   marginBottom: "5rem",
 });
 
