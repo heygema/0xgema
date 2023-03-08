@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Icons } from "../Icons";
 import * as styles from "./style.css";
@@ -36,9 +37,15 @@ export function Social() {
           target="_blank"
           passHref
         >
-          <a aria-label={label} target="_blank" rel="noopener noreferrer">
+          <motion.a
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            aria-label={label}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {icon}
-          </a>
+          </motion.a>
         </Link>
       ))}
     </div>
