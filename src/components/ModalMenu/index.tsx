@@ -261,7 +261,6 @@ export default function ModalMenu() {
     >
       <div className={styles.searchContainer}>
         <input
-          inputMode="none"
           aria-label="global-search-box"
           className={styles.inputStyle}
           placeholder="Search for posts and menus..."
