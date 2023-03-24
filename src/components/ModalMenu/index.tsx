@@ -144,10 +144,7 @@ export default function ModalMenu() {
   );
 
   useEffect(() => {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (!isMobile) {
-      inputRef?.current?.focus();
-    }
+    inputRef?.current?.focus();
   }, []);
 
   const combinedFuse = useMemo(
@@ -263,7 +260,6 @@ export default function ModalMenu() {
     >
       <div className={styles.searchContainer}>
         <input
-          onClick={() => inputRef.current.focus()}
           aria-label="global-search-box"
           className={styles.inputStyle}
           placeholder="Search for posts and menus..."
