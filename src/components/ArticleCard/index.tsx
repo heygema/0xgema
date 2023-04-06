@@ -37,6 +37,9 @@ export default function ArticleCard({
         whileTap={{
           scale: 0.975,
         }}
+        whileHover={{
+          scale: 1.05,
+        }}
         initial="hidden"
         animate="visible"
         className={[styles.card, isDraggable && styles.draggableCard].join(" ")}
