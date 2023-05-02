@@ -66,7 +66,10 @@ export const code = style({
 globalStyle(`pre code.${code}`, {
   display: "block",
   overflowX: "auto",
-  padding: "1rem",
+  padding: "3rem",
+  marginTop: "3rem",
+  marginBottom: "3rem",
+  fontSize: "small",
   background: globalVars.colors.black,
   color: globalVars.colors.white,
   borderRadius: "16px",

@@ -11,7 +11,7 @@ const cardBase = style({
   backdropFilter: "blur(1.1px)",
   //border: "3px solid " + "var(--accentForeground)",
   //padding: "15px 15px 15px 30px",
-  padding: "1.1rem",
+  padding: "1.5rem",
   borderRadius: "16px",
   cursor: "pointer",
   ":active": {
