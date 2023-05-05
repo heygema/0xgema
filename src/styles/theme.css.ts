@@ -57,7 +57,7 @@ export const globalVars = createGlobalTheme(":root", {
   },
   shadow: {
     mild: "0px 2px 5px rgba(0,0,0,0.25)",
-    macShadow: "0 22px 70px 4px rgba(0, 0, 0, 0.1)",
+    macShadow: "0 2px 7px 4px rgba(0, 0, 0, 0.1)",
   },
   space: {
     none: "0",
