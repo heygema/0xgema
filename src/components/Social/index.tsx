@@ -7,7 +7,7 @@ export function Social() {
   const links = [
     {
       label: "social-link-twitter",
-      href: "https://twitter.com/heygema",
+      href: "https://twitter.com/0xgema",
       icon: <Icons.BsTwitter />,
     },
     {
