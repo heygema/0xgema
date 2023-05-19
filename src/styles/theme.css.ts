@@ -2,6 +2,7 @@ import { createGlobalTheme } from "@vanilla-extract/css";
 
 const BASE_COLORS = {
   black: "hsla(0, 0%, 7%, 87%)",
+  black1: "hsl(180deg 10.03% 5.14%)",
   gray: "hsla(217, 8%, 80%, 30%)",
   grayish: "hsl(200, 6%, 10%)",
   grayish2: "hsl(200, 6%, 15%)",

@@ -112,7 +112,7 @@ globalStyle(":root", {
 
 globalStyle("[data-theme='dark']", {
   vars: {
-    "--background": globalVars.colors.grayish,
+    "--background": globalVars.colors.black1,
     "--foreground": globalVars.colors.white,
 
     "--accentBackground": globalVars.colors.darkThemeAccent,
