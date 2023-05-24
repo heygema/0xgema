@@ -6,6 +6,7 @@ export const root = style({
   backgroundSize: 'cover',
   width: '50px',
   aspectRatio: '1 / 1',
+  cursor: 'pointer',
   // margin: '0 auto',
   //borderRadius: "16px",
   borderRadius: '100%',
