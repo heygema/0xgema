@@ -20,12 +20,14 @@ export function TimezoneClock() {
 }
 
 export function Hero() {
+  // ×
   return (
     <div className={styles.root}>
       <h4 className={styles.title}>Gema Anggada</h4>
       <p className={styles.detail}>
         Locale <TimezoneClock />
       </p>
+      <div></div>
     </div>
   );
 }
