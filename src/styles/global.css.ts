@@ -2,9 +2,16 @@ import {globalFontFace, globalStyle} from '@vanilla-extract/css';
 import {BREAKPOINTS} from '../constant';
 import {globalVars} from './theme.css';
 
+export const syneBold = 'Syne-Bold';
 export const readex = 'ReadexPro';
 export const readexBold = 'ReadexPro-Bold';
 export const jetbrains = 'JetBrains Mono';
+
+globalFontFace(syneBold, {
+  src: 'url(/assets/fonts/Syne/Syne-SemiBold.ttf)',
+  fontStyle: 'bold',
+  fontDisplay: 'swap',
+});
 
 globalFontFace(readex, {
   src: 'url(/assets/fonts/ReadexPro/ReadexPro-Light.ttf)',
