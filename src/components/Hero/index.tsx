@@ -1,10 +1,12 @@
 import Link from 'next/link';
-import {useTime} from '../../hooks/useTime';
-import * as styles from './style.css';
+import {useRouter} from 'next/router';
 
 //import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
 import {TIME_ZONE} from '../../constant';
-import {useRouter} from 'next/router';
+import {useTime} from '../../hooks/useTime';
+import {Avatar} from '../Avatar';
+
+import * as styles from './style.css';
 
 // this component is something alright
 export function TimezoneClock() {
@@ -44,6 +46,9 @@ export function Hero() {
 
   return (
     <div className={styles.root}>
+      <div>
+        <Avatar />
+      </div>
       <h4 className={styles.title}>{routeTitle.get(route) ?? asPath}</h4>
       <p className={styles.detail}>
         Locale <TimezoneClock />

@@ -1,5 +1,5 @@
-import * as styles from "./style.css";
+import * as styles from './style.css';
 
 export function Avatar() {
-  return <div title="avatar-degentoonz-942" className={styles.root} />;
+  return <div title="avatar" className={styles.root} />;
 }
