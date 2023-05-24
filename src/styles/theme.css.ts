@@ -16,6 +16,7 @@ const BASE_COLORS = {
   "white3-transluscent": "hsla(200, 100%, 100%, 95%)",
   transluscent: "hsla(0, 0%, 30%, 10%)",
   genericTransparent: "hsla(0, 0%, 30%, 10%)",
+  cyanBlue: "hsl(211deg, 92%, 64%)",
   blue: "#0423F7",
   lime: "hsl(79, 100%, 58%)",
   lime1: "hsl(74, 85%, 69%)",
