@@ -37,7 +37,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta property="og:title" content="Gema's Internet Corner Space" />
         <meta
           property="og:description"
-          content="Gema's Internet Corner Space, sharing personal notes and stuff."
+          content="Gema's Internet Corner, sharing personal notes and stuff."
         />
         <meta property="og:image" content="/preview.png" />
       </Head>
