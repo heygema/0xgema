@@ -1,4 +1,4 @@
-import { globalVars } from "../../styles/theme.css";
+// import { globalVars } from "../../styles/theme.css";
 import * as styles from "./style.css";
 
 export const MDXComponents = {
