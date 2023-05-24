@@ -1,9 +1,9 @@
-import { useTime } from "../../hooks/useTime";
-import * as styles from "./style.css";
+import {useTime} from '../../hooks/useTime';
+import * as styles from './style.css';
 
 //import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
-import { TIME_ZONE } from "../../constant";
-import { Social } from "../Social";
+import {TIME_ZONE} from '../../constant';
+import {Social} from '../Social';
 
 // this component is something alright
 export function TimezoneClock() {
@@ -25,8 +25,7 @@ export function Hero() {
     <div className={styles.root}>
       <h4 className={styles.title}>Gema Anggada</h4>
       <p className={styles.detail}>
-        Software Engineer{' '}
-        <TimezoneClock />
+        Locale <TimezoneClock />
       </p>
       <Social />
     </div>
