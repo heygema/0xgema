@@ -10,6 +10,7 @@ export const root = style({
 
 export const title = style({
   fontFamily: syneBold,
+  marginTop: '1rem',
   marginBottom: '1rem',
 });
 
