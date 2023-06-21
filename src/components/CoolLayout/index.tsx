@@ -66,22 +66,6 @@ export default function Layout({ children }: { children: ReactNode }) {
               cc-by-sa
             </a>
           </Link>
-          {` • `}
-          <Link
-            aria-label={"license"}
-            href={"https://github.com/heygema/0xgema/"}
-            target="_blank"
-            passHref
-          >
-            <a
-              className={linkStyle}
-              aria-label={"source code"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              src
-            </a>
-          </Link>
         </span>
       </footer>
     </>
