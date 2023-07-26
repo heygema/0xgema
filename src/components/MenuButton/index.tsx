@@ -1,14 +1,14 @@
-import { motion } from "framer-motion";
-import * as styles from "./style.css";
-import "reactjs-popup/dist/index.css";
-import Popup from "reactjs-popup";
-import { Suspense, useEffect } from "react";
+import { motion } from 'framer-motion';
+import * as styles from './style.css';
+import 'reactjs-popup/dist/index.css';
+import Popup from 'reactjs-popup';
+import { Suspense, useEffect } from 'react';
 //import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
-import { useModalStore } from "../../data/store";
-import ModalMenu from "../ModalMenu";
-import { Loading } from "../../core-ui/Loading";
+import { useModalStore } from '../../data/store';
+import ModalMenu from '../ModalMenu';
+import { Loading } from '../../core-ui/Loading';
 
-export default function CircleMenu() {
+export default function MenuButton() {
   const { isOpen, setOpen, toggleOpen } = useModalStore((state) => state);
 
   const closeModal = () => setOpen(false);
@@ -17,14 +17,14 @@ export default function CircleMenu() {
 
   const keyDown = (event: KeyboardEvent) => {
     switch (event.key) {
-      case "k": {
+      case 'k': {
         if (event.metaKey) {
           event.preventDefault();
           toggleOpen();
         }
         break;
       }
-      case "Escape": {
+      case 'Escape': {
         event.preventDefault();
         closeModal();
         break;
@@ -37,9 +37,9 @@ export default function CircleMenu() {
 
   useEffect(() => {
     if (!document) return;
-    document.addEventListener("keydown", keyDown);
+    document.addEventListener('keydown', keyDown);
 
-    return () => removeEventListener("keydown", keyDown);
+    return () => removeEventListener('keydown', keyDown);
   }, []);
 
   // <Smiley className={styles.smiley} />

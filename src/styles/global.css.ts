@@ -1,6 +1,6 @@
-import {globalFontFace, globalStyle} from '@vanilla-extract/css';
-import {BREAKPOINTS} from '../constant';
-import {globalVars} from './theme.css';
+import { globalFontFace, globalStyle } from '@vanilla-extract/css';
+import { BREAKPOINTS } from '../constant';
+import { globalVars } from './theme.css';
 
 export const syneBold = 'Syne-Bold';
 export const readex = 'ReadexPro';

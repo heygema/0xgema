@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
-import CircleMenu from '../CircleMenu';
+import MenuButton from '../MenuButton';
 import * as styles from './style.css';
 import { link as linkStyle } from '../../.././src/components/MDX/style.css';
 import { motion } from 'framer-motion';
@@ -46,7 +46,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       <nav className={styles.navigation}>
         <div className={styles.menuContainer}>
-          <CircleMenu />
+          <MenuButton />
         </div>
       </nav>
       <motion.main {...REVEAL_ANIMATE_PROPS} className={styles.main}>
