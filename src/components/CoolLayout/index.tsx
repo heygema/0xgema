@@ -1,9 +1,11 @@
-import Head from "next/head";
-import Link from "next/link";
-import React, { ReactNode } from "react";
-import CircleMenu from "../CircleMenu";
-import * as styles from "./style.css";
-import { link as linkStyle } from "../../.././src/components/MDX/style.css";
+import Head from 'next/head';
+import Link from 'next/link';
+import React, { ReactNode } from 'react';
+import CircleMenu from '../CircleMenu';
+import * as styles from './style.css';
+import { link as linkStyle } from '../../.././src/components/MDX/style.css';
+import { motion } from 'framer-motion';
+import { REVEAL_ANIMATE_PROPS } from '../../constant';
 
 export default function Layout({ children }: { children: ReactNode }) {
   //const backGlow = (
@@ -47,19 +49,21 @@ export default function Layout({ children }: { children: ReactNode }) {
           <CircleMenu />
         </div>
       </nav>
-      <main className={styles.main}>{children}</main>
+      <motion.main {...REVEAL_ANIMATE_PROPS} className={styles.main}>
+        {children}
+      </motion.main>
       <footer className={styles.footer}>
         <span>
           {`© ${new Date().getFullYear()} Gema Anggada • `}
           <Link
-            aria-label={"license"}
-            href={"https://creativecommons.org/licenses/by-sa/4.0/"}
+            aria-label={'license'}
+            href={'https://creativecommons.org/licenses/by-sa/4.0/'}
             target="_blank"
             passHref
           >
             <a
               className={linkStyle}
-              aria-label={"license"}
+              aria-label={'license'}
               target="_blank"
               rel="noopener noreferrer"
             >

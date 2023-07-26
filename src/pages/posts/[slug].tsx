@@ -1,20 +1,21 @@
-import React from "react";
-import { DateTime } from "luxon";
-import Head from "next/head";
-import Link from "next/link";
-import path from "path";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { promises as fs } from "fs";
+import React from 'react';
+import { DateTime } from 'luxon';
+import Head from 'next/head';
+import Link from 'next/link';
+import path from 'path';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { promises as fs } from 'fs';
 
-import { POST_DIR } from "../../constant";
-import getPosts from "../../helpers/getPosts";
-import { Posts } from "../../data/types";
-import { useSetPosts } from "../../hooks/useSetPosts";
-import { MDXComponents, StyledTitle } from "../../components";
+import { POST_DIR, REVEAL_ANIMATE_PROPS } from '../../constant';
+import getPosts from '../../helpers/getPosts';
+import { Posts } from '../../data/types';
+import { useSetPosts } from '../../hooks/useSetPosts';
+import { MDXComponents, StyledTitle } from '../../components';
 
-import * as styles from "../../styles/slug.css";
-import rehypeHighlight from "rehype-highlight";
+import * as styles from '../../styles/slug.css';
+import rehypeHighlight from 'rehype-highlight';
+import { motion } from 'framer-motion';
 
 interface Props {
   slug: string;
@@ -41,14 +42,17 @@ export default function Post({ posts, source }: Props) {
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css"
         />
       </Head>
-      <Link aria-label="back-button" href="/" passHref>
-        <a className={styles.backButton}>↩ Home</a>
-      </Link>
-      <StyledTitle type="h1" text={title} />
-      <span className={styles.date}>
-        {date.day} {date.monthLong}, {date.year}
-      </span>
-      <MDXRemote {...source} components={MDXComponents} />
+
+      <motion.div {...REVEAL_ANIMATE_PROPS}>
+        <Link aria-label="back-button" href="/" passHref>
+          <a className={styles.backButton}>↩ Home</a>
+        </Link>
+        <StyledTitle type="h1" text={title} />
+        <span className={styles.date}>
+          {date.day} {date.monthLong}, {date.year}
+        </span>
+        <MDXRemote {...source} components={MDXComponents} />
+      </motion.div>
     </>
   );
 }
@@ -58,7 +62,7 @@ export const getStaticPaths = async () => {
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace(".md", ""),
+      slug: filename.replace('.md', ''),
     },
   }));
 
@@ -71,9 +75,9 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params: { slug } }) => {
   let posts = await getPosts();
 
-  const postLocation = path.join(POST_DIR, slug + `/index` + ".mdx");
+  const postLocation = path.join(POST_DIR, slug + `/index` + '.mdx');
 
-  const rawFile = await fs.readFile(postLocation, "utf-8");
+  const rawFile = await fs.readFile(postLocation, 'utf-8');
 
   const mdxSource = await serialize(rawFile, {
     parseFrontmatter: true,
