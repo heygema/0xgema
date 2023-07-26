@@ -1,5 +1,5 @@
-import {globalStyle, style} from '@vanilla-extract/css';
-import {syneBold} from '../../styles/global.css';
+import { globalStyle, style } from '@vanilla-extract/css';
+import { syneBold } from '../../styles/global.css';
 
 export const root = style({
   width: '100%',
@@ -9,7 +9,7 @@ export const root = style({
 });
 
 export const title = style({
-  fontFamily: syneBold,
+  fontFamily: `${syneBold}, ui-sans-serif, sans-serif`,
   marginTop: '1rem',
   marginBottom: '1rem',
 });
