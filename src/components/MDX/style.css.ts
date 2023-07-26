@@ -1,6 +1,6 @@
-import {globalStyle, style} from '@vanilla-extract/css';
-import {jetbrains} from '../../styles/global.css';
-import {globalVars} from '../../styles/theme.css';
+import { globalStyle, style } from '@vanilla-extract/css';
+import { jetbrains } from '../../styles/global.css';
+import { globalVars } from '../../styles/theme.css';
 
 export const link = style({
   color: 'var(--url-color)',
@@ -10,7 +10,7 @@ export const link = style({
   transition: 'opacity 0.1s ease-in',
   ':hover': {
     textDecoration: 'underline',
-    textDecorationStyle: 'wavy',
+    textDecorationStyle: 'dashed',
     textDecorationColor: 'var(--accentBackground)',
   },
 });
