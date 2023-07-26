@@ -1,23 +1,24 @@
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
-import {Suspense, useEffect} from 'react';
+import { Suspense, useEffect } from 'react';
 
 import * as styles from '../styles/index.css';
 import getPosts from '../helpers/getPosts';
-import {Posts} from '../data/types';
-import {usePostsStore} from '../data/store';
+import { Posts } from '../data/types';
+import { usePostsStore } from '../data/store';
 import Button from '../components/Button';
-import {Card, Loading} from '../core-ui';
-import {motion} from 'framer-motion';
-import {Hero} from '../components';
+import { Card, Loading } from '../core-ui';
+import { motion } from 'framer-motion';
+import { Hero } from '../components';
 import ArticleCard from '../components/ArticleCard';
+import { REVEAL_ANIMATE_PROPS } from '../constant';
 
 type Props = {
   posts: Posts;
 };
 
-export default function Home({posts}: Props) {
-  const {asPath, query, push} = useRouter();
+export default function Home({ posts }: Props) {
+  const { asPath, query, push } = useRouter();
 
   // tedious
   let currentActualPage: string;
@@ -75,7 +76,7 @@ export default function Home({posts}: Props) {
   }
 
   const renderedPosts = availablePost.map(
-    ({slug, date, title, excerpt}, index) => {
+    ({ slug, date, title, excerpt }, index) => {
       return (
         <ArticleCard
           key={`slug_${index}`}
@@ -140,7 +141,9 @@ export default function Home({posts}: Props) {
             <span className={styles.eggUnicorn}></span>
           </div>
         </Link>
-        <div className={styles.root}>{renderedPosts}</div>
+        <motion.div {...REVEAL_ANIMATE_PROPS} className={styles.root}>
+          {renderedPosts}
+        </motion.div>
         {renderedPaginations}
       </Suspense>
     </>
