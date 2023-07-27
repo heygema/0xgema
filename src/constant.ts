@@ -27,3 +27,12 @@ export const REVEAL_ANIMATE_PROPS = {
   initial: 'hidden',
   animate: 'visible',
 };
+
+export const CLICKABLE_RESPONSE_PROPS = {
+  whileTap: {
+    scale: 0.975,
+  },
+  whileHover: {
+    scale: 1.05,
+  },
+};
