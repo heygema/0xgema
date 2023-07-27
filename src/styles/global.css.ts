@@ -4,6 +4,7 @@ import { globalVars } from './theme.css';
 
 export const syneBold = 'Syne-Bold';
 export const readex = 'ReadexPro';
+export const readexLight = 'ReadexPro-ExtraLight';
 export const readexBold = 'ReadexPro-Bold';
 export const jetbrains = 'JetBrains Mono';
 
@@ -15,6 +16,12 @@ globalFontFace(syneBold, {
 
 globalFontFace(readex, {
   src: 'url(/assets/fonts/ReadexPro/ReadexPro-Light.ttf)',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+});
+
+globalFontFace(readexLight, {
+  src: 'url(/assets/fonts/ReadexPro/ReadexPro-ExtraLight.ttf)',
   fontStyle: 'normal',
   fontDisplay: 'swap',
 });
@@ -31,7 +38,7 @@ globalFontFace(jetbrains, {
   fontDisplay: 'swap',
 });
 
-const baseFontFamily = `${readex}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
+export const baseFontFamily = `${readex}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
 
 globalStyle('html, body', {
   background: 'var(--background)',

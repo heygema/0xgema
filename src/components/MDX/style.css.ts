@@ -1,5 +1,9 @@
 import { globalStyle, style } from '@vanilla-extract/css';
-import { jetbrains } from '../../styles/global.css';
+import {
+  baseFontFamily,
+  jetbrains,
+  readexLight,
+} from '../../styles/global.css';
 import { globalVars } from '../../styles/theme.css';
 
 export const link = style({
@@ -48,7 +52,17 @@ export const paragraph = style({
   // for inter
   // for outfit
   //letterSpacing: "0.025rem",
+  fontFamily: `${readexLight}, ${baseFontFamily}`,
+  // fontWeight: 100,
   lineHeight: '1.6',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      opacity: 0.8,
+    },
+    '(prefers-color-scheme: light)': {
+      opacity: 1,
+    },
+  },
 });
 
 globalStyle(`${blockquote} p`, {
