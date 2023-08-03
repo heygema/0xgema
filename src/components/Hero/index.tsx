@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
 //import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
-import {TIME_ZONE} from '../../constant';
-import {useTime} from '../../hooks/useTime';
-import {Avatar} from '../Avatar';
+import { TIME_ZONE } from '../../constant';
+import { useTime } from '../../hooks/useTime';
+import { Avatar } from '../Avatar';
 
 import * as styles from './style.css';
 
@@ -25,7 +25,7 @@ export function TimezoneClock() {
 
 export function Hero() {
   // ×
-  const {route, asPath} = useRouter();
+  const { route, asPath } = useRouter();
 
   const routeTitle = new Map([
     ['/', 'Writings'],
@@ -51,10 +51,10 @@ export function Hero() {
       </div>
       <h4 className={styles.title}>{routeTitle.get(route) ?? asPath}</h4>
       <p className={styles.detail}>
-        Locale <TimezoneClock />
+        <TimezoneClock />
       </p>
       <div>
-        {[].map(({url, title}) => {
+        {[].map(({ url, title }) => {
           return (
             <Link key={title} href={url}>
               {title}
