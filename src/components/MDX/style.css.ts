@@ -19,6 +19,10 @@ export const link = style({
   },
 });
 
+export const strong = style({
+  fontFamily: baseFontFamily,
+});
+
 export const blockquote = style({
   borderRadius: '8px',
   maxWidth: '450px',
