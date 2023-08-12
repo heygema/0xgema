@@ -2,6 +2,7 @@ import { globalStyle, style } from '@vanilla-extract/css';
 import {
   baseFontFamily,
   jetbrains,
+  readexBold,
   readexLight,
 } from '../../styles/global.css';
 import { globalVars } from '../../styles/theme.css';
@@ -20,7 +21,9 @@ export const link = style({
 });
 
 export const strong = style({
-  fontFamily: baseFontFamily,
+  fontFamily: `${readexBold} ${baseFontFamily}`,
+  fontWeight: 'bold',
+  opacity: 1,
 });
 
 export const blockquote = style({
@@ -56,17 +59,23 @@ export const paragraph = style({
   // for inter
   // for outfit
   //letterSpacing: "0.025rem",
-  fontFamily: `${readexLight}, ${baseFontFamily}`,
+  // fontFamily: `${readexLight}, ${baseFontFamily}`,
+  fontFamily: `$${baseFontFamily}`,
   // fontWeight: 100,
   lineHeight: '1.6',
   '@media': {
     '(prefers-color-scheme: dark)': {
-      opacity: 0.8,
+      color: globalVars.colors.white4,
     },
     '(prefers-color-scheme: light)': {
       opacity: 1,
     },
   },
+});
+
+globalStyle(`${paragraph} strong`, {
+  opacity: 1,
+  color: globalVars.colors.white3,
 });
 
 globalStyle(`${blockquote} p`, {

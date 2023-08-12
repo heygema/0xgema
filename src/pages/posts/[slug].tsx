@@ -7,7 +7,11 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { promises as fs } from 'fs';
 
-import { POST_DIR, REVEAL_ANIMATE_PROPS } from '../../constant';
+import {
+  CLICKABLE_RESPONSE_PROPS,
+  POST_DIR,
+  REVEAL_ANIMATE_PROPS,
+} from '../../constant';
 import getPosts from '../../helpers/getPosts';
 import { Posts } from '../../data/types';
 import { useSetPosts } from '../../hooks/useSetPosts';
@@ -45,7 +49,9 @@ export default function Post({ posts, source }: Props) {
 
       <motion.div {...REVEAL_ANIMATE_PROPS}>
         <Link aria-label="back-button" href="/" passHref>
-          <a className={styles.backButton}>↩ Home</a>
+          <motion.a {...CLICKABLE_RESPONSE_PROPS} className={styles.backButton}>
+            ↩ Home
+          </motion.a>
         </Link>
         <StyledTitle type="h1" text={title} />
         <span className={styles.date}>

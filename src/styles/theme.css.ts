@@ -1,8 +1,9 @@
-import {createGlobalTheme} from '@vanilla-extract/css';
+import { createGlobalTheme } from '@vanilla-extract/css';
 
 const BASE_COLORS = {
   black: 'hsla(0, 0%, 7%, 87%)',
   black1: 'hsl(180deg 10.03% 5.14%)',
+  // black2: 'hsla(0, 0%, 0%, 0.71)',
   gray: 'hsla(217, 8%, 80%, 30%)',
   grayish: 'hsl(200, 6%, 10%)',
   grayish2: 'hsl(200, 6%, 15%)',
@@ -14,6 +15,8 @@ const BASE_COLORS = {
   'white-transluscent50': 'hsla(0, 0%, 98%, 50%)',
   white2: 'hsl(0, 0%, 93.0%)',
   'white3-transluscent': 'hsla(200, 100%, 100%, 95%)',
+  white3: 'hsla(200, 100%, 100%, 75%)',
+  white4: 'hsla(200, 100%, 100%, 65%)',
   transluscent: 'hsla(0, 0%, 30%, 10%)',
   genericTransparent: 'hsla(0, 0%, 30%, 10%)',
   cyanBlue: 'hsl(211deg, 92%, 64%)',
