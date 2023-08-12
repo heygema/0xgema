@@ -1,19 +1,19 @@
 // eslint-disable react-hooks/exhaustive-deps
-import { motion } from "framer-motion";
-import Fuse from "fuse.js";
-import { useTheme } from "next-themes";
-import { useRouter } from "next/router";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { useModalStore, usePostsStore } from "../../data/store";
-import { Post } from "../../data/types";
-import Button from "../Button";
-import { Icons } from "../Icons";
-import * as styles from "./style.css";
+import { motion } from 'framer-motion';
+import Fuse from 'fuse.js';
+import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useModalStore, usePostsStore } from '../../data/store';
+import { Post } from '../../data/types';
+import Button from '../Button';
+import { Icons } from '../Icons';
+import * as styles from './style.css';
 
 export enum MenuType {
-  "POST",
-  "ACTION",
-  "DESCRIPTION",
+  'POST',
+  'ACTION',
+  'DESCRIPTION',
 }
 
 export type MenuItem = {
@@ -33,7 +33,7 @@ export type PostSearchItem = {
 
 export default function ModalMenu() {
   const inputRef = useRef<HTMLInputElement>();
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>('');
   const [selectedMenuIndex, selectMenuIndex] = useState<number>(0);
   const { setTheme } = useTheme();
 
@@ -70,59 +70,59 @@ export default function ModalMenu() {
       type: MenuType.ACTION,
       icon: <Icons.Home />,
       menu: {
-        title: "Home",
+        title: 'Home',
       },
-      action: () => navigate("/"),
+      action: () => navigate('/'),
     },
     {
       type: MenuType.ACTION,
       icon: <Icons.About />,
       menu: {
-        title: "About",
+        title: 'About',
       },
-      action: () => navigate("/about"),
+      action: () => navigate('/about'),
     },
 
     {
       type: MenuType.ACTION,
       menu: {
-        title: "Twitter",
+        title: 'Twitter',
       },
       icon: <Icons.Twitter />,
-      action: () => window?.open("https://twitter.com/0xgema", "_blank"),
+      action: () => window?.open('https://twitter.com/0xgema', '_blank'),
     },
 
     {
       type: MenuType.ACTION,
       menu: {
-        title: "Github",
+        title: 'Github',
       },
       icon: <Icons.Github />,
-      action: () => window?.open("https://github.com/heygema", "_blank"),
+      action: () => window?.open('https://github.com/heygema', '_blank'),
     },
     {
       type: MenuType.ACTION,
       menu: {
-        title: "Switch to Light Theme",
+        title: 'Switch to Light Theme',
       },
       icon: <Icons.Day />,
-      action: () => setTheme?.("light"),
+      action: () => setTheme?.('light'),
     },
     {
       type: MenuType.ACTION,
       menu: {
-        title: "Switch to Dark Theme",
+        title: 'Switch to Dark Theme',
       },
       icon: <Icons.Night />,
-      action: () => setTheme?.("dark"),
+      action: () => setTheme?.('dark'),
     },
     {
       type: MenuType.ACTION,
       menu: {
-        title: "Switch to System Theme",
+        title: 'Switch to System Theme',
       },
       icon: <Icons.System />,
-      action: () => setTheme?.("system"),
+      action: () => setTheme?.('system'),
     },
   ];
 
@@ -150,7 +150,7 @@ export default function ModalMenu() {
   const combinedFuse = useMemo(
     () =>
       new Fuse(combinedMenuItems, {
-        keys: ["post.title", "menu.title"],
+        keys: ['post.title', 'menu.title'],
       }),
     []
   );
@@ -193,13 +193,13 @@ export default function ModalMenu() {
 
   const keydownListener = (e: KeyboardEvent) => {
     switch (e.key) {
-      case "Enter": {
+      case 'Enter': {
         e.preventDefault();
         enterAction();
         break;
       }
-      case "j":
-      case "n": {
+      case 'j':
+      case 'n': {
         if (e.ctrlKey) {
           e.stopPropagation();
           e.preventDefault();
@@ -208,8 +208,8 @@ export default function ModalMenu() {
         }
         break;
       }
-      case "k":
-      case "p": {
+      case 'k':
+      case 'p': {
         if (e.ctrlKey) {
           e.stopPropagation();
           e.preventDefault();
@@ -218,12 +218,12 @@ export default function ModalMenu() {
         }
         break;
       }
-      case "ArrowUp": {
+      case 'ArrowUp': {
         e.preventDefault();
         upHandler();
         break;
       }
-      case "ArrowDown": {
+      case 'ArrowDown': {
         e.preventDefault();
         downHandler();
         break;
@@ -236,9 +236,9 @@ export default function ModalMenu() {
 
   useEffect(() => {
     if (!document || !window) return;
-    window.addEventListener("keydown", keydownListener);
+    window.addEventListener('keydown', keydownListener);
     return () => {
-      window.removeEventListener("keydown", keydownListener);
+      window.removeEventListener('keydown', keydownListener);
     };
   }, [combinedSearchItems, selectedMenuIndex, search]);
 
@@ -262,13 +262,13 @@ export default function ModalMenu() {
         <input
           aria-label="global-search-box"
           className={styles.inputStyle}
-          placeholder="Search for posts and menus..."
+          placeholder="press cmd+k to access this command palette"
           type="text"
           autoComplete="off"
           value={search}
           onChange={(e) => {
             e.preventDefault();
-            setSearch(e?.target?.value || "");
+            setSearch(e?.target?.value || '');
           }}
         />
         <Button onClick={closeModal}>ESC</Button>
@@ -278,13 +278,13 @@ export default function ModalMenu() {
           const onMouseOver = () => selectMenuIndex(index);
           const isSelected = selectedMenuIndex === index;
 
-          const selectedStyle = isSelected ? "highlighted" : "default";
+          const selectedStyle = isSelected ? 'highlighted' : 'default';
 
           if (item.type === MenuType.POST) {
             let title = item.post.title;
 
             if (title.length >= 65) {
-              title = title.slice(0, 65) + "...";
+              title = title.slice(0, 65) + '...';
             }
 
             return (
@@ -317,7 +317,7 @@ export default function ModalMenu() {
           menuItems.map(({ menu, icon, action }, index) => {
             const onMouseOver = () => selectMenuIndex(index);
             const isSelected = selectedMenuIndex === index;
-            const selectedStyle = isSelected ? "highlighted" : "default";
+            const selectedStyle = isSelected ? 'highlighted' : 'default';
 
             return (
               <div
