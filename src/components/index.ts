@@ -1,4 +1,5 @@
 export * from './ArticleCard';
+export * from './ArticleRow';
 export * from './Avatar';
 export * from './MenuButton';
 export * from './Hero';
