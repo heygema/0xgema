@@ -6,18 +6,33 @@ import {
   readexLight,
 } from '../../styles/global.css';
 import { globalVars } from '../../styles/theme.css';
+import { sprinkles } from '../../styles/sprinkles.css';
+
+export const arrowWrapper = style({
+  lineHeight: 0,
+});
 
 export const link = style({
   color: 'var(--url-color)',
   // background: "var(--accentBackground)",
   // WebkitBackgroundClip: "text",
   // WebkitTextFillColor: "transparent",
-  transition: 'opacity 0.1s ease-in',
+  display: 'inline-flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  transition: 'all .3s cubic-bezier(.05,.03,.35,1)',
   ':hover': {
     textDecoration: 'underline',
     textDecorationStyle: 'dashed',
     textDecorationColor: 'var(--accentBackground)',
+    opacity: 0.7,
   },
+});
+
+globalStyle(`${link}:hover span`, {
+  transition: 'all .3s cubic-bezier(.05,.03,.35,1)',
+  marginLeft: 4,
 });
 
 export const strong = style({
@@ -55,23 +70,30 @@ globalStyle(`${blockquote}:before`, {
   verticalAlign: '-0.4em',
 });
 
-export const paragraph = style({
-  // for inter
-  // for outfit
-  //letterSpacing: "0.025rem",
-  // fontFamily: `${readexLight}, ${baseFontFamily}`,
-  fontFamily: `$${baseFontFamily}`,
-  // fontWeight: 100,
-  lineHeight: '1.6',
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      color: globalVars.colors.white4,
-    },
-    '(prefers-color-scheme: light)': {
-      opacity: 1,
-    },
+const fontColor = sprinkles({
+  color: {
+    lightMode: 'black',
+    darkMode: 'white4',
   },
 });
+
+export const paragraph = style([
+  {
+    // for inter
+    // for outfit
+    //letterSpacing: "0.025rem",
+    // fontFamily: `${readexLight}, ${baseFontFamily}`,
+    fontFamily: `$${baseFontFamily}`,
+    // fontWeight: 100,
+    lineHeight: '1.6',
+    '@media': {
+      '(prefers-color-scheme: dark)': {
+        // color: globalVars.colors.white4,
+      },
+    },
+  },
+  fontColor,
+]);
 
 globalStyle(`${paragraph} strong`, {
   opacity: 1,
