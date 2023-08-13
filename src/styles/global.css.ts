@@ -111,6 +111,9 @@ globalStyle(':root', {
     '--accentBackground': globalVars.colors.lightThemeAccent,
     '--accentForeground': globalVars.colors.white,
 
+    '--menuBG': globalVars.colors.gray,
+    '--menuFG': globalVars.colors.black,
+
     '--cardBackground': globalVars.colors['white-transluscent50'],
 
     // it's the glowing effect for cmd k button
@@ -129,10 +132,13 @@ globalStyle(':root', {
 globalStyle("[data-theme='dark']", {
   vars: {
     '--background': globalVars.colors.black1,
-    '--foreground': globalVars.colors.white,
+    '--foreground': globalVars.colors.white4,
 
     '--accentBackground': globalVars.colors.darkThemeAccent,
     '--accentForeground': globalVars.colors.black,
+
+    '--menuBG': globalVars.colors.darkThemeAccent,
+    '--menuFG': globalVars.colors.black,
 
     '--cardBackground': globalVars.colors.transluscent,
 
