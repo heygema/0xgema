@@ -70,35 +70,19 @@ globalStyle(`${blockquote}:before`, {
   verticalAlign: '-0.4em',
 });
 
-const fontColor = sprinkles({
-  color: {
-    lightMode: 'black',
-    darkMode: 'white4',
-  },
-});
+// const fontColor = sprinkles({
+//   color: {
+//     lightMode: 'black',
+//     darkMode: 'white4',
+//   },
+// });
 
 export const paragraph = style([
   {
-    // for inter
-    // for outfit
-    //letterSpacing: "0.025rem",
-    // fontFamily: `${readexLight}, ${baseFontFamily}`,
     fontFamily: `$${baseFontFamily}`,
-    // fontWeight: 100,
     lineHeight: '1.6',
-    '@media': {
-      '(prefers-color-scheme: dark)': {
-        // color: globalVars.colors.white4,
-      },
-    },
   },
-  fontColor,
 ]);
-
-globalStyle(`${paragraph} strong`, {
-  opacity: 1,
-  color: globalVars.colors.white3,
-});
 
 globalStyle(`${blockquote} p`, {
   display: 'inline',
