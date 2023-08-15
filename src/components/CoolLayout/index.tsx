@@ -1,11 +1,14 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
+
 import MenuButton from '../MenuButton';
-import * as styles from './style.css';
-import { link as linkStyle } from '../../.././src/components/MDX/style.css';
+import { link as linkStyle } from '../Anchor/style.css';
 import { motion } from 'framer-motion';
 import { REVEAL_ANIMATE_PROPS } from '../../constant';
+import { Anchor } from '../Anchor';
+
+import * as styles from './style.css';
 
 export default function Layout({ children }: { children: ReactNode }) {
   //const backGlow = (
@@ -61,14 +64,15 @@ export default function Layout({ children }: { children: ReactNode }) {
             target="_blank"
             passHref
           >
-            <a
+            <Anchor
               className={linkStyle}
               aria-label={'license'}
               target="_blank"
               rel="noopener noreferrer"
+              iconSize={12}
             >
               cc-by-sa
-            </a>
+            </Anchor>
           </Link>
         </span>
       </footer>

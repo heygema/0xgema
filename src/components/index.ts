@@ -1,3 +1,4 @@
+export * from './Anchor';
 export * from './ArticleCard';
 export * from './ArticleRow';
 export * from './Avatar';
