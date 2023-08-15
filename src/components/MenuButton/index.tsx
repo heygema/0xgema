@@ -52,9 +52,6 @@ export default function MenuButton() {
       trigger={
         <motion.div
           title="(cmd/ctrl)+k"
-          whileHover={{
-            scale: 1.2,
-          }}
           whileTap={{
             scale: 0.9,
           }}
