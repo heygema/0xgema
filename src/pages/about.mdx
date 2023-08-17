@@ -1,5 +1,5 @@
 import { Card } from '../.././src/core-ui/'
-import { Avatar, WorkingSince, StyledTitle, Social, Projects } from '../.././src/components/'
+import { Avatar, ContactCard, WorkingSince, StyledTitle, Social, Projects } from '../.././src/components/'
 
 <Card variant="none">
 
@@ -16,15 +16,12 @@ Follow me on socials:
 
 
 <Card variant="none">
-### Contact
-email: [0xgema@proton.me](mailto:0xgema@proton.me)
+### Contact 
+<ContactCard title="Email" url="mailto:0xgema@proton.me" alias="0xgema@proton.me" />
 
-keybase: [keybase.io/gemx](https://keybase.io/gemx)
+<ContactCard title="Keybase" url="https://keybase.io/gemx" alias="keybase.io/gemx" />
 
-cal: [cal.com/gem](https://https://cal.com/gem)
+<ContactCard title="Cal" url="https://cal.com/gem" alias="cal.com/gem" />
 
-read.cv: [read.cv/gema](https://read.cv/gema)
-
+<ContactCard title="Read.cv" url="https://read.cv/gema" alias="read.cv/gema" />
 </Card>
-
-

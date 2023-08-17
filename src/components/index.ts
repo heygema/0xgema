@@ -2,6 +2,7 @@ export * from './Anchor';
 export * from './ArticleCard';
 export * from './ArticleRow';
 export * from './Avatar';
+export * from './ContactCard';
 export * from './MenuButton';
 export * from './Hero';
 export * from './CoolLayout';

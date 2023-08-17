@@ -1,28 +1,33 @@
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { Icons } from "../Icons";
-import * as styles from "./style.css";
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Icons } from '../Icons';
+import * as styles from './style.css';
 
 export function Social() {
   const links = [
     {
-      label: "social-link-twitter",
-      href: "https://twitter.com/0xgema",
+      label: 'social-link-twitter',
+      href: 'https://twitter.com/0xgema',
       icon: <Icons.BsTwitter />,
     },
     {
-      label: "social-link-github",
-      href: "https://github.com/heygema",
+      label: 'social-link-github',
+      href: 'https://github.com/heygema',
       icon: <Icons.BsGithub />,
     },
     {
-      label: "social-link-linkedin",
-      href: "https://linkedin.com/in/heygema",
+      label: 'social-link-linkedin',
+      href: 'https://linkedin.com/in/heygema',
       icon: <Icons.Linkedin />,
     },
     {
-      label: "social-link-mastodon",
-      href: "https://mstdn.social/@gema",
+      label: 'social-link-youtube',
+      href: 'https://www.youtube.com/channel/UCp3bZ2CYGavOv20O_eh3k8g',
+      icon: <Icons.Youtube />,
+    },
+    {
+      label: 'social-link-mastodon',
+      href: 'https://mstdn.social/@gema',
       icon: <Icons.Mastodon />,
     },
   ];

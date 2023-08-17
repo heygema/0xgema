@@ -7,6 +7,7 @@ import * as styles from './style.css';
 type Props = {
   children: ReactNode;
   iconSize?: number;
+  href?: string;
 };
 
 export function Anchor<T extends Props>(props: T) {

@@ -1,22 +1,24 @@
-import { FiTwitter as Twitter } from "react-icons/fi";
+import { FiTwitter as Twitter } from 'react-icons/fi';
 import {
   GrPersonalComputer as System,
   GrHomeRounded as Home,
-} from "react-icons/gr";
+} from 'react-icons/gr';
 
-import { VscGithubAlt as Github } from "react-icons/vsc";
-import { RiSkullLine as About } from "react-icons/ri";
-import { BiMoon as Night } from "react-icons/bi";
+import { VscGithubAlt as Github } from 'react-icons/vsc';
+import { RiSkullLine as About } from 'react-icons/ri';
+import { BiMoon as Night } from 'react-icons/bi';
 import {
   BsTwitter,
   BsGithub,
   BsSun as Day,
   BsLinkedin as LinkedIn,
   BsMastodon as Mastodon,
-} from "react-icons/bs";
+  BsYoutube,
+} from 'react-icons/bs';
 
-import * as styles from "./style.css";
-import { IconBaseProps } from "react-icons";
+import * as styles from './style.css';
+import { IconBaseProps } from 'react-icons';
+import { Youtube, YoutubeIcon } from 'lucide-react';
 
 export const Icons = {
   Home: (props: IconBaseProps) => (
@@ -50,4 +52,5 @@ export const Icons = {
     <Day {...props} className={styles.semiBoldIcon} />
   ),
   Linkedin: (props: IconBaseProps) => <LinkedIn {...props} />,
+  Youtube: (props: any) => <BsYoutube {...props} />,
 };
