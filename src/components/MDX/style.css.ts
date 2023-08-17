@@ -1,10 +1,5 @@
 import { globalStyle, style } from '@vanilla-extract/css';
-import {
-  baseFontFamily,
-  jetbrains,
-  readexBold,
-  readexLight,
-} from '../../styles/global.css';
+import { baseFontFamily, jetbrains, readexBold } from '../../styles/global.css';
 import { globalVars } from '../../styles/theme.css';
 
 export const strong = style({
