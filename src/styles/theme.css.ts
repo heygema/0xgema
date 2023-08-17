@@ -26,6 +26,8 @@ const BASE_COLORS = {
   orange: '#F78D42',
   gold: '#E8D9AC',
   purple: 'hsl(239, 86%, 55%)',
+  whiteToBlackGradient:
+    'linear-gradient(130deg, rgba(255,0,0,0) 33%, rgba(0,0,0,1) 66%, rgba(0,0,0,1) 81%, rgba(0,0,0,1) 100%)',
   redToPurpleGradient:
     'linear-gradient(130deg, rgba(255,0,0,0) 33%, rgba(227,88,31,1) 66%, rgba(161,44,128,1) 81%, rgba(125,22,198,1) 100%)',
   redToPurpleGradientFull:

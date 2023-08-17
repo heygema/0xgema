@@ -123,7 +123,7 @@ globalStyle(':root', {
     '--cmdKBackground': globalVars.colors['white3-transluscent'],
     '--cmdKShadow': globalVars.shadow.mild,
 
-    '--hoverGradient': globalVars.colors.black1,
+    '--hoverGradient': globalVars.colors.whiteToBlackGradient,
 
     '--url-color': globalVars.colors.blue,
   },
