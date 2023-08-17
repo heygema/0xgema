@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { getArticleDate } from '../../helpers/getArticleDate';
 import * as styles from './style.css';
-import { CLICKABLE_RESPONSE_PROPS } from '../../constant';
+// import { CLICKABLE_RESPONSE_PROPS } from "../../constant";
 
 interface Props {
   isDraggable?: boolean;
@@ -35,7 +35,9 @@ export default function ArticleCard({
           },
           visible: { opacity: 1 },
         }}
-        {...CLICKABLE_RESPONSE_PROPS}
+        whileTap={{
+          scale: 0.975,
+        }}
         initial="hidden"
         animate="visible"
         className={[styles.card, isDraggable && styles.draggableCard].join(' ')}
