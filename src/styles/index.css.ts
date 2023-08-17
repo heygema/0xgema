@@ -1,14 +1,14 @@
-import {globalStyle, style, styleVariants} from '@vanilla-extract/css';
-import {button} from '../components/Button/style.css';
-import {BREAKPOINTS} from '../constant';
+import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
+import { button } from '../components/Button/style.css';
+import { BREAKPOINTS } from '../constant';
 
 export const root = style({
   display: 'grid',
   //gridTemplateColumns: "repeat(auto-fill, minmax(3fr, 3fr))",
-  gridTemplateColumns: '1fr 1fr',
+  border: '1px solid green',
   //gridTemplateRows: "minmax(100px, auto)",
-  gridAutoFlow: 'dense',
-  gridGap: '10px',
+  // gridAutoFlow: 'dense',
+  gridGap: '20px',
   '@media': {
     [`(max-width: ${BREAKPOINTS.mobile})`]: {
       gridGap: '1rem',
@@ -72,7 +72,7 @@ const buttonWrapperBase = style({
 
 export const buttonWrapper = styleVariants({
   base: [buttonWrapperBase],
-  selected: [buttonWrapperBase, {background: 'var(--accentBackground)'}],
+  selected: [buttonWrapperBase, { background: 'var(--accentBackground)' }],
 });
 
 const buttonGlowBase = style({

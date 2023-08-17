@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 import * as styles from '../styles/index.css';
 import getPosts from '../helpers/getPosts';
@@ -9,8 +9,7 @@ import { usePostsStore } from '../data/store';
 import Button from '../components/Button';
 import { Card, Loading } from '../core-ui';
 import { motion } from 'framer-motion';
-import { Hero } from '../components';
-import ArticleCard from '../components/ArticleCard';
+import { ArticleRow, Hero } from '../components';
 import { REVEAL_ANIMATE_PROPS } from '../constant';
 
 type Props = {
@@ -19,6 +18,8 @@ type Props = {
 
 export default function Home({ posts }: Props) {
   const { asPath, query, push } = useRouter();
+
+  const [hoveredArticle, setHoveredArticle] = useState<string | undefined>();
 
   // tedious
   let currentActualPage: string;
@@ -78,7 +79,10 @@ export default function Home({ posts }: Props) {
   const renderedPosts = availablePost.map(
     ({ slug, date, title, excerpt }, index) => {
       return (
-        <ArticleCard
+        <ArticleRow
+          onHover={(slug) => {
+            setHoveredArticle(slug);
+          }}
           key={`slug_${index}`}
           slug={slug}
           date={date}

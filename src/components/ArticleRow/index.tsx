@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { ArrowRight, Camera } from 'lucide-react';
 import Link from 'next/link';
 import { getArticleDate } from '../../helpers/getArticleDate';
 import * as styles from './style.css';
@@ -16,7 +17,6 @@ interface Props {
 export function ArticleRow({
   slug,
   title,
-  excerpt,
   date,
   onHover,
   ...otherProps
@@ -47,7 +47,7 @@ export function ArticleRow({
         <span className={styles.postDate}>
           {month} {day}, {year}
         </span>
-        <p className={styles.excerpt}>{excerpt}</p>
+        <ArrowRight />
       </motion.div>
     </Link>
   );
