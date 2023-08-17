@@ -1,39 +1,39 @@
-import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
-import { BREAKPOINTS } from "../../constant";
-import { globalVars } from "../../styles/theme.css";
+import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
+import { BREAKPOINTS } from '../../constant';
+import { globalVars } from '../../styles/theme.css';
 
 const cardBase = style({
   //background: globalVars.colors.transluscent,
-  background: "var(--cardBackground)",
+  background: 'var(--cardBackground)',
   //aspectRatio: "1.2 / 1",
   //aspectRatio: "1.3 / 1",
   boxShadow: globalVars.shadow.macShadow,
-  backdropFilter: "blur(1.1px)",
+  backdropFilter: 'blur(1.1px)',
   //border: "3px solid " + "var(--accentForeground)",
   //padding: "15px 15px 15px 30px",
-  padding: "1.5rem",
-  borderRadius: "16px",
-  cursor: "pointer",
-  ":active": {
+  padding: '1.5rem',
+  borderRadius: '16px',
+  cursor: 'pointer',
+  ':active': {
     opacity: 0.85,
   },
-  placeItems: "center",
-  textAlign: "left",
-  ":first-child": {},
-  overflow: "hidden",
-  transition: "color 350ms ease",
+  placeItems: 'center',
+  textAlign: 'left',
+  ':first-child': {},
+  overflow: 'hidden',
+  transition: 'color 350ms ease',
 });
 
 export const cardSystemColorStyle = style({
-  "@media": {
-    "(prefers-color-scheme: dark)": {
-      ":first-child": {
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      ':first-child': {
         backgroundColor: globalVars.colors.darkThemeAccent,
         color: globalVars.colors.black,
       },
     },
-    "(prefers-color-scheme: light)": {
-      ":first-child": {
+    '(prefers-color-scheme: light)': {
+      ':first-child': {
         backgroundColor: globalVars.colors.lightThemeAccent,
         color: globalVars.colors.white,
       },
@@ -42,9 +42,9 @@ export const cardSystemColorStyle = style({
 });
 
 const cardGridStyle = style({
-  "@media": {
+  '@media': {
     [`(max-width: ${BREAKPOINTS.tablet})`]: {
-      gridColumn: "span 3 !important",
+      gridColumn: 'span 3 !important',
       //aspectRatio: "1.6 / 1",
       //aspectRatio: "1 / 1",
     },
@@ -63,7 +63,7 @@ export const cardAccent = styleVariants({
 });
 
 export const draggableCard = style({
-  cursor: "grab",
+  cursor: 'grab',
 });
 
 export const card = style([
@@ -78,43 +78,43 @@ export const card = style([
 ]);
 
 globalStyle(`${card}:hover`, {
-  color: "var(--accentForeground)",
+  color: 'var(--accentForeground)',
 });
 
 globalStyle(`${card}:before`, {
-  content: "",
-  height: "100%",
-  width: "100%",
-  left: "0px",
-  top: "0px",
-  position: "absolute",
-  background: "var(--hoverGradient)",
-  backgroundSize: "300% 300%",
-  backgroundPosition: "0% 0%",
-  transition: "background-position 350ms ease",
-  WebkitTransition: "background-position 350ms ease",
+  content: '',
+  height: '100%',
+  width: '100%',
+  left: '0px',
+  top: '0px',
+  position: 'absolute',
+  background: 'var(--hoverGradient)',
+  backgroundSize: '300% 300%',
+  backgroundPosition: '0% 0%',
+  transition: 'background-position 350ms ease',
+  WebkitTransition: 'background-position 350ms ease',
 });
 
 globalStyle(`${card}:hover:before`, {
-  backgroundPosition: "90% 90%",
-  transform: "scale(1.08, 1.03)",
+  backgroundPosition: '90% 90%',
+  transform: 'scale(1.08, 1.03)',
 });
 
 export const title = style({
-  marginTop: "0.5rem",
-  marginBottom: "0.5rem",
+  marginTop: '0.5rem',
+  marginBottom: '0.5rem',
   opacity: 0.99,
-  fontSize: "1.3rem",
+  fontSize: '1rem',
 });
 
 export const postDate = style({
-  fontSize: "0.7rem",
+  fontSize: '0.7rem',
   opacity: 0.8,
   fontWeight: 500,
 });
 
 export const excerpt = style({
-  marginTop: "0.5rem",
-  marginBottom: "0.5rem",
+  marginTop: '0.5rem',
+  marginBottom: '0.5rem',
   opacity: 0.99,
 });
