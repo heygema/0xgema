@@ -79,6 +79,8 @@ export const card = style([
 
 globalStyle(`${card}:hover`, {
   color: 'var(--accentForeground)',
+  transition: 'background-image linear 0.1s',
+  backgroundImage: 'url(/noise.svg)',
 });
 
 globalStyle(`${card}:before`, {
@@ -91,6 +93,7 @@ globalStyle(`${card}:before`, {
   background: 'var(--hoverGradient)',
   backgroundSize: '300% 300%',
   backgroundPosition: '0% 0%',
+  opacity: 0.65,
   transition: 'background-position 350ms ease',
   WebkitTransition: 'background-position 350ms ease',
 });
