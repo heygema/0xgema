@@ -69,7 +69,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               aria-label={'license'}
               target="_blank"
               rel="noopener noreferrer"
-              iconSize={12}
+              size={12}
             >
               cc-by-sa
             </Anchor>

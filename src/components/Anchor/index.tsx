@@ -6,7 +6,7 @@ import * as styles from './style.css';
 
 type Props = {
   children: ReactNode;
-  iconSize?: number;
+  size?: number;
   href?: string;
 };
 
@@ -15,7 +15,7 @@ export function Anchor<T extends Props>(props: T) {
     <a target="_blank" className={styles.link} {...props}>
       {props.children}
       <motion.span className={styles.arrowWrapper}>
-        <ArrowUpRight size={props?.iconSize || 16} />
+        <ArrowUpRight size={props?.size || 16} />
       </motion.span>
     </a>
   );
