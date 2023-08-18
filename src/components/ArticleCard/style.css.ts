@@ -7,7 +7,6 @@ const cardBase = style({
   background: 'var(--cardBackground)',
   //aspectRatio: "1.2 / 1",
   //aspectRatio: "1.3 / 1",
-  boxShadow: globalVars.shadow.macShadow,
   backdropFilter: 'blur(1.1px)',
   //border: "3px solid " + "var(--accentForeground)",
   //padding: "15px 15px 15px 30px",
@@ -81,6 +80,7 @@ globalStyle(`${card}:hover`, {
   color: 'var(--accentForeground)',
   transition: 'background-image linear 0.1s',
   backgroundImage: 'url(/noise.svg)',
+  boxShadow: globalVars.shadow.macShadow,
 });
 
 globalStyle(`${card}:before`, {

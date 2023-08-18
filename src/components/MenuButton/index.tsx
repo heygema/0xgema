@@ -1,15 +1,17 @@
-import { motion } from 'framer-motion';
+import { animate, motion, motionValue, useAnimate } from 'framer-motion';
 import * as styles from './style.css';
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
-import { Suspense, useEffect } from 'react';
-//import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
+import { Suspense, useEffect, useState } from 'react';
 import { useModalStore } from '../../data/store';
 import ModalMenu from '../ModalMenu';
 import { Loading } from '../../core-ui/Loading';
 
 export default function MenuButton() {
   const { isOpen, setOpen, toggleOpen } = useModalStore((state) => state);
+
+  const [glow1, animateGlow1] = useAnimate();
+  const [glow2, animateGlow2] = useAnimate();
 
   const closeModal = () => setOpen(false);
 
@@ -56,10 +58,18 @@ export default function MenuButton() {
             scale: 0.9,
           }}
           className={styles.container}
+          onMouseOver={() => {
+            animateGlow1(glow1.current, { opacity: 1 }, { duration: 0.2 });
+            animateGlow1(glow2.current, { opacity: 1 }, { duration: 0.2 });
+          }}
+          onMouseLeave={() => {
+            animateGlow2(glow1.current, { opacity: 0 }, { duration: 0.2 });
+            animateGlow2(glow2.current, { opacity: 0 }, { duration: 0.2 });
+          }}
           role="button"
         >
-          <div className={styles.CircleStackGlow} />
-          <div className={styles.CircleStackGlow} />
+          <div ref={glow1} className={styles.CircleStackGlow} />
+          <div ref={glow2} className={styles.CircleStackGlow} />
           <div className={styles.circleFallback}>⌘</div>
         </motion.div>
       }

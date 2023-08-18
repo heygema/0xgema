@@ -17,18 +17,25 @@ export const circleFallback = style({
   justifyContent: 'center',
   alignItems: 'center',
   borderRadius: '10px',
-  background: 'var(--menuBG)',
+  // background: 'var(--menuBG), url(/noise.svg)',
+  backgroundImage: 'url(/noise.svg)',
   color: 'var(--menuFG)',
   fontSize: '1.3rem',
   zIndex: '1',
 });
 
+globalStyle(`${circleFallback}:before`, {
+  background: 'var(--menuBG)',
+});
+
 export const CircleStackGlow = style([
   circleFallback,
   {
+    background: 'var(--menuBG)',
+    opacity: 0,
     position: 'absolute',
     pointerEvents: 'none',
-    // boxShadow: 'var(--cmdKShadow)',
+    boxShadow: 'var(--cmdKShadow)',
     filter: 'var(--glowFilter)',
     transform: 'scale(1.01)',
   },

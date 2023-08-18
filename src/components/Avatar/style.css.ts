@@ -1,4 +1,4 @@
-import {style} from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 import { globalVars } from '../../styles/theme.css';
 
 export const root = style({
@@ -8,8 +8,12 @@ export const root = style({
   width: '50px',
   aspectRatio: '1 / 1',
   cursor: 'pointer',
-  boxShadow: globalVars.shadow.macShadow,
   // margin: '0 auto',
   //borderRadius: "16px",
   borderRadius: '100%',
+  transition: 'box-shadow 0.2s linear',
+});
+
+globalStyle(`${root}:hover`, {
+  boxShadow: globalVars.shadow.macShadow,
 });
