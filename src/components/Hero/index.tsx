@@ -23,6 +23,17 @@ export function TimezoneClock() {
   return timezoneClock;
 }
 
+export const menu = [
+  {
+    url: '/',
+    title: 'Blog',
+  },
+  {
+    url: '/about',
+    title: 'About',
+  },
+];
+
 export function Hero() {
   // ×
   const { route, asPath } = useRouter();
@@ -32,17 +43,6 @@ export function Hero() {
     ['/about', 'Gema Anggada'],
     ['/photos', 'Photos'],
   ]);
-
-  const menu = [
-    {
-      url: '/',
-      title: 'Blog',
-    },
-    {
-      url: '/about',
-      title: 'About',
-    },
-  ];
 
   return (
     <div className={styles.root}>

@@ -62,6 +62,21 @@ globalStyle('html, body', {
   //},
 });
 
+globalStyle('button', {
+  border: 'none',
+  background: 'none',
+  padding: 0,
+  margin: 0,
+  fontSize: 'inherit',
+  fontFamily: 'inherit',
+  cursor: 'pointer',
+  transition: 'opacity 0.1s linear',
+});
+
+globalStyle('button:active', {
+  opacity: 0.5,
+});
+
 const getMobileFontSize = (baseNumber = 0) => ({
   '@media': {
     [`(max-width: ${BREAKPOINTS.mobile})`]: {

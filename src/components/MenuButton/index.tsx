@@ -1,8 +1,8 @@
-import { animate, motion, motionValue, useAnimate } from 'framer-motion';
+import { motion, useAnimate } from 'framer-motion';
 import * as styles from './style.css';
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useModalStore } from '../../data/store';
 import ModalMenu from '../ModalMenu';
 import { Loading } from '../../core-ui/Loading';
@@ -44,7 +44,6 @@ export default function MenuButton() {
     return () => removeEventListener('keydown', keyDown);
   }, []);
 
-  // <Smiley className={styles.smiley} />
   return (
     <Popup
       onClose={closeModal}
