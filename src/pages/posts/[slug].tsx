@@ -53,7 +53,7 @@ export default function Post({ posts, source }: Props) {
             ↩ Home
           </motion.a>
         </Link>
-        <StyledTitle type="h1" text={title} />
+        <h1 className={styles.heading}>{title}</h1>
         <span className={styles.date}>
           {date.day} {date.monthLong}, {date.year}
         </span>

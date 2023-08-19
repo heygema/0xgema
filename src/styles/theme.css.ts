@@ -18,6 +18,7 @@ const BASE_COLORS = {
   white3: 'hsla(200, 100%, 100%, 75%)',
   white4: 'hsla(200, 100%, 100%, 65%)',
   white5: 'rgba(232, 230, 227, 0.64)',
+  white6: 'hsla(200, 100%, 100%, 50%)',
   transluscent: 'hsla(0, 0%, 30%, 10%)',
   genericTransparent: 'hsla(0, 0%, 30%, 10%)',
   cyanBlue: 'hsl(211deg, 92%, 64%)',

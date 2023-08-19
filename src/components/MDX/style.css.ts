@@ -1,10 +1,15 @@
 import { globalStyle, style } from '@vanilla-extract/css';
-import { baseFontFamily, jetbrains } from '../../styles/global.css';
+import { jetbrains } from '../../styles/global.css';
 import { globalVars } from '../../styles/theme.css';
 
 export const strong = style({
   fontWeight: 'bold',
+  color: 'var(--foregroundHeading)',
   opacity: 1,
+});
+
+export const heading = style({
+  color: 'var(--foregroundHeading)',
 });
 
 export const blockquote = style({
@@ -34,7 +39,12 @@ globalStyle(`${blockquote}:before`, {
   verticalAlign: '-0.4em',
 });
 
-export const paragraph = style({});
+export const paragraph = style({
+  marginBlockStart: '1em',
+  marginBlockEnd: '1em',
+  marginInlineStart: '0px',
+  marginInlineEnd: '0px',
+});
 
 globalStyle(`${blockquote} p`, {
   display: 'inline',

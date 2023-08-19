@@ -18,6 +18,7 @@ export const title = style({
   fontWeight: 'bold',
   marginTop: '1rem',
   marginBottom: '1rem',
+  color: 'var(--foregroundHeading)',
 });
 
 export const detail = style({

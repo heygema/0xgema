@@ -13,4 +13,10 @@ export const MDXComponents = {
   code: (props: any) => {
     return <code {...props} className={styles.code} />;
   },
+  h1: (props: any) => <h1 {...props} className={styles.heading} />,
+  h2: (props: any) => <h2 {...props} className={styles.heading} />,
+  h3: (props: any) => <h3 {...props} className={styles.heading} />,
+  h4: (props: any) => <h4 {...props} className={styles.heading} />,
+  h5: (props: any) => <h5 {...props} className={styles.heading} />,
+  h6: (props: any) => <h6 {...props} className={styles.heading} />,
 };

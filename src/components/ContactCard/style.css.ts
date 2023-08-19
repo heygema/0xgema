@@ -14,7 +14,6 @@ const sectionBase = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-start',
-  opacity: 0.8,
 });
 
 const alignment = sprinkles({
@@ -27,6 +26,6 @@ const alignment = sprinkles({
 });
 
 export const section = styleVariants({
-  left: [sectionBase],
+  left: [sectionBase, { opacity: 0.8 }],
   right: [sectionBase, { justifyContent: 'flex-end' }, alignment],
 });

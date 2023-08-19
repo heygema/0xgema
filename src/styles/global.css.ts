@@ -30,6 +30,10 @@ globalFontFace(jetbrains, {
 
 export const baseFontFamily = `${readex}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`;
 
+globalStyle('*', {
+  wordWrap: 'break-word',
+});
+
 globalStyle('html, body', {
   background: 'var(--background)',
   color: 'var(--foreground)',
@@ -39,7 +43,7 @@ globalStyle('html, body', {
   fontSize: '14px',
   minHeight: '100vh',
   letterSpacing: '0.88px',
-  lineHeight: '1.4',
+  lineHeight: '1.5',
 });
 
 globalStyle('button', {
@@ -66,7 +70,6 @@ const getMobileFontSize = (baseNumber = 0) => ({
 });
 
 globalStyle('h1, h2, h3, h4, h5, h6, h7', {
-  //letterSpacing: "0.025rem",
   fontWeight: 'bold',
 });
 
@@ -101,6 +104,7 @@ globalStyle(':root', {
     //"--background": "hsla(217, 8%, 80%, 30%)",
     '--background': globalVars.colors.gray,
     '--foreground': globalVars.colors.black,
+    '--foregroundHeading': globalVars.colors.black,
 
     '--accentBackground': globalVars.colors.lightThemeAccent,
     '--accentForeground': globalVars.colors.white,
@@ -126,7 +130,8 @@ globalStyle(':root', {
 globalStyle("[data-theme='dark']", {
   vars: {
     '--background': globalVars.colors.black1,
-    '--foreground': globalVars.colors.white4,
+    '--foreground': globalVars.colors.white6,
+    '--foregroundHeading': globalVars.colors.white4,
 
     '--accentBackground': globalVars.colors.darkThemeAccent,
     '--accentForeground': globalVars.colors.black,
@@ -143,7 +148,7 @@ globalStyle("[data-theme='dark']", {
 
     '--hoverGradient': globalVars.colors.hoverGradientDarkTheme,
 
-    '--url-color': globalVars.colors.cyanBlue,
+    '--url-color': globalVars.colors.white,
   },
 });
 

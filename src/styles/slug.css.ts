@@ -5,6 +5,10 @@ export const date = style({
   opacity: 0.8,
 });
 
+export const heading = style({
+  color: 'var(--foregroundHeading)',
+});
+
 export const backButton = style({
   padding: '8px',
   WebkitTransition: 'background 0.2s ease, border 0.3s ease;',
