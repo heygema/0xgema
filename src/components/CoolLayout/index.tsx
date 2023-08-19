@@ -58,8 +58,8 @@ export default function Layout({ children }: { children: ReactNode }) {
       </motion.main>
       <footer className={styles.footer}>
         <span>
-          {`© ${new Date().getFullYear()} Gema Anggada • `}
-          <Link
+          {`© ${new Date().getFullYear()} Gema Anggada`}
+          {/* <Link
             aria-label={'license'}
             href={'https://creativecommons.org/licenses/by-sa/4.0/'}
             target="_blank"
@@ -76,7 +76,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </Anchor>
           </Link>
           {' • '}
-          <TimezoneClock />
+          <TimezoneClock /> */}
         </span>
       </footer>
     </>
