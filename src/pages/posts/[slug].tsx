@@ -1,4 +1,6 @@
 import React from 'react';
+import rehypeHighlight from 'rehype-highlight';
+import { motion } from 'framer-motion';
 import { DateTime } from 'luxon';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -15,11 +17,8 @@ import {
 import getPosts from '../../helpers/getPosts';
 import { Posts } from '../../data/types';
 import { useSetPosts } from '../../hooks/useSetPosts';
-import { MDXComponents, StyledTitle } from '../../components';
-
+import { MDXComponents } from '../../components';
 import * as styles from '../../styles/slug.css';
-import rehypeHighlight from 'rehype-highlight';
-import { motion } from 'framer-motion';
 
 interface Props {
   slug: string;
