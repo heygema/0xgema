@@ -1,8 +1,6 @@
-// import { globalVars } from "../../styles/theme.css";
-import { ArrowUpRight } from 'lucide-react';
-import * as styles from './style.css';
-import { motion } from 'framer-motion';
 import { Anchor } from '../Anchor';
+
+import * as styles from './style.css';
 
 export const MDXComponents = {
   p: (props: any) => <p className={styles.paragraph} {...props} />,
@@ -11,20 +9,7 @@ export const MDXComponents = {
   blockquote: (props: any) => (
     <blockquote className={styles.blockquote} {...props} />
   ),
-  //pre: (props: any) => (
-  //<pre
-  //{...props}
-  //style={{
-  //width: "100%",
-  //padding: "20px",
-  //overflow: "scroll",
-  //wordWrap: "normal",
-  //wordBreak: "break-word",
-  //background: globalVars.colors.black,
-  //borderRadius: "10px",
-  //}}
-  ///>
-  //),
+  // pre: (props: any) => <Pre {...props} />, // wip Pre component
   code: (props: any) => {
     return <code {...props} className={styles.code} />;
   },
