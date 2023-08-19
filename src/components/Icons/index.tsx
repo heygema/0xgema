@@ -5,8 +5,8 @@ import {
 } from 'react-icons/gr';
 
 import { VscGithubAlt as Github } from 'react-icons/vsc';
-import { RiSkullLine as About } from 'react-icons/ri';
-import { BiMoon as Night } from 'react-icons/bi';
+// import { RiSkullLine as About } from 'react-icons/ri';
+import { BiQuestionMark, BiMoon as Night } from 'react-icons/bi';
 import {
   BsTwitter,
   BsGithub,
@@ -18,14 +18,13 @@ import {
 
 import * as styles from './style.css';
 import { IconBaseProps } from 'react-icons';
-import { Youtube, YoutubeIcon } from 'lucide-react';
 
 export const Icons = {
   Home: (props: IconBaseProps) => (
     <Home {...props} className={styles.boldIcon} />
   ),
   About: (props: IconBaseProps) => (
-    <About {...props} className={styles.menuIcon} />
+    <BiQuestionMark {...props} className={styles.menuIcon} />
   ),
   Twitter: (props: IconBaseProps) => (
     <Twitter {...props} className={styles.boldIcon} />
