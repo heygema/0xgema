@@ -23,10 +23,10 @@ export function TimezoneClock() {
   return timezoneClock;
 }
 
-export const menu = [
+const menu = [
   {
     url: '/',
-    title: 'Blog',
+    title: 'Home',
   },
   {
     url: '/about',
@@ -35,7 +35,6 @@ export const menu = [
 ];
 
 export function Hero() {
-  // ×
   const { route, asPath } = useRouter();
 
   const routeTitle = new Map([
@@ -53,11 +52,14 @@ export function Hero() {
       <p className={styles.detail}>
         <TimezoneClock />
       </p>
-      <div>
-        {[].map(({ url, title }) => {
+      <div className={styles.menuContainer}>
+        {menu.map(({ url, title }) => {
+          const isSelected = url === route;
           return (
-            <Link key={title} href={url}>
-              {title}
+            <Link key={title} href={url} passHref>
+              <a className={styles.menu[isSelected ? 'selected' : 'base']}>
+                {title}
+              </a>
             </Link>
           );
         })}

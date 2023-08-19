@@ -1,5 +1,4 @@
-import { globalStyle, style } from '@vanilla-extract/css';
-// import { syneBold } from '../../styles/global.css';
+import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 
 export const root = style({
   width: '100%',
@@ -25,4 +24,31 @@ export const timezone = style({});
 
 globalStyle(`${smiley} > path`, {
   stroke: 'var(--foreground)',
+});
+
+export const menuContainer = style({
+  display: 'inline-flex',
+  gap: 10,
+  justifyContent: 'space-between',
+  flexDirection: 'row',
+});
+
+const menuBase = style({
+  transition: 'all .3s cubic-bezier(.05,.03,.35,1)',
+  cursor: 'pointer',
+  ':hover': {
+    opacity: 0.5,
+  },
+});
+
+export const menu = styleVariants({
+  base: [menuBase],
+  selected: [
+    menuBase,
+    {
+      textDecoration: 'underline',
+      textDecorationStyle: 'dashed',
+      color: 'var(--url-color)',
+    },
+  ],
 });
