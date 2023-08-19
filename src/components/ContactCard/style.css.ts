@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 export const root = style({
   display: 'flex',
@@ -7,11 +7,21 @@ export const root = style({
   marginBottom: 10,
 });
 
-export const section = style({
+const sectionBase = style({
   flexDirection: 'row',
   flex: 1,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-start',
   opacity: 0.8,
+});
+
+export const section = styleVariants({
+  left: [sectionBase],
+  right: [
+    sectionBase,
+    {
+      // justifyContent: 'flex-end',
+    },
+  ],
 });

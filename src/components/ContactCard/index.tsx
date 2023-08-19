@@ -10,8 +10,8 @@ export function ContactCard(props: {
 
   return (
     <div className={styles.root}>
-      <div className={styles.section}>{title}</div>
-      <div className={styles.section}>
+      <div className={styles.section.left}>{title}</div>
+      <div className={styles.section.right}>
         <Anchor href={url}>{alias}</Anchor>
       </div>
     </div>
