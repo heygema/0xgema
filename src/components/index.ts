@@ -14,3 +14,4 @@ export * from './StyledTitle';
 export * from './Social';
 export * from './WorkingSince';
 export * from './Pre';
+export * from './TimeZoneClock';

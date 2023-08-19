@@ -20,8 +20,6 @@ export const detail = style({
 
 export const smiley = style({});
 
-export const timezone = style({});
-
 globalStyle(`${smiley} > path`, {
   stroke: 'var(--foreground)',
 });

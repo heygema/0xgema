@@ -9,6 +9,7 @@ import { REVEAL_ANIMATE_PROPS } from '../../constant';
 import { Anchor } from '../Anchor';
 
 import * as styles from './style.css';
+import { TimezoneClock } from '../TimeZoneClock';
 
 export default function Layout({ children }: { children: ReactNode }) {
   //const backGlow = (
@@ -74,6 +75,8 @@ export default function Layout({ children }: { children: ReactNode }) {
               cc-by-sa
             </Anchor>
           </Link>
+          {' • '}
+          <TimezoneClock />
         </span>
       </footer>
     </>

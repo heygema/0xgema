@@ -1,27 +1,9 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-//import Smiley from "../../.././public/assets/images/Smiley-small15.svg";
-import { TIME_ZONE } from '../../constant';
-import { useTime } from '../../hooks/useTime';
 import { Avatar } from '../Avatar';
 
 import * as styles from './style.css';
-
-// this component is something alright
-export function TimezoneClock() {
-  const time = useTime();
-
-  const clock = time && `${time.hour}:${time.minute}:${time.second}`;
-
-  const timezoneClock = (
-    <span className={styles.timezone}>
-      ({TIME_ZONE}) {clock}
-    </span>
-  );
-
-  return timezoneClock;
-}
 
 const menu = [
   {
@@ -49,9 +31,6 @@ export function Hero() {
         <Avatar />
       </div>
       <h4 className={styles.title}>{routeTitle.get(route) ?? asPath}</h4>
-      <p className={styles.detail}>
-        <TimezoneClock />
-      </p>
       <div className={styles.menuContainer}>
         {menu.map(({ url, title }) => {
           const isSelected = url === route;
