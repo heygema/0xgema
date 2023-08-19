@@ -20,7 +20,7 @@ export const circleFallback = style({
   // background: 'var(--menuBG), url(/noise.svg)',
   color: 'var(--foreground)',
   fontSize: '1.6rem',
-  transition: 'all 0.2s linear',
+  transition: 'all 0.1s linear',
   zIndex: '1',
   ':hover': {
     color: 'var(--menuFG)',
