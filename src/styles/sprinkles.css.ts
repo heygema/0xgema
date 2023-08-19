@@ -5,10 +5,10 @@ import { globalVars as vars } from './theme.css';
 export const responsiveProperties = defineProperties({
   conditions: {
     mobile: {
-      '@media': `screen and (min-width: ${BREAKPOINTS['mobile-s']}) and (max-width: ${BREAKPOINTS.mobile})`,
+      '@media': `(min-width: ${BREAKPOINTS.mobile})`,
     },
     tablet: {
-      '@media': `screen and (min-width: ${BREAKPOINTS.mobile}) and (max-width: ${BREAKPOINTS.desktop})`,
+      '@media': `(min-width: ${BREAKPOINTS.tablet})`,
     },
     desktop: { '@media': `screen and (min-width: ${BREAKPOINTS.desktop})` },
     ['mobile-s']: {
