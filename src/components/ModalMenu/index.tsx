@@ -106,7 +106,10 @@ export default function ModalMenu() {
         title: 'Switch to Light Theme',
       },
       icon: <Icons.Day />,
-      action: () => setTheme?.('light'),
+      action: () => {
+        setTheme?.('light');
+        closeModal();
+      },
     },
     {
       type: MenuType.ACTION,
@@ -114,7 +117,10 @@ export default function ModalMenu() {
         title: 'Switch to Dark Theme',
       },
       icon: <Icons.Night />,
-      action: () => setTheme?.('dark'),
+      action: () => {
+        setTheme?.('dark');
+        closeModal();
+      },
     },
     {
       type: MenuType.ACTION,
@@ -122,7 +128,10 @@ export default function ModalMenu() {
         title: 'Switch to System Theme',
       },
       icon: <Icons.System />,
-      action: () => setTheme?.('system'),
+      action: () => {
+        setTheme?.('system');
+        closeModal();
+      },
     },
   ];
 
