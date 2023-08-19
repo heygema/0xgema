@@ -18,10 +18,14 @@ export const circleFallback = style({
   alignItems: 'center',
   borderRadius: '10px',
   // background: 'var(--menuBG), url(/noise.svg)',
-  backgroundImage: 'url(/noise.svg)',
-  color: 'var(--menuFG)',
-  fontSize: '1.3rem',
+  color: 'var(--foreground)',
+  fontSize: '1.6rem',
+  transition: 'all 0.2s linear',
   zIndex: '1',
+  ':hover': {
+    color: 'var(--menuFG)',
+    backgroundImage: 'url(/noise.svg)',
+  },
 });
 
 globalStyle(`${circleFallback}:before`, {
