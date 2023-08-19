@@ -4,7 +4,7 @@ export * from './ArticleRow';
 export * from './Avatar';
 export * from './Card';
 export * from './ContactCard';
-export * from './CoolLayout';
+export * from './Layout';
 export * from './Hero';
 export * from './Icons';
 export * from './Loading';
