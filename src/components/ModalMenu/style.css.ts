@@ -36,8 +36,7 @@ export const modal = style({
   background: 'var(--cmdKBackground)',
   backdropFilter: 'blur(4px)',
   width: '100%',
-  minHeight: '10rem',
-  maxHeight: '33rem',
+  minHeight: 'fit-content',
   '@media': {
     [`screen and (max-width: ${BREAKPOINTS.mobile})`]: {
       // idk why was this like this
