@@ -3,7 +3,7 @@ import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 export const root = style({
   width: '100%',
   paddingTop: '0px',
-  marginTop: '100px',
+  // marginTop: '100px',
   marginBottom: '40px',
 });
 
