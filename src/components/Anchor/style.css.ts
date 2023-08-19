@@ -13,7 +13,6 @@ export const link = style({
   ':hover': {
     textDecoration: 'underline',
     textDecorationStyle: 'dashed',
-    textDecorationColor: 'var(--accentBackground)',
     opacity: 0.7,
   },
 });

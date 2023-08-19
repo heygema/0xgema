@@ -98,7 +98,13 @@ export default function Home({ posts }: Props) {
           pressPagination(item);
         };
         return (
-          <a key={index} onClick={onClick}>
+          <a
+            className={
+              styles.paginationAnchor[isCurrentPage ? 'selected' : 'base']
+            }
+            key={index}
+            onClick={onClick}
+          >
             {String(index + 1)}
           </a>
         );

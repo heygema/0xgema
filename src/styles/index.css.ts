@@ -1,6 +1,6 @@
-import {globalStyle, style, styleVariants} from '@vanilla-extract/css';
-import {button} from '../components/Button/style.css';
-import {BREAKPOINTS} from '../constant';
+import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
+import { button } from '../components/Button/style.css';
+import { BREAKPOINTS } from '../constant';
 
 export const root = style({
   display: 'grid',
@@ -70,9 +70,29 @@ const buttonWrapperBase = style({
   zIndex: 1,
 });
 
+const paginationAnchorBase = style({
+  transition: 'all .3s cubic-bezier(.05,.03,.35,1)',
+  cursor: 'pointer',
+  ':hover': {
+    opacity: 0.5,
+  },
+});
+
+export const paginationAnchor = styleVariants({
+  base: [paginationAnchorBase],
+  selected: [
+    paginationAnchorBase,
+    {
+      textDecoration: 'underline',
+      textDecorationStyle: 'dashed',
+      color: 'var(--url-color)',
+    },
+  ],
+});
+
 export const buttonWrapper = styleVariants({
   base: [buttonWrapperBase],
-  selected: [buttonWrapperBase, {background: 'var(--accentBackground)'}],
+  selected: [buttonWrapperBase, { background: 'var(--accentBackground)' }],
 });
 
 const buttonGlowBase = style({
@@ -114,8 +134,6 @@ export const paginationButton = styleVariants({
       border: 'var(--accentBorder)',
       color: 'var(--accentForeground)',
       fontWeight: 800,
-      //WebkitBackgroundClip: "text",
-      //WebkitTextFillColor: "transparent",
     },
   ],
 });
