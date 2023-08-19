@@ -46,7 +46,7 @@ globalStyle(`${blockquote}:before`, {
 
 export const paragraph = style([
   {
-    fontFamily: `$${baseFontFamily}`,
+    fontFamily: `${baseFontFamily}`,
     lineHeight: '1.4',
   },
 ]);
