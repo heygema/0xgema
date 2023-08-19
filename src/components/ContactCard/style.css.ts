@@ -27,5 +27,5 @@ const alignment = sprinkles({
 
 export const section = styleVariants({
   left: [sectionBase, { opacity: 0.8 }],
-  right: [sectionBase, { justifyContent: 'flex-end' }, alignment],
+  right: [sectionBase, alignment],
 });
