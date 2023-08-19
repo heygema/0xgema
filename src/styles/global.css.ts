@@ -194,26 +194,3 @@ globalStyle('a', {
   textDecoration: 'none',
   fontWeight: '500',
 });
-
-globalStyle('.popup-content', {
-  background: 'transparent !important',
-  padding: 0,
-  translate: '0px -220px',
-  border: 'none !important',
-  width: '600px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'flex-start',
-  height: '10px',
-  pointerEvents: 'none',
-  '@media': {
-    [`screen and (max-width: ${BREAKPOINTS.mobile})`]: {
-      height: '100%',
-      translate: 0,
-      width: '100%',
-      bottom: '0',
-      alignItems: 'center',
-      background: 'var(--cmdKBackground) !important',
-    },
-  },
-});
