@@ -1,9 +1,8 @@
 import { globalStyle, style } from '@vanilla-extract/css';
-import { baseFontFamily, jetbrains, readexBold } from '../../styles/global.css';
+import { baseFontFamily, jetbrains } from '../../styles/global.css';
 import { globalVars } from '../../styles/theme.css';
 
 export const strong = style({
-  fontFamily: `${readexBold} ${baseFontFamily}`,
   fontWeight: 'bold',
   opacity: 1,
 });
@@ -14,8 +13,6 @@ export const blockquote = style({
   background: globalVars.colors.blockquote,
   fontWeight: 400,
   fontSize: '0.8rem',
-  //fontStyle: "italic",
-  //borderLeft: `10px solid ${globalVars.colors["grayish-02-transluscent-02"]}`,
   border: '1px dashed var(--foreground)',
   opacity: 0.6,
   margin: '2rem 2px 2rem 1.7vmin',
@@ -37,19 +34,7 @@ globalStyle(`${blockquote}:before`, {
   verticalAlign: '-0.4em',
 });
 
-// const fontColor = sprinkles({
-//   color: {
-//     lightMode: 'black',
-//     darkMode: 'white4',
-//   },
-// });
-
-export const paragraph = style([
-  {
-    fontFamily: `${baseFontFamily}`,
-    lineHeight: '1.4',
-  },
-]);
+export const paragraph = style({});
 
 globalStyle(`${blockquote} p`, {
   display: 'inline',
@@ -70,7 +55,7 @@ globalStyle(`pre code.${code}`, {
   padding: '3rem',
   marginTop: '3rem',
   marginBottom: '3rem',
-  fontSize: 'small',
+  fontSize: '12px',
   background: globalVars.colors.black,
   color: globalVars.colors.white,
   borderRadius: '16px',

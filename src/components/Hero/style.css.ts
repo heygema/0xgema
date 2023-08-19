@@ -7,9 +7,15 @@ export const root = style({
   marginBottom: '40px',
 });
 
+export const navigationContainer = style({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  marginBottom: '40px',
+});
+
 export const title = style({
-  // fontFamily: `${syneBold}, ui-sans-serif, sans-serif`,
-  fontFamily: 'inherit',
+  fontWeight: 'bold',
   marginTop: '1rem',
   marginBottom: '1rem',
 });

@@ -1,15 +1,10 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import React, { ReactNode } from 'react';
 
-import MenuButton from '../MenuButton';
-import { link as linkStyle } from '../Anchor/style.css';
 import { motion } from 'framer-motion';
 import { REVEAL_ANIMATE_PROPS } from '../../constant';
-import { Anchor } from '../Anchor';
 
 import * as styles from './style.css';
-import { TimezoneClock } from '../TimeZoneClock';
 
 export default function Layout({ children }: { children: ReactNode }) {
   //const backGlow = (
@@ -48,36 +43,11 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta property="og:image" content="/preview.png" />
       </Head>
 
-      <nav className={styles.navigation}>
-        <div className={styles.menuContainer}>
-          <MenuButton />
-        </div>
-      </nav>
       <motion.main {...REVEAL_ANIMATE_PROPS} className={styles.main}>
         {children}
       </motion.main>
       <footer className={styles.footer}>
-        <span>
-          {`© ${new Date().getFullYear()} Gema Anggada`}
-          {/* <Link
-            aria-label={'license'}
-            href={'https://creativecommons.org/licenses/by-sa/4.0/'}
-            target="_blank"
-            passHref
-          >
-            <Anchor
-              className={linkStyle}
-              aria-label={'license'}
-              target="_blank"
-              rel="noopener noreferrer"
-              size={12}
-            >
-              cc-by-sa
-            </Anchor>
-          </Link>
-          {' • '}
-          <TimezoneClock /> */}
-        </span>
+        <span>{`© ${new Date().getFullYear()} Gema Anggada`}</span>
       </footer>
     </>
   );

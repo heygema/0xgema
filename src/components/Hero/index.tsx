@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { Avatar } from '../Avatar';
 
 import * as styles from './style.css';
+import MenuButton from '../MenuButton';
 
 const menu = [
   {
@@ -27,8 +28,9 @@ export function Hero() {
 
   return (
     <div className={styles.root}>
-      <div>
+      <div className={styles.navigationContainer}>
         <Avatar />
+        <MenuButton />
       </div>
       <h4 className={styles.title}>{routeTitle.get(route) ?? asPath}</h4>
       <div className={styles.menuContainer}>

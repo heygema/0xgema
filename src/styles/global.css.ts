@@ -4,31 +4,21 @@ import { globalVars } from './theme.css';
 
 export const syneBold = 'Syne-Bold';
 export const readex = 'ReadexPro';
-export const readexLight = 'ReadexPro-ExtraLight';
-export const readexBold = 'ReadexPro-Bold';
 export const jetbrains = 'JetBrains Mono';
 
-globalFontFace(syneBold, {
-  src: 'url(/assets/fonts/Syne/Syne-SemiBold.ttf)',
-  fontStyle: 'bold',
+globalFontFace(readex, {
+  src: 'url(/assets/fonts/ReadexPro/ReadexPro-Light.ttf)',
+  // to condsider
+  // src: 'url(/assets/fonts/Hanken_Grotesk/static/HankenGrotesk-Light.ttf)',
+  fontWeight: 'normal',
+  fontStyle: 'normal',
   fontDisplay: 'swap',
 });
 
 globalFontFace(readex, {
-  src: 'url(/assets/fonts/ReadexPro/ReadexPro-Light.ttf)',
-  fontStyle: 'normal',
-  fontDisplay: 'swap',
-});
-
-globalFontFace(readexLight, {
-  src: 'url(/assets/fonts/ReadexPro/ReadexPro-ExtraLight.ttf)',
-  fontStyle: 'normal',
-  fontDisplay: 'swap',
-});
-
-globalFontFace(readexBold, {
   src: 'url(/assets/fonts/ReadexPro/ReadexPro-Regular.ttf)',
-  fontStyle: 'bold',
+  fontWeight: 'bold',
+  fontStyle: 'normal',
   fontDisplay: 'swap',
 });
 
@@ -46,20 +36,10 @@ globalStyle('html, body', {
   fontFamily: baseFontFamily,
   margin: 0,
   padding: 0,
-  //fontSize: "15px",
+  fontSize: '14px',
   minHeight: '100vh',
   letterSpacing: '0.88px',
-  // NOTE: I like this media style, but..
-  //"@media": {
-  //"(prefers-color-scheme: light)": {
-  //background: globalVars.colors.white,
-  //color: globalVars.colors.black,
-  //},
-  //"(prefers-color-scheme: dark)": {
-  //background: globalVars.colors.grayish,
-  //color: globalVars.colors.white,
-  //},
-  //},
+  lineHeight: '1.4',
 });
 
 globalStyle('button', {
@@ -86,9 +66,8 @@ const getMobileFontSize = (baseNumber = 0) => ({
 });
 
 globalStyle('h1, h2, h3, h4, h5, h6, h7', {
-  fontFamily: `${readexBold}, ${baseFontFamily}`,
   //letterSpacing: "0.025rem",
-  fontWeight: 500,
+  fontWeight: 'bold',
 });
 
 // if you want gradient stuff
