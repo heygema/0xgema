@@ -37,6 +37,7 @@ export const modal = style({
   backdropFilter: 'blur(4px)',
   width: '100%',
   minHeight: 'fit-content',
+  maxHeight: '800px',
   '@media': {
     [`screen and (max-width: ${BREAKPOINTS.mobile})`]: {
       // idk why was this like this
