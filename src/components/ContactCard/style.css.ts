@@ -1,4 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+import { sprinkles } from '../../styles/sprinkles.css';
 
 export const root = style({
   display: 'flex',
@@ -16,12 +17,16 @@ const sectionBase = style({
   opacity: 0.8,
 });
 
+const alignment = sprinkles({
+  justifyContent: {
+    desktop: 'flex-start',
+    tablet: 'flex-start',
+    mobile: 'flex-end',
+    'mobile-s': 'flex-end',
+  },
+});
+
 export const section = styleVariants({
   left: [sectionBase],
-  right: [
-    sectionBase,
-    {
-      // justifyContent: 'flex-end',
-    },
-  ],
+  right: [sectionBase, alignment],
 });
