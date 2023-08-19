@@ -11,12 +11,13 @@ export const root = style({
 const sectionBase = style({
   flexDirection: 'row',
   flex: 1,
+  maxWidth: '100px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-start',
 });
 
-const alignment = sprinkles({
+export const alignment = sprinkles({
   justifyContent: {
     tablet: 'flex-start',
     desktop: 'flex-start',
@@ -27,5 +28,5 @@ const alignment = sprinkles({
 
 export const section = styleVariants({
   left: [sectionBase, { opacity: 0.8 }],
-  right: [sectionBase, alignment],
+  right: [sectionBase],
 });
