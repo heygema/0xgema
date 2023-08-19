@@ -131,7 +131,7 @@ globalStyle("[data-theme='dark']", {
   vars: {
     '--background': globalVars.colors.black1,
     '--foreground': globalVars.colors.white6,
-    '--foregroundHeading': globalVars.colors.white4,
+    '--foregroundHeading': globalVars.colors.white,
 
     '--accentBackground': globalVars.colors.darkThemeAccent,
     '--accentForeground': globalVars.colors.black,
