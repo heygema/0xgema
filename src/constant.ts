@@ -10,8 +10,8 @@ const postToRender = 'posts';
 export const POST_DIR = `./src/data/${postToRender}`;
 
 export const BREAKPOINTS = {
-  ['mobile-s']: '480px',
-  mobile: '680px',
+  ['mobile-s']: '479px', //max-width
+  mobile: '480px',
   tablet: '768px',
   desktop: '1024px',
 };

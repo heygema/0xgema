@@ -19,8 +19,8 @@ const sectionBase = style({
 
 const alignment = sprinkles({
   justifyContent: {
-    desktop: 'flex-start',
     tablet: 'flex-start',
+    desktop: 'flex-start',
     mobile: 'flex-end',
     'mobile-s': 'flex-end',
   },
@@ -28,5 +28,5 @@ const alignment = sprinkles({
 
 export const section = styleVariants({
   left: [sectionBase],
-  right: [sectionBase, alignment],
+  right: [sectionBase, { justifyContent: 'flex-end' }, alignment],
 });

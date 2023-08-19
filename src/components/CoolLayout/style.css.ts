@@ -16,10 +16,10 @@ const mainBase = style({
 
 const mainResponsive = sprinkles({
   width: {
-    desktop: 'breakpoint-desktop',
-    tablet: 'breakpoint-tablet',
-    mobile: 'breakpoint-mobile',
-    ['mobile-s']: 'breakpoint-x-small',
+    desktop: 'l',
+    tablet: 'm',
+    mobile: 's',
+    ['mobile-s']: 'xs',
   },
 });
 
