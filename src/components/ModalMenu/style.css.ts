@@ -42,6 +42,7 @@ export const modal = style({
     [`screen and (max-width: ${BREAKPOINTS.mobile})`]: {
       // idk why was this like this
       // height: "100vmin",
+      translate: 'unset',
     },
   },
 });
