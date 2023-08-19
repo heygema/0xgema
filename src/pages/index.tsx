@@ -6,7 +6,7 @@ import * as styles from '../styles/index.css';
 import getPosts from '../helpers/getPosts';
 import { Posts } from '../data/types';
 import { usePostsStore } from '../data/store';
-import { Card, Loading } from '../core-ui';
+import { Card, Loading } from '../components';
 import { motion } from 'framer-motion';
 import ArticleCard from '../components/ArticleCard';
 import { REVEAL_ANIMATE_PROPS } from '../constant';

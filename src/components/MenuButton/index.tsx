@@ -5,7 +5,7 @@ import Popup from 'reactjs-popup';
 import { Suspense, useEffect } from 'react';
 import { useModalStore } from '../../data/store';
 import ModalMenu from '../ModalMenu';
-import { Loading } from '../../core-ui/Loading';
+import { Loading } from '../Loading';
 
 export default function MenuButton() {
   const { isOpen, setOpen, toggleOpen } = useModalStore((state) => state);
