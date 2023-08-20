@@ -279,6 +279,7 @@ export default function ModalMenu() {
             e.preventDefault();
             setSearch(e?.target?.value || '');
           }}
+          onFocus={(e) => e.target.blur}
         />
         <Button onClick={closeModal}>ESC</Button>
       </div>
