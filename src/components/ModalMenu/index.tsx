@@ -70,7 +70,7 @@ export default function ModalMenu() {
       type: MenuType.ACTION,
       icon: <Icons.Home />,
       menu: {
-        title: 'Home',
+        title: 'Blog',
       },
       action: () => navigate('/'),
     },

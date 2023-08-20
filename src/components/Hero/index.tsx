@@ -9,7 +9,7 @@ import MenuButton from '../MenuButton';
 const menu = [
   {
     url: '/',
-    title: 'Home',
+    title: 'Blog',
   },
   {
     url: '/about',
