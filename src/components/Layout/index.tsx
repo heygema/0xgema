@@ -23,11 +23,8 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@0xgema" />
         <meta name="twitter:creator" content="@0xgema" />
-        <meta name="twitter:title" content="Gema" />
-        <meta
-          name="twitter:description"
-          content="Gema's Internet Corner Space"
-        />
+        <meta name="twitter:title" content="gema.monster" />
+        <meta name="twitter:description" content="blog by @0xgema" />
         <meta
           name="twitter:image"
           content="https://0xgema.vercel.app/preview.png"
@@ -35,10 +32,10 @@ export default function Layout({ children }: { children: ReactNode }) {
 
         <meta property="og:url" content="https://gema.monster" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Gema's Internet Corner Space" />
+        <meta property="og:title" content="blog by @0xgema" />
         <meta
           property="og:description"
-          content="Gema's Internet Corner, sharing personal notes and stuff."
+          content="sharing personal notes and stuff."
         />
         <meta property="og:image" content="/preview.png" />
       </Head>
