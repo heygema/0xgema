@@ -52,7 +52,7 @@ export default function MenuButton() {
       onOpen={onClick}
       trigger={
         <motion.div
-          title="(cmd/ctrl)+k"
+          aria-label="menu-button-press-cmd/ctrl+k"
           whileTap={{
             scale: 0.9,
           }}

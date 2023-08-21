@@ -271,7 +271,7 @@ export default function ModalMenu() {
         <input
           aria-label="global-search-box"
           className={styles.inputStyle}
-          placeholder="press cmd+k to access this command palette"
+          placeholder="press ⌘+k to access this command palette"
           type="text"
           autoComplete="off"
           value={search}
