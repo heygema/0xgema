@@ -1,14 +1,14 @@
 import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 import { button } from '../components/Button/style.css';
 import { BREAKPOINTS } from '../constant';
-import { sprinkles } from './sprinkles.css';
+// import { sprinkles } from './sprinkles.css';
 
 export const root = style([
-  sprinkles({
-    width: {
-      tablet: 'fit',
-    },
-  }),
+  // sprinkles({
+  //   width: {
+  //     tablet: 'fit',
+  //   },
+  // }),
   {
     display: 'grid',
     //gridTemplateColumns: "repeat(auto-fill, minmax(3fr, 3fr))",

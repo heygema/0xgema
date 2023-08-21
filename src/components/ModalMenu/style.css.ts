@@ -52,7 +52,7 @@ export const inputStyle = style({
   border: 'none',
   height: '64px',
   padding: '0px 50px 0px 10px',
-  fontSize: '18px',
+  fontSize: '13px',
   //letterSpacing: "-0.013em",
   outline: 'none',
   backgroundColor: 'transparent',
