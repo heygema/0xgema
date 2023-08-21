@@ -79,5 +79,6 @@ export const globalVars = createGlobalTheme(':root', {
     m: '450px',
     s: '350px',
     xs: '300px',
+    fit: 'fit-content',
   },
 });

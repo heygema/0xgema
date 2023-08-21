@@ -1,22 +1,30 @@
 import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 import { button } from '../components/Button/style.css';
 import { BREAKPOINTS } from '../constant';
+import { sprinkles } from './sprinkles.css';
 
-export const root = style({
-  display: 'grid',
-  //gridTemplateColumns: "repeat(auto-fill, minmax(3fr, 3fr))",
-  gridTemplateColumns: '1fr 1fr',
-  //gridTemplateRows: "minmax(100px, auto)",
-  gridAutoFlow: 'dense',
-  gridGap: '10px',
-  '@media': {
-    [`(max-width: ${BREAKPOINTS.mobile})`]: {
-      gridGap: '1rem',
-      gridTemplateColumns: '100px',
-      gridTemplateRows: 'minmax(auto, auto)',
+export const root = style([
+  sprinkles({
+    width: {
+      tablet: 'fit',
+    },
+  }),
+  {
+    display: 'grid',
+    //gridTemplateColumns: "repeat(auto-fill, minmax(3fr, 3fr))",
+    gridTemplateColumns: '1fr 1fr',
+    //gridTemplateRows: "minmax(100px, auto)",
+    gridAutoFlow: 'dense',
+    gridGap: '10px',
+    '@media': {
+      [`(max-width: ${BREAKPOINTS.mobile})`]: {
+        gridGap: '1rem',
+        gridTemplateColumns: '100px',
+        gridTemplateRows: 'minmax(auto, auto)',
+      },
     },
   },
-});
+]);
 
 export const easterEggContainer = style({
   display: 'flex',
