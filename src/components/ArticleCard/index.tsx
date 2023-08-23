@@ -1,6 +1,8 @@
-import { motion } from "framer-motion";
-import Link from "next/link";
-import * as styles from "./style.css";
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { getArticleDate } from '../../helpers/getArticleDate';
+import * as styles from './style.css';
+// import { CLICKABLE_RESPONSE_PROPS } from "../../constant";
 
 interface Props {
   isDraggable?: boolean;
@@ -8,10 +10,8 @@ interface Props {
   slug?: string;
   title: string;
   excerpt: string;
-  month: string;
-  day: string;
-  year: string;
-  ["aria-label"]?: string;
+  date: string;
+  ['aria-label']?: string;
 }
 
 export default function ArticleCard({
@@ -20,18 +20,15 @@ export default function ArticleCard({
   slug,
   title,
   excerpt,
-  month,
-  day,
-  year,
+  date,
   ...otherProps
 }: Props) {
+  const { year, month, day } = getArticleDate(date);
+
   return (
-    <Link {...otherProps} href={"/posts/" + slug}>
+    <Link {...otherProps} href={'/posts/' + slug}>
       <motion.div
         aria-label="article-card"
-        drag={isDraggable}
-        dragElastic={0.1}
-        dragMomentum={false}
         variants={{
           hidden: {
             opacity: 0,
@@ -43,16 +40,13 @@ export default function ArticleCard({
         }}
         initial="hidden"
         animate="visible"
-        className={[styles.card, isDraggable && styles.draggableCard].join(" ")}
-        whileHover={{ scale: 1.02 }}
+        className={[styles.card, isDraggable && styles.draggableCard].join(' ')}
       >
-        <div>
-          <h3 className={styles.title}>{title}</h3>
-          <span className={styles.postDate}>
-            {month} {day}, {year}
-          </span>
-        </div>
-        <p>{excerpt}</p>
+        <h5 className={styles.title}>{title}</h5>
+        <span className={styles.postDate}>
+          {month} {day}, {year}
+        </span>
+        {/* <p className={styles.excerpt}>{excerpt}</p> */}
       </motion.div>
     </Link>
   );

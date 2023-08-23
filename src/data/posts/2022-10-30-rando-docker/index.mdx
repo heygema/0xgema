@@ -1,49 +1,69 @@
 ---
-title: Rando Docker stuff 
-tags: #programming 
-topics: [[Javascript MOC]]
+title: Docker Cheat Sheet 
+tags: #docker #programming #cheatsheet
 date: 2022-10-30
-excerpt: Docker Cheat sheet
-
+excerpt: A personal Docker commands cheat sheets.
 ---
 
-here lies some cheat sheet
+This cheat sheet provides a personal random list of Docker commands. 
+
+### Basic Commands
+
+Here are some basic Docker commands that you can use to manage your Docker containers.
 
 ```bash
-docker run --name xmachina -d -p 80:8080 ubuntu /bin/sh -c "while true; do ping 8.8.8.8; done"
+docker run --name [container-name] -d -p [host-port]:[container-port] [image-name] /bin/sh -c "while true; do ping 8.8.8.8; done"
+```
 
+This command runs a Docker container with the specified name, image, and port mapping. The container runs a command that continuously pings an IP address (in this case, 8.8.8.8).
+
+```bash
 docker stop $(docker ps -a -q)
+```
+
+This command stops all running Docker containers.
+
+```bash
 docker rm $(docker ps -a -q)
-
-docker exec -it xmachina /bin/bash
 ```
 
-left side is host's port, right side is docker's port
-[Reference SQL](https://bytearcher.com/articles/create-new-postgresql-database-instance-using-docker/)
-Quick PostgreSQL [[202102101304-SQL Cheat sheet]]
+This command removes all stopped Docker containers.
+
 ```bash
- docker run --name app-postgres \
-             --env POSTGRES_USER=app_dev \
-             --env POSTGRES_PASSWORD=e1bc9e7f864d \
-             --publish 127.0.0.1:5432:5432 \
-             --detach \
-             --restart unless-stopped \
-             postgres:13
-
+docker exec -it [container-name] /bin/bash
 ```
 
-mount to outside volume
+This command opens a shell inside a running Docker container.
+
+### PostgreSQL Configuration
+
+PostgreSQL is a popular database management system that can be run in Docker. Here are some Docker commands to create a new PostgreSQL instance and mount to an outside volume.
+
 ```bash
-docker run --name pg-node-orms -p 5432:5432 -e POSTGRES\_PASSWORD=hunter12 -e POSTGRES\_USER=orm-user -e POSTGRES\_DB=orm-db -v ~/data/pg-node-orms:/var/lib/postgresql/data -d
-
+docker run --name [container-name] \
+           --env POSTGRES_USER=[username] \
+           --env POSTGRES_PASSWORD=[password] \
+           --publish 127.0.0.1:[host-port]:5432 \
+           --detach \
+           --restart unless-stopped \
+           postgres:13
 ```
 
-any update
+This command creates a new PostgreSQL instance with the specified username, password, and port mapping.
+
 ```bash
-docker update --restart=unless-stopped $(docker ps -a -q)
+docker run --name [container-name] -p 5432:5432 -e POSTGRES_PASSWORD=[password] -e POSTGRES_USER=[username] -e POSTGRES_DB=[database-name] -v ~/data/[volume-name]:/var/lib/postgresql/data -d
 ```
 
-elastic
+This command creates a new PostgreSQL instance with the specified username, password, database name, and volume mount.
+
+### Elastic Configuration
+
+Elasticsearch is a popular search engine that can also be run in Docker. Here is a Docker command to run a single-node Elasticsearch instance.
+
 ```bash
 docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.15.1
 ```
+
+This command runs a single-node Elasticsearch instance with the specified port mappings and configuration.
+

@@ -1,31 +1,33 @@
-import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
-import { BREAKPOINTS } from "../constant";
-import { globalVars as vars } from "./theme.css";
+import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
+import { BREAKPOINTS } from '../constant';
+import { globalVars as vars } from './theme.css';
 
-const responsiveProperties = defineProperties({
+export const responsiveProperties = defineProperties({
   conditions: {
+    ['mobile-s']: {
+      '@media': `screen and (max-width: ${BREAKPOINTS['mobile-s']})`,
+    },
     mobile: {
-      "@media": `screen and (min-width: ${BREAKPOINTS["mobile-s"]}) and (max-width: ${BREAKPOINTS.mobile})`,
+      '@media': `screen and (min-width: ${BREAKPOINTS.mobile})`,
     },
-    tablet: { "@media": `screen and (min-width: ${BREAKPOINTS.tablet})` },
-    desktop: { "@media": `screen and (min-width: ${BREAKPOINTS.desktop})` },
-    ["mobile-s"]: {
-      "@media": `screen and (max-width: ${BREAKPOINTS["mobile-s"]})`,
+    tablet: {
+      '@media': `screen and (min-width: ${BREAKPOINTS.tablet})`,
     },
+    desktop: { '@media': `screen and (min-width: ${BREAKPOINTS.desktop})` },
   },
-  defaultCondition: "mobile",
+  defaultCondition: 'mobile',
   properties: {
-    display: ["none", "flex", "block", "inline"],
-    flexDirection: ["row", "column"],
+    display: ['none', 'flex', 'block', 'inline'],
+    flexDirection: ['row', 'column'],
     justifyContent: [
-      "stretch",
-      "flex-start",
-      "center",
-      "flex-end",
-      "space-around",
-      "space-between",
+      'stretch',
+      'flex-start',
+      'center',
+      'flex-end',
+      'space-around',
+      'space-between',
     ],
-    alignItems: ["stretch", "flex-start", "center", "flex-end"],
+    alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
     paddingTop: vars.space,
     paddingBottom: vars.space,
     paddingLeft: vars.space,
@@ -33,19 +35,19 @@ const responsiveProperties = defineProperties({
     width: vars.width,
   },
   shorthands: {
-    padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
-    paddingX: ["paddingLeft", "paddingRight"],
-    paddingY: ["paddingTop", "paddingBottom"],
-    placeItems: ["justifyContent", "alignItems"],
+    padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
+    paddingX: ['paddingLeft', 'paddingRight'],
+    paddingY: ['paddingTop', 'paddingBottom'],
+    placeItems: ['justifyContent', 'alignItems'],
   },
 });
 
 const colorProperties = defineProperties({
   conditions: {
     lightMode: {},
-    darkMode: { "@media": "(prefers-color-scheme: dark)" },
+    darkMode: { '@media': '(prefers-color-scheme: dark)' },
   },
-  defaultCondition: "lightMode",
+  defaultCondition: 'lightMode',
   properties: {
     color: vars.colors,
     background: vars.colors,

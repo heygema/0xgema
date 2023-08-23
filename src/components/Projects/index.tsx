@@ -9,12 +9,13 @@ export function Projects() {
       href: "https://zebracult.vercel.app",
       description: "yay",
       image: "zebracult.png",
+      alt: "zebracult project preview image",
     },
   ];
 
   return (
     <div className={styles.root}>
-      {projects.map(({ href, title, description }, index) => (
+      {projects.map(({ href, alt, title, description }, index) => (
         <Link
           key={`${title}-${index}`}
           aria-label={title}
@@ -23,6 +24,7 @@ export function Projects() {
         >
           <div className={styles.project}>
             <Image
+              alt={alt}
               className={styles.display}
               src={`/assets/projects/zebracult.png`}
               width="290px"

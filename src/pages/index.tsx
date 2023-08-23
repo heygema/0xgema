@@ -1,18 +1,15 @@
-import { useRouter } from "next/router";
-import Link from "next/link";
-import dynamic from "next/dynamic";
-import { Suspense, useEffect } from "react";
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { Suspense, useEffect } from 'react';
 
-import * as styles from "../styles/index.css";
-import getPosts from "../helpers/getPosts";
-import { Posts } from "../data/types";
-import { usePostsStore } from "../data/store";
-import Button from "../components/Button";
-import { Card, Loading } from "../core-ui";
-
-const ArticleCard = dynamic(() => import("../components/ArticleCard"), {
-  suspense: true,
-});
+import * as styles from '../styles/index.css';
+import getPosts from '../helpers/getPosts';
+import { Posts } from '../data/types';
+import { usePostsStore } from '../data/store';
+import { Card, Loading } from '../components';
+import { motion } from 'framer-motion';
+import ArticleCard from '../components/ArticleCard';
+import { REVEAL_ANIMATE_PROPS } from '../constant';
 
 type Props = {
   posts: Posts;
@@ -23,11 +20,11 @@ export default function Home({ posts }: Props) {
 
   // tedious
   let currentActualPage: string;
-  const q = String(asPath.split("?").pop()).split("&");
-  const pageParamIndex = q.findIndex((value) => value.startsWith("page"));
+  const q = String(asPath.split('?').pop()).split('&');
+  const pageParamIndex = q.findIndex((value) => value.startsWith('page'));
 
   if (q[pageParamIndex]) {
-    const [, target] = q[pageParamIndex]?.split("=");
+    const [, target] = q[pageParamIndex]?.split('=');
     currentActualPage = target;
   }
 
@@ -55,7 +52,7 @@ export default function Home({ posts }: Props) {
   );
 
   const pressPagination = (page: string) => {
-    push("/", {
+    push('/', {
       query: {
         page,
       },
@@ -77,33 +74,20 @@ export default function Home({ posts }: Props) {
   }
 
   const renderedPosts = availablePost.map(
-    ({ slug, title, excerpt, ...info }, index) => {
-      const year = new Date(info.date).toLocaleString("en-US", {
-        year: "numeric",
-      });
-      const month = new Date(info.date).toLocaleString("en-US", {
-        month: "long",
-      });
-      const day = new Date(info.date).toLocaleString("en-US", {
-        day: "2-digit",
-      });
-
+    ({ slug, date, title, excerpt }, index) => {
       return (
         <ArticleCard
           key={`slug_${index}`}
           slug={slug}
-          isDraggable={index === 0}
+          date={date}
           title={title}
           excerpt={excerpt}
-          month={month}
-          day={day}
-          year={year}
         />
       );
     }
   );
 
-  const renderedPaginations = (
+  const renderedPaginations = totalPages > 1 && (
     <div className={styles.pagination}>
       {paginations.map((item, index) => {
         const isCurrentPage = String(page) === item;
@@ -114,30 +98,34 @@ export default function Home({ posts }: Props) {
           pressPagination(item);
         };
         return (
-          <Button
+          <a
             className={
-              styles.paginationButton[isCurrentPage ? "currentPage" : "base"]
+              styles.paginationAnchor[isCurrentPage ? 'selected' : 'base']
             }
-            onClick={onClick}
             key={index}
+            onClick={onClick}
           >
-            {String(item)}
-          </Button>
+            {String(index + 1)}
+          </a>
         );
       })}
     </div>
   );
 
   return (
-    <Suspense fallback={<Loading />}>
-      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        <div className={styles.easterEggContainer}>
-          <span className={styles.eggUnicorn}>🥚🦄</span>
-        </div>
-      </Link>
-      <div className={styles.root}>{renderedPosts}</div>
-      {renderedPaginations}
-    </Suspense>
+    <>
+      <Suspense fallback={<Loading />}>
+        <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <div className={styles.easterEggContainer}>
+            <span className={styles.eggUnicorn}></span>
+          </div>
+        </Link>
+        <motion.div {...REVEAL_ANIMATE_PROPS} className={styles.root}>
+          {renderedPosts}
+        </motion.div>
+        {renderedPaginations}
+      </Suspense>
+    </>
   );
 }
 
