@@ -38,6 +38,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           content="sharing personal notes and stuff."
         />
         <meta property="og:image" content="/preview.png" />
+        <meta name="description" content="personal website of @0xgema" />
       </Head>
 
       <motion.main {...REVEAL_ANIMATE_PROPS} className={styles.main}>
