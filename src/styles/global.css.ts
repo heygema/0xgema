@@ -123,7 +123,7 @@ globalStyle(':root', {
 
     '--hoverGradient': globalVars.colors.whiteToBlackGradient,
 
-    '--url-color': globalVars.colors.blue,
+    '--url-color': globalVars.colors.black,
   },
 });
 
