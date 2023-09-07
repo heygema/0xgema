@@ -43,6 +43,7 @@ export default function Post({ posts, source }: Props) {
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css"
+        />
         <meta name="description" content={source?.frontmatter?.excerpt} />
       </Head>
 
