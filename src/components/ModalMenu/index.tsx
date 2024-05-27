@@ -68,9 +68,9 @@ export default function ModalMenu() {
   const menuItems: Array<MenuItem> = [
     {
       type: MenuType.ACTION,
-      icon: <Icons.Home />,
+      icon: <Icons.About />,
       menu: {
-        title: 'Blog',
+        title: 'About',
       },
       action: () => navigate('/'),
     },
@@ -78,9 +78,9 @@ export default function ModalMenu() {
       type: MenuType.ACTION,
       icon: <Icons.About />,
       menu: {
-        title: 'About',
+        title: 'Blog',
       },
-      action: () => navigate('/about'),
+      action: () => navigate('/blog'),
     },
 
     {
