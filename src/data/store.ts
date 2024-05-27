@@ -1,5 +1,5 @@
-import create from "zustand";
-import { Posts } from "./types";
+import { create } from 'zustand';
+import { Posts } from './types';
 
 type State = {
   posts: Posts;

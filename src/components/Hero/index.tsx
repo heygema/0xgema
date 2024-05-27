@@ -9,11 +9,11 @@ import MenuButton from '../MenuButton';
 const menu = [
   {
     url: '/',
-    title: 'Blog',
+    title: 'About',
   },
   {
-    url: '/about',
-    title: 'About',
+    url: '/blog',
+    title: 'Blog',
   },
 ];
 
@@ -21,8 +21,8 @@ export function Hero() {
   const { route, asPath } = useRouter();
 
   const routeTitle = new Map([
-    ['/', 'Writings'],
-    ['/about', 'Gema Anggada'],
+    ['/', 'Gema Anggada'],
+    ['/blog', 'Writings'],
     ['/photos', 'Photos'],
   ]);
 
