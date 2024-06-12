@@ -92,6 +92,8 @@ export const getStaticProps = async ({ params: { slug } }) => {
     },
   });
 
+  const sourceDate = new Date(String(mdxSource.frontmatter?.date));
+
   return {
     props: {
       slug,
@@ -100,7 +102,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
         ...mdxSource,
         frontmatter: {
           ...mdxSource.frontmatter,
-          date: new Date(mdxSource.frontmatter?.date).toISOString(),
+          date: sourceDate.toISOString(),
         },
       },
     },
