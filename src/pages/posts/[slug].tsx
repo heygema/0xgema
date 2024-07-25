@@ -48,7 +48,7 @@ export default function Post({ posts, source }: Props) {
       </Head>
 
       <motion.div {...REVEAL_ANIMATE_PROPS}>
-        <Link aria-label="back-button" href="/" passHref>
+        <Link aria-label="back-button" href="/blog" passHref>
           <motion.a {...CLICKABLE_RESPONSE_PROPS} className={styles.backButton}>
             ↩ Home
           </motion.a>
