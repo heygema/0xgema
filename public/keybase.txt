@@ -4,7 +4,7 @@ https://keybase.io/gemx
 
 I hereby claim:
 
-  * I am an admin of https://gema.monster
+  * I am an admin of https://0xgema.site
   * I am gemx (https://keybase.io/gemx) on keybase.
   * I have a public key with fingerprint D744 BA16 5466 78F3 C0FC  A549 6639 42C9 5F35 3332
 
@@ -21,17 +21,27 @@ To do so, I am signing this object:
       "uid": "ea3f87225d6b8a4e2ba490136fa0d319",
       "username": "gemx"
     },
+    "merkle_root": {
+      "ctime": 1729623436,
+      "hash_meta": "17c1da94e609dbba6271fcd3bd4a5e75a3dc63344326ae2c88688c458549a90d",
+      "seqno": 26232038
+    },
+    "revoke": {
+      "sig_ids": [
+        "66cd28b6ef9e9fcdc6343a346aed2f81afe9f648e974c6eafedc0c863e26ebd00f"
+      ]
+    },
     "service": {
-      "hostname": "gema.monster",
+      "hostname": "0xgema.site",
       "protocol": "https:"
     },
     "type": "web_service_binding",
     "version": 1
   },
-  "ctime": 1666956074,
+  "ctime": 1729623460,
   "expire_in": 157680000,
-  "prev": "7596c09b26f39d282a949f459e4ac7f05fce5ccc915a783830e0a72a50e9394a",
-  "seqno": 14,
+  "prev": "97839f974219411f7b671fee1b9c32b7e1e2a704ca6ff31d241ab2a14b414e43",
+  "seqno": 16,
   "tag": "signature"
 }
 
@@ -41,30 +51,33 @@ which yields the signature:
 Version: Keybase OpenPGP v2.1.13
 Comment: https://keybase.io/crypto
 
-yMNwAnicbZJ/UBRlGMcPFEMGFaVS5AJndQiQcHfffffHTSCDJZ2MEymQ8cNzb/dd
-2FH2jr3jRC7QKDV1aqbG0MauxihIw2CQsnAqyasQrUGQCkpvgCPHkgl/EAgCvcfk
-9E9/vfO+z/f7eb/P877eBXMMYUGKkH7BAgEddLHtcJlByj+b6CasNnkXYXIT29Hs
-gnbIyOG0bFdlwkSQFE1ygCR5RgaywitApqAiiazIc1ZEUxQNIFRoKAqIBVYOkkAB
-NK5SiiAxMqQkmoIsKRJJhKJqRUi366rmxFiZYxirSLGQYVkOUyUSQyEjsCwQGFoS
-oAIgAIDGxmKbI+DA4ayiAyWrNnyGN5bZeP+jf5AbJ4ckxtNWXhRZjgGSzDMA4V5I
-JOENxwkASBRPQ46SZZriOJIFrMSzkAXYTcrMbO6yWRwSgcJzNA1lFuMYRFtFRiAp
-wCoiKQNKCAgdSNfEEoTVRaiknKhMIvCJS5VQYKiBLv6risklNs3hRDr22XWb0ybZ
-duBKsdNpd5gCTucue0C6E1kt/0IsVlWT8Qyxw4V0h2rTCBOFlZJTDVAplmUFPGqO
-SSJQuV3VkUUNKCDH8rhjMnAPcmEkBwVWIgUrzSpAkGmeFgVGUBgoIEaUOIXEr4ug
-JEkCBUWOBzwgESlytAhJJOBZB0biQKWaDbPxVU6xCDMdapEmOst0RFR+01Yw1xAU
-ZpgXEhz4XIaw+REPvty3UYtm0j35HekLIwYjqozP5CVmmz+zrzi5Kbh7ssK8dPRL
-8zJxZG/atZXLnux2re/pH2vMjj00dl931NR8mB+x3/VczGXjUF9Ohv3QTtfeoZ7F
-NVmrp909N4nMg+8fHz8+s2RVwoov/p4wf9J3rmHT7oO15+LbqlytgxVzw8m8795u
-rEq8daB5YcoNd8UZ1+DDAzFHoy4ODzTdrX2s8vSn/qLUU3bvquVZi+tfPPJzh+vY
-/ncaXqcy5sT+kDCee+W1akLKgNeDX/ltTcGJ0tDetaXx06ETprzqO/5OH1rTurTe
-6zP2d3MbjJfHPJr20kdSeubUdM6C2mHNpKtX280922qjQ/1XTNTtJo8v+uiZyKTf
-D//qH97zwl8xjZPeZzevNmz5+pLvau6tkMK4JXeqIhO2RRc0hI2M3L9W8OP51PD4
-0+3eRaXPz7zVatx4qnjdEXi2a3Srd6OQ+IZ5bKImdN/awdaPt6aED5Znujc3jYeW
-1d3sfbevko7d3eVI6713/g9fzAfv1f+5vuFVX9pXfEXcys51dQPH2k8un/dmMVWd
-f/uhwnWPgIGZ7MjYn/rgSN9ETsvnJ+omKpq/7+oJ6fA8YYq7kZHeqUdG+XMak/dk
-z/eYQOoWU7OrJdtz7+Xrk1ORElnd4v/FlubcEPL4FHVAv5t7wQhKH43fl9rvlkIE
-LWs0LuWpwiGbm8t5+tI/1Ou9LA==
-=ZeK4
+yMQAAnicbZN/TJVVGMcvCCo3HJiWytTla5qRwnt+vOd9X9I0mmH+ytKWCXY773vO
+y73cy73X974ipCzMH7gpwUZuiTObNtGyCH+ghJqyWji0yTTFH2GOnEwdJQUKNu1c
+pmtr/XV2zvM8n+f7fM853w8Z4HLHWHrmSY+CYExzo73clTui+/OVkhFiRVLGSsnP
++xceYDziePw+JmVIMoCyimRZwwwxS7MQA4plUkI11eAQAIgUxYIK1TlBhqrIyEJQ
+RIGlm5gpwIRAITKVJkuWL5jL7bDtCzoCy1SMDQqIgglRBdWUBVTBOiFIx9DUFQsp
+CCEoCr2hSLRCiDNohKf5QuJMbDz98v4n/7FuoVyRBR4aGqVExchkGkZczCJzU2xU
+VUfIBBpUVMAYBKoqE0RMjSgEiWqZ4X7dy/txnCJLUyFUGBE4zKFBsS4DRCwqMwT0
+aGKE20Gaz0V2Ls8vlIonS/nc9ge4xw6FnKixpuOLhoEKdQIRRkQMRyNeTz53qKgC
+qgkY1TEnss4MgxKoAstkyGCYKlxVKGImQQhjBAnl0NQ0omkmVjThG9VlJjRE+LJg
+SMqAAg9lpAkJNi8I+Xm0e8SXKzyLSBnZwjWTQc0g3NK5LloILEYUYYFl0NIAtcQx
+wRrXVWwSLrbMlIUziEPCDSbLlrS0ONrNLvCZ/fDoJT0aXi4U49O0iM/hQlHYDjkh
+MxQQAa/jhCMZUV+conA0cwU3PI8YHsMXZOKFiIoCbkd8oaDwSWT+xzIiT5Z4Ydhn
+c48vmqGoRBP3KUf78AKB1FUN6ZaQDYGOAbBUgwgTOQeGbiJoqBxwSFUZixdsWQgw
+iAE1IAXYwABzjP71EIjbcWiuYArjgtRZbnOpuPFETpwrxu0aGB8b/Toud0Ly4w91
+b0HSw7yvc3JeG17/bsLNH0avt163fSVPJ76zZ5ndUH+3cW6PmlJ7uzWx9q3nAjeJ
+uz324+zVVzbOXFI+sqRmXfL2DdXuglNl4QVGS1bX2DXnQknzYstaU8srDm/wPjN6
+eNXmyC3/VOnDzN7a1KTfp66qOnmveGPqjKrqvO6Sl9c2tXfFFy0eOrFk2JW9q3uH
+ndtxKssV09NUkvLEoo7eX6+db37l23nxM/4+u7XixLzyJPDZ6IS6+s69KaMOV99I
+byh/mO20dTuTBu36qd1780Hs+MZdf9xdOyZ54VPTSjem+QeWPtjB11y8fL3tl87F
+K3a+HyPV7rQW1owoPx/f8l7i/dCpQFbfpe1tceZ6vfCruDdK0+suLRnw0pS9LXZb
+YNDg8g0JdQcrjkzMWdVRGPjk6ISexfT4ot2V+5oqcyd1jdpzZdYm+37r1e6azMTW
+5BeOlx/qMX4bLFd3nNmV+GrcjPSi1J8TmsfOnjVpG+OdnfxgR93Ish/3f7PvyTxz
+W8mLN6qastzXF32RfJpdOP1gy4p0bwLsuzOUvrkpr/3a6ezammDz3IrKvqu9Az17
+1LT4hsy6ix/denZV+IBa37FlztjpKamzKjcfq1WuPr81cjLeOrp7vs9t6N+NaTYu
+NJwJ0FvTLy/NGDJquL9r2vi+vw6l3559fOjbLV9+8Oen3v3rpnQdu3Mxpmz+nHET
+zo6bObjn0O0jrgNjuv8Bzcn81A==
+=FniB
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
@@ -72,4 +85,5 @@ appending to this document.
 
 View my publicly-auditable identity here: https://keybase.io/gemx
 
-========================================
+==================================================================
+
