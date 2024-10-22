@@ -1,19 +1,19 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { Avatar } from '../Avatar';
+import { Avatar } from "../Avatar";
 
-import * as styles from './style.css';
-import MenuButton from '../MenuButton';
+import * as styles from "./style.css";
+import MenuButton from "../MenuButton";
 
 const menu = [
   {
-    url: '/',
-    title: 'About',
+    url: "/",
+    title: "About",
   },
   {
-    url: '/blog',
-    title: 'Blog',
+    url: "/blog",
+    title: "Blog",
   },
 ];
 
@@ -21,9 +21,9 @@ export function Hero() {
   const { route, asPath } = useRouter();
 
   const routeTitle = new Map([
-    ['/', 'Gema Anggada'],
-    ['/blog', 'Writings'],
-    ['/photos', 'Photos'],
+    ["/", "0xgema"],
+    ["/blog", "Writings"],
+    ["/photos", "Photos"],
   ]);
 
   return (
@@ -38,7 +38,7 @@ export function Hero() {
           const isSelected = url === route;
           return (
             <Link key={title} href={url} passHref>
-              <a className={styles.menu[isSelected ? 'selected' : 'base']}>
+              <a className={styles.menu[isSelected ? "selected" : "base"]}>
                 {title}
               </a>
             </Link>
