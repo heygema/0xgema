@@ -1,0 +1,69 @@
+---
+title: React tips, make illegal states unrepresentable 
+tags: #programming #react #javascript
+date: 2024-01-12
+excerpt: Let's discuss a common issue of illegal states on react modal
+---
+
+ By definition what is an illegal state?
+ 
+  >An Illegal state is a situation where a program or object contains values or is in a condition that should be impossible according to the business rules or logical constraints of the system. It represents a violation of the program's invariants or assumptions.
+ 
+ In the case of React component states, this is the often neglected case that I frequently encountered when going through newcomer's codebases. 
+ 
+Let's use a modal as an example, first we have a car app modal where we can `add, edit, or delete` a car. We use React state to determine which modal should be opened.
+
+```javascript
+import { useState } from 'react';
+
+const CarAppModal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [modalType, setModalType] = useState(null); // 'add', 'edit', or 'delete'
+  const [formData, setFormData] = useState({
+    make: '',
+    model: '',
+    year: ''
+  });
+
+  if (!isOpen) return null;
+
+  return <Modal modalType={modalType} car={formData} />;
+};
+
+export default CarModal;
+```
+
+now let's create a function that will open the modal 
+
+```javascript
+  
+
+  const openModal = (type, car = null) => {
+    setIsOpen(true);
+    setModalType(type);
+    if (car) {
+      setFormData(car);
+    }
+  };
+```
+
+Now with this code can you spot the problem?
+There are possibilities where
+- the car data can be null but the modal is open
+-  `modalType` can be null, but `isOpen = true` therefore leading to unknown display
+
+Managing state is not easy especially in a more complex app, as the app grows it will be increasingly difficult to maintain.
+
+Now to make it less dangerous, let's refactor our code and simplify the state that makes illegal states unrepresentable!
+
+```javascript
+
+const CarAppModal = () => {
+  const [modalType, setModalType] = useState(null); // null, 'add', 'edit', or 'delete'
+  const [formData, setFormData] = useState(null); // null | {id: '',model: '',year: ''} in typescript
+}
+```
+
+Since we remove `isOpen` state we can directly use `modalType` to determine whether the modal is open or not. And let's make the formData nullable so now we know that in the case of "edit" or "delete", the car data state should be present.
+
+Hope this helps, feedbacks much appreciated!
