@@ -76,7 +76,7 @@ export default function ModalMenu() {
     },
     {
       type: MenuType.ACTION,
-      icon: <Icons.About />,
+      icon: <Icons.Pencil />,
       menu: {
         title: 'Blog',
       },

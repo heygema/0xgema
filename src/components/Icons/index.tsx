@@ -15,6 +15,7 @@ import {
   BsMastodon as Mastodon,
   BsYoutube,
 } from 'react-icons/bs';
+import { FaPencilAlt as Pencil } from "react-icons/fa";
 
 import * as styles from './style.css';
 import { IconBaseProps } from 'react-icons';
@@ -52,4 +53,7 @@ export const Icons = {
   ),
   Linkedin: (props: IconBaseProps) => <LinkedIn {...props} />,
   Youtube: (props: any) => <BsYoutube {...props} />,
+  Pencil: (props: IconBaseProps) => (
+    <Pencil {...props} className={styles.boldIcon} />
+  ),
 };
