@@ -129,7 +129,7 @@ globalStyle(':root', {
 
 globalStyle("[data-theme='dark']", {
   vars: {
-    '--background': globalVars.colors.black1,
+    '--background': globalVars.colors.black2,
     '--foreground': globalVars.colors.white6,
     '--foregroundHeading': globalVars.colors.white,
 

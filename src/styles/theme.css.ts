@@ -3,6 +3,7 @@ import { createGlobalTheme } from '@vanilla-extract/css';
 const BASE_COLORS = {
   black: 'hsla(0, 0%, 7%, 87%)',
   black1: 'hsl(180deg 10.03% 5.14%)',
+  black2: 'color(display-p3 0.067 0.067 0.067)',
   // black2: 'hsla(0, 0%, 0%, 0.71)',
   gray: 'hsla(217, 8%, 80%, 30%)',
   grayish: 'hsl(200, 6%, 10%)',
