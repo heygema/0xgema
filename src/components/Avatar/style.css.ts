@@ -2,7 +2,7 @@ import { globalStyle, style } from '@vanilla-extract/css';
 import { globalVars } from '../../styles/theme.css';
 
 export const root = style({
-  background: 'url(/assets/images/avatar-bg-white.png)',
+  background: 'url(/assets/images/hexagram.jpg)',
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   width: '45px',
