@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import React, { ReactNode } from 'react';
+import Head from "next/head";
+import React, { ReactNode } from "react";
 
-import { motion } from 'framer-motion';
-import { REVEAL_ANIMATE_PROPS } from '../../constant';
+import { motion } from "framer-motion";
+import { REVEAL_ANIMATE_PROPS } from "../../constant";
 
-import * as styles from './style.css';
+import * as styles from "./style.css";
 
 export default function Layout({ children }: { children: ReactNode }) {
   //const backGlow = (
@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   //);
 
   return (
-    <>
+    <div className={styles.layout}>
       <Head>
         <title>@0xgema</title>
         <link rel="icon" href="/favicon.ico" />
@@ -47,6 +47,6 @@ export default function Layout({ children }: { children: ReactNode }) {
       <footer className={styles.footer}>
         <span>{`© ${new Date().getFullYear()} Gema Anggada`}</span>
       </footer>
-    </>
+    </div>
   );
 }
