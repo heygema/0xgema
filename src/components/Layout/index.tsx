@@ -45,7 +45,16 @@ export default function Layout({ children }: { children: ReactNode }) {
         {children}
       </motion.main>
       <footer className={styles.footer}>
-        <span>{`© ${new Date().getFullYear()} Gema Anggada`}</span>
+        <span>{`© ${new Date().getFullYear()} Gema Anggada ・ `}</span>
+        <span>
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CC BY-SA 4.0
+          </a>
+        </span>
       </footer>
     </div>
   );
