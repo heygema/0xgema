@@ -1,24 +1,24 @@
-import React from 'react';
-import rehypeHighlight from 'rehype-highlight';
-import { motion } from 'framer-motion';
-import { DateTime } from 'luxon';
-import Head from 'next/head';
-import Link from 'next/link';
-import path from 'path';
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { promises as fs } from 'fs';
+import React from "react";
+import rehypeHighlight from "rehype-highlight";
+import { motion } from "framer-motion";
+import { DateTime } from "luxon";
+import Head from "next/head";
+import Link from "next/link";
+import path from "path";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { promises as fs } from "fs";
 
 import {
   CLICKABLE_RESPONSE_PROPS,
   POST_DIR,
   REVEAL_ANIMATE_PROPS,
-} from '../../constant';
-import getPosts from '../../helpers/getPosts';
-import { Posts } from '../../data/types';
-import { useSetPosts } from '../../hooks/useSetPosts';
-import { MDXComponents } from '../../components';
-import * as styles from '../../styles/slug.css';
+} from "../../constant";
+import getPosts from "../../helpers/getPosts";
+import { Posts } from "../../data/types";
+import { useSetPosts } from "../../hooks/useSetPosts";
+import { MDXComponents } from "../../components";
+import * as styles from "../../styles/slug.css";
 
 interface Props {
   slug: string;
@@ -48,9 +48,9 @@ export default function Post({ posts, source }: Props) {
       </Head>
 
       <motion.div {...REVEAL_ANIMATE_PROPS}>
-        <Link aria-label="back-button" href="/blog" passHref>
+        <Link legacyBehavior aria-label="back-button" href="/blog" passHref>
           <motion.a {...CLICKABLE_RESPONSE_PROPS} className={styles.backButton}>
-            ↩ 
+            ↩
           </motion.a>
         </Link>
         <h1 className={styles.heading}>{title}</h1>
@@ -68,7 +68,7 @@ export const getStaticPaths = async () => {
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace('.md', ''),
+      slug: filename.replace(".md", ""),
     },
   }));
 
@@ -81,9 +81,9 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params: { slug } }) => {
   let posts = await getPosts();
 
-  const postLocation = path.join(POST_DIR, slug + `/index` + '.mdx');
+  const postLocation = path.join(POST_DIR, slug + `/index` + ".mdx");
 
-  const rawFile = await fs.readFile(postLocation, 'utf-8');
+  const rawFile = await fs.readFile(postLocation, "utf-8");
 
   const mdxSource = await serialize(rawFile, {
     parseFrontmatter: true,

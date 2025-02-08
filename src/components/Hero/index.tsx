@@ -37,7 +37,7 @@ export function Hero() {
         {menu.map(({ url, title }) => {
           const isSelected = url === route;
           return (
-            <Link key={title} href={url} passHref>
+            <Link legacyBehavior key={title} href={url} passHref>
               <a className={styles.menu[isSelected ? "selected" : "base"]}>
                 {title}
               </a>
