@@ -1,15 +1,15 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { Suspense, useEffect } from 'react';
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { Suspense, useEffect } from "react";
 
-import * as styles from '../styles/index.css';
-import getPosts from '../helpers/getPosts';
-import { Posts } from '../data/types';
-import { usePostsStore } from '../data/store';
-import { Card, Loading } from '../components';
-import { motion } from 'framer-motion';
-import ArticleCard from '../components/ArticleCard';
-import { REVEAL_ANIMATE_PROPS } from '../constant';
+import * as styles from "../styles/index.css";
+import getPosts from "../helpers/getPosts";
+import { Posts } from "../data/types";
+import { usePostsStore } from "../data/store";
+import { Card, Loading } from "../components";
+import { motion } from "framer-motion";
+import ArticleCard from "../components/ArticleCard";
+import { REVEAL_ANIMATE_PROPS } from "../constant";
 
 type Props = {
   posts: Posts;
@@ -20,11 +20,11 @@ export default function Home({ posts }: Props) {
 
   // tedious
   let currentActualPage: string;
-  const q = String(asPath.split('?').pop()).split('&');
-  const pageParamIndex = q.findIndex((value) => value.startsWith('page'));
+  const q = String(asPath.split("?").pop()).split("&");
+  const pageParamIndex = q.findIndex((value) => value.startsWith("page"));
 
   if (q[pageParamIndex]) {
-    const [, target] = q[pageParamIndex]?.split('=');
+    const [, target] = q[pageParamIndex]?.split("=");
     currentActualPage = target;
   }
 
@@ -46,13 +46,12 @@ export default function Home({ posts }: Props) {
   const setPosts = usePostsStore((state) => state.setPosts);
 
   // TODO: getAvailablePaginations()
-
-  const paginations = [...Array(totalPages)].map((_, index) =>
-    String(index + 1)
+  const paginations = Array.from({ length: totalPages }, (_, i) =>
+    String(i + 1)
   );
 
   const pressPagination = (page: string) => {
-    push('/', {
+    push("/", {
       query: {
         page,
       },
@@ -100,7 +99,7 @@ export default function Home({ posts }: Props) {
         return (
           <a
             className={
-              styles.paginationAnchor[isCurrentPage ? 'selected' : 'base']
+              styles.paginationAnchor[isCurrentPage ? "selected" : "base"]
             }
             key={index}
             onClick={onClick}
