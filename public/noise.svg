@@ -1,11 +1,1 @@
-<svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
-        <filter id="grainy">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="1"
-            numOctaves="3"
-            stitchTiles="stitch"
-          />
-        </filter>
-        <rect width='100%' height='100%' filter='url(#grainy)'/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><filter id="grainy"><feTurbulence baseFrequency="1" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/></filter><rect width="100%" height="100%" filter="url(#grainy)"/></svg>
