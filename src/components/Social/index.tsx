@@ -25,11 +25,11 @@ export function Social() {
       href: 'https://www.youtube.com/channel/UCp3bZ2CYGavOv20O_eh3k8g',
       icon: <Icons.Youtube />,
     },
-    {
-      label: 'social-link-mastodon',
-      href: 'https://mstdn.social/@gema',
-      icon: <Icons.Mastodon />,
-    },
+    // {
+    //   label: 'social-link-mastodon',
+    //   href: 'https://mstdn.social/@gema',
+    //   icon: <Icons.Mastodon />,
+    // },
   ];
 
   return (
