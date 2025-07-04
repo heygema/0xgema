@@ -89,7 +89,7 @@ export default function ModalMenu() {
         title: 'Twitter',
       },
       icon: <Icons.Twitter />,
-      action: () => window?.open('https://twitter.com/0xgema', '_blank'),
+      action: () => window?.open('https://twitter.com/heygema', '_blank'),
     },
 
     {
