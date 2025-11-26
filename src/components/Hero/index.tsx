@@ -21,7 +21,9 @@ export function Hero() {
   const { route, asPath } = useRouter();
 
   const domain =
-    typeof window !== 'undefined' ? window.location.hostname : 'localhost';
+    typeof window !== 'undefined'
+      ? window.location.hostname.replace(/^www\./, '')
+      : 'localhost';
 
   const routeTitle = new Map([
     ['/', domain],
