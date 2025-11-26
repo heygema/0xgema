@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "^18.17.1"
+    "node": "24.x"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -48,5 +48,6 @@
     "@vanilla-extract/next-plugin": "^2.4.0",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.1"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
