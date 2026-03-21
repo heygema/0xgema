@@ -20,13 +20,13 @@ const menu = [
 export function Hero() {
   const { route, asPath } = useRouter();
 
-  const domain =
-    typeof window !== 'undefined'
-      ? window.location.hostname.replace(/^www\./, '')
-      : 'localhost';
+  // const domain =
+  //   typeof window !== 'undefined'
+  //     ? window.location.hostname.replace(/^www\./, '')
+  //     : 'localhost';
 
   const routeTitle = new Map([
-    ['/', domain],
+    ['/', '/'],
     ['/blog', 'Writings'],
     ['/photos', 'Photos'],
   ]);
